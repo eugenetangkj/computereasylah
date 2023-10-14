@@ -2,7 +2,7 @@ import Image from "next/image";
 import Logo from "@/assets/Logo.png";
 import WhiteLogo from "@/assets/logo_white_font.png";
 import BlackLogo from "@/assets/logo_black_font.png";
-import Link from "next/link";
+import NextLink from "next/link";
 
 const Navbar = () => {
   return (
@@ -13,19 +13,23 @@ const Navbar = () => {
       <div className="text-white">
         <ul className="list-none hidden sm:flex flex-row gap-10 items-center">
           <li>
-            <Link href={""}>Home</Link>
+            <NextLink href="">Home</NextLink>
           </li>
           <li>
-            <Link href={""}>Impact</Link>
+            <NextLink href="">Impact</NextLink>
           </li>
           <li>
-            <Link href={""}>Curriculum</Link>
+            <NextLink href="">Curriculum</NextLink>
           </li>
           <li>
-            <Link href={""}>Slides</Link>
+            <NextLink href="">Slides</NextLink>
           </li>
           <li>
-            <button className="bg-rose-500 rounded-3xl h-10 w-32">Playground</button>
+            <NextLink href="/playground">
+              <button className="bg-rose-500 rounded-3xl h-10 w-32">
+                <span>Playground</span>
+              </button>
+            </NextLink>
           </li>
         </ul>
       </div>

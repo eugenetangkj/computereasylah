@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         nunito: ['Nunito', 'sans-serif'],
         itim: ['Itim', 'cursive'],
+        roboto: ['Roboto', 'sans-serif']
       },
       colors: {
         'compassion-pink': {

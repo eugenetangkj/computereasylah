@@ -1,12 +1,12 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 
-interface EmailSceneTwoProps {
+interface EmailSceneThreeProps {
     updateSceneIndex: (index: number) => void
 }
 
 //Home page for email activities in the playground
-export default function EmailSceneThree({ updateSceneIndex } : EmailSceneTwoProps) {
+export default function EmailSceneThree({ updateSceneIndex } : EmailSceneThreeProps) {
     const handleNextButtonClick = () => {
         updateSceneIndex(4);
     }

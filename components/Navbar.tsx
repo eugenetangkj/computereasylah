@@ -6,14 +6,14 @@ import NextLink from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center bg-dark-blue h-16">
+    <nav className="flex justify-between items-center bg-dark-blue h-20">
       <div className="">
         <NextLink href="">
-          <Image src={WhiteLogo} alt="Logo" className="w-48 h-11 ml-10" />
+          <Image src={WhiteLogo} alt="Logo" className="w-48 ml-10" />
         </NextLink>
       </div>
       <div className="text-white mr-10">
-        <ul className="list-none flex flex-row gap-x-10 items-center font-semibold">
+        <ul className="list-none flex flex-row gap-x-10 items-center font-semibold text-xl">
           <li>
             <NextLink href="">Home</NextLink>
           </li>
@@ -28,7 +28,7 @@ const Navbar = () => {
           </li>
           <li>
             <NextLink href="/playground">
-              <button className="bg-rose-500 rounded-3xl h-10 w-32">
+              <button className="bg-rose-500 rounded-3xl h-12 w-36">
                 <span>Playground</span>
               </button>
             </NextLink>

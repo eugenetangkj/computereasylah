@@ -13,6 +13,29 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        nunito: ['Nunito', 'sans-serif'],
+        itim: ['Itim', 'cursive'],
+      },
+      colors: {
+        'compassion-pink': {
+          100: '#FFBED5',
+          500: '#FF89B3',
+          900: '#FE357D',
+        },
+        'trust-blue': {
+          100: '#98C7F2',
+          500: '#4794DC',
+          900: '#12497C'
+        },
+      },
+      translate: {
+        '1/8': '12.5%'
+      },
+      width: {
+        '1/8': '12.5%',
+        '1/16': '6.25%',
+      },
     },
   },
   plugins: [],

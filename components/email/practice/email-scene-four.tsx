@@ -9,11 +9,11 @@ interface EmailSceneFourProps {
 //Home page for email activities in the playground
 export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProps) {
     const handleNextButtonClick = () => {
-        updateSceneIndex(4);
+        updateSceneIndex(5);
     }
 
     const handlePreviousButtonClick = () => {
-        updateSceneIndex(2);
+        updateSceneIndex(3);
     }
 
     const [isActive, setIsActive] = useState(false);

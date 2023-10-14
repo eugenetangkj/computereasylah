@@ -15,7 +15,10 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
     }
 
     const handlePreviousButtonClick = () => {
-        updateSceneIndex(4);
+        if (! shouldShowErrorPrompt) {
+            //Can only transition if the error prompt is not present
+            updateSceneIndex(4);
+        }
     }
 
     //Fade in animation
@@ -50,6 +53,11 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
     const messageFieldModelAnswer = 'hi ah boon, long time no see!'
     //Handler for send button
     const handleSendButtonClick = () => {
+        if (shouldShowErrorPrompt) {
+            //Error prompt is already shown. No need to process
+            return;
+        }
+
         //Check whether to field is correct
         let processedToFieldInput = toFieldData.trim().toLowerCase();
         if (processedToFieldInput != toFieldModelAnswer) {
@@ -78,19 +86,11 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
             return;
         }
 
-
         //Reach here means all fields are correct
         handleNextButtonClick();
     }
 
 
-
-
-
-
-
-
-    
     return (
         <div className={`grid grid-rows-1 grid-cols-3 gap-4 h-4/5 w-4/5 items-start p-8 mx-64 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Instructions */}
@@ -110,7 +110,7 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
             {/* New message interface */}
             <div className='bg-stone-300 row-start-1 col-span-2  flex flex-col flex-grow h-full'>
                 <div className='w-full flex justify-between items-center mx-0 bg-stone-600 py-4'>
-                    <h5 className='text-white font-roboto text-2xl ml-8'>New Message</h5>
+                    <h5 className='text-white font-roboto text-2xl ml-8'>{(subjectFieldData == '') ? 'New Message' : subjectFieldData}</h5>
                     <MdClose className='text-white text-5xl mr-4 cursor-pointer' onClick={handlePreviousButtonClick} />
 
                 </div>

@@ -17,7 +17,7 @@ export default function Email() {
                 <h1 className="text-8xl font-bold font-itim text-white mb-8">Email</h1>
 
                 {/* Practice button */}
-                <NextLink href='/email/practice' className='my-12'>
+                <NextLink href='/playground/email/practice' className='my-12'>
                     <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
                         <span>Practice</span>
                     </button>
@@ -26,7 +26,7 @@ export default function Email() {
             
 
                 {/* Quiz button */}
-                <NextLink href='/email/practice' className='my-4'>
+                <NextLink href='/playground/email/practice' className='my-4'>
                     <button className="bg-trust-blue-100 hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
                         <span>Quiz</span>
                     </button>

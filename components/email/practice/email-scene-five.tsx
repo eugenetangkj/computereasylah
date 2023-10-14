@@ -1,6 +1,4 @@
-import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
-import { BiSearchAlt2, BiPencil, BiSolidInbox, BiSolidSend, BiSolidTrash} from "react-icons/bi";
 import { MdAttachFile, MdClose } from "react-icons/md"
 
 interface EmailSceneFiveProps {

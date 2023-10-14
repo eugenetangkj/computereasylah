@@ -11,21 +11,14 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "teaching-image": "url('../assets/teaching_image.png')",
-      },
-      colors: {
-        "dark-blue": "#12497C",
-        "dark-gray": "#595959",
-        pink: "#FE357D",
-      },
-      fontFamily: {
-        sans: ['"PT Sans"', "sans-serif"],
       },
       fontFamily: {
         nunito: ['Nunito', 'sans-serif'],
         itim: ['Itim', 'cursive'],
-        roboto: ['Roboto', 'sans-serif']
+        roboto: ['Roboto', 'sans-serif'],
+        sans: ['"PT Sans"', "sans-serif"],
       },
       colors: {
         'compassion-pink': {

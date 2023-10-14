@@ -9,6 +9,7 @@ interface EmailSceneFiveProps {
 
 //Home page for email activities in the playground
 export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProps) {
+    //Transition functions
     const handleNextButtonClick = () => {
         updateSceneIndex(6);
     }
@@ -17,6 +18,7 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
         updateSceneIndex(4);
     }
 
+    //Fade in animation
     const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
@@ -27,6 +29,66 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
   
       return () => clearTimeout(timer); // Clean up the timer on unmount
     }, []);
+
+
+    //Input form variables
+    const [toFieldData, setToFieldData] = useState('');
+    const [subjectFieldData, setSubjectFieldData] = useState('');
+    const [messageFieldData, setMessageFieldData] = useState('');
+
+    //Handle error message
+    const [errorMessage, setErrorMessage] = useState('');
+    const [shouldShowErrorPrompt, setShowShouldErrorPrompt] = useState(false);
+    const handleTryAgainButtonClick = () => {
+        setShowShouldErrorPrompt(false);
+    }
+
+
+    //Model answers
+    const toFieldModelAnswer = 'ahboon@gmail.com';
+    const subjectFieldModelAnswer = 'greetings';
+    const messageFieldModelAnswer = 'hi ah boon, long time no see!'
+    //Handler for send button
+    const handleSendButtonClick = () => {
+        //Check whether to field is correct
+        let processedToFieldInput = toFieldData.trim().toLowerCase();
+        if (processedToFieldInput != toFieldModelAnswer) {
+            //Show error prompt
+            setErrorMessage('Did you send to the correct email address?')
+            setShowShouldErrorPrompt(true);
+            return;
+        }
+        
+        //Check whether subject field is correct
+        let processedSubjectFieldInput = subjectFieldData.trim().toLowerCase();
+        if (processedSubjectFieldInput != subjectFieldModelAnswer) {
+            //Show error prompt
+            setErrorMessage('Did you set the correct subject?')
+            setShowShouldErrorPrompt(true);
+            return;
+        }
+
+
+        //Check whether message field is correct
+        let processedMessageFieldInput = messageFieldData.trim().toLowerCase();
+        if (processedMessageFieldInput != messageFieldModelAnswer) {
+            //Show error prompt
+            setErrorMessage('Did you enter the correct message?')
+            setShowShouldErrorPrompt(true);
+            return;
+        }
+
+
+        //Reach here means all fields are correct
+        handleNextButtonClick();
+    }
+
+
+
+
+
+
+
 
     
     return (
@@ -62,11 +124,9 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
                                 placeholder="Email address of the person you want to send an email to"
                                 className="border border-gray-300 text-gray-900 rounded-lg text-xl font-roboto focus:outline-blue-500 p-2.5 w-3/4  placeholder-gray-300"
                                 onChange={(e: any) => {
-                                    //TODO: Update state of recipient's email address
+                                    setToFieldData(e.target.value);
                                 }}
                     />
-
-
                 </div>
 
                 {/* Subject field */}
@@ -79,7 +139,7 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
                                 placeholder="What topic is your email on"
                                 className="border border-gray-300 text-gray-900 rounded-lg text-xl font-roboto focus:outline-blue-500  w-3/4 p-2.5  placeholder-gray-300"
                                 onChange={(e: any) => {
-                                    //TODO: Update state of the email's subject
+                                    setSubjectFieldData(e.target.value);
                                 }}
                     />
                 </div>
@@ -94,30 +154,42 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
                                 placeholder="What do you want to say to the other person"
                                 className="border border-gray-300 text-gray-900 rounded-lg text-xl font-roboto focus:outline-blue-500  w-3/4 p-2.5  placeholder-gray-300 resize-none"
                                 onChange={(e: any) => {
-                                    //TODO: Update state of the email's message
+                                    setMessageFieldData(e.target.value);
                                 }}
                     />
 
 
                 </div>
                 
-
-
-
+                {/* Send button and attach file */}
                 <div className='flex mx-8 space-x-4 mt-8'>
                     <button className="bg-blue-500 hover:shadow-lg text-white font-roboto py-4 rounded-lg flex px-4 justify-center duration-300 w-48 items-center animate-pulse"
-                        onClick={handleNextButtonClick}>
+                        onClick={handleSendButtonClick}>
                             <span className='text-3xl font-roboto'>Send</span>
                     </button>
                     <button className="cursor-auto">
                         <MdAttachFile className='text-gray-600 text-5xl' />
                     </button>
-
                 </div>
 
-               
-
             </div>
+
+            {/* Error Message */}
+            {
+                (shouldShowErrorPrompt)
+                ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 p-16 rounded-xl flex flex-col justify-center items-center w-1/2 h-1/2 space-y-16'>
+                    <h4 className='text-trust-blue-900 text-5xl font-itim'>Hmmm... something is not right</h4>
+                    <h6 className='text-trust-blue-900 text-3xl font-itim'>{errorMessage}</h6>
+                    {/* Try again button */}
+                    <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-3xl"
+                        onClick={handleTryAgainButtonClick}>
+                            <span>Try again</span>
+                    </button>
+                </div>
+                : ''
+            }
+
+  
    
 
         </div>

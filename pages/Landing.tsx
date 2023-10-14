@@ -9,12 +9,13 @@ import ResourceIcon2 from "@/assets/resource_icon_2.png";
 import ResourceIcon3 from "@/assets/resource_icon_3.png";
 import NextLink from "next/link";
 
+
 const Intro = (props) => {
   const { title, text } = props;
   return (
     <div className="mx-auto w-1/2">
-      <p className="text-4xl font-semibold text-dark-blue p-12">{title}</p>
-      <p className="text-xl text-dark-gray ">{text}</p>
+      <p className="text-4xl font-semibold text-trust-blue-900 p-12">{title}</p>
+      <p className="text-xl text-gray-600 ">{text}</p>
     </div>
   );
 };
@@ -29,10 +30,10 @@ const Resource = (props) => {
       </div>
 
       <div className="text-left w-1/3">
-        <h2 className="text-3xl text-pink font-bold">{title}</h2>
-        <p className="text-dark-gray my-4 text-xl">{text}</p>
+        <h2 className="text-3xl text-compassion-pink-900 font-bold">{title}</h2>
+        <p className="text-gray-600 my-4 text-xl">{text}</p>
         <NextLink href={link}>
-          <button className="w-40 h-12 bg-dark-blue rounded-3xl text-white font-semibold text-xl">
+          <button className="w-40 h-12 bg-trust-blue-900 rounded-3xl text-white font-semibold text-xl">
             {button}
           </button>
         </NextLink>
@@ -69,10 +70,10 @@ const Landing = () => {
         />
 
         <div className="text-text text-left w-1/2">
-          <p className="text-pink text-3xl text-center font-semibold p-12">
+          <p className="text-compassion-pink-900 text-3xl text-center font-semibold p-12">
             Method 1: Curriculum + SilverBytes Playground (Recommended)
           </p>
-          <ol className="list-decimal space-y-4 text-dark-gray text-xl">
+          <ol className="list-decimal space-y-4 text-gray-600 text-xl">
             <li>
               View our foundation{" "}
               <a className="underline text-blue-500" href="#">
@@ -100,10 +101,10 @@ const Landing = () => {
             </li>
             <li>You are ready to teach senior adults fundamental computer skills!</li>
           </ol>
-          <p className="text-pink text-3xl text-center font-semibold p-12">
+          <p className="text-compassion-pink-900 text-3xl text-center font-semibold p-12">
             Method 2: SilverBytes Playground
           </p>
-          <ol className="list-decimal space-y-4 text-dark-gray text-xl">
+          <ol className="list-decimal space-y-4 text-gray-600 text-xl">
             <li>
               If you do not wish to go through a structured curriculum for teaching, you
               can also directly use SilverBytes Playground to encourage hands-on
@@ -141,7 +142,7 @@ const Landing = () => {
           button="View"
           link="/"
         />
-        <p className="text-4xl font-semibold text-dark-blue pt-12">
+        <p className="text-4xl font-semibold text-trust-blue-900 pt-12">
           We are supported by
         </p>
         <Image src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />

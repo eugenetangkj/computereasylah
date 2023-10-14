@@ -6,7 +6,7 @@ import NextLink from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center bg-dark-blue h-20">
+    <nav className="flex justify-between items-center bg-trust-blue-900 h-20">
       <div className="">
         <NextLink href="">
           <Image src={WhiteLogo} alt="Logo" className="w-48 ml-10" />

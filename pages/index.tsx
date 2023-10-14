@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import NextLink from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -113,6 +114,12 @@ export default function Home() {
           </p>
         </a>
       </div>
+
+      <NextLink href='/playground'>
+        <button className="border-lime-800 font-bold py-3 px-4 w-3/5 mt-5 rounded-full">
+          <span>Playground</span>
+        </button>
+      </NextLink>
     </main>
   )
 }

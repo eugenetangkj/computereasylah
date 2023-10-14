@@ -6,12 +6,14 @@ import NextLink from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center bg-gray-700">
-      <div className="flex select-none">
-        <Image src={WhiteLogo} alt="Logo" className="w-48 h-11 m-1 mt-[1px]" />
+    <nav className="flex justify-center items-center bg-dark-blue h-16">
+      <div className="">
+        <NextLink href="">
+          <Image src={WhiteLogo} alt="Logo" className="w-48 h-11 m-1" />
+        </NextLink>
       </div>
       <div className="text-white">
-        <ul className="list-none hidden sm:flex flex-row gap-10 items-center">
+        <ul className="list-none flex flex-row gap-x-10 items-center font-semibold">
           <li>
             <NextLink href="">Home</NextLink>
           </li>
@@ -33,7 +35,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

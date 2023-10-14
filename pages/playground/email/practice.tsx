@@ -2,6 +2,8 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import EmailSceneZero from '@/components/email/practice/email-scene-zero';
 import EmailSceneOne from '@/components/email/practice/email-scene-one';
+import EmailSceneTwo from '@/components/email/practice/email-scene-two';
+import EmailSceneThree from '@/components/email/practice/email-scene-three';
 
 
 //Practice component for email activities
@@ -23,6 +25,10 @@ export default function EmailPractice() {
                 ? <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />
                 :(currentSceneIndex == 1)
                 ? <EmailSceneOne updateSceneIndex={updateCurrentSceneIndex} />
+                :(currentSceneIndex == 2)
+                ? <EmailSceneTwo updateSceneIndex={updateCurrentSceneIndex} />
+                :(currentSceneIndex == 3)
+                ? <EmailSceneThree updateSceneIndex={updateCurrentSceneIndex} />
                 : <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />
             }
 

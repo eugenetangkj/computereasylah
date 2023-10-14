@@ -8,7 +8,7 @@ interface EmailSceneOneProps {
 //Home page for email activities in the playground
 export default function EmailSceneOne({ updateSceneIndex } : EmailSceneOneProps) {
     const handleNextButtonClick = () => {
-        updateSceneIndex(1);
+        updateSceneIndex(2);
     }
 
     const handlePreviousButtonClick = () => {

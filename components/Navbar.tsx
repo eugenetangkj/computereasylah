@@ -6,7 +6,7 @@ import NextLink from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center bg-gray-700">
       <div className="flex select-none">
         <Image src={WhiteLogo} alt="Logo" className="w-48 h-11 m-1 mt-[1px]" />
       </div>

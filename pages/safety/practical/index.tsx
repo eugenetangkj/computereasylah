@@ -1,5 +1,5 @@
 import React from "react";
-import Email, { EmailProps } from "@/components/safety/Email";
+import Email, { EmailProps } from "@/components/safety/practical/Email";
 
 const EmailPage: React.FC = () => {
   const emailData: EmailProps = {

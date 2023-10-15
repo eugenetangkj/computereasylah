@@ -1,19 +1,19 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
-import { BiSearchAlt2, BiPencil, BiSolidInbox, BiSolidSend, BiSolidTrash, BiReply} from "react-icons/bi";
+import { BiSearchAlt2, BiPencil, BiSolidInbox, BiSolidSend, BiSolidTrash} from "react-icons/bi";
 
-interface EmailSceneNineProps {
+interface EmailSceneTwelveProps {
     updateSceneIndex: (index: number) => void
 }
 
 //Home page for email activities in the playground
-export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProps) {
+export default function EmailSceneTwelve({ updateSceneIndex } : EmailSceneTwelveProps) {
     const handleNextButtonClick = () => {
-        updateSceneIndex(10);
+        updateSceneIndex(8);
     }
 
     const handlePreviousButtonClick = () => {
-        updateSceneIndex(8);
+        updateSceneIndex(6);
     }
 
     const [isActive, setIsActive] = useState(false);
@@ -54,14 +54,14 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                     </button>
 
                     {/* Inbox */}
-                    <button className="bg-blue-200 font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
-                    onClick={handleNextButtonClick}>
+                    <button className="font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
+                    >
                         <BiSolidInbox className='text-3xl' />
                         <span className=''>Inbox</span>
                     </button>
 
                     {/* Sent */}
-                    <button className="font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
+                    <button className="bg-blue-200 font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
                     >
                         <BiSolidSend className='text-3xl' />
                         <span className=''>Sent</span>
@@ -78,30 +78,30 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
 
                 </div>
                 {/* Main body */}
-                <div className='flex flex-col bg-white justify-start items-start flex-grow rounded-xl px-8 py-8 space-y-8'>
-                    {/* Body title */}
-                    <div className='flex justify-between items-center rounded-xl px-8 w-full'>
-                        <h6 className='text-4xl text-black font-roboto'>Re: Greetings</h6>
-                        <div className='flex space-x-8 items-center'>
-                            <h6 className='text-3xl text-gray-600 font-roboto'>May 4</h6>
-                            <BiReply className='text-5xl text-gray-600 cursor-pointer animate-pulse' onClick={handleNextButtonClick} />
-                        </div>
+                <div className='flex flex-col bg-white justify-start items-center flex-grow rounded-xl px-8 py-8 space-y-16'>
+                    <div className='flex justify-between items-start w-full'>
+                        <h6 className='text-3xl text-gray-600 font-roboto'>To: Ah Boon</h6>
+                        <h6 className='text-3xl text-gray-600 font-roboto'><span className='text-black'>Re: Greetings</span> - Yes, it's still open! </h6>
+                        <h6 className='text-3xl text-gray-600 font-roboto'>May 4</h6>
+                    </div>
+                    <div className='flex justify-between items-start w-full'>
+                        <h6 className='text-3xl text-gray-600 font-roboto'>To: Ah Boon</h6>
+                        <h6 className='text-3xl text-gray-600 font-roboto'><span className='text-black'>Greetings</span> - Hi Ah Boon, long time no see! </h6>
+                        <h6 className='text-3xl text-gray-600 font-roboto'>May 4</h6>
                     </div>
 
-                    {/* Body content */}
-                  
-                    <h6 className='text-4xl text-gray-600 font-roboto px-8 mt-8 font-bold'>Ah Boon</h6>
-                    <h6 className='text-2xl text-gray-600 font-roboto px-8'>to me</h6>
-                    <p className='text-3xl text-gray-600 font-roboto px-8'>Hey Ah Hock, it's great to hear from you! I am doing great, thanks for asking.</p>
-                    <p className='text-3xl text-gray-600 font-roboto px-8'>I miss the chicken rice in Singapore... Is our favorite stall still open?</p>
-    
                 </div>
             </div>
 
 
             {/* Instruction to player */}
-            <div className='bg-compassion-pink-500 fixed bottom-8 right-8 p-16 rounded-lg'>
-                <h4 className='text-trust-blue-900 text-4xl font-itim'>Let us reply Ah Boon's email. Left click the Reply icon.</h4>
+            <div className='bg-compassion-pink-500 fixed bottom-8 right-8 p-16 rounded-lg flex flex-col space-y-8 items-center justify-center'>
+                <h4 className='text-trust-blue-900 text-4xl font-itim'>Nice! You have successfully replied.</h4>
+                {/* Finish practice button */}
+                <button className="bg-trust-blue-100 hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-3xl"
+                    onClick={handleNextButtonClick}>
+                        <span>Finish Practice</span>
+                </button>
 
             </div>
 

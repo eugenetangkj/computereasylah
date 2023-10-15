@@ -13,6 +13,7 @@ import EmailSceneNine from '@/components/email/practice/email-scene-nine';
 import EmailSceneTen from '@/components/email/practice/email-scene-ten';
 import EmailSceneEleven from '@/components/email/practice/email-scene-eleven';
 import EmailSceneTwelve from '@/components/email/practice/email-scene-twelve';
+import EmailSceneThirteen from '@/components/email/practice/email-scene-thirteen';
 
 
 //Practice component for email activities
@@ -56,6 +57,8 @@ export default function EmailPractice() {
                 ? <EmailSceneEleven updateSceneIndex={updateCurrentSceneIndex} />
                 : (currentSceneIndex == 12)
                 ? <EmailSceneTwelve updateSceneIndex={updateCurrentSceneIndex} />
+                : (currentSceneIndex == 13)
+                ? <EmailSceneThirteen updateSceneIndex={updateCurrentSceneIndex} />
                 : <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />
             }
 

@@ -9,7 +9,7 @@ interface EmailSceneTwelveProps {
 //Home page for email activities in the playground
 export default function EmailSceneTwelve({ updateSceneIndex } : EmailSceneTwelveProps) {
     const handleNextButtonClick = () => {
-        updateSceneIndex(8);
+        updateSceneIndex(13);
     }
 
     const handlePreviousButtonClick = () => {

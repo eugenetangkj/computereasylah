@@ -1,10 +1,25 @@
 import NextLink from 'next/link';
+import { useEffect, useState } from 'react';
 
 
 //Home page for email activities in the playground
 export default function Email() {
+
+    // Animation
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+      // Set isActive to true after a short delay when the component is mounted
+      const timer = setTimeout(() => {
+        setIsActive(true);
+      }, 100); // Adjust the delay as needed
+  
+      return () => clearTimeout(timer); // Clean up the timer on unmount
+    }, []);
+
+
     return (
-        <div className="h-screen w-screen bg-trust-blue-900 flex flex-col items-center justify-center">
+        <div className={`h-screen w-screen bg-trust-blue-900 flex flex-col items-center justify-center opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             <div className="fixed top-16 left-16 p-4">
                 <NextLink href="/playground">
                 <h5 className="font-itim text-5xl hover:text-trust-blue-500 duration-300 text-white">Back</h5>
@@ -18,16 +33,15 @@ export default function Email() {
 
                 {/* Practice button */}
                 <NextLink href='/playground/email/practice' className='my-12'>
-                    <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
+                    <button className="bg-trust-blue-100 hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
                         <span>Practice</span>
                     </button>
                 </NextLink>
 
-            
-
+                
                 {/* Quiz button */}
                 <NextLink href='/playground/email/practice' className='my-4'>
-                    <button className="bg-trust-blue-100 hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
+                    <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
                         <span>Quiz</span>
                     </button>
                 </NextLink>

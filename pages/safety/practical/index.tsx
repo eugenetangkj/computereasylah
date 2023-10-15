@@ -18,7 +18,6 @@ const EmailPage: React.FC = () => {
         <p>
           Please note that this is a time-sensitive matter, and we urge you to take action immediately to claim your refund. To proceed, click on the following link to access the secure IRAS website and confirm your details:
         </p>
-        <br/>
         <p>
           <a href="http://phishingsite.com/verify" target="_blank" rel="noopener noreferrer" style="color: blue; text-decoration: underline;">
             [IRAS Refund Team Inland Revenue Authority of Singapore: http://phishingsite.com/verify-sg]
@@ -36,7 +35,6 @@ const EmailPage: React.FC = () => {
         <p>
           We understand the importance of protecting your personal information. Rest assured that this verification process is secure, and your data will be handled with the utmost confidentiality.
         </p>
-        <br/>
         <p>
           If you have any questions or need assistance, please do not hesitate to contact our IRAS support team at the following email address:
           <a href="mailto:iras.support@phishingsite.com" style="color: blue; text-decoration: underline;"> iras.support@officialiras.gov.sg</a>.
@@ -47,7 +45,10 @@ const EmailPage: React.FC = () => {
         </p>
         <br/>
         <br/>
-        <p>Sincerely, IRAS Refund Team Inland Revenue Authority of Singapore</p>
+        <p>Sincerely,</p>
+        <p>
+          IRAS Refund Team Inland Revenue Authority of Singapore
+        </p>
       </div>
     `,
   };

@@ -16,8 +16,12 @@ const config: Config = {
       },
       colors: {
         "dark-blue": "#12497C",
-        "dark-gray": "#595959",
-        pink: "#FE357D",
+        "accent-blue": "#4794DC",
+        "light-blue": "#98C7F2",
+        "normal-text": "#595959",
+        "bright-pink": "#FE357D",
+        "pale-pink": "#FF89B3",
+        "light-pink": "#FFBED5",
       },
       fontFamily: {
         sans: ['"PT Sans"', "sans-serif"],

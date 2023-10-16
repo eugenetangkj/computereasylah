@@ -29,7 +29,7 @@ const Resource = (props) => {
       </div>
 
       <div className="text-left w-1/3">
-        <h2 className="text-3xl text-pink font-bold">{title}</h2>
+        <h2 className="text-3xl text-accent-pink font-bold">{title}</h2>
         <p className="text-dark-gray my-4 text-xl">{text}</p>
         <NextLink href={link}>
           <button className="w-40 h-12 bg-dark-blue rounded-3xl text-white font-semibold text-xl">
@@ -69,7 +69,7 @@ const Landing = () => {
         />
 
         <div className="text-text text-left w-1/2">
-          <p className="text-pink text-3xl text-center font-semibold p-12">
+          <p className="text-accent-pink text-3xl text-center font-semibold p-12">
             Method 1: Curriculum + SilverBytes Playground (Recommended)
           </p>
           <ol className="list-decimal space-y-4 text-dark-gray text-xl">
@@ -100,7 +100,7 @@ const Landing = () => {
             </li>
             <li>You are ready to teach senior adults fundamental computer skills!</li>
           </ol>
-          <p className="text-pink text-3xl text-center font-semibold p-12">
+          <p className="text-accent-pink text-3xl text-center font-semibold p-12">
             Method 2: SilverBytes Playground
           </p>
           <ol className="list-decimal space-y-4 text-dark-gray text-xl">

@@ -52,8 +52,8 @@ export const EmailQuizData: Quiz = {
       {
         question:
           'What is the purpose of the "Subject" field when composing an email?',
-        choices: ['To address the email', 'To format the email', 'To specify the type of email', 'To provide a brief description of the content'],
-        correctAnswer: 'To provide a brief description of the content',
+        choices: ['Address the email', 'Format the email', 'Specify the type of email', 'Brief overview of the content'],
+        correctAnswer: 'Brief overview of the content',
         imageLink: '',
         explanation: 'Subject provides a quick overview of what the email is about.'
       },

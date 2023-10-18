@@ -58,7 +58,7 @@ export default function Email() {
 
 
                 {/* Quiz */}
-                <NextLink href='/playground/typing' className='flex flex-col justify-center items-center space-y-4'>
+                <NextLink href='/playground/email/quiz' className='flex flex-col justify-center items-center space-y-4'>
                     <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300'>
                         <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Quiz</h3>
                     </div>

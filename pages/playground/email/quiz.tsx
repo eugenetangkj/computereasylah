@@ -5,11 +5,27 @@ import { Quiz } from '@/components/quiz/emailQuizData';
 
 //Practice component for email activities
 export default function EmailQuiz() {
+    // Animation
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+      // Set isActive to true after a short delay when the component is mounted
+      const timer = setTimeout(() => {
+        setIsActive(true);
+      }, 100); // Adjust the delay as needed
+  
+      return () => clearTimeout(timer); // Clean up the timer on unmount
+    }, []);
+
+
+
+
+
 
     const allQuestions: Quiz = EmailQuizData;
 
 
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1); //Initially show start screen
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [currentScore, setCurrentScore] = useState(0);
 
@@ -165,72 +181,26 @@ export default function EmailQuiz() {
 
 
     return (
-        <div className="h-screen w-screen bg-trust-blue-900 flex flex-col items-center justify-center overflow-hidden">
-        <h1>Email Quiz</h1>
-
-        <div id='quiz-content'>
-            {/* Question */}
-            {
-                (currentQuestionIndex + 1 != allQuestions.totalQuestions + 1)
-                ? <h2>{allQuestions.questions[currentQuestionIndex].question}</h2>
-                : <h2></h2>
-            }
-
-            <button id='view-explanation-button' className="hidden">
-                <span>View Explanation</span>
-            </button>
-
-            
-            {/* Options */}
-            {
-                (currentQuestionIndex + 1 != allQuestions.totalQuestions + 1)
-                ?
-            
-            
-            allQuestions.questions[currentQuestionIndex].choices.map((choice, index) => (
-            <div key={index} id={choice} className='bg-white mb-5 cursor-pointer options' onClick={() => handleAnswerSelection(choice)}>
-                <h3>{choice}</h3>
-            
+        <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 pt-28 md:pt-8 md:mt-20 lg:mt-20 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+            <div className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}>
+                {/* Back button */}
+                <NextLink href="/playground/email" className=''>
+                    <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">Back</h5>
+                </NextLink>
             </div>
-            
-                ))
-            : <h3></h3>
-            
-            
-            }
 
-            {/* Check button */}
-            <button id='check-button' className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72"
-            onClick={handleCheckAnswer} disabled={selectedAnswer == ''}>
-                <span>Check</span>
-            </button>
+            {/* Title */}
+            <div className='flex flex-col justify-center items-center space-y-36'>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Email Quiz</h1>
 
-            {/* Next button */}
-            <button id='next-button' className="hidden bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full duration-300 text-5xl w-72"
-            onClick={handleNextQuestion}>
-                <span>Next</span>
-            </button>
-        </div>
+                <h3 className='text-xl lg:text-2xl font-nunito text-center mx-4'>Want to test your knowledge about emails? Take the Email Quiz now!</h3>
 
-        <div id='end-screen' className='hidden'>
-            <h1>Congrats</h1>
-            <h2>{`Total Score:${currentScore} / ${allQuestions.totalQuestions}`}</h2>
-            <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72"
-            onClick={handlePracticeAgain}>
-                <span>Practice Again</span>
-            </button>
-
-            <NextLink href='/playground/email' className='my-4'>
-                <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
-                    <span>Home</span>
+                <button className='text-3xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300'
+                onClick={() => console.log('TODO: Transition to starting question')}>
+                Start Quiz  
                 </button>
-            </NextLink>
-
+            </div>
        
-        </div>
-
-
-
 
             
            

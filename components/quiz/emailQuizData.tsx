@@ -4,6 +4,7 @@ export interface Question {
   question: string;
   choices: string[];
   correctAnswer: string;
+  imageLink: string;
 }
 
 
@@ -15,23 +16,41 @@ export interface Quiz {
 
 
 export const EmailQuizData: Quiz = {
-    totalQuestions: 3,
+    totalQuestions: 5,
     questions: [
       {
-        question: 'Which function is used to serialize an object into a JSON string in Javascript?',
-        choices: ['stringify()', 'parse()', 'convert()', 'None of the above'],
-        correctAnswer: 'stringify()',
+        question: 'Which of the following is an invalid email address?',
+        choices: ['sally123@gmail.com', 'sally.123@gmail.com', 'sally/123@gmail.com', 'sally@gmail.com'],
+        correctAnswer: 'sally/123@gmail.com',
+        imageLink: ''
       },
       {
-        question: 'Which of the following keywords is used to define a variable in Javascript?',
-        choices: ['var', 'let', 'var and let', 'None of the above'],
-        correctAnswer: 'var and let',
+        question: 'What does the send button do?',
+        choices: ['Send an email', 'Delete an email', 'Forward an email', 'Compose an email'],
+        correctAnswer: 'Send an email',
+        imageLink: 'https://equalsdrummond.files.wordpress.com/2013/07/what-was-google-thinking-1.png'
       },
       {
         question:
-          'Which of the following methods can be used to display data in some form using Javascript?',
-        choices: ['document.write()', 'console.log()', 'window.alert', 'All of the above'],
-        correctAnswer: 'All of the above',
+          'What does "CC" stand for in the context of email?',
+        choices: ['Click and Copy', 'Carbon Copy', 'Central Control', 'Clear Communication'],
+        correctAnswer: 'Carbon Copy',
+        imageLink: ''
       },
+      {
+        question:
+          'Which folder is typically used to store sent emails?',
+        choices: [' Inbox', 'Outbox', 'Drafts', 'Sent'],
+        correctAnswer: 'Sent',
+        imageLink: ''
+      },
+      {
+        question:
+          'What is the purpose of the "Subject" field when composing an email?',
+        choices: ['To address the email', 'To format the email', 'To specify the type of email', 'To provide a brief description of the content'],
+        correctAnswer: 'To provide a brief description of the content',
+        imageLink: ''
+      },
+
     ],
 }

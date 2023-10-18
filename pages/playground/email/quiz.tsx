@@ -43,9 +43,9 @@ export default function EmailQuiz() {
                 ? <div className='flex flex-col justify-center items-center space-y-36'>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Email Quiz</h1>
 
-                    <h3 className='text-xl lg:text-2xl font-nunito text-center mx-4'>Want to test your knowledge about emails? Take the Email Quiz now!</h3>
+                    <h3 className='text-xl lg:text-3xl font-nunito text-center mx-8'>Want to test your knowledge about emails? Take the Email Quiz now!</h3>
 
-                    <button className='text-3xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300'
+                    <button className='text-3xl md:text-4xl lg:text-5xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300'
                     onClick={ handleStartQuiz }>
                         Start Quiz  
                     </button>

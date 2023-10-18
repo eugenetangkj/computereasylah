@@ -154,12 +154,14 @@ export default function EmailQuizBody() {
     //Runs when user wants to advance to the next question
     const handleNextQuestion = () => {
         setShouldDisableOptions(false);
+        window.scrollTo(0, 0)
         if (currentQuestionIndex + 1 == allQuestions.totalQuestions) {
             //No more questions
             
             //Hide the question content
             let questionContent = document.getElementById('quiz-content');
             questionContent?.classList.add('hidden');
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
 
             //Show end screen
             let endScreen = document.getElementById('end-screen');
@@ -208,6 +210,7 @@ export default function EmailQuizBody() {
         setCurrentQuestionIndex(0);
         setSelectedAnswer('');
         setCurrentScore(0);
+        window.scrollTo(0, 0)
 
 
 
@@ -253,24 +256,24 @@ export default function EmailQuizBody() {
 
     return (<div className={`opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">{
-                    (currentQuestionIndex + 1 < allQuestions.totalQuestions)
+                    (currentQuestionIndex + 1 == allQuestions.totalQuestions + 1)
                     ?(
-                        `Question ${currentQuestionIndex + 1} of ${allQuestions.totalQuestions}`
-                      ) : (
                         'Quiz Complete!'
+                      ) : (
+                        `Question ${currentQuestionIndex + 1} of ${allQuestions.totalQuestions}`
                       )}</h1>
 
                 <div id='quiz-content' className='flex flex-col justify-center items-center space-y-8 mt-8 mb-8'>
                     {/* Question */}
                     {
                         (currentQuestionIndex + 1 != allQuestions.totalQuestions + 1)
-                        ? <h2 className="text-2xl mx-4 md:text-6xl lg:text-7xl xl:text-8xl font-nunito text-center">{allQuestions.questions[currentQuestionIndex].question}</h2>
+                        ? <h2 className="text-2xl mx-4 md:text-3xl lg:text-4xl xl:text-5xl font-nunito text-center">{allQuestions.questions[currentQuestionIndex].question}</h2>
                         : <h2></h2>
                     }
 
                     {/* Image */}
                     {
-                        allQuestions.questions[currentQuestionIndex].imageLink != ''
+                        (currentQuestionIndex + 1 != allQuestions.totalQuestions + 1) && allQuestions.questions[currentQuestionIndex].imageLink != ''
                         ? <img src={allQuestions.questions[currentQuestionIndex].imageLink} alt='Question Image' className='mx-4 w-3/4' />
                         : <h2></h2>
                     }
@@ -281,10 +284,10 @@ export default function EmailQuizBody() {
                         (currentQuestionIndex + 1 != allQuestions.totalQuestions + 1)
                         ? allQuestions.questions[currentQuestionIndex].choices.map((choice, index) => (
                             (choice != selectedAnswer)
-                            ? <div key={index} id={choice} className='bg-white border-solid hover:bg-trust-blue-hover hover:border-trust-blue-hover border-4 border-pale-gray rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 font-nunito duration-300 text-xl' onClick={() => handleAnswerSelection(choice)}>
+                            ? <div key={index} id={choice} className='bg-white border-solid hover:bg-trust-blue-hover hover:border-trust-blue-hover border-4 border-pale-gray rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 md:w-500p lg:w-600p xl:w-800p font-nunito duration-300 text-xl' onClick={() => handleAnswerSelection(choice)}>
                                 <h3>{choice}</h3>
                             </div>
-                            : <div key={index} id={choice} className='bg-trust-blue-900 border-solid border-4 border-trust-blue-900 rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 font-nunito duration-300 text-xl' onClick={() => handleAnswerSelection(choice)}>
+                            : <div key={index} id={choice} className='bg-trust-blue-900 border-solid border-4 border-trust-blue-900 rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 md:w-500p lg:w-600p xl:w-800p font-nunito duration-300 text-xl' onClick={() => handleAnswerSelection(choice)}>
                             <h3>{choice}</h3>
                             </div>
 
@@ -295,13 +298,13 @@ export default function EmailQuizBody() {
 
 
                     {/* Explanation */}
-                    <div id='explanation-prompt' className='hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 py-4 px-8 w-4/5 rounded-2xl flex-col justify-center items-center space-y-8'>
-                        <h3 className='font-bold font-nunito text-center text-2xl'>{ allQuestions.questions[currentQuestionIndex].question }</h3>
+                    <div id='explanation-prompt' className='hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 py-4 lg:py-16 xl:py-24 px-8 w-4/5 lg:w-3/4 rounded-2xl flex-col justify-center items-center space-y-8'>
+                        <h3 className='font-bold font-nunito text-center text-2xl lg:text-3xl xl:text-4xl'>{ currentQuestionIndex < allQuestions.totalQuestions ? allQuestions.questions[currentQuestionIndex].question : '' }</h3>
                         <div className='flex flex-col space-y-2'>
-                            <p className='text-center font-nunito text-lg'>Answer:</p>
-                            <h4 className='font-nunito text-center text-2xl'>{ allQuestions.questions[currentQuestionIndex].correctAnswer }</h4>
+                            <p className='text-center font-nunito text-lg lg:text-xl xl:text-2xl'>Answer:</p>
+                            <h4 className='font-nunito text-center text-2xl lg:text-3xl xl:text-4xl'>{ currentQuestionIndex < allQuestions.totalQuestions ? allQuestions.questions[currentQuestionIndex].correctAnswer : '' }</h4>
                         </div>
-                        <p className='text-center font-nunito text-xl'>{ allQuestions.questions[currentQuestionIndex].explanation }</p>
+                        <p className='text-center font-nunito text-xl lg:text-2xl xl:text-3xl'>{ currentQuestionIndex < allQuestions.totalQuestions ? allQuestions.questions[currentQuestionIndex].explanation : '' }</p>
                         <button id='dismiss-explanation-button' className="w-48 text-4xl font-gaegu bg-trust-blue-900 hover:bg-trust-blue-hover font-bold px-4 py-4 rounded-2xl duration-300 disabled:bg-gray-200"
                         onClick={ () => toggleExplanation('close') }>
                             <span>Ok</span>
@@ -332,15 +335,15 @@ export default function EmailQuizBody() {
                             
                 </div>
 
-                <div id='end-screen' className='hidden flex-col justify-center items-center mt-16 space-y-16'>
-                    <h2 className='text-3xl font-nunito text-center'>{`Total Score: ${currentScore} / ${allQuestions.totalQuestions}`}</h2>
+                <div id='end-screen' className='hidden flex-col justify-center items-center mt-16 space-y-16 xl:space-y-28'>
+                    <h2 className='text-3xl lg:text-4xl xl:text-5xl font-nunito text-center'>{`Total Score: ${currentScore} / ${allQuestions.totalQuestions}`}</h2>
                     <div className='flex flex-col justify-center items-center space-y-8'>
-                        <button className="text-3xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300 w-64"
+                        <button className="text-3xl xl:text-4xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300 w-64 xl:w-72"
                         onClick={handlePracticeAgain}>
                             <span>Take Again</span>
                         </button>
                         <NextLink href='/playground/email' className='my-4'>
-                            <button className="text-3xl font-gaegu border-solid border-4 border-trust-blue-900 hover:bg-trust-blue-hover hover:border-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300 w-64">
+                            <button className="text-3xl xl:text-4xl font-gaegu border-solid border-4 border-trust-blue-900 hover:bg-trust-blue-hover hover:border-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300 w-64 xl:w-72">
                                 <span>Home</span>
                             </button>
                         </NextLink>

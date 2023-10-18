@@ -10,7 +10,7 @@ import ResourceIcon3 from "@/assets/resource_icon_3.png";
 import NextLink from "next/link";
 
 
-const Intro = (props) => {
+const Intro = (props: any) => {
   const { title, text } = props;
   return (
     <div className="mx-auto w-1/2">
@@ -20,7 +20,7 @@ const Intro = (props) => {
   );
 };
 
-const Resource = (props) => {
+const Resource = (props: any) => {
   const { image, title, text, button, link } = props;
 
   return (
@@ -76,9 +76,9 @@ const Landing = () => {
           <ol className="list-decimal space-y-4 text-gray-600 text-xl">
             <li>
               View our foundation{" "}
-              <a className="underline text-blue-500" href="#">
-                curriculum
-              </a>{" "}
+              <NextLink href="#">
+                <a className="underline text-blue-500">curriculum</a>
+              </NextLink>{" "}
               to have an overview of the content that can be covered with the senior
               adults.
             </li>
@@ -90,13 +90,17 @@ const Landing = () => {
             </li>
             <li>
               Read the{" "}
-              <a className="underline text-blue-500" href="#">
+              <NextLink href='#'>
+              <span className="underline text-blue-500">
                 curriculum guide
-              </a>{" "}
+              </span></NextLink>{" "}
               to understand how to incorporate hands-on learning via{" "}
-              <a className="underline text-blue-500" href="/playground">
+              <NextLink href='/playground'>
+                <span className="underline text-blue-500">
                 SilverBytes Playground
-              </a>{" "}
+              </span>
+              </NextLink>
+              {" "}
               during and after lessons.
             </li>
             <li>You are ready to teach senior adults fundamental computer skills!</li>
@@ -112,9 +116,11 @@ const Landing = () => {
             </li>
             <li>
               Read the{" "}
-              <a className="underline text-blue-500" href="/playground">
+              <NextLink href='/playground'>
+              <span className="underline text-blue-500">
                 SilverBytes Playground{" "}
-              </a>{" "}
+              </span>
+              </NextLink>{" "}
               guide to understand how to use it and what skills the activities aim to
               impart.
             </li>

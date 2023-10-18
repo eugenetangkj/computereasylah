@@ -110,7 +110,7 @@ export default function EmailSceneTen({ updateSceneIndex } : EmailSceneTenProps)
             <div className='bg-compassion-pink-500 row-start-1 row-span-5 col-start-1 col-span-2 flex flex-col p-16 rounded-lg space-y-8 h-full justify-between'>
                 <h4 className='text-trust-blue-900 text-4xl font-itim text-center'>Fill in the following information</h4>
 
-                <h5 className='text-trust-blue-900 text-3xl font-itim'>Message: <br /> <span className='text-white'>Yes, it's still open!</span></h5>
+                <h5 className='text-trust-blue-900 text-3xl font-itim'>Message: <br /> <span className='text-white'>Yes, it is still open!</span></h5>
 
                 <h5 className='text-trust-blue-900 text-3xl font-itim'>Attachment: <br /> <span className='text-white'>Attach an image of the chicken rice stall</span></h5>
 
@@ -132,7 +132,7 @@ export default function EmailSceneTen({ updateSceneIndex } : EmailSceneTenProps)
                     {/* Main body */}
                     <div className='flex flex-col bg-white justify-start items-start flex-grow rounded-xl px-8 py-8 space-y-8'>
                         {/* Body content */}
-                        <p className='text-xl text-gray-600 font-roboto'>Hey Ah Hock, it's great to hear from you! I am doing great, thanks for asking.</p>
+                        <p className='text-xl text-gray-600 font-roboto'>Hey Ah Hock, it is great to hear from you! I am doing great, thanks for asking.</p>
                         <p className='text-xl text-gray-600 font-roboto'>I miss the chicken rice in Singapore... Is our favorite stall still open?</p>
 
                         {/* Reply field */}

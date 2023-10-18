@@ -92,7 +92,7 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                   
                     <h6 className='text-4xl text-gray-600 font-roboto px-8 mt-8 font-bold'>Ah Boon</h6>
                     <h6 className='text-2xl text-gray-600 font-roboto px-8'>to me</h6>
-                    <p className='text-3xl text-gray-600 font-roboto px-8'>Hey Ah Hock, it's great to hear from you! I am doing great, thanks for asking.</p>
+                    <p className='text-3xl text-gray-600 font-roboto px-8'>Hey Ah Hock, it is great to hear from you! I am doing great, thanks for asking.</p>
                     <p className='text-3xl text-gray-600 font-roboto px-8'>I miss the chicken rice in Singapore... Is our favorite stall still open?</p>
     
                 </div>
@@ -101,7 +101,7 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
 
             {/* Instruction to player */}
             <div className='bg-compassion-pink-500 fixed bottom-8 right-8 p-16 rounded-lg'>
-                <h4 className='text-trust-blue-900 text-4xl font-itim'>Let us reply Ah Boon's email. Left click the Reply icon.</h4>
+                <h4 className='text-trust-blue-900 text-4xl font-itim'>Let us reply Ah Boon email. Left click the Reply icon.</h4>
 
             </div>
 

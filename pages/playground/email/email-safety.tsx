@@ -43,10 +43,10 @@ export default function EmailSafety() {
 
 
     return (
-        <div className={`flex flex-col items-center justify-start min-h-screen py-2 bg-white space-y-8 lg:space-y-4 pt-28 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 pt-28 md:pt-8 md:mt-20 lg:mt-20 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             <div className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}>
                 {/* Back button */}
-                <NextLink href="/playground" className=''>
+                <NextLink href="/playground/email" className=''>
                     <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">Back</h5>
                 </NextLink>
             </div>
@@ -58,16 +58,16 @@ export default function EmailSafety() {
                 <div className='flex justify-between items-center space-x-4'>
                     <button className="bg-trust-blue-500 hover:bg-trust-blue-hover text-white rounded-full duration-300"
                     onClick={() => switchTips('left')}>
-                        <MdChevronLeft className='text-2xl w-8 h-8' />
+                        <MdChevronLeft className='text-2xl w-8 h-8 lg:w-12 lg:h-12' />
                     </button>
-                    <h3 className='text-xl font-nunito text-center'>{allTips.tips[currentTipIndex].tipBody}</h3>
+                    <h3 className='text-xl lg:text-2xl font-nunito text-center'>{allTips.tips[currentTipIndex].tipBody}</h3>
                     <button className="bg-trust-blue-500 hover:bg-trust-blue-hover text-white rounded-full duration-300"
                     onClick={() => switchTips('right')}>
-                        <MdChevronRight className='text-2xl w-8 h-8' />
+                        <MdChevronRight className='text-2xl w-8 h-8 lg:w-12 lg:h-12' />
                     </button>
                 </div>
                
-                <img src={allTips.tips[currentTipIndex].tipImage} alt='Email Safety Tip Image' className='w-4/5' />
+                <img src={allTips.tips[currentTipIndex].tipImage} alt='Email Safety Tip Image' className='w-3/4 md:w-1/2' />
 
 
 

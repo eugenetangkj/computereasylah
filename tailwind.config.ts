@@ -15,10 +15,8 @@ const config: Config = {
         "teaching-image": "url('../assets/teaching_image.png')",
       },
       fontFamily: {
-        nunito: ['Nunito', 'sans-serif'],
-        itim: ['Itim', 'cursive'],
-        roboto: ['Roboto', 'sans-serif'],
-        sans: ['"PT Sans"', "sans-serif"],
+        nunito: ['Nunito Sans', 'sans-serif'],
+        gaegu: ['Gaegu', 'sans-serif']
       },
       colors: {
         'compassion-pink': {
@@ -26,11 +24,28 @@ const config: Config = {
           500: '#FF89B3',
           900: '#FE357D',
         },
-        'trust-blue': {
-          100: '#98C7F2',
-          500: '#4794DC',
-          900: '#12497C'
+      
+        'energy-orange': {
+          500: '#F8DC69',
+          900: '#FDBF5E'
         },
+
+        'trust-blue': {
+          500: '#C0DEFA',
+          900: '#5EB1FD'
+        },
+
+        'passion-red': {
+          500: 'FAC0C0',
+          900: '#FD5E68'
+        },
+
+        'pale-gray': {
+          100: '#D4D4D4'
+        }
+
+       
+
       },
       translate: {
         '1/8': '12.5%'

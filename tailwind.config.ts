@@ -27,17 +27,20 @@ const config: Config = {
       
         'energy-orange': {
           500: '#F8DC69',
-          900: '#FDBF5E'
+          900: '#FDBF5E',
+          'hover': '#EAA12F'
         },
 
         'trust-blue': {
           500: '#C0DEFA',
-          900: '#5EB1FD'
+          900: '#5EB1FD',
+          'hover': '#2D8EE9'
         },
 
         'passion-red': {
           500: 'FAC0C0',
-          900: '#FD5E68'
+          900: '#FD5E68',
+          'hover': '#DB3943'
         },
 
         'pale-gray': {
@@ -48,12 +51,17 @@ const config: Config = {
 
       },
       translate: {
-        '1/8': '12.5%'
+        '1/8': '12.5%',
+        '3/10': '30%',
+        '2/5': '40%'
       },
       width: {
         '1/8': '12.5%',
         '1/16': '6.25%',
       },
+      top: {
+        '1/8': '12.5%'
+      }
     },
   },
   plugins: [],

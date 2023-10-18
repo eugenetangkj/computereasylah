@@ -45,6 +45,10 @@ const config: Config = {
 
         'pale-gray': {
           100: '#D4D4D4'
+        },
+
+        'question': {
+          'correct': '#A2DA87'
         }
 
        

@@ -2,6 +2,7 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { EmailQuizData } from '@/components/quiz/emailQuizData';
 import { Quiz } from '@/components/quiz/emailQuizData';
+import EmailQuizBody from '@/components/email/quiz/quiz-body';
 
 //Practice component for email activities
 export default function EmailQuiz() {
@@ -18,167 +19,15 @@ export default function EmailQuiz() {
     }, []);
 
 
+    const [hasStartedQuiz, setHasStartedQuiz] = useState(false);
 
-
-
-
-    const allQuestions: Quiz = EmailQuizData;
-
-
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1); //Initially show start screen
-    const [selectedAnswer, setSelectedAnswer] = useState('');
-    const [currentScore, setCurrentScore] = useState(0);
-
-
-    //Runs whenever user changes the option
-    const handleAnswerSelection = (newSelectedAnswer : string) => {
-
-        //Check if user changed his answer and whether he should be allowed to change options
-        let showExplanationButton = document.getElementById('view-explanation-button');
-        if (newSelectedAnswer == selectedAnswer || ! showExplanationButton?.classList.contains('hidden')) {
-            return;
-        }
-
-
-        //Select new option
-        let newSelectedOption = document.getElementById(newSelectedAnswer);
-        newSelectedOption?.classList.remove('bg-white');
-        newSelectedOption?.classList.add('bg-sky-200');
-        console.log("reached");
-
-        //Unselect new option
-        let oldSelectedOption = document.getElementById(selectedAnswer);
-        oldSelectedOption?.classList.add('bg-white');
-        oldSelectedOption?.classList.remove('bg-sky-200');
-
-        //Update selected answer
-        setSelectedAnswer(newSelectedAnswer);
-
-    };
-
-
-    //Runs when user presses the check answer button
-    const handleCheckAnswer = () => {
-
-        //Update current score
-        if (selectedAnswer == allQuestions.questions[currentQuestionIndex].correctAnswer) {
-            setCurrentScore(currentScore + 1);
-        }
-
-
-
-        //Display explanation button
-        let showExplanationButton = document.getElementById('view-explanation-button');
-        showExplanationButton?.classList.remove('hidden');
-
-        let correctAnswer = document.getElementById(allQuestions.questions[currentQuestionIndex].correctAnswer);
-        correctAnswer?.classList.remove('bg-white');
-        correctAnswer?.classList.remove('bg-sky-200');
-        correctAnswer?.classList.add('bg-green-200');
-
-
-        //Hide check button
-        let checkButton = document.getElementById('check-button');
-        checkButton?.classList.add('hidden');
-
-        //Make next button appear
-        let nextButton = document.getElementById('next-button');
-        nextButton?.classList.remove('hidden');
-
-
-    };
-
-    //Runs when user wants to advance to the next question
-    const handleNextQuestion = () => {
-        if (currentQuestionIndex + 1 == allQuestions.totalQuestions) {
-            //No more questions
-
-            //Hide the question content
-            let questionContent = document.getElementById('quiz-content');
-            questionContent?.classList.add('hidden');
-
-            //Show end screen
-            let endScreen = document.getElementById('end-screen');
-            endScreen?.classList.remove('hidden');
-
-            return;
-
-        }
-
-        //Make check button appear
-        let checkButton = document.getElementById('check-button');
-        checkButton?.classList.remove('hidden');
-
-        //Make next button disappear
-        let nextButton = document.getElementById('next-button');
-        nextButton?.classList.add('hidden');
-
-        //Hide the explanation button
-        let showExplanationButton = document.getElementById('view-explanation-button');
-        showExplanationButton?.classList.add('hidden');
-
-        //Reset all colour backgrounds
-        let options = document.getElementsByClassName('options');
-        for (let i = 0; i < options.length; i++) {
-            let currentOption = options[i];
-            currentOption?.classList.remove('bg-sky-200');
-            currentOption?.classList.remove('bg-green-200');
-            currentOption?.classList.add('bg-white');
-        }
-    
-
-        //Update current question index and selected answer
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-        setSelectedAnswer('');
-
+    //Starts quiz
+    const handleStartQuiz = () => {
+        setHasStartedQuiz(true);
     }
 
 
-    //Reset quiz
-    const handlePracticeAgain = () => {
-        setCurrentQuestionIndex(0);
-        setSelectedAnswer('');
-        setCurrentScore(0);
-
-
-
-        //Hide the question content
-        let questionContent = document.getElementById('quiz-content');
-        questionContent?.classList.remove('hidden');
-
-        //Show end screen
-        let endScreen = document.getElementById('end-screen');
-        endScreen?.classList.add('hidden');
-
-         //Make check button appear
-         let checkButton = document.getElementById('check-button');
-         checkButton?.classList.remove('hidden');
- 
-         //Make next button disappear
-         let nextButton = document.getElementById('next-button');
-         nextButton?.classList.add('hidden');
- 
-         //Hide the explanation button
-         let showExplanationButton = document.getElementById('view-explanation-button');
-         showExplanationButton?.classList.add('hidden');
-
-
-
-
-
-
-        //Reset all colour backgrounds
-        let options = document.getElementsByClassName('options');
-        for (let i = 0; i < options.length; i++) {
-            let currentOption = options[i];
-            currentOption?.classList.remove('bg-sky-200');
-            currentOption?.classList.remove('bg-green-200');
-            currentOption?.classList.add('bg-white');
-        }
-
-
-    }
-
+   
 
     return (
         <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 pt-28 md:pt-8 md:mt-20 lg:mt-20 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
@@ -189,23 +38,24 @@ export default function EmailQuiz() {
                 </NextLink>
             </div>
 
-            {/* Title */}
-            <div className='flex flex-col justify-center items-center space-y-36'>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Email Quiz</h1>
+            {
+                (! hasStartedQuiz)
+                ? <div className='flex flex-col justify-center items-center space-y-36'>
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Email Quiz</h1>
 
-                <h3 className='text-xl lg:text-2xl font-nunito text-center mx-4'>Want to test your knowledge about emails? Take the Email Quiz now!</h3>
+                    <h3 className='text-xl lg:text-2xl font-nunito text-center mx-4'>Want to test your knowledge about emails? Take the Email Quiz now!</h3>
 
-                <button className='text-3xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300'
-                onClick={() => console.log('TODO: Transition to starting question')}>
-                Start Quiz  
-                </button>
-            </div>
-       
+                    <button className='text-3xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300'
+                    onClick={ handleStartQuiz }>
+                        Start Quiz  
+                    </button>
+                </div>
+            : <EmailQuizBody />
+            }
 
-            
-           
-    </div>
-
-
+            {/* Background Images */}
+            <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+            <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
+        </div>
     )
 }

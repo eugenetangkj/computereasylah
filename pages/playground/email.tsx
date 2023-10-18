@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
+import { MdComputer } from 'react-icons/md';
 
 
 //Home page for email activities in the playground
@@ -18,46 +19,61 @@ export default function Email() {
     }, []);
 
 
+
+    
+
     return (
-        <div className={`h-screen w-screen bg-trust-blue-900 flex flex-col items-center justify-center opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            <div className="fixed top-16 left-16 p-4">
-                <NextLink href="/playground">
-                <h5 className="font-itim text-5xl hover:text-trust-blue-500 duration-300 text-white">Back</h5>
+        <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+            {/* Back button */}
+            <NextLink href="/playground" className='fixed top-0 left-0 translate-x-10 lg:translate-x-20 translate-y-10 lg:translate-y-20'>
+                <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">Back</h5>
+            </NextLink>
+            {/* Title */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-16">Email</h1>
+            {/* Options */}
+            <div className='flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4'>
+                {/* Reasons to learn email */}
+                <NextLink href='/playground/typing' className='flex flex-col justify-center items-center space-y-4'>
+                    <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300'>
+                    <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Why should I learn email?</h3>
+                    </div>
                 </NextLink>
+
+                {/* Email Safety */}
+                <NextLink href='/playground/typing' className='flex flex-col justify-center items-center'>
+                    <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300'>
+                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Email Safety</h3>
+                    </div>
+                </NextLink>
+
+                {/* Practice */}
+                <NextLink href='/playground/typing' className='flex flex-col justify-center items-center space-y-4'>
+                    <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300' style={{ position: 'relative' }}>
+                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Practice</h3>
+                        <MdComputer className='text-trust-blue-900 text-3xl lg:text-4xl' style={{ position: 'absolute', bottom: '20px', right: '20px' }} />
+                    </div>
+                </NextLink>
+
+
+                {/* Quiz */}
+                <NextLink href='/playground/typing' className='flex flex-col justify-center items-center space-y-4'>
+                    <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300'>
+                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Quiz</h3>
+                    </div>
+                </NextLink>
+
+
+
+
+
             </div>
 
-            <div className='flex flex-col items-center justify-center'>
-            
-                {/* Title */}
-                <h1 className="text-8xl font-bold font-itim text-white mb-8">Email</h1>
 
-                {/* Practice button */}
-                <NextLink href='/playground/email/practice' className='my-12'>
-                    <button className="bg-trust-blue-100 hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
-                        <span>Practice</span>
-                    </button>
-                </NextLink>
-
-                
-                {/* Quiz button */}
-                <NextLink href='/playground/email/quiz' className='my-4'>
-                    <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
-                        <span>Quiz</span>
-                    </button>
-                </NextLink>
-
-
-                {/* Planet email image */}
-                <img src='/assets/email/planet-email.png' alt='Planet and Email' className='w-1/6 fixed bottom-0 right-16 translate-y-1/3' />
-
-                {/* Text chat image */}
-                <img src='/assets/email/text-chat.png' alt='Text Chat' className='w-1/8 fixed top-1/2 left-0 -translate-x-1/4' />
-
-                {/* Heart chat image */}
-                <img src='/assets/email/hearts-chat.png' alt='Heart Chat' className='w-1/8 fixed top-16 right-0 translate-x-1/8' />
-
-            </div>
+            {/* Background Images */}
+            <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 lg:-translate-y-1/4' />
+            <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
         </div>
+
 
 
     )

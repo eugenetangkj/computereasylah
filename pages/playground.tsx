@@ -1,9 +1,23 @@
 import NextLink from 'next/link';
-
+import { useEffect, useState } from 'react';
 
 export default function Playground() {
+    // Animation
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+        // Set isActive to true after a short delay when the component is mounted
+        const timer = setTimeout(() => {
+        setIsActive(true);
+        }, 100); // Adjust the delay as needed
+
+        return () => clearTimeout(timer); // Clean up the timer on unmount
+    }, []);
+
+
+
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-32">
+        <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-32 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Title */}
             <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold font-gaegu w-2/3 text-center mt-16">Computer, Easy Lah!</h1>
             {/* Options */}

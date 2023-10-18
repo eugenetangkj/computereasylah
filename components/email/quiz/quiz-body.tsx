@@ -164,6 +164,7 @@ export default function EmailQuizBody() {
             //Show end screen
             let endScreen = document.getElementById('end-screen');
             endScreen?.classList.remove('hidden');
+            endScreen?.classList.add('flex');
 
             return;
 
@@ -217,6 +218,8 @@ export default function EmailQuizBody() {
         //Show end screen
         let endScreen = document.getElementById('end-screen');
         endScreen?.classList.add('hidden');
+        endScreen?.classList.remove('flex');
+
 
          //Make check button appear
          let checkButton = document.getElementById('check-button');
@@ -249,7 +252,14 @@ export default function EmailQuizBody() {
 
 
     return (<div className={`opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Question {currentQuestionIndex + 1} of {allQuestions.totalQuestions}</h1>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">{
+                    (currentQuestionIndex + 1 < allQuestions.totalQuestions)
+                    ?(
+                        `Question ${currentQuestionIndex + 1} of ${allQuestions.totalQuestions}`
+                      ) : (
+                        'Quiz Complete!'
+                      )}</h1>
+
                 <div id='quiz-content' className='flex flex-col justify-center items-center space-y-8 mt-8 mb-8'>
                     {/* Question */}
                     {
@@ -285,7 +295,7 @@ export default function EmailQuizBody() {
 
 
                     {/* Explanation */}
-                    <div id='explanation-prompt' className='hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 py-4 px-8 w-4/5 rounded-xl flex-col justify-center items-center space-y-8'>
+                    <div id='explanation-prompt' className='hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 py-4 px-8 w-4/5 rounded-2xl flex-col justify-center items-center space-y-8'>
                         <h3 className='font-bold font-nunito text-center text-2xl'>{ allQuestions.questions[currentQuestionIndex].question }</h3>
                         <div className='flex flex-col space-y-2'>
                             <p className='text-center font-nunito text-lg'>Answer:</p>
@@ -322,19 +332,22 @@ export default function EmailQuizBody() {
                             
                 </div>
 
-                <div id='end-screen' className='hidden'>
-                    <h1>Congrats</h1>
-                    <h2>{`Total Score:${currentScore} / ${allQuestions.totalQuestions}`}</h2>
-                    <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72"
-                    onClick={handlePracticeAgain}>
-                        <span>Practice Again</span>
-                    </button>
-
-                    <NextLink href='/playground/email' className='my-4'>
-                        <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72">
-                            <span>Home</span>
+                <div id='end-screen' className='hidden flex-col justify-center items-center mt-16 space-y-16'>
+                    <h2 className='text-3xl font-nunito text-center'>{`Total Score: ${currentScore} / ${allQuestions.totalQuestions}`}</h2>
+                    <div className='flex flex-col justify-center items-center space-y-8'>
+                        <button className="text-3xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300 w-64"
+                        onClick={handlePracticeAgain}>
+                            <span>Take Again</span>
                         </button>
-                    </NextLink>
+                        <NextLink href='/playground/email' className='my-4'>
+                            <button className="text-3xl font-gaegu border-solid border-4 border-trust-blue-900 hover:bg-trust-blue-hover hover:border-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300 w-64">
+                                <span>Home</span>
+                            </button>
+                        </NextLink>
+
+                    </div>
+                   
+                   
 
 
                 </div>

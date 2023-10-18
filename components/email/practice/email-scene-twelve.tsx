@@ -81,7 +81,7 @@ export default function EmailSceneTwelve({ updateSceneIndex } : EmailSceneTwelve
                 <div className='flex flex-col bg-white justify-start items-center flex-grow rounded-xl px-8 py-8 space-y-16'>
                     <div className='flex justify-between items-start w-full'>
                         <h6 className='text-3xl text-gray-600 font-roboto'>To: Ah Boon</h6>
-                        <h6 className='text-3xl text-gray-600 font-roboto'><span className='text-black'>Re: Greetings</span> - Yes, it's still open! </h6>
+                        <h6 className='text-3xl text-gray-600 font-roboto'><span className='text-black'>Re: Greetings</span> - Yes, it is still open! </h6>
                         <h6 className='text-3xl text-gray-600 font-roboto'>May 4</h6>
                     </div>
                     <div className='flex justify-between items-start w-full'>

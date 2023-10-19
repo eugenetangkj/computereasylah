@@ -8,13 +8,15 @@ import ResourceIcon1 from "@/assets/resource_icon_1.png";
 import ResourceIcon2 from "@/assets/resource_icon_2.png";
 import ResourceIcon3 from "@/assets/resource_icon_3.png";
 import NextLink from "next/link";
+import Title from "@/common/Title";
+import Text from "@/common/Text";
 
 const Intro = (props) => {
   const { title, text } = props;
   return (
     <div className="mx-auto w-1/2">
-      <p className="text-4xl font-semibold text-dark-blue p-12">{title}</p>
-      <p className="text-xl text-dark-gray ">{text}</p>
+      <Title className="p-12" text={title} />
+      <Text content={text}/>
     </div>
   );
 };
@@ -30,7 +32,7 @@ const Resource = (props) => {
 
       <div className="text-left w-1/3">
         <h2 className="text-3xl text-accent-pink font-bold">{title}</h2>
-        <p className="text-dark-gray my-4 text-xl">{text}</p>
+        <Text className="my-4" content={text} />
         <NextLink href={link}>
           <button className="w-40 h-12 bg-dark-blue rounded-3xl text-white font-semibold text-xl">
             {button}
@@ -93,9 +95,9 @@ const Landing = () => {
                 curriculum guide
               </a>{" "}
               to understand how to incorporate hands-on learning via{" "}
-              <a className="underline text-blue-500" href="/playground">
+              <NextLink className="underline text-blue-500" href="/playground">
                 SilverBytes Playground
-              </a>{" "}
+              </NextLink>{" "}
               during and after lessons.
             </li>
             <li>You are ready to teach senior adults fundamental computer skills!</li>
@@ -111,9 +113,9 @@ const Landing = () => {
             </li>
             <li>
               Read the{" "}
-              <a className="underline text-blue-500" href="/playground">
+              <NextLink className="underline text-blue-500" href="/playground">
                 SilverBytes Playground{" "}
-              </a>{" "}
+              </NextLink>{" "}
               guide to understand how to use it and what skills the activities aim to
               impart.
             </li>
@@ -141,9 +143,7 @@ const Landing = () => {
           button="View"
           link="/"
         />
-        <p className="text-4xl font-semibold text-dark-blue pt-12">
-          We are supported by
-        </p>
+        <Title text="We are supported by" />
         <Image src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />
       </div>
       <Footer />

@@ -18,7 +18,7 @@ const config: Config = {
         "dark-blue": "#12497C",
         "accent-blue": "#4794DC",
         "light-blue": "#98C7F2",
-        "normal-text": "#595959",
+        "dark-gray": "#595959",
         "accent-pink": "#FE357D",
         "pale-pink": "#FF89B3",
         "light-pink": "#FFBED5",

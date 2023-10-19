@@ -41,20 +41,73 @@ const SafetyTips = () => {
     },
   ];
 
+  const commonScamCards = [
+    {
+      Front: <div>Keep your software up to date</div>,
+      Back: (
+        <div>
+          Software updates often include security patches that fix
+          vulnerabilities. Make sure to keep your operating system, web browser,
+          and other software up to date to stay protected.
+        </div>
+      ),
+      imageUrl: "/assets/safety/safety-tips/update-software.png",
+    },
+    {
+      Front: <div>Don&apos;t overshare on social media</div>,
+      Back: (
+        <div>
+          Be careful about what you post on social media. Avoid sharing personal
+          information, such as your home address or phone number, and be mindful
+          of who can see your posts.
+        </div>
+      ),
+      imageUrl: "/assets/safety/safety-tips/social-media-sharing.png",
+    },
+    {
+      Front: <div>Watch out for fake tech support scams</div>,
+      Back: (
+        <div>
+          Scammers may pose as tech support representatives and ask you to give
+          them remote access to your computer. They may then install malware or
+          steal your personal information. If you need tech support, contact the
+          company directly.
+        </div>
+      ),
+      imageUrl: "/assets/safety/safety-tips/tech-support-scam.png",
+    },
+  ];
+
   const [preemptiveIndex, setPreemptiveIndex] = useState(0);
   const [preemptiveflipped, setPreemptiveFlipped] = useState(false);
+  const [scamIndex, setScamIndex] = useState(0);
+  const [scamflipped, setScamFlipped] = useState(false);
 
-  const handleNext = () => {
+  const handlePreemptiveNext = () => {
     if (preemptiveIndex < preemptiveMeasuresCards.length - 1) {
       setPreemptiveIndex(preemptiveIndex + 1);
       setPreemptiveFlipped(false);
     }
   };
 
-  const handlePrevious = () => {
+  const handlePreemptivePrevious = () => {
     if (preemptiveIndex > 0) {
       setPreemptiveIndex(preemptiveIndex - 1);
       setPreemptiveFlipped(false);
+    }
+  };
+
+  const handleScamNext = () => {
+    if (preemptiveIndex < preemptiveMeasuresCards.length - 1) {
+      setScamIndex(preemptiveIndex + 1);
+      setScamFlipped(false);
+    }
+  };
+
+  const handleScamPrevious = () => {
+    if (preemptiveIndex > 0) {
+      setScamIndex(preemptiveIndex - 1);
+      setScamFlipped(false);
     }
   };
 
@@ -83,7 +136,7 @@ const SafetyTips = () => {
           />
           <div className="mt-4 flex justify-between">
             <button
-              onClick={handlePrevious}
+              onClick={handlePreemptivePrevious}
               disabled={preemptiveIndex === 0}
               className={`rounded p-2 px-4 ${
                 preemptiveIndex === 0
@@ -94,7 +147,7 @@ const SafetyTips = () => {
               Previous
             </button>
             <button
-              onClick={handleNext}
+              onClick={handlePreemptiveNext}
               className={`rounded p-2 px-4 ${
                 preemptiveIndex === preemptiveMeasuresCards.length - 1
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
@@ -109,18 +162,18 @@ const SafetyTips = () => {
         <div className="text-black m-10">
           <h1 className="text-3xl mb-10">Common Scams</h1>
           <Flashcard
-            Front={preemptiveMeasuresCards[preemptiveIndex].Front}
-            Back={preemptiveMeasuresCards[preemptiveIndex].Back}
-            imageUrl={preemptiveMeasuresCards[preemptiveIndex].imageUrl}
-            flipped={preemptiveflipped}
-            setFlipped={setPreemptiveFlipped}
+            Front={commonScamCards[scamIndex].Front}
+            Back={commonScamCards[scamIndex].Back}
+            imageUrl={commonScamCards[scamIndex].imageUrl}
+            flipped={scamflipped}
+            setFlipped={setScamFlipped}
           />
           <div className="mt-4 flex justify-between">
             <button
-              onClick={handlePrevious}
-              disabled={preemptiveIndex === 0}
+              onClick={handleScamPrevious}
+              disabled={scamIndex === 0}
               className={`rounded p-2 px-4 ${
-                preemptiveIndex === 0
+                scamIndex === 0
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
                   : "bg-blue-500 text-white cursor-pointer"
               }`}
@@ -128,9 +181,9 @@ const SafetyTips = () => {
               Previous
             </button>
             <button
-              onClick={handleNext}
+              onClick={handleScamNext}
               className={`rounded p-2 px-4 ${
-                preemptiveIndex === preemptiveMeasuresCards.length - 1
+                scamIndex === commonScamCards.length - 1
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
                   : "bg-blue-500 text-white cursor-pointer"
               }`}

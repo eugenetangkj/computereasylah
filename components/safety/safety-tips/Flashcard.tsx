@@ -58,6 +58,7 @@ const Flashcard = ({
       {imageUrl && !flipped && (
         <img
           src={imageUrl}
+          alt="card image"
           className="m-4 w-11/12 h-1/2 object-contain rounded-md shadow-md"
         />
       )}

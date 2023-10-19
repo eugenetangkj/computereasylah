@@ -15,7 +15,7 @@ const Email: React.FC<EmailProps> = ({
   subject,
   content,
 }) => {
-  const createMarkup = (htmlContent : any) => ({ __html: htmlContent });
+  const createMarkup = (htmlContent: any) => ({ __html: htmlContent });
 
   return (
     <div className="bg-white shadow-md rounded-md p-10 flex flex-col">

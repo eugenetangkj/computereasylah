@@ -1,4 +1,4 @@
-const IconButton = (props) => {
+const IconButton = (props : any) => {
   const { onClick, icon } = props;
 
   return (

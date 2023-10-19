@@ -77,7 +77,7 @@ const Landing = () => {
             <li>
               View our foundation{" "}
               <NextLink href="#">
-                <a className="underline text-blue-500">curriculum</a>
+                <span className="underline text-blue-500">curriculum</span>
               </NextLink>{" "}
               to have an overview of the content that can be covered with the senior
               adults.
@@ -91,14 +91,14 @@ const Landing = () => {
             <li>
               Read the{" "}
               <NextLink href='#'>
-              <span className="underline text-blue-500">
-                curriculum guide
-              </span></NextLink>{" "}
+                <span className="underline text-blue-500">
+                  curriculum guide
+                </span></NextLink>{" "}
               to understand how to incorporate hands-on learning via{" "}
               <NextLink href='/playground'>
                 <span className="underline text-blue-500">
-                SilverBytes Playground
-              </span>
+                  SilverBytes Playground
+                </span>
               </NextLink>
               {" "}
               during and after lessons.
@@ -117,9 +117,9 @@ const Landing = () => {
             <li>
               Read the{" "}
               <NextLink href='/playground'>
-              <span className="underline text-blue-500">
-                SilverBytes Playground{" "}
-              </span>
+                <span className="underline text-blue-500">
+                  SilverBytes Playground{" "}
+                </span>
               </NextLink>{" "}
               guide to understand how to use it and what skills the activities aim to
               impart.

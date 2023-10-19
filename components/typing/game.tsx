@@ -147,16 +147,18 @@ const TypingGame: React.FC<TypingGameProps> = ({
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}
                     {currentSentence.split("").map((char, index) => {
-                        if (index == currentCharIndex) {
+                        if (index === currentCharIndex) {
                             return (
-                                // Trying to make arrow that is centered underneath the current character but cant yet
-                                // <span className='flex flex-col'>
-                                <span className="underline underline-offset-8">{getHighlightedChar(index)}</span>
-                                //     <span className="top-[50px] h-0 w-0 border-x-[6px] border-x-transparent border-b-[10px] border-b-red-600"></span>
-                                // </span>
+                                <span key={index} className="underline underline-offset-8">
+                                    {getHighlightedChar(index)}
+                                </span>
                             );
                         } else {
-                            return getHighlightedChar(index);
+                            return (
+                                <span key={index}>
+                                    {getHighlightedChar(index)}
+                                </span>
+                            );
                         }
                     })}
                 </div>

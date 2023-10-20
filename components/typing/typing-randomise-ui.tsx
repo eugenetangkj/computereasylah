@@ -15,6 +15,7 @@ interface TypingRandomiseUIProps {
 
 // This component loads the story data and randomises the order before presenting it to the Game component
 // It is used for the Learn feature for Typing
+// It is also used for the Practice feature for Typing
 const TypingRandomiseUI: React.FC<TypingRandomiseUIProps> = (chosenStory) => {
     const storyData: StoryScenes = {
         scenes: getStoryScenesFromString(chosenStory.chosenStory).scenes.map(value => ({ value, sort: Math.random() }))

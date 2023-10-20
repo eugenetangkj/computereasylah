@@ -1,5 +1,7 @@
 // Custom interface for data used in typing stories
 
+import { get } from "http";
+
 export interface StoryScene {
     typingSentence: string;
     bkgImg: string;
@@ -158,10 +160,26 @@ const storyMapping: { [key: string]: StoryScenes } = {
 };
 
 export const getStoryScenesFromString = (storyName: string): StoryScenes => {
+    if (storyName == "all-random") {
+        return getStorySceneWithAllScenes();
+    }
+
     console.log("Getting story scenes for " + storyName);
     return storyMapping[storyName];
 };
 
+const getStorySceneWithAllScenes = (): StoryScenes => {
+    const allScenes: StoryScene[] = [];
+    Object.values(storyMapping).forEach((story) => {
+        allScenes.push(...story.scenes);
+    });
+
+    const allScenesStoryScene: StoryScenes = {
+        scenes: allScenes
+    }
+
+    return allScenesStoryScene;
+};
 
 
 

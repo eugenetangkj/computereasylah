@@ -33,10 +33,10 @@ export default function EmailSceneSix({ updateSceneIndex } : EmailSceneSixProps)
             {/* Email interface header */}
             <div className='flex justify-start items-center space-x-8 w-full px-8 '>
                 <img src='/assets/email/gmail-logo.png' alt='Gmail' className='' />
-                <h4 className='text-5xl text-gray-600 font-roboto'>Gmail</h4>
+                <h4 className='text-5xl text-gray-600 '>Gmail</h4>
                 <div className='flex justify-start items-center bg-blue-100 pl-8 rounded-full space-x-8 py-4 ml-8 flex-grow'>
                     <BiSearchAlt2 className='text-gray-600 text-2xl' />
-                    <h6 className='text-2xl text-gray-600 font-roboto'>Search mail</h6>
+                    <h6 className='text-2xl text-gray-600 '>Search mail</h6>
                 </div>
 
 
@@ -47,28 +47,28 @@ export default function EmailSceneSix({ updateSceneIndex } : EmailSceneSixProps)
                 {/* Side bar */}
                 <div className='flex flex-col justify-start space-y-8'>
                     {/* Compose */}
-                    <button className="bg-sky-200  text-gray-600 font-roboto py-4 rounded-lg flex px-4 space-x-2 justify-center duration-300 w-48 text-2xl items-center cursor-auto"
+                    <button className="bg-sky-200  text-gray-600  py-4 rounded-lg flex px-4 space-x-2 justify-center duration-300 w-48 text-2xl items-center cursor-auto"
                     >
                         <BiPencil className='text-gray-600 text-3xl' />
                         <span className=''>Compose</span>
                     </button>
 
                     {/* Inbox */}
-                    <button className="font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center animate-pulse"
+                    <button className=" py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center animate-pulse"
                     onClick={handleNextButtonClick}>
                         <BiSolidInbox className='text-3xl' />
                         <span className=''>Inbox</span>
                     </button>
 
                     {/* Sent */}
-                    <button className="bg-blue-200 font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
+                    <button className="bg-blue-200  py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
                     >
                         <BiSolidSend className='text-3xl' />
                         <span className=''>Sent</span>
                     </button>
 
                     {/* Trash */}
-                    <button className="font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
+                    <button className=" py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
                     >
                         <BiSolidTrash className='text-3xl' />
                         <span className=''>Trash</span>
@@ -80,9 +80,9 @@ export default function EmailSceneSix({ updateSceneIndex } : EmailSceneSixProps)
                 {/* Main body */}
                 <div className='flex bg-white justify-between items-start flex-grow rounded-xl px-8 py-8'>
                     
-                    <h6 className='text-xl xl:text-3xl text-gray-600 font-roboto'>To: Care Fan</h6>
-                    <h6 className='text-xl xl:text-3xl text-gray-600 font-roboto'><span className='text-black'>Warranty</span> - I want to register for warranty. </h6>
-                    <h6 className='text-xl xl:text-3xl text-gray-600 font-roboto'>May 4</h6>
+                    <h6 className='text-xl xl:text-3xl text-gray-600 '>To: Care Fan</h6>
+                    <h6 className='text-xl xl:text-3xl text-gray-600 '><span className='text-black'>Warranty</span> - I want to register for warranty. </h6>
+                    <h6 className='text-xl xl:text-3xl text-gray-600 '>May 4</h6>
                 </div>
             </div>
 

@@ -124,7 +124,7 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                 {/* Search bar
                 <div className='row-start-1 row-span-1 col-start-3 col-span-6 flex justify-start items-center bg-blue-100 pl-8 rounded-full space-x-8 py-4 ml-8 flex-grow'>
                     <BiSearchAlt2 className='text-gray-600 text-2xl' />
-                    <h6 className='text-2xl text-gray-600 font-roboto'>Search mail</h6>
+                    <h6 className='text-2xl text-gray-600 '>Search mail</h6>
                 </div> */}
 
                 {/* Email interface body */}
@@ -132,21 +132,21 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                     {/* Main body */}
                     <div className='flex flex-col bg-white justify-start items-start flex-grow rounded-xl px-8 py-8 space-y-4'>
                         {/* Body conNinet */}
-                        <p className='text-xl 2xl:text-2xl text-gray-600 font-roboto'>Hi, please attach an image of the receipt for confirmation.</p>
+                        <p className='text-xl 2xl:text-2xl text-gray-600 '>Hi, please attach an image of the receipt for confirmation.</p>
 
                         {/* Reply field */}
                         <div className="flex flex-col border-4 border-gray-400 rounded-xl flex-grow w-full p-4 space-y-4">
                             
                             <div className='flex justify-start items-center space-x-4'>
                                 <BiReply className='text-5xl text-gray-600'/>
-                                <h6 className='text-2xl xl:text-3xl text-gray-600 font-roboto'>care@fan.com</h6>
+                                <h6 className='text-2xl xl:text-3xl text-gray-600 '>care@fan.com</h6>
                             </div>
                             <textarea
                                 rows={2}
                                 name="message"
                                 id="message"
                                 placeholder="What do you want to say to the other person"
-                                className="border border-gray-300 text-gray-900 rounded-lg text-xl font-roboto focus:outline-blue-500  w-full p-2.5  placeholder-gray-300 resize-none "
+                                className="border border-gray-300 text-gray-900 rounded-lg text-xl  focus:outline-blue-500  w-full p-2.5  placeholder-gray-300 resize-none "
                                 onChange={(e: any) => {
                                     setMessageFieldData(e.target.value);
                                 }}
@@ -156,7 +156,7 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                             {
                                 (hasAttachedImage)
                                 ? <div className='flex justify-between items-center w-1/2 p-2 xl:p-4 bg-gray-200'>
-                                    <h6 className='font-roboto text-lg xl:text-xl font-bold text-blue-500'>Receipt.png</h6>
+                                    <h6 className=' text-lg xl:text-xl font-bold text-blue-500'>Receipt.png</h6>
                                     <MdClose className='text-gray-600 text-3xl mr-4 cursor-pointer' onClick={handleUnselectImage} />
                                 </div>
                                 : ''
@@ -166,9 +166,9 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                             <div className='flex justify-start items-center'>
                             {/* Send button bar */}
                             <div className='flex space-x-4 mt-2'>
-                                <button className="bg-blue-500 hover:shadow-lg text-white font-roboto rounded-lg flex px-2 py-2 xl:px-4 xl:py-4 justify-center duration-300 w-48 items-center animate-pulse"
+                                <button className="bg-blue-500 hover:shadow-lg text-white  rounded-lg flex px-2 py-2 xl:px-4 xl:py-4 justify-center duration-300 w-48 items-center animate-pulse"
                                 onClick={handleSendButtonClick}>
-                                    <span className='text-2xl xl:text-3xl font-roboto'>Send</span>
+                                    <span className='text-2xl xl:text-3xl '>Send</span>
                                 </button>
                     <button className="cursor-auto">
                         <MdAttachFile className='text-gray-600 text-5xl cursor-pointer' onClick={handleOpenImageWindow}/>
@@ -210,6 +210,13 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                 </div>
                 : ''
             }
+
+            <div className={`fixed bottom-10 right-0 z-20 bg-trust-blue-900 hover:bg-trust-blue-hover mr-16 px-8 py-4 rounded-3xl duration-300`}>
+                {/* Back button */}
+                <NextLink href='/playground/email' className=''>
+                <h5 className="font-nunito text-2xl lg:text-4xl font-bold ">Quit</h5>
+                </NextLink>
+            </div>
             
          
 

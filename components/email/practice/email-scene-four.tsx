@@ -110,19 +110,19 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
             {/* New message interface */}
             <div className='bg-stone-300 row-start-1 col-span-2  flex flex-col flex-grow h-full overflow-y-hidden'>
                 <div className='w-full flex justify-between items-center mx-0 bg-stone-600 py-2'>
-                    <h5 className='text-white font-roboto text-2xl ml-8'>{(subjectFieldData == '') ? 'New Message' : subjectFieldData}</h5>
+                    <h5 className='text-white  text-2xl ml-8'>{(subjectFieldData == '') ? 'New Message' : subjectFieldData}</h5>
                     <MdClose className='text-white text-5xl mr-4' />
 
                 </div>
                 {/* To field */}
                 <div className='flex justify-start items-center bg-white mx-8 mt-4 py-2 px-4 space-x-8'>
-                    <h5 className='text-gray-600 font-roboto text-2xl w-16 text-center'>To</h5>
+                    <h5 className='text-gray-600  text-2xl w-16 text-center'>To</h5>
                     <input
                                 type='text'
                                 name="to-email"
                                 id="to-email"
                                 placeholder="Email address of the person you want to send an email to"
-                                className="border border-gray-300 text-gray-900 rounded-lg text-xl font-roboto focus:outline-blue-500 p-2.5 w-3/4  placeholder-gray-300"
+                                className="border border-gray-300 text-gray-900 rounded-lg text-xl  focus:outline-blue-500 p-2.5 w-3/4  placeholder-gray-300"
                                 onChange={(e: any) => {
                                     setToFieldData(e.target.value);
                                 }}
@@ -131,13 +131,13 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
 
                 {/* Subject field */}
                 <div className='flex justify-start items-center bg-white mx-8 mt-4 py-2 px-4 space-x-8'>
-                    <h5 className='text-gray-600 font-roboto text-2xl w-16'>Subject</h5>
+                    <h5 className='text-gray-600  text-2xl w-16'>Subject</h5>
                     <input
                                 type='text'
                                 name="subject"
                                 id="subject"
                                 placeholder="What topic is your email on"
-                                className="border border-gray-300 text-gray-900 rounded-lg text-xl font-roboto focus:outline-blue-500  w-3/4 p-2.5  placeholder-gray-300"
+                                className="border border-gray-300 text-gray-900 rounded-lg text-xl  focus:outline-blue-500  w-3/4 p-2.5  placeholder-gray-300"
                                 onChange={(e: any) => {
                                     setSubjectFieldData(e.target.value);
                                 }}
@@ -146,13 +146,13 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
 
                 {/* Message field */}
                 <div className='flex flex-col justify-start items-start bg-white mx-8 mt-4 py-4 px-4 space-y-4'>
-                    <h5 className='text-gray-600 font-roboto text-2xl w-16'>Message</h5>
+                    <h5 className='text-gray-600  text-2xl w-16'>Message</h5>
                     <textarea
                                 rows={2}
                                 name="message"
                                 id="message"
                                 placeholder="What do you want to say to the other person"
-                                className="border border-gray-300 text-gray-900 rounded-lg text-xl font-roboto focus:outline-blue-500  w-3/4 p-2.5  placeholder-gray-300 resize-none"
+                                className="border border-gray-300 text-gray-900 rounded-lg text-xl  focus:outline-blue-500  w-3/4 p-2.5  placeholder-gray-300 resize-none"
                                 onChange={(e: any) => {
                                     setMessageFieldData(e.target.value);
                                 }}
@@ -163,9 +163,9 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
                 
                 {/* Send button and attach file */}
                 <div className='flex mx-8 space-x-4 mt-4 mb-16'>
-                    <button className="bg-blue-500 hover:shadow-lg text-white font-roboto rounded-lg flex px-2 py-2 xl:px-4 xl:py-4 justify-center duration-300 w-48 items-center animate-pulse"
+                    <button className="bg-blue-500 hover:shadow-lg text-white  rounded-lg flex px-2 py-2 xl:px-4 xl:py-4 justify-center duration-300 w-48 items-center animate-pulse"
                         onClick={handleSendButtonClick}>
-                            <span className='text-2xl xl:text-3xl font-roboto'>Send</span>
+                            <span className='text-2xl xl:text-3xl '>Send</span>
                     </button>
                     <button className="cursor-auto">
                         <MdAttachFile className='text-gray-600 text-5xl' />

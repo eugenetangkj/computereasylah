@@ -98,32 +98,32 @@ const SafetyTips = () => {
   };
 
   const handleScamNext = () => {
-    if (preemptiveIndex < preemptiveMeasuresCards.length - 1) {
-      setScamIndex(preemptiveIndex + 1);
+    if (scamIndex < commonScamCards.length - 1) {
+      setScamIndex(scamIndex + 1);
       setScamFlipped(false);
     }
   };
 
   const handleScamPrevious = () => {
-    if (preemptiveIndex > 0) {
-      setScamIndex(preemptiveIndex - 1);
+    if (scamIndex > 0) {
+      setScamIndex(scamIndex - 1);
       setScamFlipped(false);
     }
   };
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
-      <div
-        className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16 text-blue-800`}
-      >
-        {/* Back button */}
-        <NextLink href="/playground/safety" className="w-1/4">
-          <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">
-            Back
-          </h5>
-        </NextLink>
-      </div>
       <VStack>
+        <div
+          className={`relative left-0 w-full py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16 text-blue-800`}
+        >
+          {/* Back button */}
+          <NextLink href="/playground/safety" className="w-1/4">
+            <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">
+              Back
+            </h5>
+          </NextLink>
+        </div>
         {/*Preemptive Measures*/}
         <div className="text-black m-10">
           <h1 className="text-3xl mb-10">Pre-emptive Measures</h1>
@@ -148,6 +148,7 @@ const SafetyTips = () => {
             </button>
             <button
               onClick={handlePreemptiveNext}
+              disabled={preemptiveIndex === preemptiveMeasuresCards.length - 1}
               className={`rounded p-2 px-4 ${
                 preemptiveIndex === preemptiveMeasuresCards.length - 1
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
@@ -182,6 +183,7 @@ const SafetyTips = () => {
             </button>
             <button
               onClick={handleScamNext}
+              disabled={scamIndex === commonScamCards.length - 1}
               className={`rounded p-2 px-4 ${
                 scamIndex === commonScamCards.length - 1
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"

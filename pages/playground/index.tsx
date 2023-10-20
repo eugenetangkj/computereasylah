@@ -17,15 +17,15 @@ export default function Playground() {
 
 
     return (
-        <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-16 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 2xl:space-y-8 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Title */}
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold font-gaegu w-2/3 text-center mt-8">Computer, Easy Lah!</h1>
+            <h1 className="text-5xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu w-2/3 text-center mt-8">Computer, Easy Lah!</h1>
             {/* Options */}
-            <div className='flex flex-col lg:flex-row justify-center items-center mx-24 space-y-4 lg:space-y-0 lg:space-x-24 xl:space-x-28 py-4'>
+            <div className='flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-3 lg:gap-y-8 lg:gap-x-16 justify-center items-center mx-24 space-y-4 lg:space-y-0 py-4'>
                 {/* Typing */}
                 <NextLink href='/playground/typing' className='flex flex-col justify-center items-center space-y-4'>
-                    <div className='bg-energy-orange-900 hover:bg-energy-orange-hover py-10 xl:py-14 flex justify-center rounded-3xl w-48 h-36 lg:w-56 lg:h-40 xl:w-64 xl:h-48 duration-300'>
-                        <img src='/assets/playground/keyboard.png' alt='Typing on Keyboard' className='w-3/4'/>
+                    <div className='bg-energy-orange-900 hover:bg-energy-orange-hover py-10 2xl:py-12  flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
+                        <img src='/assets/playground/keyboard.png' alt='Typing on Keyboard' className='h-full'/>
                     </div>
                     <h3 className='font-bold font-nunito text-2xl'>Typing</h3>
 
@@ -33,8 +33,8 @@ export default function Playground() {
 
                 {/* Email */}
                 <NextLink href='/playground/email' className='flex flex-col justify-center items-center space-y-4'>
-                    <div className='bg-trust-blue-900 hover:bg-trust-blue-hover py-8 xl:py-12 flex justify-center rounded-3xl w-48 h-36 lg:w-56 lg:h-40 xl:w-64 xl:h-48 duration-300'>
-                        <img src='/assets/playground/email.png' alt='Text Chat' className='w-1/2'/>
+                    <div className='bg-trust-blue-900 hover:bg-trust-blue-hover py-6 2xl:py-8 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
+                        <img src='/assets/playground/email.png' alt='Text Chat' className='h-full'/>
                     </div>
                     <h3 className='font-bold font-nunito text-2xl'>Email</h3>
 
@@ -42,12 +42,23 @@ export default function Playground() {
 
                 {/* Safety */}
                 <NextLink href='/playground/safety' className='flex flex-col justify-center items-center space-y-4'>
-                    <div className='bg-passion-red-900 hover:bg-passion-red-hover py-6 xl:py-10 xl:px-4 flex justify-center rounded-3xl w-48 h-36 lg:w-56 lg:h-40 xl:w-64 xl:h-48 duration-300'>
-                        <img src='/assets/playground/safety.png' alt='Text Chat' className='w-1/2'/>
+                    <div className='bg-passion-red-900 hover:bg-passion-red-hover py-6 2xl:py-8 xl:px-4 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
+                        <img src='/assets/playground/safety.png' alt='Text Chat' className='h-full'/>
                     </div>
                     <h3 className='font-bold font-nunito text-2xl'>Safety</h3>
 
                 </NextLink>
+
+                {/* Dictionary */}
+                <NextLink href='/playground/dictionary' className='flex flex-col justify-center items-center space-y-4'>
+                    <div className='bg-wisdom-purple-900 hover:bg-wisdom-purple-hover py-6 2xl:py-8 xl:px-4 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
+                        <img src='/assets/playground/dictionary.png' alt='Dictionary' className='h-full'/>
+                    </div>
+                    <h3 className='font-bold font-nunito text-2xl'>Dictionary</h3>
+
+                </NextLink>
+
+
             </div>
 
 

@@ -29,7 +29,7 @@ export default function EmailSceneSeven({ updateSceneIndex } : EmailSceneSevenPr
 
     
     return (
-        <div className={`flex flex-col justify-start h-4/5 w-4/5 items-start p-8 mx-64 space-y-8 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex flex-col justify-start items-start w-screen h-screen p-8 space-y-16 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Email interface header */}
             <div className='flex justify-start items-center space-x-8 w-full px-8 '>
                 <img src='/assets/email/gmail-logo.png' alt='Gmail' className='' />
@@ -54,14 +54,14 @@ export default function EmailSceneSeven({ updateSceneIndex } : EmailSceneSevenPr
                     </button>
 
                     {/* Inbox */}
-                    <button className="font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center animate-pulse"
-                    onClick={handleNextButtonClick}>
+                    <button className="bg-blue-200 font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
+                    >
                         <BiSolidInbox className='text-3xl' />
                         <span className=''>Inbox</span>
                     </button>
 
                     {/* Sent */}
-                    <button className="bg-blue-200 font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
+                    <button className="font-roboto py-4 rounded-full flex px-6 space-x-4 justify-start duration-300 w-48 text-2xl items-center cursor-auto"
                     >
                         <BiSolidSend className='text-3xl' />
                         <span className=''>Sent</span>
@@ -79,18 +79,26 @@ export default function EmailSceneSeven({ updateSceneIndex } : EmailSceneSevenPr
                 </div>
                 {/* Main body */}
                 <div className='flex bg-white justify-between items-start flex-grow rounded-xl px-8 py-8'>
-                    
-                    <h6 className='text-3xl text-gray-600 font-roboto'>To: Ah Boon</h6>
-                    <h6 className='text-3xl text-gray-600 font-roboto'><span className='text-black'>Greetings</span> - Hi Ah Boon, long time no see! </h6>
-                    <h6 className='text-3xl text-gray-600 font-roboto'>May 4</h6>
+                    <div className='flex justify-between items-start flex-grow rounded-xl px-8 cursor-pointer animate-pulse' onClick={handleNextButtonClick}>
+                        <h6 className='text-xl xl:text-3xl text-gray-600 font-roboto'>Care Fan</h6>
+                        <h6 className='text-xl xl:text-3xl text-gray-600 font-roboto'><span className='text-black'>Re: Warranty</span> - Hi, kindly attach... </h6>
+                        <h6 className='text-xl xl:text-3xl text-gray-600 font-roboto'>May 4</h6>
+                    </div>
                 </div>
             </div>
 
 
             {/* Instruction to player */}
-            <div className='bg-compassion-pink-500 fixed bottom-8 right-8 p-16 rounded-lg'>
-                <h4 className='text-trust-blue-900 text-4xl font-itim'>Nice! Now, let us return to our inbox.</h4>
+            <div className='bg-trust-blue-500 fixed bottom-8 right-8 p-8 rounded-lg'>
+                <h4 className='text-3xl 2xl:text-5xl font-gaegu font-bold text-center'>It seems like Care Fan has replied us. Let us open the email.</h4>
 
+            </div>
+
+            <div className={`fixed top-0 right-0 z-20 bg-trust-blue-900 hover:bg-trust-blue-hover mr-16 px-8 py-4 rounded-3xl duration-300`}>
+                {/* Back button */}
+                <NextLink href='/playground/email' className=''>
+                <h5 className="font-nunito text-2xl lg:text-4xl font-bold ">Quit</h5>
+                </NextLink>
             </div>
 
         </div>

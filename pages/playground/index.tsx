@@ -17,9 +17,9 @@ export default function Playground() {
 
 
     return (
-        <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-32 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-16 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Title */}
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold font-gaegu w-2/3 text-center mt-16">Computer, Easy Lah!</h1>
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold font-gaegu w-2/3 text-center mt-8">Computer, Easy Lah!</h1>
             {/* Options */}
             <div className='flex flex-col lg:flex-row justify-center items-center mx-24 space-y-4 lg:space-y-0 lg:space-x-24 xl:space-x-28 py-4'>
                 {/* Typing */}

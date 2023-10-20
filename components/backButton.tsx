@@ -20,16 +20,17 @@ import EmailSceneThirteen from '@/components/email/practice/email-scene-thirteen
 
 type BackButtonProps = {
     pathToReturnTo: string;
+    displayText: string
   };
 
 
 
-export default function BackButton({ pathToReturnTo } : BackButtonProps) {
+export default function BackButton({ pathToReturnTo, displayText } : BackButtonProps) {
 
-    return ( <div className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}>
+    return ( <div className={`fixed top-0 left-0 w-full py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}>
         {/* Back button */}
         <NextLink href={ pathToReturnTo } className=''>
-            <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">Back</h5>
+            <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">{ displayText }</h5>
         </NextLink>
     </div>
         

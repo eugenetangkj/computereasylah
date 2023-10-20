@@ -31,7 +31,7 @@ export default function EmailPractice() {
 
     return (
         <div className="h-screen w-screen bg-white flex flex-col items-center justify-center overflow-hidden">
-            <BackButton pathToReturnTo='/playground/email' />
+            <BackButton pathToReturnTo='/playground/email' displayText='Exit' />
             
             
             <div className='hidden lg:block'>

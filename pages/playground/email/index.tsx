@@ -1,6 +1,7 @@
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { MdComputer } from "react-icons/md";
+import BackButton from "@/components/backButton";
 
 //Home page for email activities in the playground
 export default function Email() {
@@ -22,22 +23,16 @@ export default function Email() {
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
-      <div
-        className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
-      >
-        {/* Back button */}
-        <NextLink href="/playground" className="w-1/4">
-          <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">
-            Back
-          </h5>
-        </NextLink>
-      </div>
+      
+      {/* Back button */}
+      <BackButton pathToReturnTo='/playground' displayText='Back' />
+     
       {/* Title */}
       <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-16">
         Email
       </h1>
       {/* Options */}
-      <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
+      <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-y-8 lg:gap-x-32 2xl:gap-y-16 py-4">
         {/* Reasons to learn email */}
         <NextLink
           href="/playground/email/why-learn-email"

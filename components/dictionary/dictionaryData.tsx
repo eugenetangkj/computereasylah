@@ -12,6 +12,14 @@ export interface Term {
   export interface ListOfTerms {
     terms: Term[];
   }
+
+  export const EmptyTerm: Term = {
+    term: '',
+    shortDescription: '',
+    leadingText: '',
+    imageUrl: '',
+    explanation: ''
+  }
   
   
   

@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 type BackButtonProps = {
     pathToReturnTo: string;
     displayText: string
-  };
+};
 
 
 

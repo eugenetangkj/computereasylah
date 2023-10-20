@@ -6,14 +6,18 @@ import Game from './game';
 // import pic from '@/assets/chickenricestall.png';
 import { getStoryScenesFromString } from './story-data';
 
+
 interface TypingMainUIProps {
     chosenStory: string;
 }
+
+
 
 const TypingMainUI: React.FC<TypingMainUIProps> = (chosenStory) => {
     return (
         <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
             {/* <Menu /> */}
+
             <Game
                 storyData={getStoryScenesFromString(chosenStory.chosenStory)}
             />

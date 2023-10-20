@@ -14,7 +14,7 @@ export interface StoryScenes {
 export const chickenRiceStory: StoryScenes = {
     scenes: [
         {
-            typingSentence: "Wah! I'm damn hungry sia! Eat what ah?",
+            typingSentence: "Wah! I'm damn hungry sia! Eat what for lunch ah?",
             bkgImg: "/assets/typing/chickenrice/bored.png"
         },
         {
@@ -90,9 +90,30 @@ export const chickenRiceStory: StoryScenes = {
 };
 
 
+
+export const mrtStory: StoryScenes = {
+    scenes: [
+        {
+            typingSentence: "A story about an elderly going on MRT then getting offered a seat",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+    ]
+};
+
+export const supermarketStory: StoryScenes = {
+    scenes: [
+        {
+            typingSentence: "A story about an elderly going NTUC, viewing the various deals and buying several items, then going to self checkout then dont know how to use self checkout counter then ask for help",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+    ]
+};
+
 // Update dictionary new stories
 const storyMapping: { [key: string]: StoryScenes } = {
-    "chickenrice": chickenRiceStory
+    "chickenrice": chickenRiceStory,
+    "mrt": mrtStory,
+    "supermarket": supermarketStory,
 };
 
 export const getStoryScenesFromString = (storyName: string): StoryScenes => {

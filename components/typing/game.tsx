@@ -23,6 +23,8 @@ const TypingGame: React.FC<TypingGameProps> = ({
 
     const [gameEnded, setGameEnded] = useState(false);
 
+    const [fontSize, setFontSize] = useState(2);
+
 
     const getChar = (index: number) => {
         const chars = currentSentence.split("");
@@ -137,16 +139,37 @@ const TypingGame: React.FC<TypingGameProps> = ({
         };
     }, [currentCharIndex]);
 
+
+    const handleFontSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log("Font size changed to: " + event.target.value);
+        setFontSize(parseInt(event.target.value));
+    };
+
     const hintClassName = "text-pink-500 bg-yellow-200 font-bold text-center mt-5 mb-4"
 
     return (
         <div id='typing-game-container' className='grow relative h-full w-full'>
             <img src={currentBackgroundImage} alt='Current Typing Background Image' className='object-cover h-full w-full' />
+            <div className="absolute top-0 right-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
+                <span>Font Size</span>
+                <input
+                    type="range"
+                    min="2"
+                    max="6"
+                    value={fontSize}
+                    onChange={handleFontSizeChange}
+                    className="absolute top-10 right-0 w-full"
+                />
+            </div>
+
+
             <div className="flex flex-col justify-center items-center">
                 {gameEnded ? <GameEndOverlayDiv /> : null}
 
                 {/* Font for sentence to type should use Roboto? or Consolas? I use consolas now because it is monospaced */}
-                <div className='absolute bottom-20 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-2xl max-w-fit' hidden={gameEnded}>
+                {/* Dynamic font size in className did not work: text-[${fontSize}px] */}
+                {/* Use inline-block to fix flex box ignoring margin and padding */}
+                <div className={`absolute bottom-20 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8`} hidden={gameEnded}>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}

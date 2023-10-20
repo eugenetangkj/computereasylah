@@ -34,7 +34,7 @@ const LevelSelection: React.FC<LevelSelectionProps> = ({
                             onClick={() => onOptionSelect(index)}
                         >
                             {/* FIX IMAGE SIZE */}
-                            <img src={option.imageSrc} className="object-cover w-1/5 h-1/2" />
+                            <img alt={option.id} src={option.imageSrc} className="object-cover w-1/5 h-1/2" />
                             <span className="mt-2 font-gaegu">{option.label}</span>
                         </div>
                     ))}

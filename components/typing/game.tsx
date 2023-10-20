@@ -137,7 +137,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [currentCharIndex]);
+    });
 
 
     const handleFontSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -164,7 +164,6 @@ const TypingGame: React.FC<TypingGameProps> = ({
 
 
             <div className="flex flex-col justify-center items-center">
-                {gameEnded ? <GameEndOverlayDiv /> : null}
 
                 {/* Font for sentence to type should use Roboto? or Consolas? I use consolas now because it is monospaced */}
                 {/* Dynamic font size in className did not work: text-[${fontSize}px] */}
@@ -189,6 +188,8 @@ const TypingGame: React.FC<TypingGameProps> = ({
                         }
                     })}
                 </div>
+
+                {gameEnded ? <GameEndOverlayDiv /> : null}
             </div>
         </div>
     );

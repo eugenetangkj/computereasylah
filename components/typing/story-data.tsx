@@ -1,6 +1,5 @@
 // Custom interface for data used in typing stories
 
-import { get } from "http";
 
 export interface StoryScene {
     typingSentence: string;

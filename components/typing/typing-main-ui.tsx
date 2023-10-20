@@ -4,21 +4,18 @@ import Statistics from './statistics';
 import Game from './game';
 // import Image from 'next/image';
 // import pic from '@/assets/chickenricestall.png';
+import { getStoryScenesFromString } from './story-data';
 
 interface TypingMainUIProps {
-
+    chosenStory: string;
 }
 
-const TypingMainUI: React.FC<TypingMainUIProps> = (props) => {
+const TypingMainUI: React.FC<TypingMainUIProps> = (chosenStory) => {
     return (
         <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
-            <Menu />
+            {/* <Menu /> */}
             <Game
-                upcomingSentencesAndBackgroundImages={[
-                    ["Hello, Mr. Lim! What can I get you today?", "/assets/typing/chickenricestall.png"],
-                    ["I would like a steamed chicken rice medium sized take away!", "/assets/typing/chickenricestall.png"],
-                    ["Ok, coming right up!", "/assets/typing/chickenricestall.png"]
-                ]}
+                storyData={getStoryScenesFromString(chosenStory.chosenStory)}
             />
             {/* <Statistics /> */}
 

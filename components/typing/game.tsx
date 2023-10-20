@@ -2,17 +2,18 @@ import { get } from "http";
 import React, { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
 // import Image from 'next/image';
+import { StoryScenes } from "./story-data";
 
 interface TypingGameProps {
-    upcomingSentencesAndBackgroundImages: [string, string][];
+    storyData: StoryScenes;
 }
 
 const TypingGame: React.FC<TypingGameProps> = ({
-    upcomingSentencesAndBackgroundImages,
+    storyData,
 }) => {
 
-    const [currentSentence, setCurrentSentence] = useState(upcomingSentencesAndBackgroundImages[0][0]);
-    const [currentBackgroundImage, setCurrentBackgroundImage] = useState(upcomingSentencesAndBackgroundImages[0][1]);
+    const [currentSentence, setCurrentSentence] = useState(storyData.scenes[0].typingSentence);
+    const [currentBackgroundImage, setCurrentBackgroundImage] = useState(storyData.scenes[0].bkgImg);
     const [typedSentence, setTypedSentence] = useState("");
     const [currentCharIndex, setCurrentCharIndex] = useState(0);
 
@@ -42,7 +43,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
             );
         } else if (isCharTypedCorrectly(index)) {
             return (
-                <span className="text-lime-300">{currentChar}</span>
+                <span className="text-green-600">{currentChar}</span>
             );
         } else {
             return (
@@ -54,8 +55,8 @@ const TypingGame: React.FC<TypingGameProps> = ({
     };
 
     const resetGame = () => {
-        setCurrentSentence(upcomingSentencesAndBackgroundImages[currentQuestionIndex][0]);
-        setCurrentBackgroundImage(upcomingSentencesAndBackgroundImages[currentQuestionIndex][1]);
+        setCurrentSentence(storyData.scenes[currentQuestionIndex].typingSentence);
+        setCurrentBackgroundImage(storyData.scenes[currentQuestionIndex].bkgImg);
         setTypedSentence("");
         setCurrentCharIndex(0);
     };
@@ -63,17 +64,17 @@ const TypingGame: React.FC<TypingGameProps> = ({
     const handleQuestionEnded = () => {
         console.log("Question ended");
         console.log("Current question index: " + currentQuestionIndex);
-        console.log("Upc: " + upcomingSentencesAndBackgroundImages);
+        console.log("Upc: " + storyData);
 
         setShowHint(false);
 
         // Use the next element in upcomingSentencesAndBackgroundImages in another instance of TypingGame
-        if (currentQuestionIndex < upcomingSentencesAndBackgroundImages.length - 1) {
+        if (currentQuestionIndex < storyData.scenes.length - 1) {
             setTypedSentence("");
             setCurrentCharIndex(0);
 
-            setCurrentSentence(upcomingSentencesAndBackgroundImages[currentQuestionIndex + 1][0]);
-            setCurrentBackgroundImage(upcomingSentencesAndBackgroundImages[currentQuestionIndex + 1][1]);
+            setCurrentSentence(storyData.scenes[currentQuestionIndex + 1].typingSentence);
+            setCurrentBackgroundImage(storyData.scenes[currentQuestionIndex + 1].bkgImg);
 
             // I still dont fully understand how react works with state yet - It seems like even though
             // I set question index within this function, it only updates after the function is done
@@ -145,7 +146,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
                 {gameEnded ? <GameEndOverlayDiv /> : null}
 
                 {/* Font for sentence to type should use Roboto? or Consolas? I use consolas now because it is monospaced */}
-                <div className='absolute bottom-20 bg-white bg-opacity-50 p-5 font-consolas font-bold text-2xl max-w-fit'>
+                <div className='absolute bottom-20 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-2xl max-w-fit' hidden={gameEnded}>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}

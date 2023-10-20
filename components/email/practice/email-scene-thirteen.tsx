@@ -60,7 +60,7 @@ export default function EmailSceneThirteen({ updateSceneIndex } : EmailSceneThir
 
 
                 {/* Email with chat image */}
-                <Image src='/assets/email/email-with-chat.png' alt='Email with chat' className='w-1/6 fixed bottom-0 right-16 translate-y-1/4' />
+                <img src='/assets/email/email-with-chat.png' alt='Email with chat' className='w-1/6 fixed bottom-0 right-16 translate-y-1/4' />
 
             </div>
         </div>

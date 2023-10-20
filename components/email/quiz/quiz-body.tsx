@@ -264,7 +264,7 @@ export default function EmailQuizBody() {
                     {/* Image */}
                     {
                         (currentQuestionIndex + 1 != allQuestions.totalQuestions + 1) && allQuestions.questions[currentQuestionIndex].imageLink != ''
-                        ? <Image src={allQuestions.questions[currentQuestionIndex].imageLink} alt='Question Image' className='mx-4 w-3/4' />
+                        ? <img src={allQuestions.questions[currentQuestionIndex].imageLink} alt='Question Image' className='mx-4 w-3/4' />
                         : <h2></h2>
                     }
 

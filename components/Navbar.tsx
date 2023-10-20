@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="flex justify-between items-center bg-trust-blue-900 h-20">
       <div className="">
         <NextLink href="">
-          <Image src={WhiteLogo} alt="Logo" className="w-48 ml-10" />
+          <img src={WhiteLogo} alt="Logo" className="w-48 ml-10" />
         </NextLink>
       </div>
       <div className="text-white mr-10">

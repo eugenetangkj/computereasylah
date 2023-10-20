@@ -56,8 +56,8 @@ export default function Dictionary() {
 
                 
             {/* Background Images */}
-            <Image src='/assets/dictionary/book.png' alt='Book' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-20 left-0 -translate-x-1/4' />
-            <Image src='/assets/dictionary/computer.png' alt='Computer' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10' />
+            <img src='/assets/dictionary/book.png' alt='Book' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-20 left-0 -translate-x-1/4' />
+            <img src='/assets/dictionary/computer.png' alt='Computer' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10' />
         </div>
 
 

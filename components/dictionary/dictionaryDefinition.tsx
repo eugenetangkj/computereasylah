@@ -50,7 +50,7 @@ export default function DictionaryDefinition({ term, updateCurrentViewState, cur
                 {/* Subtitle */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold font-gaegu text-center">{ term.leadingText }</h2>
                 {/* Image */}
-                <Image src={ term.imageUrl } alt='Image' className='w-48 md:w-60 lg:w-72 xl:'/>
+                <img src={ term.imageUrl } alt='Image' className='w-48 md:w-60 lg:w-72 xl:'/>
                 {/* Explanation */}
                 <p className="text-xl leading-relaxed md:text-2xl md:leading-relaxed lg:text-3xl lg:leading-relaxed 2xl:text-4xl 2xl:leading-relaxed font- font-nunito text-center">{ term.explanation }</p>
 

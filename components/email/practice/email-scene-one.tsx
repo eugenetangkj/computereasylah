@@ -32,7 +32,7 @@ export default function EmailSceneOne({ updateSceneIndex } : EmailSceneOneProps)
             <BackButton pathToReturnTo='/playground/email' displayText='Quit' />
 
             {/* Picture image */}
-            <Image src='/assets/email/fan.png' alt='Fan' className='w-1/6' />
+            <img src='/assets/email/fan.png' alt='Fan' className='w-1/6' />
 
             {/* Content */}
             <div className='flex flex-col justify-center items-center space-y-16'>
@@ -48,8 +48,8 @@ export default function EmailSceneOne({ updateSceneIndex } : EmailSceneOneProps)
                 </button>
 
                 {/* Background Images */}
-                <Image src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
-                <Image src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
+                <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+                <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
 
             </div>
 

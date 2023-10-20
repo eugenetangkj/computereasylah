@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="flex flex-col items-left bg-trust-blue-900 px-10 py-16 ">
         <div className="flex flex-col gap-y-2">
           <div className="flex flex-row items-center select-none">
-            <Image src={Logo} alt="SilverBytes Logo" className="w-48" />
+            <img src={Logo} alt="SilverBytes Logo" className="w-48" />
           </div>
         </div>
         <div className="flex gap-x-4 m-4">

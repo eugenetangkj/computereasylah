@@ -9,7 +9,6 @@ import ResourceIcon2 from "@/assets/resource_icon_2.png";
 import ResourceIcon3 from "@/assets/resource_icon_3.png";
 import NextLink from "next/link";
 
-
 const Intro = (props: any) => {
   const { title, text } = props;
   return (
@@ -79,8 +78,8 @@ const Landing = () => {
               <NextLink href="#">
                 <span className="underline text-blue-500">curriculum</span>
               </NextLink>{" "}
-              to have an overview of the content that can be covered with the senior
-              adults.
+              to have an overview of the content that can be covered with the
+              senior adults.
             </li>
             <li>
               <a className="underline text-blue-500" href="#">
@@ -90,39 +89,42 @@ const Landing = () => {
             </li>
             <li>
               Read the{" "}
-              <NextLink href='#'>
-              <span className="underline text-blue-500">
-                curriculum guide
-              </span></NextLink>{" "}
-              to understand how to incorporate hands-on learning via{" "}
-              <NextLink href='/playground'>
+              <NextLink href="#">
                 <span className="underline text-blue-500">
-                SilverBytes Playground
-              </span>
-              </NextLink>
-              {" "}
+                  curriculum guide
+                </span>
+              </NextLink>{" "}
+              to understand how to incorporate hands-on learning via{" "}
+              <NextLink href="/playground">
+                <span className="underline text-blue-500">
+                  SilverBytes Playground
+                </span>
+              </NextLink>{" "}
               during and after lessons.
             </li>
-            <li>You are ready to teach senior adults fundamental computer skills!</li>
+            <li>
+              You are ready to teach senior adults fundamental computer skills!
+            </li>
           </ol>
           <p className="text-compassion-pink-900 text-3xl text-center font-semibold p-12">
             Method 2: SilverBytes Playground
           </p>
           <ol className="list-decimal space-y-4 text-gray-600 text-xl">
             <li>
-              If you do not wish to go through a structured curriculum for teaching, you
-              can also directly use SilverBytes Playground to encourage hands-on
-              learning of fundamental computer skills for senior adults.
+              If you do not wish to go through a structured curriculum for
+              teaching, you can also directly use SilverBytes Playground to
+              encourage hands-on learning of fundamental computer skills for
+              senior adults.
             </li>
             <li>
               Read the{" "}
-              <NextLink href='/playground'>
-              <span className="underline text-blue-500">
-                SilverBytes Playground{" "}
-              </span>
+              <NextLink href="/playground">
+                <span className="underline text-blue-500">
+                  SilverBytes Playground{" "}
+                </span>
               </NextLink>{" "}
-              guide to understand how to use it and what skills the activities aim to
-              impart.
+              guide to understand how to use it and what skills the activities
+              aim to impart.
             </li>
           </ol>
         </div>

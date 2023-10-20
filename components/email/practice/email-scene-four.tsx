@@ -1,5 +1,7 @@
+import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { MdAttachFile, MdClose } from "react-icons/md"
+
 
 interface EmailSceneFourProps {
     updateSceneIndex: (index: number) => void
@@ -46,9 +48,9 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
 
 
     //Model answers
-    const toFieldModelAnswer = 'ahboon@gmail.com';
-    const subjectFieldModelAnswer = 'greetings';
-    const messageFieldModelAnswer = 'hi ah boon, long time no see!'
+    const toFieldModelAnswer = 'care@fan.com';
+    const subjectFieldModelAnswer = 'warranty';
+    const messageFieldModelAnswer = 'i want to register for warranty.'
     //Handler for send button
     const handleSendButtonClick = () => {
         if (shouldShowErrorPrompt) {
@@ -92,16 +94,16 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
     return (
         <div className={`grid grid-rows-1 grid-cols-3 gap-4 w-screen h-screen items-start p-8 mx-64 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Instructions */}
-            <div className='bg-trust-blue-500 row-start-1 col-span-1 flex flex-col p-8 rounded-lg space-y-6 justify-center h-full overflow-y-hidden'>
-                <h4 className='text-4xl 2xl:text-5xl font-gaegu font-bold text-center'>Fill in the following information</h4>
+            <div className='bg-trust-blue-500 row-start-1 col-span-1 flex flex-col p-8 rounded-lg space-y-2 xl:space-y-6 justify-center h-full overflow-y-hidden'>
+                <h4 className='text-3xl xl:text-4xl 2xl:text-5xl font-gaegu font-bold text-center'>Fill in the following information</h4>
 
-                <h5 className='text-trust-blue-900 text-2xl 2xl:text-3xl font-nunito font-bold'>Send to: <br /> <span className='text-black'>care@fan.com</span></h5>
+                <h5 className='text-trust-blue-900 text-xl xl:text-2xl 2xl:text-3xl font-nunito font-bold'>Send to: <br /> <span className='text-black'>care@fan.com</span></h5>
 
-                <h5 className='text-trust-blue-900 text-2xl 2xl:text-3xl font-nunito font-bold'>Subject: <br /> <span className='text-black'>Warranty</span></h5>
+                <h5 className='text-trust-blue-900 text-xl xl:text-2xl 2xl:text-3xl font-nunito font-bold'>Subject: <br /> <span className='text-black'>Warranty</span></h5>
 
-                <h5 className='text-trust-blue-900 text-2xl 2xl:text-3xl font-nunito font-bold'>Message: <br /> <span className='text-black'>I want to register for warranty.</span></h5>
+                <h5 className='text-trust-blue-900 text-xl xl:text-2xl 2xl:text-3xl font-nunito font-bold'>Message: <br /> <span className='text-black'>I want to register for warranty.</span></h5>
 
-                <h4 className='text-4xl 2xl:text-5xl font-bold text-center font-gaegu' style={{ marginTop: '50px' }}>Then press send!</h4>
+                <h4 className='text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center font-gaegu'>Then press send!</h4>
             </div>
         
         
@@ -109,7 +111,7 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
             <div className='bg-stone-300 row-start-1 col-span-2  flex flex-col flex-grow h-full overflow-y-hidden'>
                 <div className='w-full flex justify-between items-center mx-0 bg-stone-600 py-2'>
                     <h5 className='text-white font-roboto text-2xl ml-8'>{(subjectFieldData == '') ? 'New Message' : subjectFieldData}</h5>
-                    <MdClose className='text-white text-5xl mr-4 cursor-pointer' onClick={handlePreviousButtonClick} />
+                    <MdClose className='text-white text-5xl mr-4' />
 
                 </div>
                 {/* To field */}
@@ -160,10 +162,10 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
                 </div>
                 
                 {/* Send button and attach file */}
-                <div className='flex mx-8 space-x-4 mt-4 mb-4'>
-                    <button className="bg-blue-500 hover:shadow-lg text-white font-roboto py-4 rounded-lg flex px-4 justify-center duration-300 w-48 items-center animate-pulse"
+                <div className='flex mx-8 space-x-4 mt-4 mb-16'>
+                    <button className="bg-blue-500 hover:shadow-lg text-white font-roboto rounded-lg flex px-2 py-2 xl:px-4 xl:py-4 justify-center duration-300 w-48 items-center animate-pulse"
                         onClick={handleSendButtonClick}>
-                            <span className='text-3xl font-roboto'>Send</span>
+                            <span className='text-2xl xl:text-3xl font-roboto'>Send</span>
                     </button>
                     <button className="cursor-auto">
                         <MdAttachFile className='text-gray-600 text-5xl' />
@@ -175,17 +177,24 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
             {/* Error Message */}
             {
                 (shouldShowErrorPrompt)
-                ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 p-16 rounded-xl flex flex-col justify-center items-center w-1/2 h-1/2 space-y-16'>
-                    <h4 className='text-trust-blue-900 text-5xl font-itim'>Hmmm... something is not right</h4>
-                    <h6 className='text-trust-blue-900 text-3xl font-itim'>{errorMessage}</h6>
+                ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 rounded-xl p-8 flex flex-col justify-center items-center space-y-8 2xl:space-y-16 bg-gray-100'>
+                    <h4 className='text-2xl xl:text-3xl 2xl:text-4xl font-nunito text-center'>Hmmm... something is not right</h4>
+                    <h6 className='text-3xl xl:text-4xl 2xl:text-5xl font-nunito text-center font-bold 2xl:leading-relaxed'>{errorMessage}</h6>
                     {/* Try again button */}
-                    <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-3xl"
+                    <button className="w-48 text-4xl font-gaegu bg-trust-blue-900 font-bold px-4 py-4 rounded-2xl duration-300"
                         onClick={handleTryAgainButtonClick}>
-                            <span>Try again</span>
+                            <span>Ok</span>
                     </button>
                 </div>
                 : ''
             }
+
+            <div className={`fixed top-20 right-0 z-20 bg-trust-blue-900 hover:bg-trust-blue-hover mr-16 px-8 py-4 rounded-3xl duration-300`}>
+                {/* Back button */}
+                <NextLink href='/playground/email' className=''>
+                <h5 className="font-nunito text-3xl xl:text-4xl font-bold ">Quit</h5>
+                </NextLink>
+            </div>
 
   
    

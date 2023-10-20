@@ -1,6 +1,7 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { BiSearchAlt2, BiPencil, BiSolidInbox, BiSolidSend, BiSolidTrash} from "react-icons/bi";
+import Image from 'next/image';
 
 interface EmailSceneThirteenProps {
     updateSceneIndex: (index: number) => void

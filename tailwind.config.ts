@@ -45,6 +45,12 @@ const config: Config = {
           'hover': '#DB3943'
         },
 
+        'wisdom-purple': {
+          500: '#DDDAFF',
+          900: '#8378FF',
+          'hover': '#6A5DF6'
+        },
+
         'pale-gray': {
           100: '#D4D4D4'
         },
@@ -66,8 +72,11 @@ const config: Config = {
         '1/16': '6.25%',
         '500p': '500px',
         '600p': '600px',
-        '800p': '800px'
-
+        '800p': '800px',
+        '80vw': '80vw'
+      },
+      height: {
+        '80vh': '80vh',
       },
       top: {
         '1/8': '12.5%'

@@ -15,7 +15,7 @@ const config: Config = {
         "teaching-image": "url('../assets/teaching_image.png')",
       },
       fontFamily: {
-        nunito: ['Nunito Sans', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
         gaegu: ['Gaegu', 'sans-serif']
       },
       colors: {

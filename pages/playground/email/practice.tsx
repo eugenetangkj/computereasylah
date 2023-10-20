@@ -29,7 +29,7 @@ export default function EmailPractice() {
     }
 
     return (
-        <div className="h-screen w-screen bg-trust-blue-900 flex flex-col items-center justify-center overflow-hidden">
+        <div className="h-screen w-screen bg-trust-blue-500 flex flex-col items-center justify-center overflow-hidden">
             {
                 (currentSceneIndex == 0)
                 ? <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />

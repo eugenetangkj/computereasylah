@@ -150,7 +150,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
     return (
         <div id='typing-game-container' className='grow relative h-full w-full'>
             <img src={currentBackgroundImage} alt='Current Typing Background Image' className='object-cover h-full w-full' />
-            <div className="absolute top-0 right-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
+            <div className="absolute top-1 right-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
                 <span>Font Size</span>
                 <input
                     type="range"
@@ -169,7 +169,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
                 {/* Font for sentence to type should use Roboto? or Consolas? I use consolas now because it is monospaced */}
                 {/* Dynamic font size in className did not work: text-[${fontSize}px] */}
                 {/* Use inline-block to fix flex box ignoring margin and padding */}
-                <div className={`absolute bottom-20 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8`} hidden={gameEnded}>
+                <div className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8`} hidden={gameEnded}>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}

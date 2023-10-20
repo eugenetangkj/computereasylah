@@ -109,11 +109,52 @@ export const supermarketStory: StoryScenes = {
     ]
 };
 
+export const computerParts: StoryScenes = {
+    scenes: [
+        {
+            typingSentence: "A laptop is a portable computer, small enough to be carried around easily and is flat when closed.",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        // {
+        //     typingSentence: "A computer is an electronic device that manipulates information or data. It has the ability to store, retrieve and process data.",
+        //     bkgImg: "/assets/typing/chickenrice/bored.png"
+        // },
+        {
+            typingSentence: "Hardware is any part of your computer that has a physical structure.",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "Software is any set of instructions that tells the hardware what to do.",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "The system unit is also known as the computer case - A metal and plastic box that contains the electronic components of the computer.",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "A monitor is a device that displays the information given by the computer. You are currently looking at your computer's monitor screen.",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "A keyboard is used for you to be able to communicate with the computer by typing on it. It contains many buttons labelled with symbols. You are typing on a keyboard now.",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "A mouse is a pointer tool that you can use to tell the computer which part of the screen to click on.",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+    ]
+};
+
 // Update dictionary new stories
 const storyMapping: { [key: string]: StoryScenes } = {
+    // Stories
     "chickenrice": chickenRiceStory,
     "mrt": mrtStory,
     "supermarket": supermarketStory,
+
+    // Learn
+    "computerparts": computerParts,
 };
 
 export const getStoryScenesFromString = (storyName: string): StoryScenes => {

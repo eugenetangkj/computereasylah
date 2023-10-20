@@ -19,7 +19,7 @@ export default function Email() {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-20 2xl:mt-0 opacity-0 transition-opacity ${
+      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-8 2xl:mt-0 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
@@ -38,7 +38,7 @@ export default function Email() {
           href="/playground/email/why-learn-email"
           className="flex flex-col justify-center items-center space-y-4"
         >
-          <div className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300">
+          <div className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">
             <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
               Why should I learn email?
             </h3>
@@ -50,7 +50,7 @@ export default function Email() {
           href="/playground/email/email-safety"
           className="flex flex-col justify-center items-center"
         >
-          <div className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300">
+          <div className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">
             <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
               Email Safety
             </h3>
@@ -63,7 +63,7 @@ export default function Email() {
           className="flex flex-col justify-center items-center space-y-4"
         >
           <div
-            className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300"
+            className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-16 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300"
             style={{ position: "relative" }}
           >
             <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
@@ -81,7 +81,7 @@ export default function Email() {
           href="/playground/email/quiz"
           className="flex flex-col justify-center items-center space-y-4"
         >
-          <div className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300">
+          <div className="bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">
             <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
               Quiz
             </h3>

@@ -15,7 +15,7 @@ const Intro = (props: any) => {
   const { title, text } = props;
   return (
     <div className="mx-auto w-1/2">
-      <Title className="p-12" text={title} />
+      <Title className="p-12 text-sky-900" text={title} />
       <Text content={text} />
     </div>
   );
@@ -78,7 +78,7 @@ const Landing = () => {
             <li>
               View our foundation{" "}
               <NextLink href="#">
-                <a className="underline text-blue-500">curriculum</a>
+                <span className="underline text-blue-500">curriculum</span>
               </NextLink>{" "}
               to have an overview of the content that can be covered with the senior
               adults.

@@ -26,25 +26,24 @@ export default function EmailSceneZero({ updateSceneIndex } : EmailSceneZeroProp
 
 
     return (
-        <div className={`flex justify-center items-center mx-64 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            {/* Picture image */}
-            <img src='/assets/email/past-image.png' alt='Past Image' className='' />
-
-            {/* Content */}
+        <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 md:pt-8 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+            
+            {/* Practice instructions, only available on desktop */}
             <div className='flex flex-col justify-center items-center space-y-16'>
-                {/* Text */}
-                <h5 className='text-white font-itim text-5xl w-3/4 text-center leading-relaxed'>
-                    You found a photo of you and your friends that was taken 5 years ago....
-                </h5>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Practice</h1>
 
-                {/* Next button */}
-                <button className="bg-trust-blue-100 hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-72"
-                onClick={handleNextButtonClick}>
-                    <span>Next</span>
-                </button>
+                <h3 className='text-xl lg:text-3xl font-nunito text-center mx-8'>Want to practice what you have learnt about emails? Try out this simple activity.</h3>
 
+                <button className='text-3xl md:text-4xl lg:text-5xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300'
+                    onClick={ handleNextButtonClick }>
+                        Start Practice
+                    </button>
             </div>
 
+
+            {/* Background Images */}
+            <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+            <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
         </div>
 
 

@@ -1,7 +1,5 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
-import { EmailQuizData } from '@/components/quiz/emailQuizData';
-import { Quiz } from '@/components/quiz/emailQuizData';
 import EmailQuizBody from '@/components/email/quiz/quiz-body';
 
 //Practice component for email activities

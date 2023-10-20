@@ -14,6 +14,7 @@ import EmailSceneTen from '@/components/email/practice/email-scene-ten';
 import EmailSceneEleven from '@/components/email/practice/email-scene-eleven';
 import EmailSceneTwelve from '@/components/email/practice/email-scene-twelve';
 import EmailSceneThirteen from '@/components/email/practice/email-scene-thirteen';
+import BackButton from '@/components/backButton';
 
 
 //Practice component for email activities
@@ -29,7 +30,11 @@ export default function EmailPractice() {
     }
 
     return (
-        <div className="h-screen w-screen bg-trust-blue-500 flex flex-col items-center justify-center overflow-hidden">
+        <div className="h-screen w-screen bg-white flex flex-col items-center justify-center overflow-hidden">
+            <BackButton pathToReturnTo='/playground/email' />
+            
+            
+            <div className='hidden lg:block'>
             {
                 (currentSceneIndex == 0)
                 ? <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />
@@ -61,9 +66,15 @@ export default function EmailPractice() {
                 ? <EmailSceneThirteen updateSceneIndex={updateCurrentSceneIndex} />
                 : <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />
             }
+            </div>
+            <div className='lg:hidden'>
+                {/* Only available on desktop message, only shown on mobile */}
+                <div className='flex lg:hidden flex-col justify-center items-center space-y-16'>
+                    <h1 className="text-3xl md:text-4xl font-bold font-gaegu text-center mx-8">Sorry, this activity is only available on a computer.</h1>
+                    <img src='/assets/email/computer.png' alt='Computer' className='w-2/5 md:w-1/4' />
+                </div>    
+            </div>
 
-            
-           
         </div>
 
 

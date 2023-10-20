@@ -64,7 +64,7 @@ export default function Email() {
 
         {/* Practice */}
         <NextLink
-          href="/playground/typing"
+          href="/playground/email/practice"
           className="flex flex-col justify-center items-center space-y-4"
         >
           <div
@@ -94,39 +94,11 @@ export default function Email() {
         </NextLink>
       </div>
 
-                {/* Email Safety */}
-                <NextLink href='/playground/email/email-safety' className='flex flex-col justify-center items-center'>
-                    <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300'>
-                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Email Safety</h3>
-                    </div>
-                </NextLink>
+              
 
-                {/* Practice */}
-                <NextLink href='/playground/email/practice' className='flex flex-col justify-center items-center space-y-4'>
-                    <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300' style={{ position: 'relative' }}>
-                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Practice</h3>
-                        <MdComputer className='text-trust-blue-900 text-3xl lg:text-4xl' style={{ position: 'absolute', bottom: '20px', right: '20px' }} />
-                    </div>
-                </NextLink>
-
-
-                {/* Quiz */}
-                <NextLink href='/playground/email/quiz' className='flex flex-col justify-center items-center space-y-4'>
-                    <div className='bg-white hover:bg-trust-blue-900 border-solid border-8 border-trust-blue-900 py-10 lg:px-8 xl:py-14 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300'>
-                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Quiz</h3>
-                    </div>
-                </NextLink>
-
-
-
-
-
-            </div>
-
-
-            {/* Background Images */}
-            <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
-            <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
+        {/* Background Images */}
+        <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+        <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
         </div>
 
 

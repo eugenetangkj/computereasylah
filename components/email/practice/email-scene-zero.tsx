@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
+import BackButton from '@/components/backButton';
 
 interface EmailSceneZeroProps {
     updateSceneIndex: (index: number) => void
@@ -27,7 +28,8 @@ export default function EmailSceneZero({ updateSceneIndex } : EmailSceneZeroProp
 
     return (
         <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 md:pt-8 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            
+            <BackButton pathToReturnTo='/playground/email' displayText='Exit' />
+
             {/* Practice instructions, only available on desktop */}
             <div className='flex flex-col justify-center items-center space-y-16'>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Practice</h1>

@@ -29,7 +29,7 @@ export default function EmailSceneThree({ updateSceneIndex } : EmailSceneThreePr
 
     
     return (
-        <div className={`flex flex-col justify-start items-start px-8 mt-8 w-80vw mx-64 ml-64 pt-16 pb-32 space-y-8 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex flex-col justify-start items-start w-screen h-screen p-8 space-y-16 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Email interface header */}
             <div className='flex justify-start items-center space-x-8 w-full px-8 '>
                 <img src='/assets/email/gmail-logo.png' alt='Gmail' className='' />
@@ -49,7 +49,7 @@ export default function EmailSceneThree({ updateSceneIndex } : EmailSceneThreePr
                     {/* Compose */}
                     <button className="bg-sky-200 hover:shadow-lg text-gray-600  py-4 rounded-lg flex px-4 space-x-2 justify-center duration-300 w-48 text-2xl items-center animate-pulse"
                     onClick={handleNextButtonClick}>
-                        <BiPencil className='text-gray-600 text-3xl' />
+                        <BiPencil className='text-gray-600 text-2xl 2xl:text-3xl' />
                         <span className=''>Compose</span>
                     </button>
 
@@ -79,15 +79,15 @@ export default function EmailSceneThree({ updateSceneIndex } : EmailSceneThreePr
                 </div>
                 {/* Main body */}
                 <div className='flex flex-col justify-center items-center self-center space-y-8 flex-grow'>
-                    <img src='/assets/email/mailbox.png' alt='Empty inbox' className='w-1/5' />
-                    <h6 className='text-3xl text-gray-600'>No emails in your inbox</h6>
+                    {/* <img src='/assets/email/mailbox.png' alt='Empty inbox' className='w-1/5' /> */}
+                    <h6 className='text-4xl 2xl:text-5xl text-gray-600 mb-24'>No emails in your inbox</h6>
                 </div>
             </div>
 
 
             {/* Instruction to player */}
             <div className='bg-trust-blue-500 fixed bottom-8 right-8 p-8 rounded-lg'>
-                <h4 className='text-5xl font-gaegu font-bold text-center'>Left click Compose to start creating an email</h4>
+                <h4 className='text-3xl 2xl:text-5xl font-gaegu font-bold text-center'>Left click Compose to start creating an email</h4>
 
             </div>
 

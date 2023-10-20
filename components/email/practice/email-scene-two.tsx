@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
+import BackButton from '@/components/backButton';
 
 interface EmailSceneTwoProps {
     updateSceneIndex: (index: number) => void
@@ -29,6 +30,8 @@ export default function EmailSceneTwo({ updateSceneIndex } : EmailSceneTwoProps)
     
     return (
         <div className={`flex flex-col justify-center items-center space-y-6 2xl:space-y-12 mt-16  opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+            <BackButton pathToReturnTo='/playground/email' displayText='Exit' />
+            
             {/* Picture image */}
             <img src='/assets/email/catch-up.png' alt='Catch up via email' className='w-36' />
 
@@ -51,6 +54,11 @@ export default function EmailSceneTwo({ updateSceneIndex } : EmailSceneTwoProps)
                     onClick={handleNextButtonClick}>
                         <span>Next</span>
                 </button>
+
+                
+                {/* Background Images */}
+                <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+                <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
 
             </div>
 

@@ -66,7 +66,9 @@ const config: Config = {
         '600p': '600px',
         '800p': '800px',
         '80vw': '80vw'
-
+      },
+      height: {
+        '80vh': '80vh'
       },
       top: {
         '1/8': '12.5%'

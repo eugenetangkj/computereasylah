@@ -26,7 +26,7 @@ export default function EmailSceneOne({ updateSceneIndex } : EmailSceneOneProps)
 
 
     return (
-        <div className={`flex justify-center items-center mx-16 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex justify-center items-center mx-16 mt-28 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Picture image */}
             <img src='/assets/email/fan.png' alt='Fan' className='w-1/4' />
 

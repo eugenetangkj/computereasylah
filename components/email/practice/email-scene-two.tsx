@@ -28,13 +28,13 @@ export default function EmailSceneTwo({ updateSceneIndex } : EmailSceneTwoProps)
 
     
     return (
-        <div className={`flex flex-col justify-center items-center space-y-12 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex flex-col justify-center items-center space-y-6 2xl:space-y-12 mt-16  opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Picture image */}
-            <img src='/assets/email/catch-up.png' alt='Catch up via email' className='' />
+            <img src='/assets/email/catch-up.png' alt='Catch up via email' className='w-36' />
 
     
             {/* Text */}
-            <h5 className='font-nunito text-4xl xl:text-5xl w-4/5 text-center leading-relaxed xl:leading-relaxed'>
+            <h5 className='font-nunito text-4xl 2xl:text-5xl w-4/5 text-center leading-relaxed 2xl:leading-relaxed'>
                 Let us send an email to the company to register for the fan's warranty.
             </h5>
 

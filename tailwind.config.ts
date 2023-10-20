@@ -18,6 +18,7 @@ const config: Config = {
         nunito: ['Nunito Sans', 'sans-serif'],
         gaegu: ['Gaegu', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        consolas: ['Consolas', 'sans-serif'],
       },
       colors: {
         'compassion-pink': {

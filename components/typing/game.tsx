@@ -64,6 +64,9 @@ const TypingGame: React.FC<TypingGameProps> = ({
         console.log("Question ended");
         console.log("Current question index: " + currentQuestionIndex);
         console.log("Upc: " + upcomingSentencesAndBackgroundImages);
+
+        setShowHint(false);
+
         // Use the next element in upcomingSentencesAndBackgroundImages in another instance of TypingGame
         if (currentQuestionIndex < upcomingSentencesAndBackgroundImages.length - 1) {
             setTypedSentence("");
@@ -88,8 +91,8 @@ const TypingGame: React.FC<TypingGameProps> = ({
         return (
             <div className="fixed top-0 left-0 w-full h-full bg-gray-500 bg-opacity-50 flex justify-center items-center">
                 <div className="bg-white rounded-lg p-8 flex flex-col items-center">
-                    <img src="/trophy-placeholder.png" alt="trophy" className="w-16 h-16 mb-4" />
-                    <h2 className="text-2xl font-bold text-center mb-4">Congratulations! Great Work!</h2>
+                    <img src="/assets/typing/game_end_great_work.png" alt="trophy" className="w-1/2 h-1/2 mb-4" />
+                    {/* <h2 className="text-2xl font-bold text-center mb-4">Congratulations! Great Work!</h2> */}
                     <button onClick={() => window.history.back()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Continue
                     </button>
@@ -104,7 +107,6 @@ const TypingGame: React.FC<TypingGameProps> = ({
             if (gameEnded) return;
 
             const { key } = event;
-            const currentChar = getChar(currentCharIndex);
 
             console.log("Key pressed: " + key);
 
@@ -142,7 +144,8 @@ const TypingGame: React.FC<TypingGameProps> = ({
             <div className="flex flex-col justify-center items-center">
                 {gameEnded ? <GameEndOverlayDiv /> : null}
 
-                <div className='absolute bottom-20 bg-white bg-opacity-50 p-5 font-roboto text-2xl max-w-fit'>
+                {/* Font for sentence to type should use Roboto? or Consolas? I use consolas now because it is monospaced */}
+                <div className='absolute bottom-20 bg-white bg-opacity-50 p-5 font-consolas font-bold text-2xl max-w-fit'>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}

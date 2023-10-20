@@ -153,7 +153,7 @@ const Landing = () => {
         <p className="text-4xl font-semibold text-trust-blue-900 pt-12">
           We are supported by
         </p>
-        <img src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />
+        <Image src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />
       </div>
       <Footer />
     </div>

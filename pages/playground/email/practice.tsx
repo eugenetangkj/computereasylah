@@ -14,6 +14,7 @@ import EmailSceneEleven from '@/components/email/practice/email-scene-eleven';
 import EmailSceneTwelve from '@/components/email/practice/email-scene-twelve';
 import EmailSceneThirteen from '@/components/email/practice/email-scene-thirteen';
 import BackButton from '@/components/backButton';
+import Image from 'next/image';
 
 
 //Practice component for email activities
@@ -81,7 +82,7 @@ export default function EmailPractice() {
                 <div className='flex lg:hidden flex-col justify-center items-center space-y-16'>
                     <BackButton pathToReturnTo='/playground/email' displayText='Back' />
                     <h1 className="text-3xl md:text-4xl font-bold font-gaegu text-center mx-8">Sorry, this activity is only available on a computer.</h1>
-                    <img src='/assets/email/computer.png' alt='Computer' className='w-2/5 md:w-1/4' />
+                    <Image src='/assets/email/computer.png' alt='Computer' className='w-2/5 md:w-1/4' />
                 </div>    
             </div>
 

@@ -2,6 +2,7 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { EmailTipsData, Tips } from '@/components/tips/tipsData';
+import Image from 'next/image';
 
 
 //Home page for email activities in the playground
@@ -68,7 +69,7 @@ export default function EmailSafety() {
                     </button>
                 </div>
                
-                <img src={allTips.tips[currentTipIndex].tipImage} alt='Email Safety Tip Image' className='w-3/4 md:w-1/2' />
+                <Image src={allTips.tips[currentTipIndex].tipImage} alt='Email Safety Tip Image' className='w-3/4 md:w-1/2' />
 
 
 
@@ -76,8 +77,8 @@ export default function EmailSafety() {
 
 
             {/* Background Images */}
-            <img src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
-            <img src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
+            <Image src='/assets/email/tilted-mail.png' alt='Mail' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+            <Image src='/assets/email/tilted-email-symbol.png' alt='Address Sign' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
         </div>
 
 

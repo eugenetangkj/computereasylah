@@ -1,6 +1,7 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { BiSearchAlt2, BiPencil, BiSolidInbox, BiSolidSend, BiSolidTrash} from "react-icons/bi";
+import Image from 'next/image';
 
 interface EmailSceneThirteenProps {
     updateSceneIndex: (index: number) => void
@@ -59,7 +60,7 @@ export default function EmailSceneThirteen({ updateSceneIndex } : EmailSceneThir
 
 
                 {/* Email with chat image */}
-                <img src='/assets/email/email-with-chat.png' alt='Email with chat' className='w-1/6 fixed bottom-0 right-16 translate-y-1/4' />
+                <Image src='/assets/email/email-with-chat.png' alt='Email with chat' className='w-1/6 fixed bottom-0 right-16 translate-y-1/4' />
 
             </div>
         </div>

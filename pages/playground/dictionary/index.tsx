@@ -4,6 +4,7 @@ import BackButton from '@/components/backButton';
 import DictionaryDefinition from '@/components/dictionary/dictionaryDefinition';
 import DictionaryView from '@/components/dictionary/dictionaryView';
 import { Term, EmptyTerm } from '@/components/dictionary/dictionaryData';
+import Image from 'next/image';
 
 //Dictionary home page
 export default function Dictionary() {
@@ -23,13 +24,7 @@ export default function Dictionary() {
 
     //State to track dictionary view or definition view is open
     const [isDictionaryViewOpen, setIsDictionaryViewOpen] = useState(true);
-    const [currentTerm, setCurrentTerm] = useState<Term>( {
-        term: '',
-        shortDescription: '',
-        leadingText: '',
-        imageUrl: '',
-        explanation: ''
-    },);
+    const [currentTerm, setCurrentTerm] = useState<Term>(EmptyTerm);
 
     const [currentSearchTerm, setCurrentSearchTerm] = useState('');
 
@@ -61,8 +56,8 @@ export default function Dictionary() {
 
                 
             {/* Background Images */}
-            <img src='/assets/dictionary/book.png' alt='Book' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-20 left-0 -translate-x-1/4' />
-            <img src='/assets/dictionary/computer.png' alt='Computer' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10' />
+            <Image src='/assets/dictionary/book.png' alt='Book' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-20 left-0 -translate-x-1/4' />
+            <Image src='/assets/dictionary/computer.png' alt='Computer' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10' />
         </div>
 
 

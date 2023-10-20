@@ -2,6 +2,7 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { BiSearchAlt2, BiReply} from "react-icons/bi";
 import { MdAttachFile, MdClose } from "react-icons/md"
+import Image from 'next/image';
 
 interface EmailSceneNineProps {
     updateSceneIndex: (index: number) => void
@@ -191,7 +192,7 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
                         <h6 className='text-3xl text-gray-600'>Open</h6>
                         <MdClose className='text-gray-600 text-5xl mr-4 cursor-pointer' onClick={handleCloseImageWindow} />
                     </div>
-                    <img src='/assets/email/receipt.png' alt='Receipt' className='h-48 2xl:h-96 cursor-pointer' onClick={handleSelectImage}/>
+                    <Image src='/assets/email/receipt.png' alt='Receipt' className='h-48 2xl:h-96 cursor-pointer' onClick={handleSelectImage}/>
                 </div>
                 : ''
             }

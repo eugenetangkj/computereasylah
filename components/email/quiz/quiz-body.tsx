@@ -2,6 +2,7 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { EmailQuizData } from '@/components/quiz/emailQuizData';
 import { Quiz } from '@/components/quiz/emailQuizData';
+import Image from 'next/image';
 
 //Quiz content for email quiz
 export default function EmailQuizBody() {
@@ -44,7 +45,6 @@ export default function EmailQuizBody() {
 
     const changeUnselectedOptionStyling = (elementToUpdate : HTMLElement | null, typeOfAction : string) => {
         if (typeOfAction == 'remove') {
-            console.log("reached");
             elementToUpdate?.classList.remove(unselectedOptionStylingBorder);
             elementToUpdate?.classList.remove(unselectedOptionStylingBackground);
         } else {
@@ -264,7 +264,7 @@ export default function EmailQuizBody() {
                     {/* Image */}
                     {
                         (currentQuestionIndex + 1 != allQuestions.totalQuestions + 1) && allQuestions.questions[currentQuestionIndex].imageLink != ''
-                        ? <img src={allQuestions.questions[currentQuestionIndex].imageLink} alt='Question Image' className='mx-4 w-3/4' />
+                        ? <Image src={allQuestions.questions[currentQuestionIndex].imageLink} alt='Question Image' className='mx-4 w-3/4' />
                         : <h2></h2>
                     }
 

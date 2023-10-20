@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { IoIosReturnRight } from "react-icons/io";
+import Image from 'next/image';
 
 export type FlashcardProps = {
   Back: ReactNode;
@@ -56,7 +57,7 @@ const Flashcard = ({
     >
       <IoIosReturnRight className="m-4 top-10 w-4 h-4" />
       {imageUrl && !flipped && (
-        <img
+        <Image
           src={imageUrl}
           alt="card image"
           className="m-4 w-11/12 h-1/2 object-contain rounded-md shadow-md"

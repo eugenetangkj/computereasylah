@@ -1,6 +1,7 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { BiSearchAlt2, BiPencil, BiSolidInbox, BiSolidSend, BiSolidTrash} from "react-icons/bi";
+import Image from 'next/image';
 
 interface EmailSceneFiveProps {
     updateSceneIndex: (index: number) => void
@@ -32,7 +33,7 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
         <div className={`flex flex-col justify-start items-start w-screen h-screen p-8 space-y-16 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Email interface header */}
             <div className='flex justify-start items-center space-x-8 w-full px-8 '>
-                <img src='/assets/email/gmail-logo.png' alt='Gmail' className='' />
+                <Image src='/assets/email/gmail-logo.png' alt='Gmail' className='' />
                 <h4 className='text-5xl text-gray-600'>Gmail</h4>
                 <div className='flex justify-start items-center bg-blue-100 pl-8 rounded-full space-x-8 py-4 ml-8 flex-grow'>
                     <BiSearchAlt2 className='text-gray-600 text-2xl' />
@@ -79,7 +80,7 @@ export default function EmailSceneFive({ updateSceneIndex } : EmailSceneFiveProp
                 </div>
                 {/* Main body */}
                 <div className='flex flex-col justify-center items-center self-center space-y-8 flex-grow'>
-                    {/* <img src='/assets/email/mailbox.png' alt='Empty inbox' className='w-1/5' /> */}
+                    {/* <Image src='/assets/email/mailbox.png' alt='Empty inbox' className='w-1/5' /> */}
                     <h6 className='text-4xl 2xl:text-5xl text-gray-600 mb-24'>No emails in your inbox</h6>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 
 const SafetyPage = () => {
   // Animation
@@ -75,12 +76,12 @@ const SafetyPage = () => {
       </div>
 
       {/* Background Images */}
-      <img
+      <Image
         src="/assets/safety/shield.png"
         alt="Shield"
         className="w-1/5 fixed top-12 right-60 z-20"
       />
-      <img
+      <Image
         src="/assets/safety/virus.png"
         alt="Virus"
         className="w-1/4 md:w-1/6 lg:w-1/8 fixed top-12 bottom-0 -translate-y-1/2 lg:top-44 right-0.5"

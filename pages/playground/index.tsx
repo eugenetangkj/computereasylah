@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Playground() {
     // Animation
@@ -25,7 +26,7 @@ export default function Playground() {
                 {/* Typing */}
                 <NextLink href='/playground/typing' className='flex flex-col justify-center items-center space-y-4'>
                     <div className='bg-energy-orange-900 hover:bg-energy-orange-hover py-10 2xl:py-12  flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
-                        <img src='/assets/playground/keyboard.png' alt='Typing on Keyboard' className='h-full'/>
+                        <Image src='/assets/playground/keyboard.png' alt='Typing on Keyboard' className='h-full'/>
                     </div>
                     <h3 className='font-bold font-nunito text-2xl'>Typing</h3>
 
@@ -34,7 +35,7 @@ export default function Playground() {
                 {/* Email */}
                 <NextLink href='/playground/email' className='flex flex-col justify-center items-center space-y-4'>
                     <div className='bg-trust-blue-900 hover:bg-trust-blue-hover py-6 2xl:py-8 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
-                        <img src='/assets/playground/email.png' alt='Text Chat' className='h-full'/>
+                        <Image src='/assets/playground/email.png' alt='Text Chat' className='h-full'/>
                     </div>
                     <h3 className='font-bold font-nunito text-2xl'>Email</h3>
 
@@ -43,7 +44,7 @@ export default function Playground() {
                 {/* Safety */}
                 <NextLink href='/playground/safety' className='flex flex-col justify-center items-center space-y-4'>
                     <div className='bg-passion-red-900 hover:bg-passion-red-hover py-6 2xl:py-8 xl:px-4 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
-                        <img src='/assets/playground/safety.png' alt='Text Chat' className='h-full'/>
+                        <Image src='/assets/playground/safety.png' alt='Text Chat' className='h-full'/>
                     </div>
                     <h3 className='font-bold font-nunito text-2xl'>Safety</h3>
 
@@ -52,7 +53,7 @@ export default function Playground() {
                 {/* Dictionary */}
                 <NextLink href='/playground/dictionary' className='flex flex-col justify-center items-center space-y-4'>
                     <div className='bg-wisdom-purple-900 hover:bg-wisdom-purple-hover py-6 2xl:py-8 xl:px-4 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300'>
-                        <img src='/assets/playground/dictionary.png' alt='Dictionary' className='h-full'/>
+                        <Image src='/assets/playground/dictionary.png' alt='Dictionary' className='h-full'/>
                     </div>
                     <h3 className='font-bold font-nunito text-2xl'>Dictionary</h3>
 
@@ -63,9 +64,9 @@ export default function Playground() {
 
 
             {/* Background Images */}
-            <img src='/assets/playground/wifi.png' alt='Wifi' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 lg:-translate-y-1/4' />
-            <img src='/assets/playground/cursor.png' alt='Cursor' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-1/4 lg:top-1/8 left-0 -translate-x-2/5' />
-            <img src='/assets/playground/mouse.png' alt='Mouse' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 right-0 translate-x-2/5 -translate-y-1/4' />
+            <Image src='/assets/playground/wifi.png' alt='Wifi' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 lg:-translate-y-1/4' />
+            <Image src='/assets/playground/cursor.png' alt='Cursor' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-1/4 lg:top-1/8 left-0 -translate-x-2/5' />
+            <Image src='/assets/playground/mouse.png' alt='Mouse' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 right-0 translate-x-2/5 -translate-y-1/4' />
         </div>
 
 

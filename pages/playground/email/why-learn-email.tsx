@@ -1,6 +1,5 @@
-import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
-
+import BackButton from '@/components/backButton';
 
 //Home page for email activities in the playground
 export default function WhyLearnEmail() {
@@ -24,14 +23,10 @@ export default function WhyLearnEmail() {
     return (
         <div className={`flex flex-col items-center justify-center min-h-screen py-16 md:py-8 bg-white space-y-8 mt-12 md:mt-20 lg:space-y-12 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Back button */}
-            <div className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}>
-                {/* Back button */}
-                <NextLink href="/playground/email" className=''>
-                    <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">Back</h5>
-                </NextLink>
-            </div>
+            <BackButton pathToReturnTo='/playground/email' displayText='Exit' />
+            
             {/* Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center z-10">Why Learn Email</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center z-10">Why Learn Email</h1>
 
             {/* Bullet Points */}
             <ul className='list-disc space-y-8 mx-8 font-nunito text-lg xl:text-2xl w-3/4 z-10'>

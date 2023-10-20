@@ -37,6 +37,7 @@ export default function EmailSafety() {
             ? setCurrentTipIndex(0)
             : setCurrentTipIndex(currentTipIndex + 1);
         }
+        window.scrollTo(0, 0)
     }
 
 
@@ -51,7 +52,7 @@ export default function EmailSafety() {
                 </NextLink>
             </div>
             {/* Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Email Safety</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">Email Safety</h1>
             {/* Tips */}
             <div id='tips-content' className='flex flex-col justify-center items-center mx-8 space-y-12'>
                 <h2 className='text-3xl font-bold font-gaegu text-center bg-trust-blue-500 rounded-full p-4'>{allTips.tips[currentTipIndex].tipHeader}</h2>

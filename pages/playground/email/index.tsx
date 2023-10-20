@@ -19,7 +19,7 @@ export default function Email() {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
+      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-20 2xl:mt-0 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
@@ -28,7 +28,7 @@ export default function Email() {
       <BackButton pathToReturnTo='/playground' displayText='Back' />
      
       {/* Title */}
-      <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-16">
+      <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center mt-16">
         Email
       </h1>
       {/* Options */}

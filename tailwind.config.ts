@@ -11,12 +11,14 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "teaching-image": "url('../assets/teaching_image.png')",
       },
       fontFamily: {
-        nunito: ['Nunito', 'sans-serif'],
-        gaegu: ['Gaegu', 'sans-serif']
+        nunito: ['Nunito Sans', 'sans-serif'],
+        gaegu: ['Gaegu', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        consolas: ['Consolas', 'sans-serif'],
       },
       colors: {
         'compassion-pink': {
@@ -24,7 +26,7 @@ const config: Config = {
           500: '#FF89B3',
           900: '#FE357D',
         },
-      
+
         'energy-orange': {
           500: '#F8DC69',
           900: '#FDBF5E',
@@ -48,7 +50,7 @@ const config: Config = {
           900: '#8378FF',
           'hover': '#6A5DF6'
         },
-        
+
         'pale-gray': {
           100: '#D4D4D4'
         },
@@ -57,7 +59,7 @@ const config: Config = {
           'correct': '#A2DA87'
         }
 
-       
+
 
       },
       translate: {

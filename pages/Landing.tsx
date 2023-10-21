@@ -89,11 +89,10 @@ const Landing = () => {
             </li>
             <li>
               Read the{" "}
-              <NextLink href="#">
+              <NextLink href='#'>
                 <span className="underline text-blue-500">
                   curriculum guide
-                </span>
-              </NextLink>{" "}
+                </span></NextLink>{" "}
               to understand how to incorporate hands-on learning via{" "}
               <NextLink href="/playground">
                 <span className="underline text-blue-500">

@@ -48,38 +48,41 @@ const Slides: React.FC<SlidesProps> = (props) => {
   };
 
   return (
-    <div className="overflow-x-auto">
-      <Navbar />
+    <div className="overflow-hidden">
       <div className="flex flex-col justify-center items-center text-center bg-white w-screen h-screen overflow-y-hidden">
-        <div className="mx-auto w-1/2 mb-24">
-          <div className="mb-12"><Title text="Request for Slides" className="text-sky-900 my-12" />
-          <Text content="Our Foundation Class Curriculum, designed by Work Live Digital, is specifically tailored to instill essential computer skills in senior adults, starting from the very basics. We believe in empowering seniors to confidently navigate the digital world, and our curriculum serves as the starting point on their digital journey." />
+        <div className="mx-auto w-11/12 md:w-3/4 lg:w-1/2 mb-8 md:mb-16">
+          <div className="mb-8 md:mb-12">
+            <Title text="Request for Slides" className="text-sky-900 my-6 md:my-8" />
+            <Text content="Our Foundation Class Curriculum, designed by Work Live Digital, is specifically tailored to instill essential computer skills in senior adults, starting from the very basics. We believe in empowering seniors to confidently navigate the digital world, and our curriculum serves as the starting point on their digital journey." />
           </div>
-          <div className="mx-auto w-3/4 ">
+          <div className="mx-auto w-full md:w-3/4 ">
             <div className="text-left">
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email" className="block mb-2 md:mb-1">
+                Email:
+              </label>
               <input
                 type="text"
-                className="shadow appearance-none border rounded-full bg-neutral-200 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-neutral-300 focus:border-neutral-400 first-letter h-12"
+                className="shadow appearance-none border rounded-full bg-neutral-200 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-neutral-300 focus:border-neutral-400 first-letter h-10 md:h-12"
                 value={email}
                 onChange={handleEmailChange}
               />
-              <div className="text-left">
-                <label htmlFor="message">Message:</label>
-                <textarea
-                  className="shadow appearance-none border rounded-3xl bg-neutral-200 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-neutral-300 focus:border-neutral-400 first-letter h-32"
-                  value={message}
-                  onChange={handleMessageChange}
-                />
-              </div>
             </div>
-            <button className="w-40 h-12 bg-sky-900 rounded-full text-white font-semibold text-xl mt-10">
+            <div className="text-left mt-4 md:mt-6">
+              <label htmlFor="message" className="block mb-2 md:mb-1">
+                Message:
+              </label>
+              <textarea
+                className="shadow appearance-none border rounded-3xl bg-neutral-200 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-neutral-300 focus:border-neutral-400 first-letter h-24 md:h-32"
+                value={message}
+                onChange={handleMessageChange}
+              />
+            </div>
+            <button className="w-full md:w-40 h-10 md:h-12 bg-sky-900 rounded-full text-white font-semibold text-base md:text-xl mt-6 md:mt-10">
               Submit
             </button>
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

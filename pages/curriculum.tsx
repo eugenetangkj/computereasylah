@@ -44,9 +44,8 @@ const Curriculum: React.FC<CurriculumProps> = (props) => {
   // You can use the props and state here
 
   return (
-    <div className="bg-white h-screen overflow-x-hidden">
-      <Navbar />
-      <div className="flex flex-col justify-center items-center text-center bg-white w-screen overflow-y-hidden">
+    <div className="bg-white overflow-x-hidden">
+      <div className="flex flex-col justify-center items-center text-center bg-white w-screen">
         <div className="mx-auto w-1/2 mb-24">
           <Title className="p-12 text-sky-900" text="Curriculum" />
           <Text content="Our Foundation Class Curriculum, designed by Work Live Digital, is specifically tailored to instill essential computer skills in senior adults, starting from the very basics. We believe in empowering seniors to confidently navigate the digital world, and our curriculum serves as the starting point on their digital journey." />
@@ -78,9 +77,9 @@ const Curriculum: React.FC<CurriculumProps> = (props) => {
           })}
         </div>
       </div>
-      <Footer />
     </div>
   );
+
 };
 
 export default Curriculum;

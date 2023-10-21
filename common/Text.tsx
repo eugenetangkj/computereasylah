@@ -1,10 +1,16 @@
 interface TextProps {
-  content: string;
+  content?: string;
   className?: string;
+  children?: React.ReactNode;
 }
 
-const Text: React.FC<TextProps> = ({ content, className }) => {
-  return <p className={`text-xl text-dark-gray  ${className}`}>{content}</p>;
+const Text: React.FC<TextProps> = ({ content, className, children }) => {
+  return (
+    <div className={`text-base text-dark-gray sm:text-md md:text-xl ${className}`}>
+      {content}
+      {children}
+    </div>
+  );
 };
 
 export default Text;

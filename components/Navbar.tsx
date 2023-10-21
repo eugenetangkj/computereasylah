@@ -12,11 +12,9 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center bg-trust-blue-900 h-20">
-      <div className="">
-        <NextLink href="/">
-          <Image src={WhiteLogo} alt="Logo" className="w-48 ml-10" />
-        </NextLink>
-      </div>
+      <NextLink href="/">
+        <Image src={WhiteLogo} alt="Logo" className="w-48 ml-10" />
+      </NextLink>
       <div className="text-white mr-10">
         <ul className="list-none hidden sm:flex  flex-row gap-x-5 md:gap-x-10 items-center font-semibold text-xl">
           {navLinks.map((link) => (
@@ -43,11 +41,11 @@ const Navbar = () => {
             <div
               className={`${
                 !toggle ? "hidden" : "flex"
-              } bg-dark-blue absolute top-20 right-0 mx-4 my-2  z-10 rounded-xl`}
+              } bg-sky-900 absolute top-20 right-0 mx-4 my-2  z-10 rounded-xl`}
             >
               <ul className="list-none p-4 flex justify-end items-start flex-1 flex-col text-lg">
                 {navLinks.map((link) => (
-                  <li key={link.id} className="p-1 hover:text-light-blue">
+                  <li key={link.id} className="p-1 hover:text-sky-500">
                     <NextLink href={`/${link.id}`}>{link.title}</NextLink>
                   </li>
                 ))}

@@ -1,10 +1,14 @@
 interface TitleProps {
-  text: string;
+  text: any;
   className?: string;
 }
 
 const Title: React.FC<TitleProps> = ({ text, className }) => {
-  return <p className={`text-4xl font-bold ${className}`}>{text}</p>;
+  return (
+    <div className={`text-3xl font-bold ${className} sm:text-4xl md:text-5xl`}>
+      {text}
+    </div>
+  );
 };
 
 export default Title;

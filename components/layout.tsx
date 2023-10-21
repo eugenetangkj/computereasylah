@@ -7,7 +7,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
+    <div className="overflow-x-auto">
       <Navbar />
       <main>{children}</main>
       <Footer />

@@ -11,12 +11,14 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "teaching-image": "url('../assets/teaching_image.png')",
       },
       fontFamily: {
         nunito: ['Nunito Sans', 'sans-serif'],
-        gaegu: ['Gaegu', 'sans-serif']
+        gaegu: ['Gaegu', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        consolas: ['Consolas', 'sans-serif'],
       },
       colors: {
         'compassion-pink': {
@@ -24,7 +26,7 @@ const config: Config = {
           500: '#FF89B3',
           900: '#FE357D',
         },
-      
+
         'energy-orange': {
           500: '#F8DC69',
           900: '#FDBF5E',
@@ -43,6 +45,12 @@ const config: Config = {
           'hover': '#DB3943'
         },
 
+        'wisdom-purple': {
+          500: '#DDDAFF',
+          900: '#8378FF',
+          'hover': '#6A5DF6'
+        },
+
         'pale-gray': {
           100: '#D4D4D4'
         },
@@ -51,7 +59,7 @@ const config: Config = {
           'correct': '#A2DA87'
         }
 
-       
+
 
       },
       translate: {
@@ -64,8 +72,11 @@ const config: Config = {
         '1/16': '6.25%',
         '500p': '500px',
         '600p': '600px',
-        '800p': '800px'
-
+        '800p': '800px',
+        '80vw': '80vw'
+      },
+      height: {
+        '80vh': '80vh',
       },
       top: {
         '1/8': '12.5%'

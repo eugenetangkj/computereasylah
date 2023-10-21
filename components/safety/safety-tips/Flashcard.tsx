@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { IoIosReturnRight } from "react-icons/io";
+import Image from 'next/image';
 
 export type FlashcardProps = {
   Back: ReactNode;

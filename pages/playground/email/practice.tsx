@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import EmailSceneZero from '@/components/email/practice/email-scene-zero';
 import EmailSceneOne from '@/components/email/practice/email-scene-one';
@@ -14,6 +13,8 @@ import EmailSceneTen from '@/components/email/practice/email-scene-ten';
 import EmailSceneEleven from '@/components/email/practice/email-scene-eleven';
 import EmailSceneTwelve from '@/components/email/practice/email-scene-twelve';
 import EmailSceneThirteen from '@/components/email/practice/email-scene-thirteen';
+import BackButton from '@/components/backButton';
+import Image from 'next/image';
 
 
 //Practice component for email activities
@@ -28,8 +29,22 @@ export default function EmailPractice() {
         setCurrentSceneIndex(index);
     }
 
+
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+      // Set isActive to true after a short delay when the component is mounted
+      const timer = setTimeout(() => {
+        setIsActive(true);
+      }, 100); // Adjust the delay as needed
+  
+      return () => clearTimeout(timer); // Clean up the timer on unmount
+    }, []);
+   
     return (
-        <div className="h-screen w-screen bg-trust-blue-900 flex flex-col items-center justify-center overflow-hidden">
+        <div className={`h-screen w-screen flex flex-col items-center justify-center overflow-x-hidden opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+           
+            <div className='hidden lg:block'>
             {
                 (currentSceneIndex == 0)
                 ? <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />
@@ -61,9 +76,17 @@ export default function EmailPractice() {
                 ? <EmailSceneThirteen updateSceneIndex={updateCurrentSceneIndex} />
                 : <EmailSceneZero updateSceneIndex={updateCurrentSceneIndex} />
             }
+            </div>
+            <div className='lg:hidden'>
+                {/* Only available on desktop message, only shown on mobile */}
+                <div className='flex lg:hidden flex-col justify-center items-center space-y-16'>
+                    <BackButton pathToReturnTo='/playground/email' displayText='Back' />
+                    <h1 className="text-3xl md:text-4xl font-bold font-gaegu text-center mx-8">Sorry, this activity is only available on a computer.</h1>
+                    <img src='/assets/email/computer.png' alt='Computer' className='w-2/5 md:w-1/4' />
+                </div>    
+            </div>
 
-            
-           
+
         </div>
 
 

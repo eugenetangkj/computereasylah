@@ -25,7 +25,7 @@ const Resource = (props: any) => {
   return (
     <div className="flex justify-center mb-12">
       <div className="w-1/4">
-        <Image src={image} alt={title} className="h-32 w-auto" />
+        <img src={image} alt={title} className="h-32 w-auto" />
       </div>
 
       <div className="text-left w-1/3">
@@ -89,11 +89,10 @@ const Landing = () => {
             </li>
             <li>
               Read the{" "}
-              <NextLink href="#">
+              <NextLink href='#'>
                 <span className="underline text-blue-500">
                   curriculum guide
-                </span>
-              </NextLink>{" "}
+                </span></NextLink>{" "}
               to understand how to incorporate hands-on learning via{" "}
               <NextLink href="/playground">
                 <span className="underline text-blue-500">

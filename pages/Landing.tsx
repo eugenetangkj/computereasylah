@@ -3,7 +3,7 @@ import Logo from "@/assets/Logo.png";
 import WLDLogo from "@/assets/WLDLogo.png";
 import Image from "next/image";
 import Footer from "@/components/Footer";
-import Hero from "@/components/landing/Hero";
+import TeachingImage from "@/assets/teaching_image.png";
 import ResourceIcon1 from "@/assets/resource_icon_1.png";
 import ResourceIcon2 from "@/assets/resource_icon_2.png";
 import ResourceIcon3 from "@/assets/resource_icon_3.png";
@@ -43,12 +43,23 @@ const Resource = (props: any) => {
   );
 };
 
+const Hero = () => {
+  return (
+    <div className="relative bg-cover bg-teaching-image h-screen overflow-x-hidden">
+      <div className="absolute bottom-0 w-full text-5xl font-semibold text-white p-24 text-center bg-black bg-opacity-50">
+        Equipping senior adults with the confidence and skills to use a computer.
+      </div>
+    </div>
+  );
+};
+
+
 const Landing = () => {
   return (
     <div>
       <Navbar />
       <Hero />
-      <div className="flex flex-col justify-center items-center text-center bg-white w-screen overflow-y-hidden">
+      <div className="flex flex-col justify-center items-center text-center bg-white w-screen overflow-x-auto">
         <Intro
           title="About SilverBytes"
           text="SilverBytes is an initiative in collaboration with Work Live Digital to

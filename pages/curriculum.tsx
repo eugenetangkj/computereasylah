@@ -5,6 +5,7 @@ import NextLink from "next/link";
 import Logo from "@/assets/Logo.png";
 import Image from "next/image";
 import { curriculumInfo } from "@/constants";
+import Footer from "@/components/Footer";
 
 interface CurriculumProps {
   // Define your props if needed
@@ -77,6 +78,7 @@ const Curriculum: React.FC<CurriculumProps> = (props) => {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -57,7 +57,6 @@ const Hero = () => {
 const Landing = () => {
   return (
     <div>
-      <Navbar />
       <Hero />
       <div className="flex flex-col justify-center items-center text-center bg-white w-screen overflow-x-auto">
         <Intro
@@ -157,7 +156,6 @@ const Landing = () => {
         <Title text="We are supported by" />
         <Image src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />
       </div>
-      <Footer />
     </div>
   );
 };

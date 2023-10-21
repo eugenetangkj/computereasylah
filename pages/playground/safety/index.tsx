@@ -49,14 +49,14 @@ const SafetyPage = () => {
           </div>
         </NextLink>
 
-        {/* Practice */}
+        {/* Common Scams */}
         <NextLink
-          href="/playground/safety/practical"
+          href="/playground/safety/common-scams"
           className="flex flex-col justify-center items-center space-y-4"
         >
           <div className="bg-white hover:bg-yellow-400 border-solid border-8 border-amber-500 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300 text-amber-500">
             <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
-              Practice
+              Common Scams
             </h3>
           </div>
         </NextLink>
@@ -69,6 +69,18 @@ const SafetyPage = () => {
           <div className="bg-white hover:bg-yellow-400 border-solid border-8 border-amber-500 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300 text-amber-500">
             <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
               Quiz
+            </h3>
+          </div>
+        </NextLink>
+
+        {/* Practice */}
+        <NextLink
+          href="/playground/safety/practical"
+          className="flex flex-col justify-center items-center space-y-4"
+        >
+          <div className="bg-white hover:bg-yellow-400 border-solid border-8 border-amber-500 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300 text-amber-500">
+            <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
+              Practical
             </h3>
           </div>
         </NextLink>

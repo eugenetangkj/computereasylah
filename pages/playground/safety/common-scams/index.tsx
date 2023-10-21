@@ -3,8 +3,8 @@ import NextLink from "next/link";
 import { VStack } from "@chakra-ui/react";
 import Flashcard from "@/components/safety/safety-tips/Flashcard";
 
-const SafetyTips = () => {
-  const preemptiveMeasuresCards = [
+const CommonScams = () => {
+  const commonScamCards = [
     {
       Front: <div>Keep your software up to date</div>,
       Back: (
@@ -41,20 +41,20 @@ const SafetyTips = () => {
     },
   ];
 
-  const [preemptiveIndex, setPreemptiveIndex] = useState(0);
-  const [preemptiveflipped, setPreemptiveFlipped] = useState(false);
+  const [scamIndex, setScamIndex] = useState(0);
+  const [scamflipped, setScamFlipped] = useState(false);
 
-  const handlePreemptiveNext = () => {
-    if (preemptiveIndex < preemptiveMeasuresCards.length - 1) {
-      setPreemptiveIndex(preemptiveIndex + 1);
-      setPreemptiveFlipped(false);
+  const handleScamNext = () => {
+    if (scamIndex < commonScamCards.length - 1) {
+      setScamIndex(scamIndex + 1);
+      setScamFlipped(false);
     }
   };
 
-  const handlePreemptivePrevious = () => {
-    if (preemptiveIndex > 0) {
-      setPreemptiveIndex(preemptiveIndex - 1);
-      setPreemptiveFlipped(false);
+  const handleScamPrevious = () => {
+    if (scamIndex > 0) {
+      setScamIndex(scamIndex - 1);
+      setScamFlipped(false);
     }
   };
 
@@ -71,22 +71,23 @@ const SafetyTips = () => {
             </h5>
           </NextLink>
         </div>
-        {/*Safety tips*/}
+
+        {/*Common Scams*/}
         <div className="text-black m-10">
-          <h1 className="text-3xl mb-10">Safety tips</h1>
+          <h1 className="text-3xl mb-10">Common Scams</h1>
           <Flashcard
-            Front={preemptiveMeasuresCards[preemptiveIndex].Front}
-            Back={preemptiveMeasuresCards[preemptiveIndex].Back}
-            imageUrl={preemptiveMeasuresCards[preemptiveIndex].imageUrl}
-            flipped={preemptiveflipped}
-            setFlipped={setPreemptiveFlipped}
+            Front={commonScamCards[scamIndex].Front}
+            Back={commonScamCards[scamIndex].Back}
+            imageUrl={commonScamCards[scamIndex].imageUrl}
+            flipped={scamflipped}
+            setFlipped={setScamFlipped}
           />
           <div className="mt-4 flex justify-between">
             <button
-              onClick={handlePreemptivePrevious}
-              disabled={preemptiveIndex === 0}
+              onClick={handleScamPrevious}
+              disabled={scamIndex === 0}
               className={`rounded p-2 px-4 ${
-                preemptiveIndex === 0
+                scamIndex === 0
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
                   : "bg-blue-500 text-white cursor-pointer"
               }`}
@@ -94,10 +95,10 @@ const SafetyTips = () => {
               Previous
             </button>
             <button
-              onClick={handlePreemptiveNext}
-              disabled={preemptiveIndex === preemptiveMeasuresCards.length - 1}
+              onClick={handleScamNext}
+              disabled={scamIndex === commonScamCards.length - 1}
               className={`rounded p-2 px-4 ${
-                preemptiveIndex === preemptiveMeasuresCards.length - 1
+                scamIndex === commonScamCards.length - 1
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
                   : "bg-blue-500 text-white cursor-pointer"
               }`}
@@ -111,4 +112,4 @@ const SafetyTips = () => {
   );
 };
 
-export default SafetyTips;
+export default CommonScams;

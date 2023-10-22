@@ -11,17 +11,17 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center bg-trust-blue-900 h-20">
+    <nav className="flex justify-between items-center bg-transparent h-20">
       <NextLink href="/">
-        <Image src={WhiteLogo} alt="Logo" className="w-48 ml-10" />
+        <Image src={BlackLogo} alt="Logo" className="w-48 ml-10" />
       </NextLink>
-      <div className="text-white mr-10">
+      <div className="text-black mr-10">
         <ul className="list-none hidden sm:flex  flex-row gap-x-5 md:gap-x-10 items-center font-semibold text-xl">
           {navLinks.map((link) => (
             <li key={link.id}>
               <NextLink href={`/${link.id}`}>
                 {link.id === "playground" ? (
-                  <button className="bg-rose-500 rounded-3xl h-12 w-36">
+                  <button className="bg-rose-500 rounded-3xl h-12 w-36 text-white">
                     <span>{link.title}</span>
                   </button>
                 ) : (
@@ -33,7 +33,7 @@ const Navbar = () => {
         </ul>
         <div className="sm:hidden">
           {/* Mobile menu button */}
-          <button className="text-white">
+          <button className="text-black">
             <AiOutlineMenu
               className="w-8 h-8 mt-2"
               onClick={() => setToggle(!toggle)}
@@ -43,7 +43,7 @@ const Navbar = () => {
                 !toggle ? "hidden" : "flex"
               } bg-sky-900 absolute top-20 right-0 mx-4 my-2  z-10 rounded-xl`}
             >
-              <ul className="list-none p-4 flex justify-end items-start flex-1 flex-col text-lg">
+              <ul className="list-none p-4 flex flex-col items-start  text-lg text-white">
                 {navLinks.map((link) => (
                   <li key={link.id} className="p-1 hover:text-sky-500">
                     <NextLink href={`/${link.id}`}>{link.title}</NextLink>

@@ -1,8 +1,7 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
-import { EmailQuizData } from '@/components/quiz/emailQuizData';
-import { Quiz } from '@/components/quiz/emailQuizData';
 import EmailQuizBody from '@/components/email/quiz/quiz-body';
+import Image from 'next/image';
 
 //Practice component for email activities
 export default function EmailQuiz() {
@@ -40,8 +39,8 @@ export default function EmailQuiz() {
 
             {
                 (! hasStartedQuiz)
-                ? <div className='flex flex-col justify-center items-center space-y-36'>
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center">Email Quiz</h1>
+                ? <div className='flex flex-col justify-center items-center space-y-24 2xl:space-y-36'>
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">Email Quiz</h1>
 
                     <h3 className='text-xl lg:text-3xl font-nunito text-center mx-8'>Want to test your knowledge about emails? Take the Email Quiz now!</h3>
 

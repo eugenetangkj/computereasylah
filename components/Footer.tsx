@@ -12,8 +12,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-full">
-      <div className="flex flex-col items-left bg-trust-blue-900 px-10 py-16 ">
+    <footer className="relative w-full z-10">
+      <div className="flex flex-col items-left bg-trust-blue-900 px-4 py-8">
         <div className="flex flex-col gap-y-2">
           <div className="flex flex-row items-center select-none">
             <Image src={Logo} alt="SilverBytes Logo" className="w-48" />

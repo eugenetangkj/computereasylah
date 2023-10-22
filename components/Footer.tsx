@@ -12,7 +12,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative w-full z-10">
+    <footer className="relative z-10 w-full overflow-x-auto">
       <div className="flex flex-col items-left bg-trust-blue-900 px-4 py-8">
         <div className="flex flex-col gap-y-2">
           <div className="flex flex-row items-center select-none">

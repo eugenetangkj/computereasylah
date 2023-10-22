@@ -15,72 +15,66 @@ const config: Config = {
         "teaching-image": "url('../assets/teaching_image.png')",
       },
       fontFamily: {
-        nunito: ['Nunito', 'sans-serif'],
-        gaegu: ['Gaegu', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
-        consolas: ['Consolas', 'sans-serif'],
+        nunito: ["Nunito", "sans-serif"],
+        gaegu: ["Gaegu", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        consolas: ["Consolas", "sans-serif"],
       },
       colors: {
-        'compassion-pink': {
-          100: '#FFBED5',
-          500: '#FF89B3',
-          900: '#FE357D',
+        "compassion-pink": {
+          100: "#FFBED5",
+          500: "#FF89B3",
+          900: "#FE357D",
+        },
+        "energy-orange": {
+          500: "#F8DC69",
+          900: "#FDBF5E",
+          hover: "#EAA12F",
+        },
+        "trust-blue": {
+          500: "#C0DEFA",
+          900: "#5EB1FD",
+          hover: "#2D8EE9",
         },
 
-        'energy-orange': {
-          500: '#F8DC69',
-          900: '#FDBF5E',
-          'hover': '#EAA12F'
+        "passion-red": {
+          500: "FAC0C0",
+          900: "#FD5E68",
+          hover: "#DB3943",
+        },
+        "wisdom-purple": {
+          500: "#DDDAFF",
+          900: "#8378FF",
+          hover: "#6A5DF6",
         },
 
-        'trust-blue': {
-          500: '#C0DEFA',
-          900: '#5EB1FD',
-          'hover': '#2D8EE9'
+        "pale-gray": {
+          100: "#D4D4D4",
         },
 
-        'passion-red': {
-          500: 'FAC0C0',
-          900: '#FD5E68',
-          'hover': '#DB3943'
+        question: {
+          correct: "#A2DA87",
         },
-
-        'wisdom-purple': {
-          500: '#DDDAFF',
-          900: '#8378FF',
-          'hover': '#6A5DF6'
-        },
-
-        'pale-gray': {
-          100: '#D4D4D4'
-        },
-
-        'question': {
-          'correct': '#A2DA87'
-        }
-
-
-
       },
       translate: {
-        '1/8': '12.5%',
-        '3/10': '30%',
-        '2/5': '40%'
+        "1/8": "12.5%",
+        "3/10": "30%",
+        "2/5": "40%",
       },
       width: {
-        '1/8': '12.5%',
-        '1/16': '6.25%',
-        '500p': '500px',
-        '600p': '600px',
-        '800p': '800px',
-        '80vw': '80vw'
+        "1/8": "12.5%",
+        "1/16": "6.25%",
+        "500p": "500px",
+        "600p": "600px",
+        "800p": "800px",
+        "80vw": "80vw",
       },
       height: {
-        '80vh': '80vh',
+        "80vh": "80vh",
       },
       top: {
-        '1/8': '12.5%'
-      }
+        "1/8": "12.5%",
+      },
     },
   },
   plugins: [],

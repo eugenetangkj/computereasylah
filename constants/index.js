@@ -70,10 +70,4 @@ export const curriculumInfo = [
     text: "In this chapter, we address the vital aspect of staying safe while using the computer and the Internet, recognizing the ever-evolving digital landscape and the presence of potential threats and scams. We introduce techniques and best practices to ensure the senior adults’ online safety in today's digital world.",
     imagesrc: "",
   },
-  {
-    title: "short",
-    subtitle: "test",
-    text: "short.",
-    imagesrc: "",
-  },
 ];

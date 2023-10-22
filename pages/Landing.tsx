@@ -14,8 +14,8 @@ import Text from "@/common/Text";
 const Intro = (props: any) => {
   const { title, text } = props;
   return (
-    <div className="mx-auto w-1/2 text-center">
-      <Title className="py-12 text-sky-900 w-fit" text={title} />
+    <div className="flex flex-col mx- sm:mx-auto w-full sm:w-1/2 text-center items-center">
+      <Title className="py-8 sm:py-12 text-sky-900 w-fit" text={title} />
       <Text content={text} />
     </div>
   );
@@ -79,12 +79,12 @@ const Landing = () => {
           text="Are you someone looking to teach senior adults fundamental computer skills?"
         />
 
-        <div className="text-text text-left w-1/2">
+        <div className="text-center w-4/5 sm:w-1/2">
           <Title
             text="Method 1: Curriculum + SilverBytes Playground (Recommended)"
-            className="text-compassion-pink-900"
+            className="text-compassion-pink-900  mt-8 sm:mt-12"
           />
-          <Text>
+          <Text className="text-left mt-4 sm:mt-8">
             <ol className="list-decimal space-y-4">
               <li>
                 View our foundation{" "}
@@ -117,23 +117,25 @@ const Landing = () => {
 
           <Title
             text="Method 2: SilverBytes Playground"
-            className="text-compassion-pink-900"
+            className="text-compassion-pink-900 mt-8 sm:mt-12"
           />
-          <ol className="list-decimal space-y-4 text-gray-600 text-xl">
-            <li>
-              If you do not wish to go through a structured curriculum for teaching, you
-              can also directly use SilverBytes Playground to encourage hands-on
-              learning of fundamental computer skills for senior adults.
-            </li>
-            <li>
-              Read the{" "}
-              <NextLink className="underline text-blue-500" href="/playground">
-                SilverBytes Playground{" "}
-              </NextLink>{" "}
-              guide to understand how to use it and what skills the activities aim to
-              impart.
-            </li>
-          </ol>
+          <Text className="text-left mt-4 sm:mt-8">
+            <ol className="list-decimal space-y-4">
+              <li>
+                If you do not wish to go through a structured curriculum for teaching,
+                you can also directly use SilverBytes Playground to encourage hands-on
+                learning of fundamental computer skills for senior adults.
+              </li>
+              <li>
+                Read the{" "}
+                <NextLink className="underline text-blue-500" href="/playground">
+                  SilverBytes Playground{" "}
+                </NextLink>{" "}
+                guide to understand how to use it and what skills the activities aim to
+                impart.
+              </li>
+            </ol>
+          </Text>
         </div>
         <Intro title="Useful Resources" />
         <Resource

@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import TypingMainUI from '@/components/typing/typing-main-ui';
 import React from 'react';
 
-
 const storyLevelOptions: LevelOption[] = [{
     label: 'Hawker Center',
     id: 'chickenrice',
@@ -37,7 +36,7 @@ const StoryPage = () => {
     }
 
     return (
-        <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
+        <div className='bg-slate-100'>
 
             {chosenStory ?
                 <div>

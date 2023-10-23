@@ -4,13 +4,50 @@ import ReactDOM from 'react-dom';
 // import Image from 'next/image';
 import { StoryScenes } from "./story-data";
 
+// import { turnOnFullScreen } from "./util";
+
 interface TypingGameProps {
     storyData: StoryScenes;
+}
+
+function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+        width: 1920,
+        height: 1080,
+    });
+
+    useEffect(() => {
+        // only execute all the code below in client side
+        // Handler to call on window resize
+        function handleResize() {
+            // Set window width/height to state
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+    return windowSize;
 }
 
 const TypingGame: React.FC<TypingGameProps> = ({
     storyData,
 }) => {
+
+    // turnOnFullScreen();
+
+    const windowSize = useWindowSize();
 
     const [currentSentence, setCurrentSentence] = useState(storyData.scenes[0].typingSentence);
     const [currentBackgroundImage, setCurrentBackgroundImage] = useState(storyData.scenes[0].bkgImg);
@@ -20,7 +57,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const [showHint, setShowHint] = useState(false);
-
+    const [showInstructions, setShowInstructions] = useState(true);
     const [gameEnded, setGameEnded] = useState(false);
 
     const [fontSize, setFontSize] = useState(4);
@@ -81,6 +118,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
         console.log("Upc: " + storyData);
 
         setShowHint(false);
+        setShowInstructions(false);
 
         // Use the next element in upcomingSentencesAndBackgroundImages in another instance of TypingGame
         if (currentQuestionIndex < storyData.scenes.length - 1) {
@@ -172,36 +210,55 @@ const TypingGame: React.FC<TypingGameProps> = ({
         setFontSize(parseInt(event.target.value));
     };
 
-    const hintClassName = "text-pink-500 bg-yellow-200 font-bold text-center mt-5 mb-4"
+    const hintClassName = "text-red-500 bg-white-200 font-bold text-center mb-10"
 
     return (
-        <div id='typing-game-container' className='grow relative h-full w-full'>
-            <img src={currentBackgroundImage} alt='Current Typing Background Image' className='object-cover h-full w-full' />
-            <div className="flex flex-col justify-center items-center absolute top-1 right-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
-                <div>
-                    <span className={`text-${fontSize}xl`}>Font Size</span>
+        <div id='typing-game-container' className='relative'>
+            <img src={currentBackgroundImage} alt='Current Typing Background Image' />
+
+            <div className="flex flex-row justify-center items-center content-start absolute top-1">
+                <button onClick={() => window.history.back()} className="bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-2xl">
+                    Back
+                </button>
+
+                {/* <button onClick={resetGame} className="bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-2xl">
+                    Reset
+                </button> */}
+
+                <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl`}>
+                    <span>Accuracy</span>
+                    <div>
+                        <span className="text-green-600">{numTypeCorrect}</span>
+                        <span className="text-black-500">/</span>
+                        <span className="text-red-500">{numTypeWrong}</span>
+                        <span className="text-black-500"> - {calcAccuracy()}%</span>
+                    </div>
                 </div>
-                <div>
-                    <input
-                        type="range"
-                        min="2"
-                        max="6"
-                        value={fontSize}
-                        onChange={handleFontSizeChange}
-                        className="w-full"
-                    />
-                </div>
+
+                {/* <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl`}>
+                    <span>Sentence</span>
+                    <div>
+                        <span className="text-green-600">{currentQuestionIndex + 1}</span>
+                        <span className="text-black-500">/</span>
+                        <span className="text-black-500">{storyData.scenes.length}</span>
+                    </div>
+                </div> */}
+
             </div>
 
-            <div className={`absolute top-1 left-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold text-${fontSize}xl`}>
-                <span>Accuracy</span>
-                <div>
-                    <span className="text-green-600">{numTypeCorrect}</span>
-                    <span className="text-black-500">/</span>
-                    <span className="text-red-500">{numTypeWrong}</span>
-                    <span className="text-black-500"> - {calcAccuracy()}%</span>
-                </div>
+            <div className="absolute top-2 right-5 bg-white bg-opacity-80 p-2 rounded-lg font-gaegu font-bold ">
+                <span className={`text-${fontSize}xl`}>Font Size</span>
+                <input
+                    type="range"
+                    min="2"
+                    max="6"
+                    value={fontSize}
+                    onChange={handleFontSizeChange}
+                    className="w-full"
+                />
             </div>
+
+
 
 
             <div className="flex flex-col justify-center items-center">
@@ -212,6 +269,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
                 <div className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8`} hidden={gameEnded}>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
+                    {showInstructions ? <div className={hintClassName}>Type the sentence below using your keyboard!</div> : null}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}
                     {currentSentence.split("").map((char, index) => {
                         if (index === currentCharIndex) {

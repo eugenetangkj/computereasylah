@@ -16,7 +16,7 @@ interface TypingMainUIProps {
 // It is used for the Story feature for Typing
 const TypingMainUI: React.FC<TypingMainUIProps> = (chosenStory) => {
     return (
-        <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
+        <div className='bg-slate-100'>
             {/* <Menu /> */}
 
             <Game

@@ -30,7 +30,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
 
     const calcAccuracy = () => {
         if (numTypeCorrect + numTypeWrong == 0) return 100;
-        return Math.round(100 * numTypeCorrect / (numTypeCorrect + numTypeWrong));
+        return Math.round(10000 * numTypeCorrect / (numTypeCorrect + numTypeWrong)) / 100;
     }
 
     const getChar = (index: number) => {
@@ -68,6 +68,11 @@ const TypingGame: React.FC<TypingGameProps> = ({
         setCurrentBackgroundImage(storyData.scenes[currentQuestionIndex].bkgImg);
         setTypedSentence("");
         setCurrentCharIndex(0);
+        setCurrentQuestionIndex(0);
+        setShowHint(false);
+        setGameEnded(false);
+        setNumTypeWrong(0);
+        setNumTypeCorrect(0);
     };
 
     const handleQuestionEnded = () => {
@@ -172,19 +177,23 @@ const TypingGame: React.FC<TypingGameProps> = ({
     return (
         <div id='typing-game-container' className='grow relative h-full w-full'>
             <img src={currentBackgroundImage} alt='Current Typing Background Image' className='object-cover h-full w-full' />
-            <div className="absolute top-1 right-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
-                <span>Font Size</span>
-                <input
-                    type="range"
-                    min="2"
-                    max="6"
-                    value={fontSize}
-                    onChange={handleFontSizeChange}
-                    className="absolute top-10 right-0 w-full"
-                />
+            <div className="flex flex-col justify-center items-center absolute top-1 right-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
+                <div>
+                    <span className={`text-${fontSize}xl`}>Font Size</span>
+                </div>
+                <div>
+                    <input
+                        type="range"
+                        min="2"
+                        max="6"
+                        value={fontSize}
+                        onChange={handleFontSizeChange}
+                        className="w-full"
+                    />
+                </div>
             </div>
 
-            <div className="absolute top-1 left-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
+            <div className={`absolute top-1 left-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold text-${fontSize}xl`}>
                 <span>Accuracy</span>
                 <div>
                     <span className="text-green-600">{numTypeCorrect}</span>

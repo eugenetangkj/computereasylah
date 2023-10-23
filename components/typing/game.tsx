@@ -23,8 +23,15 @@ const TypingGame: React.FC<TypingGameProps> = ({
 
     const [gameEnded, setGameEnded] = useState(false);
 
-    const [fontSize, setFontSize] = useState(2);
+    const [fontSize, setFontSize] = useState(4);
 
+    const [numTypeWrong, setNumTypeWrong] = useState(0);
+    const [numTypeCorrect, setNumTypeCorrect] = useState(0);
+
+    const calcAccuracy = () => {
+        if (numTypeCorrect + numTypeWrong == 0) return 100;
+        return Math.round(100 * numTypeCorrect / (numTypeCorrect + numTypeWrong));
+    }
 
     const getChar = (index: number) => {
         const chars = currentSentence.split("");
@@ -116,15 +123,30 @@ const TypingGame: React.FC<TypingGameProps> = ({
             if (key === "Backspace") {
                 if (currentCharIndex == 0) return;
 
+                // If char being backspaced is correct then decrement numTypeCorrect by 1
+                // Meanwhile if char is wrong the number of errors does not decrease
+                if (isCharTypedCorrectly(currentCharIndex - 1)) {
+                    setNumTypeCorrect(prevNum => prevNum - 1);
+                }
+
                 setTypedSentence(prevTypedSentence => prevTypedSentence.slice(0, -1));
                 setCurrentCharIndex(prevIndex => prevIndex - 1);
             } else if (typedSentence.length >= currentSentence.length) {
                 if (typedSentence == currentSentence) {
                     handleQuestionEnded();
                 } else {
-                    setShowHint(true);
+                    handleQuestionEnded();
+                    // setShowHint(true);
                 }
             } else if (key.length === 1) {
+
+                let correctChar = getChar(currentCharIndex);
+                if (key !== correctChar) {
+                    setNumTypeWrong(prevNum => prevNum + 1);
+                } else {
+                    setNumTypeCorrect(prevNum => prevNum + 1);
+                }
+
                 setTypedSentence(prevTypedSentence => prevTypedSentence + key);
                 setCurrentCharIndex(prevIndex => prevIndex + 1);
             }
@@ -160,6 +182,16 @@ const TypingGame: React.FC<TypingGameProps> = ({
                     onChange={handleFontSizeChange}
                     className="absolute top-10 right-0 w-full"
                 />
+            </div>
+
+            <div className="absolute top-1 left-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
+                <span>Accuracy</span>
+                <div>
+                    <span className="text-green-600">{numTypeCorrect}</span>
+                    <span className="text-black-500">/</span>
+                    <span className="text-red-500">{numTypeWrong}</span>
+                    <span className="text-black-500"> - {calcAccuracy()}%</span>
+                </div>
             </div>
 
 

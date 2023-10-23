@@ -37,15 +37,15 @@ export default function TypingPage() {
                 {/* Learn */}
                 <NextLink href='/playground/typing/learn' className='flex flex-col justify-center items-center space-y-4'>
                     <div className='bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300' style={{ position: 'relative' }}>
-                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Learn</h3>
-                        <MdComputer className='text-energy-orange-900 text-3xl lg:text-4xl' style={{ position: 'absolute', bottom: '20px', right: '20px' }} />
+                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Recap</h3>
+                        {/* <MdComputer className='text-energy-orange-900 text-3xl lg:text-4xl' style={{ position: 'absolute', bottom: '20px', right: '20px' }} /> */}
                     </div>
                 </NextLink>
 
                 {/* Story */}
                 <NextLink href='/playground/typing/story' className='flex flex-col justify-center items-center'>
                     <div className='bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300' style={{ position: 'relative' }}>
-                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Story</h3>
+                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Practice</h3>
                         <MdComputer className='text-energy-orange-900 text-3xl lg:text-4xl' style={{ position: 'absolute', bottom: '20px', right: '20px' }} />
                     </div>
                 </NextLink>
@@ -53,8 +53,8 @@ export default function TypingPage() {
                 {/* Practice */}
                 <NextLink href='/playground/typing/practice' className='flex flex-col justify-center items-center space-y-4'>
                     <div className='bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-10 lg:px-8 xl:py-14 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-40 duration-300' style={{ position: 'relative' }}>
-                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Practice</h3>
-                        <MdComputer className='text-energy-orange-900 text-3xl lg:text-4xl' style={{ position: 'absolute', bottom: '20px', right: '20px' }} />
+                        <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Quiz</h3>
+                        {/* <MdComputer className='text-energy-orange-900 text-3xl lg:text-4xl' style={{ position: 'absolute', bottom: '20px', right: '20px' }} /> */}
                     </div>
                 </NextLink>
 

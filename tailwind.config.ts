@@ -36,9 +36,8 @@ const config: Config = {
           900: "#5EB1FD",
           hover: "#2D8EE9",
         },
-
         "passion-red": {
-          500: "FAC0C0",
+          500: "#FAC0C0",
           900: "#FD5E68",
           hover: "#DB3943",
         },

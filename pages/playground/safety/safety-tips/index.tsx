@@ -4,7 +4,7 @@ import { VStack } from "@chakra-ui/react";
 import Flashcard from "@/components/safety/safety-tips/Flashcard";
 
 const SafetyTips = () => {
-  const preemptiveMeasuresCards = [
+  const safetyTipsCards = [
     {
       Front: <div>Keep your software up to date</div>,
       Back: (
@@ -41,20 +41,20 @@ const SafetyTips = () => {
     },
   ];
 
-  const [preemptiveIndex, setPreemptiveIndex] = useState(0);
-  const [preemptiveflipped, setPreemptiveFlipped] = useState(false);
+  const [safetyIndex, setsafetyIndex] = useState(0);
+  const [safetyflipped, setsafetyFlipped] = useState(false);
 
-  const handlePreemptiveNext = () => {
-    if (preemptiveIndex < preemptiveMeasuresCards.length - 1) {
-      setPreemptiveIndex(preemptiveIndex + 1);
-      setPreemptiveFlipped(false);
+  const handlesafetyNext = () => {
+    if (safetyIndex < safetyTipsCards.length - 1) {
+      setsafetyIndex(safetyIndex + 1);
+      setsafetyFlipped(false);
     }
   };
 
-  const handlePreemptivePrevious = () => {
-    if (preemptiveIndex > 0) {
-      setPreemptiveIndex(preemptiveIndex - 1);
-      setPreemptiveFlipped(false);
+  const handlesafetyPrevious = () => {
+    if (safetyIndex > 0) {
+      setsafetyIndex(safetyIndex - 1);
+      setsafetyFlipped(false);
     }
   };
 
@@ -75,18 +75,18 @@ const SafetyTips = () => {
         <div className="text-black m-10">
           <h1 className="text-3xl mb-10">Safety tips</h1>
           <Flashcard
-            Front={preemptiveMeasuresCards[preemptiveIndex].Front}
-            Back={preemptiveMeasuresCards[preemptiveIndex].Back}
-            imageUrl={preemptiveMeasuresCards[preemptiveIndex].imageUrl}
-            flipped={preemptiveflipped}
-            setFlipped={setPreemptiveFlipped}
+            Front={safetyTipsCards[safetyIndex].Front}
+            Back={safetyTipsCards[safetyIndex].Back}
+            imageUrl={safetyTipsCards[safetyIndex].imageUrl}
+            flipped={safetyflipped}
+            setFlipped={setsafetyFlipped}
           />
           <div className="mt-4 flex justify-between">
             <button
-              onClick={handlePreemptivePrevious}
-              disabled={preemptiveIndex === 0}
+              onClick={handlesafetyPrevious}
+              disabled={safetyIndex === 0}
               className={`rounded p-2 px-4 ${
-                preemptiveIndex === 0
+                safetyIndex === 0
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
                   : "bg-blue-500 text-white cursor-pointer"
               }`}
@@ -94,10 +94,10 @@ const SafetyTips = () => {
               Previous
             </button>
             <button
-              onClick={handlePreemptiveNext}
-              disabled={preemptiveIndex === preemptiveMeasuresCards.length - 1}
+              onClick={handlesafetyNext}
+              disabled={safetyIndex === safetyTipsCards.length - 1}
               className={`rounded p-2 px-4 ${
-                preemptiveIndex === preemptiveMeasuresCards.length - 1
+                safetyIndex === safetyTipsCards.length - 1
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
                   : "bg-blue-500 text-white cursor-pointer"
               }`}

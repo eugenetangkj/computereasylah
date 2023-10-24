@@ -210,7 +210,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
         setFontSize(parseInt(event.target.value));
     };
 
-    const hintClassName = "text-red-500 bg-white-200 font-bold text-center mb-10"
+    const hintClassName = "text-red-500 bg-white-200 font-nunito font-bold text-center mb-10"
 
     return (
         <div id='typing-game-container' className='relative'>

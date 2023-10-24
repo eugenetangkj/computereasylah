@@ -191,7 +191,12 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
                 : ''
             }
 
-            <BackButton pathToReturnTo='/playground/email' displayText='Quit' category={ Topic.Email } />
+            <div className={`fixed bottom-10 right-0 z-20 bg-trust-blue-900 hover:bg-trust-blue-hover mr-16 px-8 py-4 rounded-3xl duration-300`}>
+                {/* Back button */}
+                <NextLink href='/playground/email' className=''>
+                <h5 className="font-nunito text-2xl lg:text-4xl font-bold ">Quit</h5>
+                </NextLink>
+            </div>
 
   
    

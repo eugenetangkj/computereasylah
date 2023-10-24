@@ -217,7 +217,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
             <img src={currentBackgroundImage} className="object-cover w-screen h-screen" alt='Current Typing Background Image' />
 
             <div className="flex flex-row justify-center items-center content-start absolute top-1">
-                <button onClick={() => window.history.back()} className="bg-white bg-opacity-80 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-2xl duration-300">
+                <button onClick={() => window.history.back()} className={`bg-white bg-opacity-80 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-${fontSize}xl duration-300`}>
                     Back
                 </button>
 
@@ -225,7 +225,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
                     Reset
                 </button> */}
 
-                <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl`}>
+                <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl duration-300`}>
                     <span>Accuracy</span>
                     <div>
                         <span className="text-green-600">{numTypeCorrect}</span>
@@ -235,7 +235,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
                     </div>
                 </div>
 
-                {/* <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl`}>
+                {/* <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl duration-300`}>
                     <span>Sentence</span>
                     <div>
                         <span className="text-green-600">{currentQuestionIndex + 1}</span>
@@ -246,8 +246,8 @@ const TypingGame: React.FC<TypingGameProps> = ({
 
             </div>
 
-            <div className="absolute top-2 right-5 bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold ">
-                <span className={`text-${fontSize}xl`}>Font Size</span>
+            <div className="absolute top-2 right-5 flex flex-col bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold duration-300">
+                <span className={`text-${fontSize}xl ml-10 mr-10`}>Font Size</span>
                 <input
                     type="range"
                     min="2"
@@ -266,7 +266,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
                 {/* Font for sentence to type should use Roboto? or Consolas? I use consolas now because it is monospaced */}
                 {/* Dynamic font size in className did not work: text-[${fontSize}px] */}
                 {/* Use inline-block to fix flex box ignoring margin and padding */}
-                <div className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8`} hidden={gameEnded}>
+                <div className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`} hidden={gameEnded}>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
                     {showInstructions ? <div className={hintClassName}>Type the text below using your keyboard!</div> : null}

@@ -2,6 +2,7 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import BackButton from '@/components/backButton';
 import Image from 'next/image';
+import { Topic } from '@/components/backButton';
 
 interface EmailSceneTwelveProps {
     updateSceneIndex: (index: number) => void
@@ -29,7 +30,7 @@ export default function EmailSceneTwelve({ updateSceneIndex } : EmailSceneTwelve
 
     return (
         <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 md:pt-8 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            <BackButton pathToReturnTo='/playground/email' displayText='Exit' />
+            <BackButton pathToReturnTo='/playground/email' displayText='Exit'  category={ Topic.Email }  />
 
             {/* Practice instructions, only available on desktop */}
             <div className='flex flex-col justify-center items-center space-y-16'>

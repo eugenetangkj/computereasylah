@@ -1,6 +1,8 @@
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
-import { MdAttachFile, MdClose } from "react-icons/md"
+import { MdAttachFile, MdClose } from "react-icons/md";
+import { Topic } from '@/components/backButton';
+import BackButton from '@/components/backButton';
 
 
 interface EmailSceneFourProps {
@@ -189,12 +191,7 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
                 : ''
             }
 
-            <div className={`fixed top-20 right-0 z-20 bg-trust-blue-900 hover:bg-trust-blue-hover mr-16 px-8 py-4 rounded-3xl duration-300`}>
-                {/* Back button */}
-                <NextLink href='/playground/email' className=''>
-                <h5 className="font-nunito text-3xl xl:text-4xl font-bold ">Quit</h5>
-                </NextLink>
-            </div>
+            <BackButton pathToReturnTo='/playground/email' displayText='Quit' category={ Topic.Email } />
 
   
    

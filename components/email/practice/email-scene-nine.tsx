@@ -106,7 +106,7 @@ export default function EmailSceneNine({ updateSceneIndex } : EmailSceneNineProp
 
     
     return (
-        <div className={`flex items-start w-screen h-screen p-8 mx-64 opacity-0 transition-opacity rounded-2xl bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex items-start w-screen h-screen p-8 mx-64 opacity-0 transition-opacity bg-stone-100 ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Instructions to player */}
             <div className='bg-trust-blue-500 row-start-1 col-span-1 flex flex-col p-8 rounded-lg space-y-2 xl:space-y-6 justify-center h-full overflow-y-hidden'>
                 <h4 className='text-3xl xl:text-4xl 2xl:text-5xl font-gaegu font-bold text-center'>Fill in the following information</h4>

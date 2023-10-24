@@ -13,6 +13,42 @@ export interface Quiz {
   questions: Question[];
 }
 
+export const ApplicationsQuizData: Quiz = {
+  totalQuestions: 2,
+  questions: [
+    {
+      question: "Which application is commonly used for creating and editing text documents?",
+      choices: [
+        "Photoshop",
+        "Excel",
+        "Word",
+        "Powerpoint",
+      ],
+      correctAnswer: "Word",
+      imageLink:
+        "",
+      explanation: "Word allows you to create text documents.",
+    },
+    {
+      question: "What application is commonly used for sending and receiving emails?",
+      choices: [
+        "Calculator",
+        "Snipping Tool",
+        "Email",
+        "File Explorer",
+      ],
+      correctAnswer: "Email",
+      imageLink: "",
+      explanation: "Email application allows you to view and send emails.",
+    },
+  ],
+};
+
+
+
+
+
+
 export const EmailQuizData: Quiz = {
   totalQuestions: 5,
   questions: [

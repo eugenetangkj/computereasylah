@@ -46,6 +46,11 @@ const config: Config = {
           900: "#8378FF",
           hover: "#6A5DF6",
         },
+        "creative-pink": {
+          500: "#FFD7EA",
+          900: "#EB70BA",
+          hover: "#D84FA1",
+        },
 
         "pale-gray": {
           100: "#D4D4D4",
@@ -67,9 +72,14 @@ const config: Config = {
         "600p": "600px",
         "800p": "800px",
         "80vw": "80vw",
+        '340p': "340px",
+        '450p': "450px",
+        '540p': "540px"
+
       },
       height: {
         "80vh": "80vh",
+        '100p': "100px"
       },
       top: {
         "1/8": "12.5%",

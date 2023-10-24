@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
 // import Image from 'next/image';
 import { StoryScenes } from "./story-data";
+import BackButton from "../backButton";
+import { Topic } from "../backButton";
 
 // import { turnOnFullScreen } from "./util";
 
@@ -15,6 +17,15 @@ const TypingGame: React.FC<TypingGameProps> = ({
 }) => {
 
     // turnOnFullScreen();
+
+    if (storyData == null || storyData == undefined) {
+        storyData = {
+            scenes: [{
+                typingSentence: "Error! The selected story was not found.",
+                bkgImg: "/assets/typing/chickenrice/chickenrice_stall.png",
+            }]
+        }
+    }
 
     const [currentSentence, setCurrentSentence] = useState(storyData.scenes[0].typingSentence);
     const [currentBackgroundImage, setCurrentBackgroundImage] = useState(storyData.scenes[0].bkgImg);
@@ -184,6 +195,22 @@ const TypingGame: React.FC<TypingGameProps> = ({
     };
 
     const hintClassName = "text-red-500 bg-white-200 font-nunito font-bold text-center mb-10"
+
+
+    if (storyData.scenes[0].typingSentence == "Error! The selected story was not found.") {
+        return (
+            <div>
+                <div className="flex flex-col justify-center items-center w-screen h-screen">
+
+                    <div className='flex flex-col justify-center items-center space-y-16'>
+                        <BackButton pathToReturnTo='/playground/typing' displayText='Back' category={Topic.Typing} />
+                        <h1 className="font-bold font-nunito text-3xl md:text-4xl xl:text-5xl text-center  mx-8 py-10">Error! The selected story was not found.</h1>
+                        {/* <img src='/assets/email/computer.png' alt='Computer' className='w-2/5 md:w-1/4' /> */}
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div id='typing-game-container' className='relative'>

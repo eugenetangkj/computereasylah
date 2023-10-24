@@ -10,44 +10,11 @@ interface TypingGameProps {
     storyData: StoryScenes;
 }
 
-function useWindowSize() {
-    // Initialize state with undefined width/height so server and client renders match
-    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-    const [windowSize, setWindowSize] = useState({
-        width: 1920,
-        height: 1080,
-    });
-
-    useEffect(() => {
-        // only execute all the code below in client side
-        // Handler to call on window resize
-        function handleResize() {
-            // Set window width/height to state
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        }
-
-        // Add event listener
-        window.addEventListener("resize", handleResize);
-
-        // Call handler right away so state gets updated with initial window size
-        handleResize();
-
-        // Remove event listener on cleanup
-        return () => window.removeEventListener("resize", handleResize);
-    }, []); // Empty array ensures that effect is only run on mount
-    return windowSize;
-}
-
 const TypingGame: React.FC<TypingGameProps> = ({
     storyData,
 }) => {
 
     // turnOnFullScreen();
-
-    const windowSize = useWindowSize();
 
     const [currentSentence, setCurrentSentence] = useState(storyData.scenes[0].typingSentence);
     const [currentBackgroundImage, setCurrentBackgroundImage] = useState(storyData.scenes[0].bkgImg);
@@ -247,7 +214,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
             </div>
 
             <div className="absolute top-2 right-5 flex flex-col bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold duration-300">
-                <span className={`text-${fontSize}xl ml-10 mr-10`}>Font Size</span>
+                <span className={`text-${fontSize}xl ml-10 mr-10 mb-1`}>Font Size</span>
                 <input
                     type="range"
                     min="2"

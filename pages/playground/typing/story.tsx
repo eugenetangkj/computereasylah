@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import TypingMainUI from '@/components/typing/typing-main-ui';
 import React from 'react';
 import { useEffect, useState } from 'react';
+import BackButton from '@/components/backButton';
 
 import NextLink from 'next/link';
 
@@ -52,24 +53,18 @@ const StoryPage = () => {
         // setChosenStory(chosenStory);
 
         // Tell router to go to ./game/chosenStory
-
-    }
-
-    const selectSymbols = () => {
-        console.log("Chose symbols");
-
-        // setChosenStory(name);
+        router.push(`/playground/typing/game/${chosenStory}`)
     }
 
     return (
-        <div className='bg-slate-100'>
+        <div className='bg-white'>
 
             {chosenStory ?
                 <div>
                     <TypingMainUI chosenStory={chosenStory as string} />
                 </div>
                 :
-                <div>
+                <div className='hidden md:block'>
                     {/* <LevelSelection options={storyLevelOptions} onOptionSelect={(index) => { selectOption(index) }} onBackClick={() => { router.back() }} /> */}
 
                     <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
@@ -87,7 +82,7 @@ const StoryPage = () => {
                             {/* Select Basic Levels */}
                             <div className='flex flex-row justify-center items-center space-x-10'>
                                 <button className='flex flex-col justify-center items-center space-y-4' onClick={
-                                    selectSymbols
+                                    () => router.push(`/playground/typing/symbols-game`)
                                 }>
                                     <div className='bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center rounded-3xl w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 duration-300' style={{ position: 'relative' }}>
                                         <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Symbols</h3>
@@ -138,10 +133,17 @@ const StoryPage = () => {
                     <img src='/assets/typing/tilted_keyboard.png' alt='Keyboard' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 right-0 translate-x-3/10 -translate-y-1/2 z-20' />
                     <img src='/assets/typing/tilted_i_cursor_icon.png' alt='I Cursor' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 translate-y-3/4 lg:top-1/8 left-4 -translate-x-2/5' />
 
-
                 </div>
             }
 
+            <div className='md:hidden w-screen h-screen'>
+                {/* Only available on desktop message, only shown on mobile */}
+                <div className='flex md:hidden flex-col justify-center items-center space-y-16'>
+                    <BackButton pathToReturnTo='/playground/typing' displayText='Back' />
+                    <h1 className="text-3xl md:text-4xl font-bold font-gaegu text-center mx-8 py-10">Sorry, this activity is only available on a computer.</h1>
+                    <img src='/assets/email/computer.png' alt='Computer' className='w-2/5 md:w-1/4' />
+                </div>
+            </div>
         </div >
 
     );

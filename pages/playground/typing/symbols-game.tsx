@@ -1,15 +1,14 @@
 import { useRouter } from 'next/router';
 import TypingMainUI from '@/components/typing/typing-main-ui';
 import BackButton from '@/components/backButton';
+import KeyCheckGame from '@/components/typing/key-check-game';
 
-export default function Game() {
-    const router = useRouter();
-    const { id } = router.query;
+export default function SymbolsGame() {
 
     return (
         <div className='flex flex-col'>
             <div className='hidden md:block'>
-                <TypingMainUI chosenStory={id as string} />
+                <KeyCheckGame />
             </div>
 
             {/* Screen for when the screen size is too small */}

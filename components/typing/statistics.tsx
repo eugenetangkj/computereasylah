@@ -5,6 +5,7 @@ interface StatisticsProps {
     wpm: number;
 }
 
+// This is currently unused
 const Statistics: React.FC<StatisticsProps> = ({ accuracy, wpm }) => {
     return (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#f0f0f0', padding: '8px' }}>

@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 
+// This is currently unused
 function Menu() {
     const router = useRouter();
 

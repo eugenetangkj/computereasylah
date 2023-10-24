@@ -1,5 +1,4 @@
 import { SafetyTipsData, Tips } from "@/constants/tipsData";
-import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { Topic } from "@/components/backButton";

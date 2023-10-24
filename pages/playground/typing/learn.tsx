@@ -1,8 +1,6 @@
-import LevelSelection from '@/components/typing/level-selection';
-import { LevelOption } from '@/components/typing/level-selection';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import LevelSelection, { LevelOption } from '@/components/typing/level-selection';
 import TypingRandomiseUI from '@/components/typing/typing-randomise-ui';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 

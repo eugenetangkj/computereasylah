@@ -1,10 +1,8 @@
-import NextLink from "next/link";
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from 'react';
 import { QuizBody } from "@/components/QuizBody";
+import BackButton from "@/components/backButton";
 import { SafetyQuizData } from "@/constants/quizData";
 import { Topic } from "@/components/backButton";
-import BackButton from "@/components/backButton";
 
 //Practice component for email activities
 export default function SafetyQuiz() {

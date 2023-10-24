@@ -1,6 +1,6 @@
+import BackButton from "@/components/backButton";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
-import BackButton from "@/components/backButton";
 import { Topic } from "@/components/backButton";
 
 interface SafetyOptionProps {

@@ -18,19 +18,19 @@ const BorderedWordWithTooltip: React.FC<{
   };
 
   return (
-    <div className="relative inline-block">
-      <button
+    <span className="relative inline">
+      <span
         className={`cursor-pointer ${wordClassName} ${
           isTooltipOpen
-            ? "border-4 rounded-lg border-red-500 p-1 "
+            ? "border-4 rounded-lg border-red-500 p-1 leading-loose"
             : hasClicked
-            ? "border-4 rounded-lg p-1"
+            ? "border-4 rounded-lg p-1 leading-loose"
             : ""
         }`}
         onClick={toggleTooltip}
       >
         {word}
-      </button>
+      </span>
       {isTooltipOpen && (
         <div className="absolute z-10 left-0 mt-4 p-2 bg-gray-200 border border-gray-400 rounded-lg">
           <div>{tooltipContent}</div>
@@ -42,7 +42,7 @@ const BorderedWordWithTooltip: React.FC<{
           </button>
         </div>
       )}
-    </div>
+    </span>
   );
 };
 

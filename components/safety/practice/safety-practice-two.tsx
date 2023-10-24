@@ -123,9 +123,8 @@ const SafetyPracticeTwo: React.FC = () => {
           </p>
           <br />
           <p>
-            Once you click the link,
             <BorderedWordWithTooltip
-              word="you will be asked to provide your personal
+              word="You will be asked to provide your personal
               and financial information to confirm your identity. Please make sure
               to have your Tax Reference Number, bank account details, and other
               personal information"

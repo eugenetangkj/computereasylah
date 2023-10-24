@@ -29,46 +29,75 @@ export default function SnippingToolPractical({ updateCurrentElementIndex } : Sn
   //Taken from https://blog.logrocket.com/build-image-text-conversion-app-react-tesseractjs/
   const [ocrText, setOcrText] = useState("");
   const [imageData, setImageData] = useState<string | null>(null);
+  const [shouldDisable, setShouldDisable] = useState(true);
   const worker = createWorker();
 
   const convertImageToText = async () => {
     if (!imageData) return;
-    await (await worker).load();
+    
     const {
       data: { text },
     } = await (await worker).recognize(imageData);
     setOcrText(text);
+    setShouldDisable(false);
   };
 
   useEffect(() => {
     convertImageToText();
   }, [imageData]);
 
-  //Handles image upload
-  function handleImageChange(e : any) {
-    const file = e.target.files[0];
-    //Check whether got any files received
-    if(! file) {
-        return;
+    //Handles image upload
+    function handleImageChange(e : any) {
+        setShouldDisable(true);
+        const file = e.target.files[0];
+        //Check whether got any files received
+        if(! file) {
+            return;
+        }
+
+        //Check whether user uploaded a valid image file
+        const allowedImageExtensions = ['jpg', 'jpeg', 'png'];
+        const fileName = file.name;
+        const fileExtension = fileName.split(".").pop()?.toLowerCase() || "";
+
+        if (! allowedImageExtensions.includes(fileExtension)) {
+            //File is not a valid image. Should not feed into OCR model
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+        const imageDataUri : string | null = reader.result as string;
+            setImageData(imageDataUri);
+        };
+        reader.readAsDataURL(file);
+        }
+
+
+    //Error prompt handling
+    const [shouldShowErrorPrompt, setShowShouldErrorPrompt] = useState(false);
+
+    //Help prompt handling
+    const [shouldShowHelpPrompt, setShowShouldHelpPrompt] = useState(false);
+    const handleGetHelpButtonClick = () => {
+        setShowShouldHelpPrompt(true);
     }
 
-    //Check whether user uploaded a valid image file
-    const allowedImageExtensions = ['jpg', 'jpeg', 'png'];
-    const fileName = file.name;
-    const fileExtension = fileName.split(".").pop()?.toLowerCase() || "";
 
-    if (! allowedImageExtensions.includes(fileExtension)) {
-        //File is not a valid image. Should not feed into OCR model
-        return;
+        
+
+
+    //Check answer
+    const handleCheckButtonClick = () => {
+        const modelAnswer = 'Snipping tool is great';
+        if (ocrText.trim() === modelAnswer) {
+            //Proceed to success page
+            updateCurrentElementIndex(2);
+
+        } else {
+            setShowShouldErrorPrompt(true);
+        }
     }
-
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const imageDataUri : string | null = reader.result as string;
-        setImageData(imageDataUri);
-    };
-    reader.readAsDataURL(file);
-  }
 
 
 
@@ -92,7 +121,48 @@ export default function SnippingToolPractical({ updateCurrentElementIndex } : Sn
           className='text-4xl font-nunito text-center'
         />
 
-        <p>{ocrText}</p>
+      
+
+        {/* Help Message */}
+        {
+            (shouldShowHelpPrompt)
+            ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 rounded-xl p-16 flex flex-col justify-center items-center space-y-8 2xl:space-y-16 bg-gray-100' style={{ marginTop: 0 }}>
+                <h4 className='text-3xl xl:text-4xl 2xl:text-5xl font-nunito text-center'>Watch this video to get help!</h4>
+                <Iframe url="https://www.youtube.com/embed/tgbNymZ7vqY"
+                    height="320px"
+                    id=""
+                    className="z-20 w-540p"
+                />
+
+
+                {/* Dismiss help button prompt */}
+                <button className="w-48 text-4xl font-gaegu bg-creative-pink-900 font-bold px-4 py-4 rounded-2xl duration-300"
+                    onClick={ () => setShowShouldHelpPrompt(false) }>
+                        <span>Ok</span>
+                </button>
+            </div>
+            : ''
+        }
+
+
+        {/* Error Message */}
+        {
+            (shouldShowErrorPrompt)
+            ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 rounded-xl p-16 flex flex-col justify-center items-center space-y-8 2xl:space-y-16 bg-gray-100' style={{ marginTop: 0 }}>
+                <h4 className='text-3xl xl:text-4xl 2xl:text-5xl font-nunito text-center'>Hmmm... something is not right</h4>
+                <h6 className='text-4xl xl:text-5xl 2xl:text-6xl font-nunito text-center font-bold leading-relaxed xl:leading-relaxed 2xl:leading-relaxed'>Did you snip and attach a picture of the text 'Snipping tool is great'?</h6>
+                {/* Try again button */}
+                <button className="w-48 text-4xl font-gaegu bg-creative-pink-900 font-bold px-4 py-4 rounded-2xl duration-300"
+                    onClick={ () => setShowShouldErrorPrompt(false) }>
+                        <span>Ok</span>
+                </button>
+            </div>
+            : ''
+        }
+
+        
+
+       
 
 
         {/* Navigation buttons */}
@@ -106,17 +176,17 @@ export default function SnippingToolPractical({ updateCurrentElementIndex } : Sn
 
             {/* Get Help button */}
             <button id='get-help-button' className="hidden lg:flex justify-center w-56 text-4xl font-gaegu bg-creative-pink-500 hover:bg-creative-pink-hover font-bold px-8 py-4 rounded-2xl duration-300"
-            onClick={ () => updateCurrentElementIndex(1) }>
+            onClick={ handleGetHelpButtonClick }>
                 <span>Get Help</span>
             </button>
 
             {/* Check button */}
-            <button id='check-button' className="hidden lg:flex justify-center w-56 text-5xl font-gaegu bg-creative-pink-500 hover:bg-creative-pink-hover font-bold px-8 py-4 rounded-2xl duration-300"
-            onClick={ () => updateCurrentElementIndex(1) }>
+            <button id='check-button' className="hidden lg:flex justify-center w-56 text-5xl font-gaegu bg-creative-pink-500 hover:bg-creative-pink-hover font-bold px-8 py-4 rounded-2xl duration-300 disabled:bg-gray-200"
+            onClick={ handleCheckButtonClick }
+            disabled = { shouldDisable }>
                 <span>Check</span>
             </button>
-
-            
+  
         </div>
 
         <div className='h-8'>

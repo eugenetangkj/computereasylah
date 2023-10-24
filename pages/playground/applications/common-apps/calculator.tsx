@@ -8,7 +8,7 @@ import SnippingToolPractical from "@/components/applications/snipping-tool/Snipp
 import SnippingToolComplete from "@/components/applications/snipping-tool/SnippingToolComplete";
 
 //Snipping tool page
-export default function SnippingTool() {
+export default function Calculator() {
     // Animation
     const [isActive, setIsActive] = useState(false);
 

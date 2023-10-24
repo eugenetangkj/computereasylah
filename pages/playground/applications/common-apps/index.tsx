@@ -20,7 +20,7 @@ export default function CommonApps() {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-8 2xl:mt-0 opacity-0 transition-opacity ${
+      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-16 2xl:mt-0 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
@@ -33,10 +33,11 @@ export default function CommonApps() {
         Common Apps
       </h1>
       {/* Apps to learn*/}
-      <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-8 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-y-8 lg:gap-x-32 2xl:gap-y-16 py-8 z-10">
+      <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-8 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-y-8 lg:gap-x-24 2xl:gap-y-16 py-8 z-10">
         {/* Snipping tool */}
-        <NextLink href='/playground/applications/common-apps/snipping-tool'>
-            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+        <NextLink href='/playground/applications/common-apps/snipping-tool' className='w-full'>
+            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start self-center space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+            style={{ 'height': '225px' }}
             >
                 <div className='flex justify-between w-full'>
                     <h2 className='font-gaegu font-bold self-center text-3xl xl:text-4xl'>Snipping Tool</h2>
@@ -48,34 +49,37 @@ export default function CommonApps() {
         </NextLink>
 
         {/* Browser */}
-        <NextLink href='/playground/applications/common-apps/browser'>
-            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+        <NextLink href='/playground/applications/common-apps/browser' className='w-full'>
+            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start self-center space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+            style={{ 'height': '225px' }}
             >
                 <div className='flex justify-between w-full'>
                     <h2 className='font-gaegu font-bold self-center text-3xl xl:text-4xl'>Browser</h2>
                     <img src='/assets/applications/edge-logo.png' alt='Microsoft Edge' className='' />
                 </div>
                 
-                <h4 className='font-nunito text-xl xl:text-2xl'>Take a picture of your computer screen!</h4>
+                <h4 className='font-nunito text-xl xl:text-2xl'>Access the Internet and visit different sites!</h4>
             </div>
         </NextLink>
 
         {/* Calculator */}
-        <NextLink href='/playground/applications/common-apps/calculator'>
-            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+        <NextLink href='/playground/applications/common-apps/calculator' className='w-full h-full'>
+            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start self-center space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+            style={{ 'height': '225px' }}
             >
                 <div className='flex justify-between w-full'>
                     <h2 className='font-gaegu font-bold text-3xl self-center xl:text-4xl'>Calculator</h2>
                     <img src='/assets/applications/calculator-logo.png' alt='Calculator' className='' />
                 </div>
                 
-                <h4 className='font-nunito text-xl xl:text-2xl'>Need to calculate something? Use the calculator!</h4>
+                <h4 className='font-nunito text-xl xl:text-2xl'>Need to calculate something?</h4>
             </div>
         </NextLink>
 
         {/* Paint */}
-        <NextLink href='/playground/applications/common-apps/paint'>
-            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+        <NextLink href='/playground/applications/common-apps/paint' className='w-full h-full'>
+            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start self-center space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+            style={{ 'height': '225px' }}
             >
                 <div className='flex justify-between w-full'>
                     <h2 className='font-gaegu font-bold text-3xl self-center xl:text-4xl'>Paint</h2>

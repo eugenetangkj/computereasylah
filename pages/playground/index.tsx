@@ -1,7 +1,5 @@
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import BackButton from "@/components/backButton";
 
 export default function Playground() {
   // Animation
@@ -22,7 +20,6 @@ export default function Playground() {
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
-      <BackButton pathToReturnTo="/" displayText="Back" />
       {/* Title */}
       <h1 className="text-5xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu w-2/3 text-center mt-8">
         Computer, Easy Lah!

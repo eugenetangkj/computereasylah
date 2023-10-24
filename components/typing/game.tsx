@@ -214,10 +214,10 @@ const TypingGame: React.FC<TypingGameProps> = ({
 
     return (
         <div id='typing-game-container' className='relative'>
-            <img src={currentBackgroundImage} alt='Current Typing Background Image' />
+            <img src={currentBackgroundImage} className="object-cover w-screen h-screen" alt='Current Typing Background Image' />
 
             <div className="flex flex-row justify-center items-center content-start absolute top-1">
-                <button onClick={() => window.history.back()} className="bg-white bg-opacity-80 p-2 m-2 ml-4 rounded-lg font-gaegu font-bold text-2xl">
+                <button onClick={() => window.history.back()} className="bg-white bg-opacity-80 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-2xl duration-300">
                     Back
                 </button>
 
@@ -246,7 +246,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
 
             </div>
 
-            <div className="absolute top-2 right-5 bg-white bg-opacity-80 p-2 rounded-lg font-gaegu font-bold ">
+            <div className="absolute top-2 right-5 bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold ">
                 <span className={`text-${fontSize}xl`}>Font Size</span>
                 <input
                     type="range"

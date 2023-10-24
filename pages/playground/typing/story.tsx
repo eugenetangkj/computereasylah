@@ -76,7 +76,7 @@ const StoryPage = () => {
 
                         <div className={`fixed top-0 left-0 w-full py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}>
                             {/* Back button */}
-                            <NextLink href="/playground" className='w-1/4'>
+                            <NextLink href="/playground/typing" className='w-1/4'>
                                 <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-energy-orange-hover duration-300">Back</h5>
                             </NextLink>
                         </div>
@@ -107,6 +107,8 @@ const StoryPage = () => {
 
                             {/* Spacer */}
 
+                            {/* <div className='h-1'></div> */}
+
                             <div>
                                 <span className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Sentences and Stories:</span>
                             </div>
@@ -129,8 +131,6 @@ const StoryPage = () => {
                                     </button>
                                 ))}
                             </div>
-
-
 
                         </div>
                     </div>

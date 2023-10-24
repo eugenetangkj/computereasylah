@@ -1,8 +1,7 @@
-import NextLink from "next/link";
-import { useEffect, useState } from "react";
-import Image from "next/image";
 import { QuizBody } from "@/components/QuizBody";
+import BackButton from "@/components/backButton";
 import { SafetyQuizData } from "@/constants/quizData";
+import { useEffect, useState } from "react";
 
 //Practice component for email activities
 export default function SafetyQuiz() {
@@ -35,11 +34,11 @@ export default function SafetyQuiz() {
         className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
       >
         {/* Back button */}
-        <NextLink href="/playground/safety" className="">
-          <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-passion-red-hover duration-300">
-            Back
-          </h5>
-        </NextLink>
+        <BackButton
+          displayText="Back"
+          pathToReturnTo="/playground/safety"
+          themeColor="passion-red"
+        />
       </div>
 
       {!hasStartedQuiz ? (

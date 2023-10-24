@@ -1,3 +1,4 @@
+import BackButton from "@/components/backButton";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
 
@@ -40,11 +41,11 @@ const SafetyPage = () => {
         className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
       >
         {/* Back button */}
-        <NextLink href="/playground" className="w-1/4">
-          <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-passion-red-hover duration-300">
-            Back
-          </h5>
-        </NextLink>
+        <BackButton
+          displayText="Back"
+          pathToReturnTo="/playground"
+          themeColor="passion-red"
+        />
       </div>
 
       {/* Title */}

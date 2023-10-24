@@ -1,8 +1,7 @@
+import BackButton from "@/components/backButton";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { MdComputer } from "react-icons/md";
-import BackButton from "@/components/backButton";
-import Image from 'next/image';
 
 //Home page for email activities in the playground
 export default function Email() {

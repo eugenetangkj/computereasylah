@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import BackButton from '@/components/backButton';
 import Image from 'next/image';
+import { Topic } from '@/components/backButton';
 
 //Home page for email activities in the playground
 export default function WhyLearnEmail() {
@@ -24,7 +25,7 @@ export default function WhyLearnEmail() {
     return (
         <div className={`flex flex-col items-center justify-center min-h-screen py-16 md:py-8 bg-white space-y-8 mt-12 md:mt-20 lg:space-y-12 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Back button */}
-            <BackButton pathToReturnTo='/playground/email' displayText='Exit' />
+            <BackButton pathToReturnTo='/playground/email' displayText='Exit' category={ Topic.Email }  />
             
             {/* Title */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center z-10">Why Learn Email</h1>

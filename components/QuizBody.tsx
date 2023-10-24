@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import NextLink from "next/link";
 import { Quiz } from "../constants/quizData";
+import { Topic } from "./backButton";
 
 type Props = {
   quizData: Quiz;
   themeColor: string;
+  topic: Topic;
 };
 
 //Quiz content for email quiz
-export const QuizBody = ({ quizData, themeColor }: Props) => {
+export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
   // Animation
   const [isActive, setIsActive] = useState(false);
 
@@ -359,12 +361,23 @@ export const QuizBody = ({ quizData, themeColor }: Props) => {
         <h2 className="text-3xl lg:text-4xl xl:text-5xl font-nunito text-center">{`Total Score: ${currentScore} / ${allQuestions.totalQuestions}`}</h2>
         <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-8">
           <button
-            className={`text-3xl xl:text-4xl font-gaegu bg-${themeColor}-500 font-bold px-8 py-4 rounded-2xl duration-300 w-64 xl:w-72 border-solid border-4 border-${themeColor}-500`}
+            className={`text-3xl xl:text-4xl font-gaegu bg-${themeColor}-500 font-bold px-8 py-4 rounded-2xl duration-300 w-64 xl:w-72 border-4 border-${themeColor}-500`}
             onClick={handlePracticeAgain}
           >
             <span>Take Again</span>
           </button>
-          <NextLink href="/playground/email" className="my-4">
+          <NextLink href= {
+            (topic == Topic.Typing)
+            ? '/playground/typing'
+            : (topic == Topic.Applications)
+            ? '/playground/applications'
+            : (topic == Topic.Email)
+            ? '/playground/email'
+            : (topic == Topic.Safety)
+            ? '/playground/safety'
+            : ''
+
+          } className="my-4">
             <button
               className={`text-3xl xl:text-4xl font-gaegu border-solid border-4 border-${themeColor}-900 font-bold px-8 py-4 rounded-2xl duration-300 w-64 xl:w-72`}
             >

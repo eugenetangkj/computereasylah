@@ -1,11 +1,9 @@
-import Image from "next/image";
-import Logo from "@/assets/Logo.png";
-import WhiteLogo from "@/assets/logo_white_font.png";
 import BlackLogo from "@/assets/logo_black_font.png";
-import NextLink from "next/link";
 import { navLinks } from "@/constants";
-import { AiOutlineMenu } from "react-icons/ai";
+import Image from "next/image";
+import NextLink from "next/link";
 import { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -19,15 +17,15 @@ const Navbar = () => {
         <ul className="list-none hidden sm:flex  flex-row gap-x-5 md:gap-x-10 items-center font-semibold text-xl">
           {navLinks.map((link) => (
             <li key={link.id}>
-              <NextLink href={`/${link.id}`}>
-                {link.id === "playground" ? (
+              {link.id === "playground" ? (
+                <a href={`/${link.id}`} target="_blank">
                   <button className="bg-rose-500 rounded-3xl h-12 w-36 text-white">
                     <span>{link.title}</span>
                   </button>
-                ) : (
-                  link.title
-                )}
-              </NextLink>
+                </a>
+              ) : (
+                <NextLink href={`/${link.id}`}>{link.title}</NextLink>
+              )}
             </li>
           ))}
         </ul>

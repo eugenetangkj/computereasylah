@@ -110,6 +110,27 @@ export const supermarketStory: StoryScenes = {
     ]
 };
 
+export const words: StoryScenes = {
+    scenes: [
+        {
+            typingSentence: "Laptop",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "Browser",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "Keyboard",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+        {
+            typingSentence: "Mouse",
+            bkgImg: "/assets/typing/chickenrice/bored.png"
+        },
+    ]
+};
+
 export const computerParts: StoryScenes = {
     scenes: [
         {
@@ -149,18 +170,27 @@ export const computerParts: StoryScenes = {
 
 // Update dictionary new stories
 const storyMapping: { [key: string]: StoryScenes } = {
+    // Basic (Unused in this dictionary because the order of the contents have to be randomised, but added for completeness)
+    "words": words,
+
     // Stories
     "chickenrice": chickenRiceStory,
     "mrt": mrtStory,
     "supermarket": supermarketStory,
 
-    // Learn
+    // Not in use
     "computerparts": computerParts,
 };
 
 export const getStoryScenesFromString = (storyName: string): StoryScenes => {
     if (storyName == "all-random") {
         return getStorySceneWithAllScenes();
+    } else if (storyName == "words") {
+        return {
+            scenes: words.scenes.map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value)
+        }
     }
 
     console.log("Getting story scenes for " + storyName);

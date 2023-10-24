@@ -269,7 +269,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
                 <div className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8`} hidden={gameEnded}>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
-                    {showInstructions ? <div className={hintClassName}>Type the sentence below using your keyboard!</div> : null}
+                    {showInstructions ? <div className={hintClassName}>Type the text below using your keyboard!</div> : null}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}
                     {currentSentence.split("").map((char, index) => {
                         if (index === currentCharIndex) {

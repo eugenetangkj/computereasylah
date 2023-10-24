@@ -52,7 +52,7 @@ const StoryPage = () => {
         // setChosenStory(chosenStory);
 
         // Tell router to go to ./game/chosenStory
-        router.push(`/playground/typing/game/${chosenStory}`);
+
     }
 
     const selectSymbols = () => {
@@ -96,7 +96,7 @@ const StoryPage = () => {
                                 </button>
 
                                 <button className='flex flex-col justify-center items-center space-y-4' onClick={
-                                    selectSymbols
+                                    () => router.push(`/playground/typing/game/words`)
                                 }>
                                     <div className='bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center rounded-3xl w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 duration-300' style={{ position: 'relative' }}>
                                         <h3 className='font-bold font-nunito text-2xl xl:text-3xl text-center'>Words</h3>
@@ -142,7 +142,7 @@ const StoryPage = () => {
                 </div>
             }
 
-        </div>
+        </div >
 
     );
 };

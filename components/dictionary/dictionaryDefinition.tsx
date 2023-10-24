@@ -29,7 +29,7 @@ export default function DictionaryDefinition({ term, updateCurrentViewState, cur
 
     
     return (
-        <div className={`flex flex-col justify-center items-center space-y-8 xl:space-y-12 mx-8 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`flex flex-col justify-center items-center space-y-8 z-10 xl:space-y-12 mx-8 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             
             {/* Definition View */}
             <div className='flex flex-col justify-center items-center space-y-8 xl:space-y-12 mx-8'>

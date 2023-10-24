@@ -3,16 +3,20 @@ import SafetyPracticOne from "@/components/safety/practice/safety-practice-one";
 import SafetyPracticeTwo from "@/components/safety/practice/safety-practice-two";
 
 const SafetyPractice: React.FC = () => {
-  const componentsConfig = {
+  interface ComponentsConfig {
+    [key: number]: React.FC<any>;
+  }
+
+  const componentsConfig: ComponentsConfig = {
     1: SafetyPracticOne,
     2: SafetyPracticeTwo,
   };
 
   // Current scene loaded
-  const [currentIndex, setCurrentIndex] = useState("1");
+  const [currentIndex, setCurrentIndex] = useState<number>(1);
 
   // Function to update scene index
-  const updateCurrentIndex = (index: string) => {
+  const updateCurrentIndex = (index: number) => {
     setCurrentIndex(index);
   };
 

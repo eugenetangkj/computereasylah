@@ -111,7 +111,7 @@ const KeyCheckGame: React.FC = () => {
         <div id='typing-game-container' className='relative  w-screen h-screen'>
 
             <div className="flex flex-row justify-center items-center content-start absolute top-1">
-                <button onClick={() => window.history.back()} className={`bg-white bg-opacity-80 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-${fontSize}xl duration-300`}>
+                <button onClick={() => window.history.back()} className={`bg-slate-200 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-${fontSize}xl duration-300`}>
                     Back
                 </button>
 
@@ -130,7 +130,7 @@ const KeyCheckGame: React.FC = () => {
 
             </div>
 
-            <div className="absolute top-2 right-5 flex flex-col bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold duration-300">
+            <div className="absolute top-2 right-5 flex flex-col bg-slate-200 bg-opacity-80 p-2 rounded-lg font-nunito font-bold duration-300">
                 <span className={`text-${fontSize}xl ml-10 mr-10 mb-1`}>Font Size</span>
                 <input
                     type="range"

@@ -33,8 +33,14 @@ const TypingGame: React.FC<TypingGameProps> = ({
     const [numTypeCorrect, setNumTypeCorrect] = useState(0);
 
     const calcAccuracy = () => {
-        if (numTypeCorrect + numTypeWrong == 0) return 100;
-        return Math.round(10000 * numTypeCorrect / (numTypeCorrect + numTypeWrong)) / 100;
+        if (numTypeCorrect + numTypeWrong == 0) return "100%";
+        let amt: string = (Math.round(10000 * numTypeCorrect / (numTypeCorrect + numTypeWrong)) / 100).toString() + "%";
+
+        // while (amt.length < 6) {
+        //     amt += " ";
+        // }
+
+        return amt;
     }
 
     const getChar = (index: number) => {
@@ -193,23 +199,24 @@ const TypingGame: React.FC<TypingGameProps> = ({
                 </button> */}
 
                 <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl duration-300`}>
-                    <span>Accuracy</span>
+                    <span className="font-nunito">Accuracy</span>
                     <div>
                         <span className="text-green-600">{numTypeCorrect}</span>
                         <span className="text-black-500">/</span>
                         <span className="text-red-500">{numTypeWrong}</span>
-                        <span className="text-black-500"> - {calcAccuracy()}%</span>
+                        <span className="text-black-500"> - {calcAccuracy()}</span>
                     </div>
                 </div>
 
-                {/* <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl duration-300`}>
-                    <span>Sentence</span>
+                <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl duration-300`}>
+
                     <div>
+                        <span className="font-nunito">Progress: </span>
                         <span className="text-green-600">{currentQuestionIndex + 1}</span>
                         <span className="text-black-500">/</span>
                         <span className="text-black-500">{storyData.scenes.length}</span>
                     </div>
-                </div> */}
+                </div>
 
             </div>
 

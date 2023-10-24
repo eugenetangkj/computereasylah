@@ -1,12 +1,11 @@
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
-import { MdComputer } from "react-icons/md";
 import BackButton from "@/components/backButton";
 import Image from 'next/image';
 import { Topic } from "@/components/backButton";
 
-//Home page for email activities in the playground
-export default function Applications() {
+//Home page for common apps in Applications
+export default function CommonApps() {
   // Animation
   const [isActive, setIsActive] = useState(false);
 
@@ -101,8 +100,8 @@ export default function Applications() {
               
 
         {/* Background Images */}
-        <img src='/assets/applications/terminal-interface.png' alt='Video' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-5 right-0 translate-x-3/10' />
-        <img src='/assets/applications/video.png' alt='Terminal' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
+        <img src='/assets/applications/terminal-interface.png' alt='Terminal' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+        <img src='/assets/applications/video.png' alt='Video' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
         </div>
 
 

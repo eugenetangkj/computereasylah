@@ -139,7 +139,7 @@ export default function NotepadPractical({ updateCurrentElementIndex } : Notepad
             (shouldShowErrorPrompt)
             ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 rounded-xl p-16 flex flex-col justify-center items-center space-y-8 2xl:space-y-16 bg-gray-100' style={{ marginTop: 0 }}>
                 <h4 className='text-2xl xl:text-3xl 2xl:text-5xl font-nunito text-center'>Hmmm... something is not right</h4>
-                <h6 className='text-3xl xl:text-4xl 2xl:text-6xl font-nunito text-center font-bold leading-relaxed xl:leading-relaxed 2xl:leading-relaxed'>Make sure that you have uploaded a text file with the words 'I love Notepad!'.</h6>
+                <h6 className='text-3xl xl:text-4xl 2xl:text-6xl font-nunito text-center font-bold leading-relaxed xl:leading-relaxed 2xl:leading-relaxed'>Make sure that you have uploaded a text file with the words &apos;I love Notepad!&apos;.</h6>
                 {/* Try again button */}
                 <button className="w-48 text-4xl font-gaegu bg-creative-pink-900 font-bold px-4 py-4 rounded-2xl duration-300"
                     onClick={ () => setShowShouldErrorPrompt(false) }>

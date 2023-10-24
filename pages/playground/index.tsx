@@ -28,7 +28,7 @@ export default function Playground() {
         Computer, Easy Lah!
       </h1>
       {/* Options */}
-      <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-3 lg:gap-y-8 lg:gap-x-16 justify-center items-center mx-24 space-y-4 lg:space-y-0 py-4">
+      <div className="flex flex-col md:grid lg:grid-rows-2 md:grid-cols-2 lg:grid-cols-3 md:gap-x-16 lg:gap-x-24 md:gap-y-16 justify-center items-center mx-24 space-y-4 md:space-y-0 py-4">
         {/* Typing */}
         <NextLink
           href="/playground/typing"

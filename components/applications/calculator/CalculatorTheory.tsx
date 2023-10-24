@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import Iframe from 'react-iframe'
 
-//Snipping tool theory component
-type SnippingToolTheoryProps = {
+//Calculator theory component
+type CalculatorTheoryProps = {
     updateCurrentElementIndex: (newIndex: number) => void,
 };
 
 
 
 
-export default function SnippingToolTheory({ updateCurrentElementIndex } : SnippingToolTheoryProps ){
+export default function CalculatorTheory({ updateCurrentElementIndex } : CalculatorTheoryProps ){
   // Animation
   const [isActive, setIsActive] = useState(false);
 
@@ -22,7 +22,7 @@ export default function SnippingToolTheory({ updateCurrentElementIndex } : Snipp
     return () => clearTimeout(timer); // Clean up the timer on unmount
   }, []);
 
-
+  
   const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
 
 
@@ -32,12 +32,12 @@ export default function SnippingToolTheory({ updateCurrentElementIndex } : Snipp
     } duration-1000`}>
 
         {/* Title */}
-        <div className="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-x-16 lg:space-y-0 mt-16">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">Snipping Tool</h1>
-            <img src='/assets/applications/snipping-tool-logo.png' alt='Snipping Tool' className='' />
+        <div className="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-x-12 lg:space-y-0 mt-16">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">Calculator</h1>
+            <img src='/assets/applications/calculator-logo.png' alt='Calculator' className='' />
         </div>
 
-        <h3 className='text-2xl text-gray-500 font-nunito text-center'>Want to take a picture of your computer screen?</h3>
+        <h3 className='text-2xl text-gray-500 font-nunito text-center'>Need to calculate something? Use the calculator!</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }

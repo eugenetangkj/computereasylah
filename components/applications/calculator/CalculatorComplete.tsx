@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import NextLink from "next/link";
 
-//Snipping tool complete screen component
-type SnippingToolCompleteProps = {
+//Calculator complete screen component
+type CalculatorCompleteProps = {
     updateCurrentElementIndex: (newIndex: number) => void,
 };
 
 
 
 
-export default function SnippingToolComplete({ updateCurrentElementIndex } : SnippingToolCompleteProps ){
+export default function CalculatorComplete({ updateCurrentElementIndex } : CalculatorCompleteProps ){
   // Animation
   const [isActive, setIsActive] = useState(false);
 
@@ -24,7 +24,7 @@ export default function SnippingToolComplete({ updateCurrentElementIndex } : Sni
 
 
 
-  return ( <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-12 lg:space-y-8 mt-10 md:mt-20 lg:mt-16 2xl:mt-0 opacity-0 transition-opacity ${
+  return ( <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-12 lg:space-y-16 mt-10 md:mt-20 lg:mt-8 2xl:mt-0 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
     } duration-1000`}>
 

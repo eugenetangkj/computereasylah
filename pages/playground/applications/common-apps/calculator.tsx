@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import BackButton from "@/components/backButton";
 import Image from 'next/image';
 import { Topic } from "@/components/backButton";
-import SnippingToolTheory from "@/components/applications/snipping-tool/SnippingToolTheory";
-import SnippingToolPractical from "@/components/applications/snipping-tool/SnippingToolPractical";
-import SnippingToolComplete from "@/components/applications/snipping-tool/SnippingToolComplete";
+import CalculatorTheory from "@/components/applications/calculator/CalculatorTheory";
+import CalculatorPractical from "@/components/applications/calculator/CalculatorPractical";
+import CalculatorComplete from "@/components/applications/calculator/CalculatorComplete";
 
-//Snipping tool page
+//Calculator page
 export default function Calculator() {
     // Animation
     const [isActive, setIsActive] = useState(false);
@@ -63,10 +63,10 @@ export default function Calculator() {
         <BackButton pathToReturnTo='/playground/applications/common-apps' displayText='Quit' category={Topic.Applications} />
         {
             (currentElementIndex == 0)
-            ? <SnippingToolTheory updateCurrentElementIndex={ updateCurrentElementIndex } />
+            ? <CalculatorTheory updateCurrentElementIndex={ updateCurrentElementIndex } />
             : (currentElementIndex == 1)
-            ? <SnippingToolPractical updateCurrentElementIndex={ updateCurrentElementIndex } />
-            : <SnippingToolComplete updateCurrentElementIndex={ updateCurrentElementIndex } />
+            ? <CalculatorPractical updateCurrentElementIndex={ updateCurrentElementIndex } />
+            : <CalculatorComplete updateCurrentElementIndex={ updateCurrentElementIndex } />
         }
      
 

@@ -82,7 +82,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
         {/* Question  */}
         { (randomInteger != -1)
             ? <h2 className="text-4xl md:text-5xl lg:text-6xl lg:leading-relaxed 2xl:text-8xl 2xl:leading-relaxed font-bold font-gaegu text-center w-3/4">{ browserQuestions[randomInteger] }</h2>
-            : ''
+            : <h2 className="text-4xl md:text-5xl lg:text-6xl lg:leading-relaxed 2xl:text-8xl 2xl:leading-relaxed font-bold font-gaegu text-center w-3/4">{ browserQuestions[Math.floor(Math.random() * numberOfQuestions) + 1] }</h2>
         }
 
 

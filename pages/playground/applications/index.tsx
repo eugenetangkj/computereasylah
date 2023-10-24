@@ -47,9 +47,9 @@ export default function Applications() {
           </div>
         </NextLink>
 
-        {/* Email Safety */}
+        {/* Common apps */}
         <NextLink
-          href="/playground/email/email-safety"
+          href="/playground/applications/common-apps"
           className="flex flex-col justify-center items-center"
         >
           <div className="bg-white hover:bg-creative-pink-900 border-solid border-8 border-creative-pink-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">

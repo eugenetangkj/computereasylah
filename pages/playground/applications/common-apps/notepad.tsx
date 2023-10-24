@@ -6,6 +6,7 @@ import { Topic } from "@/components/backButton";
 import NotepadTheory from "@/components/applications/notepad/NotepadTheory";
 import NotepadPractical from "@/components/applications/notepad/NotepadPractical";
 import NotepadComplete from "@/components/applications/notepad/NotepadComplete";
+import Head from "next/head";
 
 //Notepad page
 export default function Notepad() {
@@ -58,21 +59,26 @@ export default function Notepad() {
 
 
   return (
-    <div className={`opacity-0 transition-opacity ${ isActive ? "opacity-100" : "" } duration-1000`}>
-        {/* Back button */}
-        <BackButton pathToReturnTo='/playground/applications/common-apps' displayText='Quit' category={Topic.Applications} />
-        {
-            (currentElementIndex == 0)
-            ? <NotepadTheory updateCurrentElementIndex={ updateCurrentElementIndex } />
-            : (currentElementIndex == 1)
-            ? <NotepadPractical updateCurrentElementIndex={ updateCurrentElementIndex } />
-            : <NotepadComplete updateCurrentElementIndex={ updateCurrentElementIndex } />
-        }
-     
+    <div>
+        <Head>
+        <title>Playground - Notepad Application</title>
+        </Head>
+        <div className={`opacity-0 transition-opacity ${ isActive ? "opacity-100" : "" } duration-1000`}>
+            {/* Back button */}
+            <BackButton pathToReturnTo='/playground/applications/common-apps' displayText='Quit' category={Topic.Applications} />
+            {
+                (currentElementIndex == 0)
+                ? <NotepadTheory updateCurrentElementIndex={ updateCurrentElementIndex } />
+                : (currentElementIndex == 1)
+                ? <NotepadPractical updateCurrentElementIndex={ updateCurrentElementIndex } />
+                : <NotepadComplete updateCurrentElementIndex={ updateCurrentElementIndex } />
+            }
+        
 
-        {/* Background Images */}
-        <img src='/assets/applications/terminal-interface.png' alt='Terminal' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
-        <img src='/assets/applications/video.png' alt='Video' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
+            {/* Background Images */}
+            <img src='/assets/applications/terminal-interface.png' alt='Terminal' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+            <img src='/assets/applications/video.png' alt='Video' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
+        </div>
     </div>
 
     )

@@ -6,7 +6,7 @@ import { Topic } from "@/components/backButton";
 import Head from "next/head";
 
 //Backup Iphone page
-export default function BackupAndroid() {
+export default function EmailRecap() {
   // Animation
   const [isActive, setIsActive] = useState(false);
 
@@ -22,7 +22,7 @@ export default function BackupAndroid() {
   return (
     <div>
         <Head>
-        <title>Playground - Backup Android</title>
+        <title>Playground - Email Recap</title>
         </Head>
         <div
         className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-16 mt-10 md:mt-20 lg:mt-0 2xl:mt-8 opacity-0 transition-opacity ${
@@ -31,10 +31,10 @@ export default function BackupAndroid() {
         >
         
         {/* Back button */}
-        <BackButton pathToReturnTo='/playground/applications/backup-phone' displayText='Back' category={Topic.Applications} />
+        <BackButton pathToReturnTo='/playground/email' displayText='Back' category={Topic.Email} />
         
         {/* Title */}
-        <h1 className="text-4xl w-4/5 md:text-5xl lg:text-6xl 2xl:text-7xl font-bold font-gaegu text-center mt-16 z-10">Back Up My Android to the Computer</h1>
+        <h1 className="text-4xl w-4/5 md:text-5xl lg:text-6xl 2xl:text-7xl font-bold font-gaegu text-center mt-16 z-10">Recap on Email</h1>
         <h3 className='text-3xl md:text-4xl text-gray-500 font-nunito text-center'>Coming soon...</h3>
 
 

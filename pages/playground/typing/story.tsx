@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import TypingMainUI from '@/components/typing/typing-main-ui';
 import React from 'react';
+import Head from 'next/head';
 
 
 const storyLevelOptions: LevelOption[] = [{
@@ -37,19 +38,24 @@ const StoryPage = () => {
     }
 
     return (
-        <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
+        <div>
+            <Head>
+            <title>Playground - Typing Story </title>
+            </Head>
+            <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
 
-            {chosenStory ?
-                <div>
-                    <TypingMainUI chosenStory={chosenStory as string} />
-                </div>
-                :
-                <div>
-                    <LevelSelection options={storyLevelOptions} onOptionSelect={(index) => { selectOption(index) }} onBackClick={() => { router.back() }} />
+                {chosenStory ?
+                    <div>
+                        <TypingMainUI chosenStory={chosenStory as string} />
+                    </div>
+                    :
+                    <div>
+                        <LevelSelection options={storyLevelOptions} onOptionSelect={(index) => { selectOption(index) }} onBackClick={() => { router.back() }} />
 
-                </div>
-            }
+                    </div>
+                }
 
+            </div>
         </div>
 
     );

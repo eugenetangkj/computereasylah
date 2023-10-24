@@ -5,6 +5,7 @@ import DictionaryDefinition from '@/components/dictionary/dictionaryDefinition';
 import DictionaryView from '@/components/dictionary/dictionaryView';
 import { Term, EmptyTerm } from '@/components/dictionary/dictionaryData';
 import Image from 'next/image';
+import Head from 'next/head';
 
 //Dictionary home page
 export default function Dictionary() {
@@ -44,23 +45,25 @@ export default function Dictionary() {
 
 
     return (
-        <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-8 pt-12 md:pt-8 md:mt-20 lg:mt-4 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            
-        
-            {/* Either dictionary or definition view */}
-            {
-                (isDictionaryViewOpen)
-                ? <DictionaryView updateCurrentTerm={ updateCurrentTerm } updateCurrentViewState= {updateCurrentViewState} updateCurrentSearchTerm={ updateCurrentSearchTerm } getCurrentSearchTerm={ getCurrentSearchTerm } />
-                : <DictionaryDefinition term={ currentTerm } updateCurrentViewState={ updateCurrentViewState } currentSearchTerm={ currentSearchTerm } />
-            }
-
+        <div>
+            <Head>
+            <title>Playground - Dictionary</title>
+            </Head>
+            <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-8 pt-12 md:pt-8 md:mt-20 lg:mt-4 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
                 
-            {/* Background Images */}
-            <img src='/assets/dictionary/book.png' alt='Book' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-20 left-0 -translate-x-1/4' />
-            <img src='/assets/dictionary/computer.png' alt='Computer' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10' />
+            
+                {/* Either dictionary or definition view */}
+                {
+                    (isDictionaryViewOpen)
+                    ? <DictionaryView updateCurrentTerm={ updateCurrentTerm } updateCurrentViewState= {updateCurrentViewState} updateCurrentSearchTerm={ updateCurrentSearchTerm } getCurrentSearchTerm={ getCurrentSearchTerm } />
+                    : <DictionaryDefinition term={ currentTerm } updateCurrentViewState={ updateCurrentViewState } currentSearchTerm={ currentSearchTerm } />
+                }
+
+                    
+                {/* Background Images */}
+                <img src='/assets/dictionary/book.png' alt='Book' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-20 left-0 -translate-x-1/4' />
+                <img src='/assets/dictionary/computer.png' alt='Computer' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10' />
+            </div>
         </div>
-
-
-
     )
 }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import SafetyPracticOne from "@/components/safety/practice/safety-practice-one";
 import SafetyPracticeTwo from "@/components/safety/practice/safety-practice-two";
-
+import Head
+ from "next/head";
 const SafetyPractice: React.FC = () => {
   interface ComponentsConfig {
     [key: number]: React.FC<any>;
@@ -24,9 +25,14 @@ const SafetyPractice: React.FC = () => {
 
   return (
     <div>
-      {DynamicComponent && (
-        <DynamicComponent updateCurrentIndex={updateCurrentIndex} />
-      )}
+      <Head>
+        <title>Playground - Safety Practice</title>
+      </Head>
+      <div>
+        {DynamicComponent && (
+          <DynamicComponent updateCurrentIndex={updateCurrentIndex} />
+        )}
+      </div>
     </div>
   );
 };

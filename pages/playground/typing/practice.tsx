@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import TypingRandomiseUI from '@/components/typing/typing-randomise-ui';
 import React from 'react';
+import Head from 'next/head';
 
 const PracticePage = () => {
     const router = useRouter();
@@ -11,12 +12,17 @@ const PracticePage = () => {
     const chosenStory = "all-random"
 
     return (
-        <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
+        <div>
+            <Head>
+            <title>Playground - Typing Practice</title>
+            </Head>
+            <div className='flex flex-col justify-center items-center bg-slate-100 max-h-full max-w-full'>
 
-            <div>
-                <TypingRandomiseUI chosenStory={chosenStory as string} />
+                <div>
+                    <TypingRandomiseUI chosenStory={chosenStory as string} />
+                </div>
+
             </div>
-
         </div>
 
     );

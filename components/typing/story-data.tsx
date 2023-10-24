@@ -110,6 +110,91 @@ export const supermarketStory: StoryScenes = {
     ]
 };
 
+export const words: StoryScenes = {
+    scenes: [
+        {
+            typingSentence: "Laptop",
+            bkgImg: "/assets/typing/computerparts/laptop.png"
+        },
+        {
+            typingSentence: "Desktop",
+            bkgImg: "/assets/typing/computerparts/desktop.png"
+        },
+        {
+            typingSentence: "Browser",
+            bkgImg: "/assets/typing/computerparts/browser.png"
+        },
+        {
+            typingSentence: "Keyboard",
+            bkgImg: "/assets/typing/computerparts/keyboard.png"
+        },
+        {
+            typingSentence: "Mouse",
+            bkgImg: "/assets/typing/computerparts/mouse.png"
+        },
+        {
+            typingSentence: "Printer",
+            bkgImg: "/assets/typing/computerparts/printer.png"
+        },
+        {
+            typingSentence: "Speaker",
+            bkgImg: "/assets/typing/computerparts/speaker.png"
+        },
+        {
+            typingSentence: "Headphone",
+            bkgImg: "/assets/typing/computerparts/headphone.png"
+        },
+        {
+            typingSentence: "Microphone",
+            bkgImg: "/assets/typing/computerparts/microphone.png"
+        },
+        {
+            typingSentence: "Smart Phone",
+            bkgImg: "/assets/typing/computerparts/smartphone.png"
+        },
+        {
+            typingSentence: "Game Controller",
+            bkgImg: "/assets/typing/computerparts/gamecontroller.png"
+        },
+        {
+            typingSentence: "Operating System",
+            bkgImg: "/assets/typing/computerparts/operatingsystem.png"
+        },
+        {
+            typingSentence: "Task Bar",
+            bkgImg: "/assets/typing/computerparts/taskbar.png"
+        },
+        {
+            typingSentence: "Start Menu",
+            bkgImg: "/assets/typing/computerparts/startmenu.png"
+        },
+        {
+            typingSentence: "Snipping Tool",
+            bkgImg: "/assets/typing/computerparts/snippingtool.png"
+        },
+        {
+            typingSentence: "Calculator",
+            bkgImg: "/assets/typing/computerparts/calculator.png"
+        },
+        {
+            typingSentence: "Notes",
+            bkgImg: "/assets/typing/computerparts/notes.png"
+        },
+        {
+            typingSentence: "Paint",
+            bkgImg: "/assets/typing/computerparts/paint.png"
+        },
+        {
+            typingSentence: "WiFi Router",
+            bkgImg: "/assets/typing/computerparts/router.png"
+        },
+        {
+            typingSentence: "Monitor",
+            bkgImg: "/assets/typing/computerparts/monitor.png"
+        },
+    ]
+};
+
 export const computerParts: StoryScenes = {
     scenes: [
         {
@@ -149,18 +234,27 @@ export const computerParts: StoryScenes = {
 
 // Update dictionary new stories
 const storyMapping: { [key: string]: StoryScenes } = {
+    // Basic (Unused in this dictionary because the order of the contents have to be randomised, but added for completeness)
+    "words": words,
+
     // Stories
     "chickenrice": chickenRiceStory,
     "mrt": mrtStory,
     "supermarket": supermarketStory,
 
-    // Learn
+    // Not in use
     "computerparts": computerParts,
 };
 
 export const getStoryScenesFromString = (storyName: string): StoryScenes => {
     if (storyName == "all-random") {
         return getStorySceneWithAllScenes();
+    } else if (storyName == "words") {
+        return {
+            scenes: words.scenes.map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value)
+        }
     }
 
     console.log("Getting story scenes for " + storyName);

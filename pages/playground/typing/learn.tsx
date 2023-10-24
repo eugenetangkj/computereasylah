@@ -11,8 +11,8 @@ const learnLevelOptions: LevelOption[] = [{
     imageSrc: '/assets/typing/chickenrice/chickenrice_stall.png'
 },
 {
-    label: 'Software Terms',
-    id: 'softwareterms',
+    label: 'All Random',
+    id: 'all-random',
     imageSrc: '/assets/typing/chickenrice/bored.png'
 }
 ]

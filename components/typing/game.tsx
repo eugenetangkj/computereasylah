@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
 // import Image from 'next/image';
 import { StoryScenes } from "./story-data";
+import BackButton from "../backButton";
+import { Topic } from "../backButton";
+
+// import { turnOnFullScreen } from "./util";
 
 interface TypingGameProps {
     storyData: StoryScenes;
@@ -12,6 +16,17 @@ const TypingGame: React.FC<TypingGameProps> = ({
     storyData,
 }) => {
 
+    // turnOnFullScreen();
+
+    if (storyData == null || storyData == undefined) {
+        storyData = {
+            scenes: [{
+                typingSentence: "Error! The selected story was not found.",
+                bkgImg: "/assets/typing/chickenrice/chickenrice_stall.png",
+            }]
+        }
+    }
+
     const [currentSentence, setCurrentSentence] = useState(storyData.scenes[0].typingSentence);
     const [currentBackgroundImage, setCurrentBackgroundImage] = useState(storyData.scenes[0].bkgImg);
     const [typedSentence, setTypedSentence] = useState("");
@@ -20,11 +35,24 @@ const TypingGame: React.FC<TypingGameProps> = ({
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const [showHint, setShowHint] = useState(false);
-
+    const [showInstructions, setShowInstructions] = useState(true);
     const [gameEnded, setGameEnded] = useState(false);
 
-    const [fontSize, setFontSize] = useState(2);
+    const [fontSize, setFontSize] = useState(4);
 
+    const [numTypeWrong, setNumTypeWrong] = useState(0);
+    const [numTypeCorrect, setNumTypeCorrect] = useState(0);
+
+    const calcAccuracy = () => {
+        if (numTypeCorrect + numTypeWrong == 0) return "100%";
+        let amt: string = (Math.round(10000 * numTypeCorrect / (numTypeCorrect + numTypeWrong)) / 100).toString() + "%";
+
+        // while (amt.length < 6) {
+        //     amt += " ";
+        // }
+
+        return amt;
+    }
 
     const getChar = (index: number) => {
         const chars = currentSentence.split("");
@@ -61,6 +89,11 @@ const TypingGame: React.FC<TypingGameProps> = ({
         setCurrentBackgroundImage(storyData.scenes[currentQuestionIndex].bkgImg);
         setTypedSentence("");
         setCurrentCharIndex(0);
+        setCurrentQuestionIndex(0);
+        setShowHint(false);
+        setGameEnded(false);
+        setNumTypeWrong(0);
+        setNumTypeCorrect(0);
     };
 
     const handleQuestionEnded = () => {
@@ -69,6 +102,7 @@ const TypingGame: React.FC<TypingGameProps> = ({
         console.log("Upc: " + storyData);
 
         setShowHint(false);
+        setShowInstructions(false);
 
         // Use the next element in upcomingSentencesAndBackgroundImages in another instance of TypingGame
         if (currentQuestionIndex < storyData.scenes.length - 1) {
@@ -116,15 +150,30 @@ const TypingGame: React.FC<TypingGameProps> = ({
             if (key === "Backspace") {
                 if (currentCharIndex == 0) return;
 
+                // If char being backspaced is correct then decrement numTypeCorrect by 1
+                // Meanwhile if char is wrong the number of errors does not decrease
+                if (isCharTypedCorrectly(currentCharIndex - 1)) {
+                    setNumTypeCorrect(prevNum => prevNum - 1);
+                }
+
                 setTypedSentence(prevTypedSentence => prevTypedSentence.slice(0, -1));
                 setCurrentCharIndex(prevIndex => prevIndex - 1);
             } else if (typedSentence.length >= currentSentence.length) {
                 if (typedSentence == currentSentence) {
                     handleQuestionEnded();
                 } else {
-                    setShowHint(true);
+                    handleQuestionEnded();
+                    // setShowHint(true);
                 }
             } else if (key.length === 1) {
+
+                let correctChar = getChar(currentCharIndex);
+                if (key !== correctChar) {
+                    setNumTypeWrong(prevNum => prevNum + 1);
+                } else {
+                    setNumTypeCorrect(prevNum => prevNum + 1);
+                }
+
                 setTypedSentence(prevTypedSentence => prevTypedSentence + key);
                 setCurrentCharIndex(prevIndex => prevIndex + 1);
             }
@@ -145,22 +194,74 @@ const TypingGame: React.FC<TypingGameProps> = ({
         setFontSize(parseInt(event.target.value));
     };
 
-    const hintClassName = "text-pink-500 bg-yellow-200 font-bold text-center mt-5 mb-4"
+    const hintClassName = "text-red-500 bg-white-200 font-nunito font-bold text-center mb-10"
+
+
+    // Workaround for when the storydata is not found because react hooks cannot be called conditionally
+    // (Original plan is to return this when storyData is null or undefined at the beginning of this entire function)
+    if (storyData.scenes[0].typingSentence == "Error! The selected story was not found.") {
+        return (
+            <div>
+                <div className="flex flex-col justify-center items-center w-screen h-screen">
+
+                    <div className='flex flex-col justify-center items-center space-y-16'>
+                        <BackButton pathToReturnTo='/playground/typing' displayText='Back' category={Topic.Typing} />
+                        <h1 className="font-bold font-nunito text-3xl md:text-4xl xl:text-5xl text-center  mx-8 py-10">Error! The selected story was not found.</h1>
+                        {/* <img src='/assets/email/computer.png' alt='Computer' className='w-2/5 md:w-1/4' /> */}
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
-        <div id='typing-game-container' className='grow relative h-full w-full'>
-            <img src={currentBackgroundImage} alt='Current Typing Background Image' className='object-cover h-full w-full' />
-            <div className="absolute top-1 right-5 bg-white bg-opacity-80 p-1 rounded-lg font-gaegu font-bold ">
-                <span>Font Size</span>
+        <div id='typing-game-container' className='relative'>
+            <img src={currentBackgroundImage} className="object-cover w-screen h-screen" alt='Current Typing Background Image' />
+
+            <div className="flex flex-row justify-center items-center content-start absolute top-1">
+                <button onClick={() => window.history.back()} className={`bg-white bg-opacity-80 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-${fontSize}xl duration-300`}>
+                    Back
+                </button>
+
+                {/* <button onClick={resetGame} className="bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-2xl">
+                    Reset
+                </button> */}
+
+                <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl duration-300`}>
+                    <span className="font-nunito">Accuracy</span>
+                    <div>
+                        <span className="text-green-600">{numTypeCorrect}</span>
+                        <span className="text-black-500">/</span>
+                        <span className="text-red-500">{numTypeWrong}</span>
+                        <span className="text-black-500"> - {calcAccuracy()}</span>
+                    </div>
+                </div>
+
+                <div className={`bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-${fontSize}xl duration-300`}>
+
+                    <div>
+                        <span className="font-nunito">Progress: </span>
+                        <span className="text-green-600">{currentQuestionIndex + 1}</span>
+                        <span className="text-black-500">/</span>
+                        <span className="text-black-500">{storyData.scenes.length}</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="absolute top-2 right-5 flex flex-col bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold duration-300">
+                <span className={`text-${fontSize}xl ml-10 mr-10 mb-1`}>Font Size</span>
                 <input
                     type="range"
                     min="2"
                     max="6"
                     value={fontSize}
                     onChange={handleFontSizeChange}
-                    className="absolute top-10 right-0 w-full"
+                    className="w-full"
                 />
             </div>
+
+
 
 
             <div className="flex flex-col justify-center items-center">
@@ -168,9 +269,10 @@ const TypingGame: React.FC<TypingGameProps> = ({
                 {/* Font for sentence to type should use Roboto? or Consolas? I use consolas now because it is monospaced */}
                 {/* Dynamic font size in className did not work: text-[${fontSize}px] */}
                 {/* Use inline-block to fix flex box ignoring margin and padding */}
-                <div className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8`} hidden={gameEnded}>
+                <div className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`} hidden={gameEnded}>
 
                     {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}
+                    {showInstructions ? <div className={hintClassName}>Type the text below using your keyboard!</div> : null}
                     {showHint ? <div className={hintClassName}>Type the entire sentence correctly to proceed!</div> : null}
                     {currentSentence.split("").map((char, index) => {
                         if (index === currentCharIndex) {

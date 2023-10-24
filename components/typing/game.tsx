@@ -197,6 +197,8 @@ const TypingGame: React.FC<TypingGameProps> = ({
     const hintClassName = "text-red-500 bg-white-200 font-nunito font-bold text-center mb-10"
 
 
+    // Workaround for when the storydata is not found because react hooks cannot be called conditionally
+    // (Original plan is to return this when storyData is null or undefined at the beginning of this entire function)
     if (storyData.scenes[0].typingSentence == "Error! The selected story was not found.") {
         return (
             <div>

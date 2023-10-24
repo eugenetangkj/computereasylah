@@ -20,7 +20,7 @@ export default function CommonApps() {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-16 2xl:mt-0 opacity-0 transition-opacity ${
+      className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-16 2xl:mt-16 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
@@ -76,6 +76,21 @@ export default function CommonApps() {
             </div>
         </NextLink>
 
+        {/* Notepad */}
+        <NextLink href='/playground/applications/common-apps/notepad' className='w-full h-full'>
+            <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start self-center space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
+            style={{ 'height': '225px' }}
+            >
+                <div className='flex justify-between w-full'>
+                    <h2 className='font-gaegu font-bold text-3xl self-center xl:text-4xl'>Notes</h2>
+                    <img src='/assets/applications/notepad-logo.png' alt='Notepad' className='' />
+                </div>
+                
+                <h4 className='font-nunito text-xl xl:text-2xl'>Write and save notes!</h4>
+            </div>
+        </NextLink>
+
+
         {/* Paint */}
         <NextLink href='/playground/applications/common-apps/paint' className='w-full h-full'>
             <div className='border-4 border-creative-pink-500 bg-white rounded-xl p-8 flex flex-col justify-start items-start self-center space-y-4 mx-4 hover:bg-creative-pink-hover hover:text-white duration-300 hover:border-creative-pink-hover cursor-pointer'
@@ -83,7 +98,7 @@ export default function CommonApps() {
             >
                 <div className='flex justify-between w-full'>
                     <h2 className='font-gaegu font-bold text-3xl self-center xl:text-4xl'>Paint</h2>
-                    <img src='/assets/applications/paint-logo.png' alt='Snipping Tool' className='' />
+                    <img src='/assets/applications/paint-logo.png' alt='Paint' className='' />
                 </div>
                 
                 <h4 className='font-nunito text-xl xl:text-2xl'>Draw shapes and text on your computer!</h4>

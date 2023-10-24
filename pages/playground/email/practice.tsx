@@ -15,6 +15,7 @@ import EmailSceneTwelve from "@/components/email/practice/email-scene-twelve";
 import EmailSceneThirteen from "@/components/email/practice/email-scene-thirteen";
 import BackButton from "@/components/backButton";
 import Image from "next/image";
+import { Topic } from "@/components/backButton";
 
 //Practice component for email activities
 export default function EmailPractice() {
@@ -79,7 +80,7 @@ export default function EmailPractice() {
       <div className="lg:hidden">
         {/* Only available on desktop message, only shown on mobile */}
         <div className="flex lg:hidden flex-col justify-center items-center space-y-16">
-          <BackButton pathToReturnTo="/playground/email" displayText="Back" />
+          <BackButton pathToReturnTo="/playground/email" displayText="Back" category= { Topic.Email } />
           <h1 className="text-3xl md:text-4xl font-bold font-gaegu text-center mx-8">
             Sorry, this activity is only available on a computer.
           </h1>

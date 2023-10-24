@@ -1,12 +1,12 @@
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
-import { EmailQuizData } from "@/constants/quizData";
+import { ApplicationsQuizData } from "@/constants/quizData";
 import { QuizBody } from "@/components/QuizBody";
-import { Topic } from "@/components/backButton";
 import BackButton from "@/components/backButton";
+import { Topic } from "@/components/backButton";
 
 //Practice component for email activities
-export default function EmailQuiz() {
+export default function ApplicationQuiz() {
   // Animation
   const [isActive, setIsActive] = useState(false);
 
@@ -32,41 +32,37 @@ export default function EmailQuiz() {
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
-      <BackButton pathToReturnTo='/playground/email' displayText='Back' category={ Topic.Email } />
-      
+      <div
+        className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
+      >
+        {/* Back button */}
+        <BackButton pathToReturnTo='/playground/applications' displayText='Back' category={Topic.Applications} />
+      </div>
 
       {!hasStartedQuiz ? (
         <div className="flex flex-col justify-center items-center space-y-24 2xl:space-y-36">
           <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">
-            Email Quiz
+            Applications Quiz
           </h1>
 
           <h3 className="text-xl lg:text-3xl font-nunito text-center mx-8">
-            Want to test your knowledge about emails? Take the Email Quiz now!
+            Want to test your knowledge about applications? Take the Applications Quiz now!
           </h3>
 
           <button
-            className="text-3xl md:text-4xl lg:text-5xl font-gaegu bg-trust-blue-500 hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300"
+            className="text-3xl md:text-4xl lg:text-5xl font-gaegu bg-creative-pink-500 hover:bg-creative-pink-hover font-bold px-8 py-4 rounded-2xl duration-300"
             onClick={handleStartQuiz}
           >
             Start Quiz
           </button>
         </div>
       ) : (
-        <QuizBody quizData={EmailQuizData} themeColor="trust-blue" topic={ Topic.Email } />
+        <QuizBody quizData={ ApplicationsQuizData } themeColor="creative-pink" topic={ Topic.Applications } />
       )}
 
       {/* Background Images */}
-      <img
-        src="/assets/email/tilted-mail.png"
-        alt="Mail"
-        className="w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20"
-      />
-      <img
-        src="/assets/email/tilted-email-symbol.png"
-        alt="Address Sign"
-        className="w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5"
-      />
+      <img src='/assets/applications/terminal-interface.png' alt='Terminal' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20' />
+    <img src='/assets/applications/video.png' alt='Video' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5' />
     </div>
   );
 }

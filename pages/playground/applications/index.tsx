@@ -35,9 +35,9 @@ export default function Applications() {
       </h1>
       {/* Options */}
       <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-y-8 lg:gap-x-32 2xl:gap-y-16 py-4">
-        {/* Reasons to learn email */}
+        {/* Recap */}
         <NextLink
-          href="/playground/email/why-learn-email"
+          href="/playground/applications/recap"
           className="flex flex-col justify-center items-center space-y-4"
         >
           <div className="bg-white hover:bg-creative-pink-900 border-solid border-8 border-creative-pink-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">
@@ -53,15 +53,13 @@ export default function Applications() {
           className="flex flex-col justify-center items-center"
         >
           <div className="bg-white hover:bg-creative-pink-900 border-solid border-8 border-creative-pink-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">
-            <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
-              Common Apps
-            </h3>
+            <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">Common Apps</h3>
           </div>
         </NextLink>
 
-        {/* Practice */}
+        {/* Back up phone*/}
         <NextLink
-          href="/playground/email/practice"
+          href="/playground/applications/backup-phone"
           className="flex flex-col justify-center items-center space-y-4"
         >
           <div
@@ -80,7 +78,7 @@ export default function Applications() {
 
         {/* Quiz */}
         <NextLink
-          href="/playground/email/quiz"
+          href="/playground/applications/quiz"
           className="flex flex-col justify-center items-center space-y-4"
         >
           <div className="bg-white hover:bg-creative-pink-900 border-solid border-8 border-creative-pink-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">

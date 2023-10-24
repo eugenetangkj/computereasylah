@@ -2,6 +2,8 @@ import { SafetyTipsData, Tips } from "@/constants/tipsData";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { Topic } from "@/components/backButton";
+import BackButton from "@/components/backButton";
 
 //Home page for email activities in the playground
 export default function SafetyTips() {
@@ -43,16 +45,7 @@ export default function SafetyTips() {
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
-      <div
-        className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
-      >
-        {/* Back button */}
-        <NextLink href="/playground/safety" className="w-1/4">
-          <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-passion-red-hover duration-300">
-            Back
-          </h5>
-        </NextLink>
-      </div>
+      <BackButton pathToReturnTo='/playground/safety' displayText='Back' category={ Topic.Safety } />
       {/* Title */}
       <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">
         Safety Tips

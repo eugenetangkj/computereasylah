@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { QuizBody } from "@/components/QuizBody";
 import { SafetyQuizData } from "@/constants/quizData";
+import { Topic } from "@/components/backButton";
+import BackButton from "@/components/backButton";
 
 //Practice component for email activities
 export default function SafetyQuiz() {
@@ -31,16 +33,7 @@ export default function SafetyQuiz() {
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
-      <div
-        className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
-      >
-        {/* Back button */}
-        <NextLink href="/playground/safety" className="">
-          <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-passion-red-hover duration-300">
-            Back
-          </h5>
-        </NextLink>
-      </div>
+      <BackButton pathToReturnTo='/playground/safety' displayText='Back' category={ Topic.Safety } />
 
       {!hasStartedQuiz ? (
         <div className="flex flex-col justify-center items-center space-y-24 2xl:space-y-36">
@@ -60,7 +53,7 @@ export default function SafetyQuiz() {
           </button>
         </div>
       ) : (
-        <QuizBody quizData={SafetyQuizData} themeColor="passion-red" />
+        <QuizBody quizData={SafetyQuizData} themeColor="passion-red" topic={ Topic.Safety } />
       )}
 
       {/* Background Images */}

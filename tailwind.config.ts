@@ -46,6 +46,11 @@ const config: Config = {
           900: "#8378FF",
           hover: "#6A5DF6",
         },
+        "creative-pink": {
+          500: "#FFD7EA",
+          900: "#EB70BA",
+          hover: "#D84FA1",
+        },
 
         "pale-gray": {
           100: "#D4D4D4",

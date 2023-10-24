@@ -22,7 +22,7 @@ export default function Playground() {
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
-      <BackButton pathToReturnTo="/" displayText="Back" />
+
       {/* Title */}
       <h1 className="text-5xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu w-2/3 text-center mt-8">
         Computer, Easy Lah!
@@ -44,6 +44,23 @@ export default function Playground() {
           <h3 className="font-bold font-nunito text-2xl">Typing</h3>
         </NextLink>
 
+        {/* Applications */}
+        <NextLink
+          href="/playground/applications"
+          className="flex flex-col justify-center items-center space-y-4"
+        >
+          <div className="bg-creative-pink-900 hover:bg-creative-pink-hover py-6 2xl:py-8 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300">
+            <img
+              src="/assets/playground/application.png"
+              alt="Applications"
+              className="h-full"
+            />
+          </div>
+          <h3 className="font-bold font-nunito text-2xl">Applications</h3>
+        </NextLink>
+
+
+
         {/* Email */}
         <NextLink
           href="/playground/email"
@@ -52,7 +69,7 @@ export default function Playground() {
           <div className="bg-trust-blue-900 hover:bg-trust-blue-hover py-6 2xl:py-8 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300">
             <img
               src="/assets/playground/email.png"
-              alt="Text Chat"
+              alt="Email"
               className="h-full"
             />
           </div>

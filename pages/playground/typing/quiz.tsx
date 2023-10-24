@@ -2,6 +2,7 @@ import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { TypingQuizData } from "@/constants/quizData";
 import { QuizBody } from "@/components/QuizBody";
+import { Topic } from "@/components/backButton";
 
 // Practice component for typing  activities
 export default function TypingQuiz() {
@@ -58,7 +59,7 @@ export default function TypingQuiz() {
                     </button>
                 </div>
             ) : (
-                <QuizBody quizData={TypingQuizData} themeColor="energy-orange" />
+                <QuizBody quizData={TypingQuizData} themeColor="energy-orange" topic={Topic.Typing} />
             )}
 
             {/* Background Images */}

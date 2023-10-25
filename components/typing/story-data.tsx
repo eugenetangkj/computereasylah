@@ -107,7 +107,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/macphersonmap.png"
         },
         {
-            typingSentence: "Yay! I reached Tampanies MRT station, time to go inside.",
+            typingSentence: "Yay! I reached Tampines MRT station, time to go inside.",
             bkgImg: "/assets/typing/mrt/tampinesoutside.png"
         },
         {
@@ -163,7 +163,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/serangoonplatform.png"
         },
         {
-            typingSentence: "Wah the shopping center is huge!! Where is the ang ku kueh store ah?",
+            typingSentence: "Wah the NEX shopping center is huge!! Where is the ang ku kueh store ah?",
             bkgImg: "/assets/typing/mrt/nex.png"
         },
         {
@@ -171,7 +171,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/angkukuehflavours.png"
         },
         {
-            typingSentence: "Ahhhh, I finally bought my ang ku kueh! Time to go enjoy it!",
+            typingSentence: "Ahhhh, I finally bought my ang ku kueh! Time to eat!",
             bkgImg: "/assets/typing/mrt/angkukueh.png"
         },
         {

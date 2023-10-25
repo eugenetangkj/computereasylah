@@ -36,7 +36,7 @@ export default function Playground() {
             href="/playground/typing"
             className="flex flex-col justify-center items-center space-y-4"
           >
-            <div className="bg-energy-orange-900 hover:bg-energy-orange-hover py-10 2xl:py-12  flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300">
+            <div className="bg-energy-orange-900 hover:bg-energy-orange-hover py-6 2xl:py-8 flex justify-center rounded-3xl w-48 h-36 2xl:w-64 2xl:h-48 duration-300">
               <img
                 src="/assets/playground/keyboard.png"
                 alt="Typing on Keyboard"

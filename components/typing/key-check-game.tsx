@@ -158,11 +158,11 @@ const KeyCheckGame: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="mt-20">
+                <div className="mt-5">
                     <span className={`font-bold font-nunito text-${fontSize}xl text-center`}>{questionTitle}</span>
                 </div>
 
-                <div className={`p-5 rounded-lg font-nunito font-bold text-${fontSize}xl max-w-fit inline-block mx-8 my-10 duration-300`} hidden={gameEnded}>
+                <div className={`p-5 rounded-lg font-nunito font-bold text-${fontSize}xl max-w-fit inline-block mx-8 mt-10 duration-300`} hidden={gameEnded}>
 
                     {showHint ? <div className={hintClassName}>Hint: {hint}</div> : null}
                 </div>

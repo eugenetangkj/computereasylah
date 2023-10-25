@@ -19,7 +19,7 @@ const storyLevelOptions: LevelOption[] = [{
 {
     label: 'MRT Station',
     id: 'mrt',
-    imageSrc: '/assets/typing/chickenrice/bored.png'
+    imageSrc: '/assets/typing/mrt/tampinesmrttopdownblur.png'
 },
 {
     label: 'Supermarket',

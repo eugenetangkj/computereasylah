@@ -95,8 +95,88 @@ export const chickenRiceStory: StoryScenes = {
 export const mrtStory: StoryScenes = {
     scenes: [
         {
-            typingSentence: "A story about an elderly going on MRT then getting offered a seat",
-            bkgImg: "/assets/typing/chickenrice/bored.png"
+            typingSentence: "Wah today so nice and sunny! Feel like buying some ang ku kueh from NEX shopping center for snack!",
+            bkgImg: "/assets/typing/mrt/sunnyday.png"
+        },
+        {
+            typingSentence: "Hmmm... Looks like to get there, I would need to take the MRT from my home at Tampines to Serangoon station.",
+            bkgImg: "/assets/typing/mrt/mrtmap1.png"
+        },
+        {
+            typingSentence: "Along the way, I would need to change trains at Macpherson station from the Downtown Line to the Circle Line.",
+            bkgImg: "/assets/typing/mrt/macphersonmap.png"
+        },
+        {
+            typingSentence: "Yay! I reached Tampanies MRT station, time to go inside.",
+            bkgImg: "/assets/typing/mrt/tampinesoutside.png"
+        },
+        {
+            typingSentence: "Wah the gantry to enter the station was upgraded, so high tech! How ah, I think I tap my card here?",
+            bkgImg: "/assets/typing/mrt/dtlgantryin.png"
+        },
+        {
+            typingSentence: "At the MRT platform now, waiting for the train towards Macpherson station.",
+            bkgImg: "/assets/typing/mrt/tampinesdtlwaittrain.png"
+        },
+        {
+            typingSentence: "Wow the train is here! Time to board the train! So exciting!!!",
+            bkgImg: "/assets/typing/mrt/mrtarrived.png"
+        },
+        {
+            typingSentence: "Eh the reserved seat got people sit already, don't know whether I should ask him whether can give up his seat for me?",
+            bkgImg: "/assets/typing/mrt/reservedseattaken.png"
+        },
+        {
+            typingSentence: "Sorry ah excuse me, can you give up your seat for me? My legs very tired.",
+            bkgImg: "/assets/typing/mrt/pointingatmyselfreservedseat.png"
+        },
+        {
+            typingSentence: "Ok ah! No problem, you should sit down and rest.",
+            bkgImg: "/assets/typing/mrt/gaveupreservedseat.png"
+        },
+        {
+            typingSentence: "Looks like I reached Macpherson station, need to alight and transfer here.",
+            bkgImg: "/assets/typing/mrt/reachmacpherson.png"
+        },
+        {
+            typingSentence: "Need to find the Circle Line platform, where is it ah?",
+            bkgImg: "/assets/typing/mrt/macphersongocircleline1.png"
+        },
+        {
+            typingSentence: "Ohh! It is up this escalator over here... Need to go up!",
+            bkgImg: "/assets/typing/mrt/macphersongocircleline2.png"
+        },
+        {
+            typingSentence: "The train towards Serangoon has arrived! Can't wait to get my ang ku kueh!!!",
+            bkgImg: "/assets/typing/mrt/circlelinetrainarrived.png"
+        },
+        {
+            typingSentence: "Wahhh, the aircon in this train so shiokkk!!!",
+            bkgImg: "/assets/typing/mrt/circlelineriding.png"
+        },
+        {
+            typingSentence: "Reaching Serangoon already, that was fast.",
+            bkgImg: "/assets/typing/mrt/reachingserangoon.png"
+        },
+        {
+            typingSentence: "Time to arrive and head over to the ang ku kueh store!",
+            bkgImg: "/assets/typing/mrt/serangoonplatform.png"
+        },
+        {
+            typingSentence: "Wah the shopping center is huge!! Where is the ang ku kueh store ah?",
+            bkgImg: "/assets/typing/mrt/nex.png"
+        },
+        {
+            typingSentence: "I found the store! So many different flavours!!",
+            bkgImg: "/assets/typing/mrt/angkukuehflavours.png"
+        },
+        {
+            typingSentence: "Ahhhh, I finally bought my ang ku kueh! Time to go enjoy it!",
+            bkgImg: "/assets/typing/mrt/angkukueh.png"
+        },
+        {
+            typingSentence: "That was some nice ang ku kueh... Next time I will buy again!",
+            bkgImg: "/assets/typing/mrt/angkukuehupsidedown.png"
         },
     ]
 };

@@ -34,10 +34,15 @@ export default function DictionaryDefinition({ term, updateCurrentViewState, cur
         <div className={`flex flex-col justify-center items-center space-y-8 z-10 xl:space-y-12 mx-8 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             
             {/* Definition View */}
-            <div className='flex flex-col justify-center items-center space-y-8 xl:space-y-12 mx-8'>
+            <div className='flex flex-col justify-center items-center space-y-16 xl:space-y-12 mx-8'>
 
             {/* Back button, show dictionary view */}
-            <BackButton pathToReturnTo='/playground/dictionary' displayText='Back' category={ Topic.Dictionary } />
+            <div className={`fixed w-full bg-white top-0 left-0 py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-8`}>
+                  <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-wisdom-purple-hover duration-300 cursor-pointer"
+                  style={{ display: 'inline-block', width: '5%', height: '100%' }}
+                  onClick={ () => updateCurrentViewState(true) }>Back</h5>
+
+              </div>
             
 
 
@@ -46,9 +51,9 @@ export default function DictionaryDefinition({ term, updateCurrentViewState, cur
             {/* Title */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">{ term.term }</h1>
             {/* Subtitle */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold font-gaegu text-center">{ term.leadingText }</h2>
+            <h2 className="text-3xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold font-gaegu text-center">{ term.leadingText }</h2>
             {/* Image */}
-            <img src={ term.imageUrl } alt='Image' className='w-48 md:w-60 lg:w-72 xl:'/>
+            <img src={ term.imageUrl } alt='Image' className='w-48 md:w-60 lg:w-72 xl:w-96'/>
             {/* Explanation */}
             <p className="text-xl leading-relaxed md:text-2xl md:leading-relaxed lg:text-3xl lg:leading-relaxed 2xl:text-4xl 2xl:leading-relaxed font- font-nunito text-center">{ term.explanation }</p>
 

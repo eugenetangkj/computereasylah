@@ -45,7 +45,7 @@ export default function SafetyQuiz() {
             </h1>
 
             <h3 className="text-xl lg:text-3xl font-nunito text-center mx-8">
-              Want to test your knowledge about safety? Take the Safety Quiz now!
+              Want to test your knowledge about computer safety? Take the Safety Quiz now!
             </h3>
 
             <button

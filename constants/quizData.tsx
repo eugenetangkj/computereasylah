@@ -93,11 +93,6 @@ export const ApplicationsQuizData: Quiz = {
   ],
 };
 
-
-
-
-
-
 export const EmailQuizData: Quiz = {
   totalQuestions: 5,
   questions: [
@@ -156,7 +151,7 @@ export const EmailQuizData: Quiz = {
       ],
       correctAnswer: "Brief overview of the content",
       imageLink: "",
-      explanation: "Subject provides a quick overview of what the email is about.",
+      explanation: "Subject provides a quick overview of what the email is about without having to read the entire email.",
     },
   ],
 };

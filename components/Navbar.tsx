@@ -1,11 +1,10 @@
-import BlackLogo from "@/assets/logo_black_font.png";
-import LogoIcon from "public/assets/home/logo-icon.png";
 import { navLinks } from "@/constants";
 import Image from "next/image";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
+import LogoIcon from "public/assets/home/logo-icon.png";
 import { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";import { useRouter } from "next/router";
-
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);

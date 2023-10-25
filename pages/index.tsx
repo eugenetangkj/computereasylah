@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen w-screen">
       <Head>
-        <title>SilverBytes</title>
+        <title>Computer, Easy Lah!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Landing />

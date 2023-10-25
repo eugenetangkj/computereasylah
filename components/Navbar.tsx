@@ -14,15 +14,15 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center bg-transparent h-20 font-nunito">
       <NextLink href="/">
-        <Image src={LogoIcon} alt="Logo" className="w-48 ml-10" />
+        <Image src={LogoIcon} alt="Logo" className="ml-10 w-28 sm:w-32" />
       </NextLink>
       <div className="text-black mr-10">
-        <ul className="list-none hidden sm:flex  flex-row gap-x-5 md:gap-x-10 items-center font-semibold text-xl">
+        <ul className="list-none hidden sm:flex flex-row gap-x-5 sm:gap-x-5 md:gap-x-10 items-center font-semibold sm:text-lg md:text-xl">
           {navLinks.map((link) => (
             <li key={link.id}>
               {link.id === "playground" ? (
                 <a href={`/${link.id}`} target="_blank">
-                  <button className="bg-trust-blue-500 rounded-3xl h-12 w-36 text-black hover:bg-trust-blue-hover">
+                  <button className="bg-trust-blue-500 rounded-3xl sm:h-8 sm:w-32 md:h-12 md:w-36 text-black hover:bg-trust-blue-hover">
                     <span>{link.title}</span>
                   </button>
                 </a>

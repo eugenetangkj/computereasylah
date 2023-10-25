@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const BorderedWordWithTooltip: React.FC<{
   word: string;
   wordClassName: string;
   tooltipContent: string;
+  isWordClicked: boolean;
   handleWordClicked: () => void;
-}> = ({ word, wordClassName, tooltipContent, handleWordClicked }) => {
+}> = ({
+  word,
+  wordClassName,
+  tooltipContent,
+  isWordClicked,
+  handleWordClicked,
+}) => {
   const [isTooltipOpen, setTooltipOpen] = useState(false);
-  const [hasClicked, setHasClicked] = useState(false);
 
   const toggleTooltip = () => {
-    if (!hasClicked) {
+    if (!isWordClicked) {
       handleWordClicked();
-      setHasClicked(true);
     }
     setTooltipOpen(!isTooltipOpen);
   };
@@ -23,7 +28,7 @@ const BorderedWordWithTooltip: React.FC<{
         className={`cursor-pointer ${wordClassName} ${
           isTooltipOpen
             ? "border-4 rounded-lg border-red-500 p-1 leading-loose"
-            : hasClicked
+            : isWordClicked
             ? "border-4 rounded-lg p-1 leading-loose"
             : ""
         }`}
@@ -32,14 +37,14 @@ const BorderedWordWithTooltip: React.FC<{
         {word}
       </span>
       {isTooltipOpen && (
-        <div className="absolute z-10 left-0 mt-4 p-2 bg-gray-200 border border-gray-400 rounded-lg">
+        <div className="absolute z-10 left-0 mt-4 p-2 bg-blue-300 border-4 border-blue-500 rounded-lg text-xl">
           <div>{tooltipContent}</div>
-          <button
-            className="text-red-500 cursor-pointer"
+          <div
+            className="text-red-500 cursor-pointer text-xl font-semibold mt-2"
             onClick={toggleTooltip}
           >
             Close
-          </button>
+          </div>
         </div>
       )}
     </span>

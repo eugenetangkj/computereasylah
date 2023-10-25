@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 import BorderedWordWithTooltip from "./BorderedWordWithTooltip";
+import WordWithTooltip from "./WordWithTooltip";
 import { Topic } from "@/components/backButton";
 import BackButton from "@/components/backButton";
 
@@ -13,6 +14,13 @@ const SafetyPracticeTwo: React.FC = () => {
   const [phishyCount, setPhishyCount] = useState(0);
   const [isCongratulationsModalOpen, setIsCongratulationsModalOpen] =
     useState(false);
+  const [isContinueToRead, setIsContinueToRead] = useState(false);
+  const [hints, setHints] = useState([
+    { hint: "1. Fake sender email", count: 0, total: 1 },
+    { hint: "2. Urgent language to rush recipients", count: 0, total: 2 },
+    { hint: "3. URL Phishing", count: 0, total: 1 },
+    { hint: "4. Asking for sensitive information", count: 0, total: 1 },
+  ]);
 
   // Function to handle email click
   const handlePhishy1Click = () => {
@@ -48,38 +56,91 @@ const SafetyPracticeTwo: React.FC = () => {
   // Function to close congratulations modal
   const closeCongratulationsModal = () => {
     setIsCongratulationsModalOpen(false);
+    setIsContinueToRead(true);
+  };
+
+  const handleRevealClicked = () => {
+    setIsContinueToRead(true);
+    handlePhishy1Click();
+    handlePhishy2Click();
+    handlePhishy3Click();
+    handlePhishy4Click();
+    handlePhishy5Click();
+    setPhishyCount(5);
   };
 
   useEffect(() => {
     // Check the phishyCount in useEffect
-    if (phishyCount === 5) {
+    if (phishyCount === 5 && !isContinueToRead) {
       openCongratulationsModal();
     }
   }, [phishyCount]);
 
+  useEffect(() => {
+    var hints = [
+      { hint: "1. Fake sender email", count: 0, total: 1 },
+      { hint: "2. Urgent language to rush recipients", count: 0, total: 2 },
+      { hint: "3. URL Phishing", count: 0, total: 1 },
+      { hint: "4. Asking for sensitive information", count: 0, total: 1 },
+    ];
+    if (isPhishy1Clicked) {
+      hints[0].count += 1;
+    }
+    if (isPhishy2Clicked) {
+      hints[1].count += 1;
+    }
+    if (isPhishy3Clicked) {
+      hints[2].count += 1;
+    }
+    if (isPhishy4Clicked) {
+      hints[3].count += 1;
+    }
+    if (isPhishy5Clicked) {
+      hints[1].count += 1;
+    }
+    setHints(hints);
+  }, [
+    isPhishy1Clicked,
+    isPhishy2Clicked,
+    isPhishy3Clicked,
+    isPhishy4Clicked,
+    isPhishy5Clicked,
+  ]);
+
   return (
-    <div className="flex flex-col item-center justify-center min-h-screen py-2 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
+    <div className="flex flex-col item-center justify-center min-h-screen p-10 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
       <BackButton
         pathToReturnTo="/playground/safety"
         displayText="Back"
         category={Topic.Safety}
       />
 
-      <div className="text-2xl bg-gray-600 text-white text-center p-10 shadow-md relative">
-        <div className="flex items-center justify-center">
-          Click on the elements in the email that are phishy.
-        </div>
-        <div className="p-2 bg-blue-400 text-white rounded-full text-center">
-          {phishyCount} / 5
+      <div className="flex flex-col justify-center items-center text-3xl font-semibold mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
+        <h1>
+          Identify the texts in this email that are phishy, then click on them.
+        </h1>
+        <div className=" flex text-center items-center justify-between">
+          <div className="bg-blue-400 text-white rounded-full py-2 px-10">
+            Phishing texts identified: {phishyCount} / 5
+          </div>
+          <div className="ml-20 bg-red-700 text-white rounded-full py-2 px-10 cursor-pointer">
+            <WordWithTooltip
+              hint="Hint"
+              hintClassName="text-white"
+              tooltipContent={hints}
+              handleRevealClicked={handleRevealClicked}
+            />
+          </div>
         </div>
       </div>
-      <div className="text-left p-10 border">
+      <div className="text-left p-10 border-4 border-passion-red-900 ">
         <div className="flex items-center space-x-2">
           <div className="font-bold">From: IRAS Refund Team</div>
           <BorderedWordWithTooltip
             word="&lt;iras.refundteam@officialiras.gov.sg&gt;"
             wordClassName="text-gray-500"
             tooltipContent="The sender email is not an official IRAS email address."
+            isWordClicked={isPhishy1Clicked}
             handleWordClicked={handlePhishy1Click}
           />
         </div>
@@ -104,6 +165,7 @@ const SafetyPracticeTwo: React.FC = () => {
               take action immediately to claim your refund."
               wordClassName="text-black"
               tooltipContent="The email creates a sense of urgency, pressuring you to take immediate action. Phishing emails often use urgency to rush recipients into making mistakes."
+              isWordClicked={isPhishy2Clicked}
               handleWordClicked={handlePhishy2Click}
             />
             To proceed, click on the following link to access the secure IRAS
@@ -115,6 +177,7 @@ const SafetyPracticeTwo: React.FC = () => {
                 http://phishingsite.com/verify-sg]"
               wordClassName="text-blue-600 underline"
               tooltipContent="URL phishing attacks uses various means to trick a user into clicking on the malicious link."
+              isWordClicked={isPhishy3Clicked}
               handleWordClicked={handlePhishy3Click}
             />
           </p>
@@ -127,6 +190,7 @@ const SafetyPracticeTwo: React.FC = () => {
               personal information"
               wordClassName="text-black"
               tooltipContent="The email asks for sensitive information like Tax Reference Number and bank account details. Legitimate organizations rarely request such information via email."
+              isWordClicked={isPhishy4Clicked}
               handleWordClicked={handlePhishy4Click}
             />
             on hand to complete the verification process.
@@ -138,6 +202,7 @@ const SafetyPracticeTwo: React.FC = () => {
               result in the cancellation of your refund request"
               wordClassName="text-black"
               tooltipContent="Another attempt to create a sense of urgency to the victim."
+              isWordClicked={isPhishy5Clicked}
               handleWordClicked={handlePhishy5Click}
             />
             , and you will forfeit the refund.

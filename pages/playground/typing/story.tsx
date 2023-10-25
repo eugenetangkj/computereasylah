@@ -24,7 +24,7 @@ const storyLevelOptions: LevelOption[] = [{
 {
     label: 'Supermarket',
     id: 'supermarket',
-    imageSrc: '/assets/typing/chickenrice/queue.png'
+    imageSrc: 'https://www.capitaland.com/content/dam/capitaland-media-library/retail/Singapore/Singapore/Lot%20One%20Shoppers%27%20Mall/child-tenants/LO_FairPrice.jpg.transform/cap-midres/image.jpg'
 }
 ]
 
@@ -61,7 +61,7 @@ const StoryPage = () => {
     return (
         <div>
             <Head>
-                <title>Playground - Typing Story </title>
+                <title>Playground - Typing Practice </title>
             </Head>
             <div className='bg-white'>
 

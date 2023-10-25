@@ -184,8 +184,65 @@ export const mrtStory: StoryScenes = {
 export const supermarketStory: StoryScenes = {
     scenes: [
         {
-            typingSentence: "A story about an elderly going NTUC, viewing the various deals and buying several items, then going to self checkout then dont know how to use self checkout counter then ask for help",
-            bkgImg: "/assets/typing/chickenrice/bored.png"
+            typingSentence: "What a bright and sunny day today. Let me prepare lunch.",
+            bkgImg: "https://media.istockphoto.com/id/1268421896/photo/skyline-of-high-rise-public-housing-on-bright-sunny-day-lush-green-public-park-in-foreground.jpg?s=612x612&w=0&k=20&c=trALEtjp-qWmDUwQCDjExmusS6o4zQpVEpkjAKGAjdI="
+        },
+        {
+            typingSentence: "Aiyo, my fridge looks so empty.",
+            bkgImg: "https://img.freepik.com/premium-photo/empty-clean-freezer-fridge-empty-shelves-fridge_356877-653.jpg"
+        },
+        {
+            typingSentence: "Let me go down to NTUC to buy some groceries.",
+            bkgImg: "https://static1.straitstimes.com.sg/s3fs-public/styles/large30x20/public/articles/2022/10/13/md_ntuc_13102022.jpg?VersionId=fAAys2wR_fMRELEEnEqngXKwUFT3hYVE"
+        },
+        {
+            typingSentence: "Wa, luckily it is not very crowded.",
+            bkgImg: "https://static.mothership.sg/1/2022/09/712-fairprice-finest-02.jpg"
+        },
+
+        {
+            typingSentence: "Let me grab a shopping trolley.",
+            bkgImg: "https://insideretail.asia/wp-content/uploads/2020/09/Supermarket-trolley-shopping-cart.jpg"
+        },
+        {
+            typingSentence: "Let me buy the important items first, like bread and milk.",
+            bkgImg: "https://pbs.twimg.com/media/EQOGWHUUEAA2iiC.jpg"
+        },
+        {
+            typingSentence: "Omg! There is an offer for nuts. Let me just buy some...",
+            bkgImg: "https://www.labourbeat.org/wp-content/uploads/2020/06/Fairprice-Essentials-1280-scaled.jpg"
+        },
+        {
+            typingSentence: "Wow! There's a new flavour of rice.",
+            bkgImg: "https://static.mothership.sg/1/2022/10/Price-Drop-15-Off-Rice-Products_Store.jpeg"
+        },
+        {
+            typingSentence: "The meat looks fresh. Let me grab some.",
+            bkgImg: "https://goodyfeed.com/wp-content/uploads/2022/05/chicken-supermarket.jpg"
+        },
+        {
+            typingSentence: "The vegetables look great too. I shall buy some.",
+            bkgImg: "https://static1.straitstimes.com.sg/s3fs-public/articles/2021/09/27/eb-jem-092721.jpg?VersionId=u2msmrCiSeefArXKBa2u2rTNgAIRUU3b"
+        },
+        {
+            typingSentence: "Okay, it is time to pay.",
+            bkgImg: "https://i.ytimg.com/vi/zuTesII1jGk/maxresdefault.jpg"
+        },
+        {
+            typingSentence: "That will be a total of $63.50.",
+            bkgImg: "/assets/typing/supermarket/price.png"
+        },
+        {
+            typingSentence: "Okay. Thank you so much!",
+            bkgImg: "https://agelessonline.net/wp-content/uploads/2022/12/CHAS-Blue.jpg"
+        },
+        {
+            typingSentence: "Time to head back home now.",
+            bkgImg: "https://i0.wp.com/genxsingapore.com/wp-content/uploads/2021/05/skyterrace-dawson.jpeg?fit=1382%2C922&ssl=1"
+        },
+        {
+            typingSentence: "With ingredients, I can prepare a good meal for dinner tonight!",
+            bkgImg: "https://www.thermos.com.sg/assets/blog/images/CHINESE-MEAL-hero.png"
         },
     ]
 };

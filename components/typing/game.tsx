@@ -127,11 +127,17 @@ const TypingGame: React.FC<TypingGameProps> = ({
     const GameEndOverlayDiv: React.FC = () => {
         return (
             <div className="fixed top-0 left-0 w-full h-full bg-gray-500 bg-opacity-50 flex justify-center items-center">
-                <div className="bg-white rounded-lg p-8 flex flex-col items-center">
+                <div className="bg-white rounded-lg p-8 flex flex-col items-center space-y-8">
                     <img src="/assets/typing/game_end_great_work.png" alt="trophy" className="w-1/2 h-1/2 mb-4" />
                     {/* <h2 className="text-2xl font-bold text-center mb-4">Congratulations! Great Work!</h2> */}
-                    <button onClick={() => window.history.back()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Continue
+                    <h4 className="text-green-600 font-nunito text-3xl">{numTypeCorrect} keys typed correctly</h4>
+                    <h4 className="text-red-500 font-nunito text-3xl">{numTypeWrong} keys typed wrongly</h4>
+                    <h4 className="text-black-500 font-nunito text-4xl font-bold">Your Accuracy: {calcAccuracy()}</h4>
+
+
+
+                    <button onClick={() => window.history.back()} className="font-nunito bg-energy-orange-500 text-5xl hover:bg-energy-orange-hover font-bold py-4 px-8 rounded-xl duration-300">
+                        Done
                     </button>
                 </div>
             </div>

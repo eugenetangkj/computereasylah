@@ -34,8 +34,8 @@ const BorderedhintWithTooltip: React.FC<{
               Close
             </div>
           </div>
-          {tooltipContent.map((hint) => (
-            <div className="whitespace-nowrap">
+          {tooltipContent.map((hint, index) => (
+            <div key={index} className="whitespace-nowrap">
               <div
                 className={`text-left ${
                   hint.count == hint.total ? "text-gray-300 line-through" : ""

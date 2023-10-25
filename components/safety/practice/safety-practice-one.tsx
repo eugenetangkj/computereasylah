@@ -166,9 +166,9 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({
                   Congratulation, you have identified a phishing attempt!
                 </h2>
                 <p className="text-xl mb-8">
-                  Next, let's try to identify the phishing elements in the
+                  Next, let&ldquo;s try to identify the phishing elements in the
                   email. <br />
-                  Press "Next" to continue.
+                  Press &ldquo;Next&rdquo; to continue.
                 </p>
               </>
             )}
@@ -188,9 +188,9 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({
                   The email contains multiple signs of phishing including:{" "}
                   <br /> 1. Fake sender email <br /> 2. Urgent language to rush
                   recipients <br /> 3. Asking for sensitive information <br />
-                  <br /> Let's try to identify the red flags in this phishing
-                  attempt together. <br />
-                  Press "Next" to continue.
+                  <br /> Let&lsquo;s try to identify the red flags in this
+                  phishing attempt together. <br />
+                  Press &ldquo;Next&rdquo; to continue.
                 </p>
               </>
             )}

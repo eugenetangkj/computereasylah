@@ -49,7 +49,11 @@ export default function SafetyTips() {
           isActive ? "opacity-100" : ""
         } duration-1000`}
       >
-        <BackButton pathToReturnTo='/playground/safety' displayText='Back' category={ Topic.Safety } />
+        <BackButton
+          pathToReturnTo="/playground/safety"
+          displayText="Back"
+          category={Topic.Safety}
+        />
         {/* Title */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">
           Safety Tips
@@ -60,7 +64,9 @@ export default function SafetyTips() {
           className="flex flex-col justify-center items-center mx-8 space-y-12"
         >
           <h2 className="text-3xl font-bold font-gaegu text-center bg-passion-red-500 rounded-full p-4">
-            {`Tip ${currentTipIndex + 1}: ${allTips.tips[currentTipIndex].tipHeader}`}
+            {`Tip ${currentTipIndex + 1}: ${
+              allTips.tips[currentTipIndex].tipHeader
+            }`}
           </h2>
           <div className="flex justify-between items-center space-x-4">
             <button
@@ -83,7 +89,7 @@ export default function SafetyTips() {
           {allTips.tips[currentTipIndex].tipImage && (
             <img
               src={allTips.tips[currentTipIndex].tipImage}
-              alt="Email Safety Tip Image"
+              alt="Safety Tips Image"
               className="w-3/4 md:w-1/2"
             />
           )}

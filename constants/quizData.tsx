@@ -14,33 +14,82 @@ export interface Quiz {
 }
 
 export const ApplicationsQuizData: Quiz = {
-  totalQuestions: 2,
+  totalQuestions: 5,
   questions: [
     {
-      question: "Which application is commonly used for creating and editing text documents?",
+      question: "What does a word processor do?",
       choices: [
-        "Photoshop",
-        "Excel",
-        "Word",
-        "Powerpoint",
+        "Listen to music",
+        "Write word documents",
+        "Access the Internet",
+        "Play interesting games",
       ],
-      correctAnswer: "Word",
+      correctAnswer: "Write word documents",
       imageLink:
         "",
-      explanation: "Word allows you to create text documents.",
+      explanation: "Word processors allow you to create word documents on your computer, such as writing a letter or designing a flyer. Examples of word processors are Microsoft Word and Notepad.",
     },
     {
-      question: "What application is commonly used for sending and receiving emails?",
+      question: "What is the function of this icon?",
       choices: [
-        "Calculator",
-        "Snipping Tool",
-        "Email",
-        "File Explorer",
+        "Close the window",
+        "Minimise the window",
+        "Maximise the window",
+        "Opens a new window",
       ],
-      correctAnswer: "Email",
-      imageLink: "",
-      explanation: "Email application allows you to view and send emails.",
+      correctAnswer: "Maximise the window",
+      imageLink: "https://cdn.icon-icons.com/icons2/2248/PNG/512/window_maximize_icon_137012.png",
+      explanation: "The icon shown is used to maximise a window, allowing the window to take up the full space on your screen.",
     },
+    {
+      question: "What is the function of this icon?",
+      choices: [
+        "Close the window",
+        "Minimise the window",
+        "Maximise the window",
+        "Opens a new window",
+      ],
+      correctAnswer: "Minimise the window",
+      imageLink: "https://cdn-icons-png.flaticon.com/512/5866/5866526.png",
+      explanation: "The icon shown is used to minimise a window, such that the window no longer appears on the screen. To bring the window into view, you can visit the taskbar.",
+    },
+    {
+      question: "I have an existing file on the computer. I made some changes, and would like to save it without changing the file name. Which option should I press?",
+      choices: [
+        "Save",
+        "Save As",
+        "Open",
+        "Print",
+      ],
+      correctAnswer: "Save",
+      imageLink: "",
+      explanation: "Save As allows you to save the file with a new file name, while Save saves the contents of the file without changing a new file name.",
+    },
+    {
+      question: "Which file extension do downloaded applications usually have?",
+      choices: [
+        ".docx",
+        ".exe",
+        ".mp3",
+        ".pptx",
+      ],
+      correctAnswer: ".exe",
+      imageLink: "",
+      explanation: "Downloaded apps are usually executable files, which contain instructions for your computer to download and run the apps. Executable files have a .exe file extension.",
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
   ],
 };
 

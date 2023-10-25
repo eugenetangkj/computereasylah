@@ -245,7 +245,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
       >
         {/* Question */}
         {currentQuestionIndex + 1 != allQuestions.totalQuestions + 1 ? (
-          <h2 className="text-2xl mx-4 md:text-3xl lg:text-4xl 2xl:text-5xl font-nunito text-center">
+          <h2 className="text-2xl leading-relaxed mx-4 md:text-3xl md:leading-relaxed lg:text-4xl lg:leading-relaxed 2xl:text-5xl 2xl:leading-relaxed font-nunito text-center">
             {allQuestions.questions[currentQuestionIndex].question}
           </h2>
         ) : (
@@ -296,7 +296,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           id="explanation-prompt"
           className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 py-4 lg:py-8 2xl:py-24 px-8 w-4/5 lg:w-3/4 rounded-2xl flex-col justify-center items-center space-y-8"
         >
-          <h3 className="font-bold font-nunito text-center text-2xl lg:text-3xl 2xl:text-4xl">
+          <h3 className="font-bold font-nunito text-center text-lg lg:text-3xl 2xl:text-4xl">
             {currentQuestionIndex < allQuestions.totalQuestions
               ? allQuestions.questions[currentQuestionIndex].question
               : ""}
@@ -356,7 +356,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
 
       <div
         id="end-screen"
-        className="hidden flex-col justify-center items-center mt-16 space-y-12 2xl:space-y-16 xl:space-y-28"
+        className="hidden flex-col justify-center items-center mt-16 space-y-12 2xl:space-y-16 xl:space-y-28 2xl:mt-32"
       >
         <h2 className="text-3xl lg:text-4xl xl:text-5xl font-nunito text-center">{`Total Score: ${currentScore} / ${allQuestions.totalQuestions}`}</h2>
         <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-8">

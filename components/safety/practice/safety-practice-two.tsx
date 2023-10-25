@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 import BorderedWordWithTooltip from "./BorderedWordWithTooltip";
+import { Topic } from "@/components/backButton";
+import BackButton from "@/components/backButton";
 
 const SafetyPracticeTwo: React.FC = () => {
   const [isPhishy1Clicked, setIsPhishy1Clicked] = useState(false);
@@ -57,16 +59,11 @@ const SafetyPracticeTwo: React.FC = () => {
 
   return (
     <div className="flex flex-col item-center justify-center min-h-screen py-2 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
-      <div
-        className={`top-0 left-0 w-full py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
-      >
-        {/* Back button */}
-        <NextLink href="/playground/safety" className="w-1/4">
-          <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-passion-red-hover duration-300">
-            Back
-          </h5>
-        </NextLink>
-      </div>
+      <BackButton
+        pathToReturnTo="/playground/safety"
+        displayText="Back"
+        category={Topic.Safety}
+      />
 
       <div className="text-2xl bg-gray-600 text-white text-center p-10 shadow-md relative">
         <div className="flex items-center justify-center">

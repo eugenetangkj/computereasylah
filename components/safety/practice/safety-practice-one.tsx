@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import NextLink from "next/link";
 import { Topic } from "@/components/backButton";
 import BackButton from "@/components/backButton";
+import { MdClose } from "react-icons/md";
 
 interface SafetyPracticalProps {
   updateCurrentIndex: (index: number) => void;
@@ -26,17 +26,25 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({
   const closeModal = () => {
     setIsPhishy(false);
     setIsNotPhishy(false);
+  };
+
+  // Function to go to next page
+  const nextPractice = () => {
     updateCurrentIndex(2);
   };
 
   return (
-    <div className="flex flex-col item-center justify-center min-h-screen py-2 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
-      <BackButton pathToReturnTo='/playground/safety' displayText='Back' category={ Topic.Safety } />
+    <div className="flex flex-col item-center justify-center min-h-screen p-10 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
+      <BackButton
+        pathToReturnTo="/playground/safety"
+        displayText="Back"
+        category={Topic.Safety}
+      />
 
-      <h1 className="text-2xl bg-gray-600 text-white text-center p-10 shadow-md">
-        Identify if the email below is phishy.
+      <h1 className="flex flex-col justify-center items-center text-3xl font-semibold mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
+        You have received the following email. Is it a phishing attempt?
       </h1>
-      <div className="text-left p-10 border">
+      <div className="text-left p-10 border-4 border-passion-red-900 ">
         <div className="flex items-center space-x-2">
           <div className="font-bold">From: IRAS Refund Team</div>
           <div className="text-gray-500">
@@ -117,15 +125,15 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({
           <p>IRAS Refund Team Inland Revenue Authority of Singapore</p>
         </div>
       </div>
-      <div className="flex flex-row justify-center mt-4">
+      <div className="flex flex-row justify-center text-xl font-semibold mt-4">
         <button
-          className="bg-red-400 rounded-full h-10 w-32 mx-10"
+          className="bg-white hover:bg-passion-red-900 border-solid border-4 border-passion-red-900 rounded-full h-16 w-40 mx-10"
           onClick={openisPhishyModal}
         >
           Phishy
         </button>
         <button
-          className="bg-blue-400 rounded-full h-10 w-32 mx-10"
+          className="bg-white hover:bg-sky-400 border-solid border-4 border-sky-400 rounded-full h-16 w-40 mx-10"
           onClick={openisNotPhishyModal}
         >
           Not Phishy
@@ -136,57 +144,68 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({
         // Modal content
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div
-            className={`p-4 rounded-lg shadow-md ${
-              isPhishy ? "bg-green-300" : "bg-red-300"
+            className={`p-4 rounded-lg shadow-md border-4 ${
+              isPhishy
+                ? "border-green-500 bg-green-300"
+                : "border-red-500 bg-red-300"
             }`}
           >
             {isPhishy && (
-              <h2 className="text-xl mb-4">
-                Congratulation, you have identified a phishing attempt!
-              </h2>
+              <>
+                <div
+                  className="top-0 right-0 text-green-900 mx-1 mb-4"
+                  dir="rtl"
+                >
+                  <MdClose
+                    className="cursor-pointer"
+                    size={32}
+                    onClick={closeModal}
+                  />
+                </div>
+                <h2 className="text-2xl font-semibold mb-4">
+                  Congratulation, you have identified a phishing attempt!
+                </h2>
+                <p className="text-xl mb-8">
+                  Next, let's try to identify the phishing elements in the
+                  email. <br />
+                  Press "Next" to continue.
+                </p>
+              </>
             )}
             {isNotPhishy && (
-              <h2 className="text-xl mb-4">
-                Sorry, you have not identified a phishing attempt.
-              </h2>
+              <>
+                <div className="top-0 right-0 text-red-900 mx-1 mb-4" dir="rtl">
+                  <MdClose
+                    className="cursor-pointer"
+                    size={32}
+                    onClick={closeModal}
+                  />
+                </div>
+                <h2 className="text-2xl font-semibold mb-4">
+                  Unfortunately, you have not identified a phishing attempt.
+                </h2>
+                <p className="text-xl mb-8">
+                  The email contains multiple signs of phishing including:{" "}
+                  <br /> 1. Fake sender email <br /> 2. Urgent language to rush
+                  recipients <br /> 3. Asking for sensitive information <br />
+                  <br /> Let's try to identify the red flags in this phishing
+                  attempt together. <br />
+                  Press "Next" to continue.
+                </p>
+              </>
             )}
-            <div className="text-left">
-              <p>Below are some of the phishing elements in the email:</p>
-              <br />
-              <p>
-                1. <span className="font-bold">Sender Email</span>: The sender
-                email is not an official IRAS email address.
-              </p>
-              <p>
-                2. <span className="font-bold">Unsolicited Email</span>: Be
-                cautious of unsolicited emails claiming you are eligible for a
-                tax refund. Tax authorities typically communicate through
-                official channels and not via email.
-              </p>
-              <p>
-                3. <span className="font-bold">Urgent Language</span>: The email
-                creates a sense of urgency, pressuring you to take immediate
-                action. Phishing emails often use urgency to rush recipients
-                into making mistakes.
-              </p>
-              <p>
-                4.{" "}
-                <span className="font-bold">
-                  Request for Personal and Financial Information
-                </span>
-                : The email asks for sensitive information like Tax Reference
-                Number and bank account details. Legitimate organizations rarely
-                request such information via email.
-              </p>
+            <div dir="rtl">
+              <button
+                className={`bg-white border-solid border-4 rounded-full h-16 w-40 mx-5 ${
+                  isPhishy
+                    ? "hover:bg-green-500 border-green-500"
+                    : "hover:bg-passion-red-900 border-passion-red-900 "
+                }`}
+                onClick={nextPractice}
+              >
+                Next
+              </button>
             </div>
-            <button
-              className={`rounded-full h-10 w-32 mt-4 ${
-                isPhishy ? "bg-green-400" : "bg-red-400"
-              }`}
-              onClick={closeModal}
-            >
-              Next
-            </button>
           </div>
         </div>
       )}

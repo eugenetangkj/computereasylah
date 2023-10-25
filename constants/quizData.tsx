@@ -232,32 +232,70 @@ export const EmailQuizData: Quiz = {
 
 //Safety Quiz Questions and Answers
 export const SafetyQuizData: Quiz = {
-  totalQuestions: 2,
+  totalQuestions: 5,
   questions: [
     {
-      question: "What does safety mean????",
+      question: "Which of the following is not a type of malware?",
       choices: [
-        "Send an email",
-        "Delete an email",
-        "Forward an email",
-        "Compose an email",
+        "Virus",
+        "Browserware",
+        "Spyware",
+        "Ransomware",
       ],
-      correctAnswer: "Send an email",
+      correctAnswer: "Browserware",
       imageLink:
-        "https://equalsdrummond.files.wordpress.com/2013/07/what-was-google-thinking-1.png",
-      explanation: "Send button is used to send an email after writing it.",
+        "",
+      explanation: "There is no such as thing as browserware. Instead, it is possible for your computer to be infected with virus, spyware or ransomware if you visit dangerous sites on the Internet.",
     },
     {
-      question: "Which of the following is an invalid email address?",
+      question: "Which of the following best describes what phishing is?",
       choices: [
-        "sally123@gmail.com",
-        "sally.123@gmail.com",
-        "sally/123@gmail.com",
-        "sally@gmail.com",
+        "A scammer invites you to go fishing",
+        "A scammer blocks off your Internet access",
+        "A scammer pretends to be someone whom you trust",
+        "A scammer directly hacks into your computer",
       ],
-      correctAnswer: "sally/123@gmail.com",
+      correctAnswer: "A scammer pretends to be someone whom you trust.",
       imageLink: "",
-      explanation: "Email addresses cannot have the backslash / character",
+      explanation: "Phishing is where scammers pretend to be someone trustable, tricking you into sharing sensitive data like bank and credit card numbers.",
     },
+    {
+      question: "Which of the following is a sign of an online scam?",
+      choices: [
+        "Vague and incorrect language",
+        "Urgent or threatening language",
+        "Promise of attractive prizes",
+        "Request for confidential information",
+        "All of the above"
+      ],
+      correctAnswer: "All of the above",
+      imageLink: "",
+      explanation: "Online scams often encourage you to perform an action that would reveal confidential information. They often do so via either threatening or attracting you with prizes.",
+    },
+    {
+      question: "What application should you download to remove ads in your browser?",
+      choices: [
+        "Ad Blocker",
+        "Ad Remover",
+        "Ad Delete",
+        "Ad Noise",
+      ],
+      correctAnswer: "Ad Blocker",
+      imageLink: "",
+      explanation: "The correct term is Ad Blocker. Ad Blocker is a software that stops ads from appearing in your browser. It is useful to remove distracting ads which could even be fake news or dangerous to click on.",
+    },
+    {
+      question: "Which of the following is a strong password?",
+      choices: [
+        "Password123",
+        "abcd123",
+        "tomtan",
+        "lrtv2!@",
+      ],
+      correctAnswer: "lrtv2!@",
+      imageLink: "",
+      explanation: "It is encouraged to use a mixture of letters and symbols in a strong password. Avoid common words like your own name, and try not to use consecutive characters on a keyboard.",
+    },
+
   ],
 };

@@ -294,7 +294,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
         {/* Explanation */}
         <div
           id="explanation-prompt"
-          className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 py-4 lg:py-8 2xl:py-24 px-8 w-4/5 lg:w-3/4 rounded-2xl flex-col justify-center items-center space-y-8"
+          className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 py-4 lg:py-8 2xl:py-24 px-8 w-4/5 lg:w-3/4 rounded-2xl flex-col justify-center items-center space-y-8 z-20"
         >
           <h3 className="font-bold font-nunito text-center text-lg lg:text-3xl 2xl:text-4xl">
             {currentQuestionIndex < allQuestions.totalQuestions

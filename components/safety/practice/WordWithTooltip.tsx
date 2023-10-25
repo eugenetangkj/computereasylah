@@ -18,10 +18,7 @@ const BorderedhintWithTooltip: React.FC<{
 
   return (
     <span className="relative inline">
-      <span
-        className={`cursor-pointer ${hintClassName}`}
-        onClick={toggleTooltip}
-      >
+      <span className={`${hintClassName}`} onClick={toggleTooltip}>
         {hint}
       </span>
       {isTooltipOpen && (
@@ -35,7 +32,7 @@ const BorderedhintWithTooltip: React.FC<{
             </div>
           </div>
           {tooltipContent.map((hint, index) => (
-            <div key={index} className="whitespace-nowrap">
+            <div key={index} className="whitespace-nowrap cursor-default">
               <div
                 className={`text-left ${
                   hint.count == hint.total ? "text-gray-300 line-through" : ""

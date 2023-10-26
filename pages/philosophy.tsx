@@ -94,7 +94,6 @@ const Philosophy: NextPage = () => {
             <div className="w-5/6 sm:w-1/3 md:w-2/3">
               {philosophyInfo.map((topic, index) => {
                 // Format the index with leading zeros
-                const formattedIndex = (index + 1).toString().padStart(2, "0");
                 const imagePath =
                   "/assets/home/philosophy/philosophy-icon-" + (index + 1) + ".png";
 

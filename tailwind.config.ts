@@ -54,6 +54,7 @@ const config: Config = {
 
         "pale-gray": {
           100: "#D4D4D4",
+          500: "#595959",
         },
 
         question: {

@@ -6,7 +6,9 @@ interface TextProps {
 
 const Text: React.FC<TextProps> = ({ content, className, children }) => {
   return (
-    <div className={`text-base text-dark-gray sm:text-md md:text-xl ${className}`}>
+    <div
+      className={`font-nunito text-base sm:text-md md:text-xl leading-loose sm:leading-normal ${className}`}
+    >
       {content}
       {children}
     </div>

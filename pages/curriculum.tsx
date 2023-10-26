@@ -10,35 +10,6 @@ interface CurriculumProps {
   // Define your props if needed
 }
 
-interface TopicProps {
-  title: string;
-  subtitle: string;
-  text: string;
-  imageSrc: any;
-  imageAlt: string;
-}
-
-const Topic: React.FC<TopicProps> = (props) => {
-  return (
-    <div className="mb-12">
-      <div className="flex flex-col text-left">
-        <Title text={props.title} className="text-sky-900" />
-        <p className="text-sky-600 text-base">{props.subtitle}</p>
-        <div className="flex flex-col sm:flex-row justify-between ">
-          <Text className="w-full sm:w-1/3 md:w-2/3" content={props.text} />
-          <div className="w-full sm:w-1/4 flex justify-center">
-            <Image
-              src={props.imageSrc}
-              alt={props.imageAlt}
-              className="h-32 w-32 mx-auto "
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const Curriculum: React.FC<CurriculumProps> = (props) => {
   // You can use the props and state here
 
@@ -63,7 +34,7 @@ const Curriculum: React.FC<CurriculumProps> = (props) => {
           </div>
 
           <div className="w-5/6 sm:w-1/3 md:w-2/3">
-            {curriculumInfo.map((topic, index) => {
+            {/* {curriculumInfo.map((topic, index) => {
               // Format the index with leading zeros
               const formattedIndex = (index + 1).toString().padStart(2, "0");
               const formattedTitle = `${formattedIndex} ${topic.title}`;
@@ -78,7 +49,7 @@ const Curriculum: React.FC<CurriculumProps> = (props) => {
                   imageAlt={topic.title}
                 />
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>

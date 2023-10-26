@@ -6,10 +6,8 @@ export enum Topic {
   Applications,
   Email,
   Safety,
-  Dictionary
-
+  Dictionary,
 }
-
 
 type BackButtonProps = {
   pathToReturnTo: string;
@@ -17,24 +15,27 @@ type BackButtonProps = {
   category: Topic;
 };
 
-
-
-export default function BackButton({ pathToReturnTo, displayText, category }: BackButtonProps) {
-  let hoverColour = (category == Topic.Typing)
-                    ? 'hover:text-energy-orange-hover'
-                    : (category == Topic.Applications)
-                    ? 'hover:text-creative-pink-hover'
-                    : (category == Topic.Email)
-                    ? 'hover:text-trust-blue-hover'
-                    : (category == Topic.Safety)
-                    ? 'hover:text-passion-red-hover'
-                    : (category == Topic.Dictionary)
-                    ? 'hover:text-wisdom-purple-hover'
-                    : 'hover:text-black'
+export default function BackButton({
+  pathToReturnTo,
+  displayText,
+  category,
+}: BackButtonProps) {
+  let hoverColour =
+    category == Topic.Typing
+      ? "hover:text-energy-orange-hover"
+      : category == Topic.Applications
+      ? "hover:text-creative-pink-hover"
+      : category == Topic.Email
+      ? "hover:text-trust-blue-hover"
+      : category == Topic.Safety
+      ? "hover:text-passion-red-hover"
+      : category == Topic.Dictionary
+      ? "hover:text-wisdom-purple-hover"
+      : "hover:text-black";
 
   return (
     <div
-      className={`fixed w-full bg-white top-0 left-0 py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-8`}
+      className={`fixed w-ful top-0 left-0 py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-8`}
     >
       {/* Back button */}
       <NextLink href={pathToReturnTo} className="">

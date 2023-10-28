@@ -86,6 +86,7 @@ const config: Config = {
       height: {
         "80vh": "80vh",
         "100p": "100px",
+        "50vh": "50vh"
       },
       top: {
         "1/8": "12.5%",

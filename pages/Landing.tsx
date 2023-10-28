@@ -13,46 +13,45 @@ import ResourceIcon4 from "public/assets/home/resource_icon_4.png";
 import VisionLogo from "public/assets/home/vision-logo.png";
 import { Resource } from "@/common/Resource";
 import { Intro } from "@/common/Intro";
+import Iframe from "react-iframe";
 
 
 
-const Hero = () => {
-  return (
-    <></>
-    // <div className="relative bg-cover bg-teaching-image h-screen w-full overflow-x-hidden">
-    //   <div className="absolute bottom-0 w-full text-5xl font-semibold text-white p-24 text-center bg-black bg-opacity-50">
-    //     Equipping senior adults with the confidence and skills to use a computer.
-    //   </div>
-    // </div>
-  );
-};
+
 
 const Landing = () => {
   return (
     <Layout>
       <div>
-        <Hero />
-        <div className="flex flex-col justify-center items-center text-center bg-white mx-8">
+        {/* Video */}
+        <div className="video-container">
+          <video autoPlay loop muted playsInline className="h-80vh w-full object-cover">
+            <source src="/assets/home/landing-video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="flex flex-col justify-center items-center text-center mt-8 bg-white mx-8 lg:mx-16 xl:mx-48 2xl:mx-64">
+          
+          {/* About Us */}
           <Intro
             title="About Us"
             text="Computer Easy Lah! is an initiative in collaboration with Work Live Digital to provide essential computer literacy to senior adults. We offer a thoughtfully designed interactive platform known as The Playground, which is tailored exclusively to empower senior adults as they embark on a journey to acquire fundamental computer skills."
           />
-          <Image src={PartnerLogo} alt="" className="w-1/2 md:w-1/6 m-12" />
+          <Image src={PartnerLogo} alt="" className="w-1/2 md:w-1/5 lg:w-1/4 m-12" />
           <Intro
             title="Our Vision"
             text="We envision to create a learning platform that would support participants in their learning during and after the curriculum of computer classes. It is a tool complementary to the computer classes, providing useful resources and hands-on activities that can complement and reinforce what was taught during the classes."
           />
-          <Image src={VisionLogo} alt="" className="w-1/2 md:w-1/6 m-12" />
+          <Image src={VisionLogo} alt="" className="w-1/2 md:w-1/5 lg:w-1/4 m-12" />
 
           <Intro
             title="Our Resources"
             text="We have created a suite of resources to support the learning of senior adults, and to help them gain confidence in using a computer. These resources are available for free download and use. "
           />
 
-          <Image src={ResourceLogo} alt="" className="w-full mt-8 sm:w-1/2 mb-12" />
+          {/* Resources */}
+          <Image src={ResourceLogo} alt="" className="w-full mt-8 sm:w-1/2 mb-12 lg:mb-8" />
 
-
-          <div className='flex flex-col space-y-16'>
+          <div className='flex flex-col space-y-16 lg:justify-center lg:items-center mt-8'>
 
           <Resource
               image={ResourceIcon1}
@@ -64,7 +63,7 @@ const Landing = () => {
             <Resource
               image={ResourceIcon2}
               title="Curriculum Guide"
-              text="A guide that outlines the curriculum of Work Live Digital’s foundation computer classes, and how to best incorporate The Playground with the lessons."
+              text="A guide that outlines the curriculum of Work Live Digital&apos;s foundation computer classes, and how to best incorporate The Playground with the lessons."
               button="Download"
               link="/"
             />
@@ -84,6 +83,18 @@ const Landing = () => {
             />
 
           </div>
+
+           {/* Video
+           <div className="video-container mt-16 flex flex-col justify-center items-center">
+          <Intro
+            title="Promotional Video"
+            text=""
+          />
+            <video controls className="xl:w-3/4">
+              <source src="/assets/home/landing-video.mp4" type="video/mp4" />
+            </video>
+          </div> */}
+
 
 
 

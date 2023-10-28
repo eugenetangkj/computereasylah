@@ -22,7 +22,6 @@ const Navbar = () => {
 
       if (isScrolledUp && navbarElement != null) {
         navbarElement.style.top = "0";
-        console.log("reached");
 
       } else if (! isScrolledUp && navbarElement != null) {
         navbarElement.style.top = "-200px";

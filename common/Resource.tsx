@@ -6,8 +6,8 @@ export const Resource = (props: any) => {
     const { image, title, text, button, link } = props;
   
     return (
-      <div className="flex flex-col space-y-8 sm:flex-row justify-center items-center"> 
-        <div className="text-center sm:text-left w-full sm:w-1/3 md:w-1/2 sm:mx-12">
+      <div className="flex flex-col space-y-8 lg:flex-row justify-center items-center lg:mx-28 lg:space-x-16"> 
+        <div className="text-center lg:text-left w-full">
           <div className="font-gaegu font-bold text-3xl sm:text-4xl md:text-5xl">
             {title}
           </div>
@@ -22,7 +22,7 @@ export const Resource = (props: any) => {
         <Image
           src={image}
           alt={title}
-          className=""
+          className="sm:w-1/2 lg:w-1/4"
         />
       </div>
     );

@@ -6,6 +6,9 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       backgroundImage: {
@@ -73,14 +76,13 @@ const config: Config = {
         "600p": "600px",
         "800p": "800px",
         "80vw": "80vw",
-        '340p': "340px",
-        '450p': "450px",
-        '540p': "540px"
-
+        "340p": "340px",
+        "450p": "450px",
+        "540p": "540px",
       },
       height: {
         "80vh": "80vh",
-        '100p': "100px"
+        "100p": "100px",
       },
       top: {
         "1/8": "12.5%",

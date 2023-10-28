@@ -11,42 +11,10 @@ import ResourceIcon2 from "public/assets/home/resource_icon_2.png";
 import ResourceIcon3 from "public/assets/home/resource_icon_3.png";
 import ResourceIcon4 from "public/assets/home/resource_icon_4.png";
 import VisionLogo from "public/assets/home/vision-logo.png";
+import { Resource } from "@/common/Resource";
+import { Intro } from "@/common/Intro";
 
-const Intro = (props: any) => {
-  const { title, text } = props;
-  return (
-    <div className="flex flex-col sm:mx-auto w-11/12 sm:w-5/6 md:w-2/3 text-center items-center">
-      <Title text={title} className="py-6 sm:py-8 w-full" />
-      <Text content={text} className="text-pale-gray-500" />
-    </div>
-  );
-};
 
-const Resource = (props: any) => {
-  const { image, title, text, button, link } = props;
-
-  return (
-    <div className="flex flex-col sm:flex-row justify-between mb-12">
-      <Image
-        src={image}
-        alt={title}
-        className="h-36 w-auto mx-auto sm:ml-auto sm:mr-20 hidden sm:block"
-      />
-      <div className="text-center sm:text-left w-full sm:w-1/3 md:w-1/2 sm:mx-12">
-        <div className="font-gaegu font-bold text-3xl sm:text-4xl md:text-5xl">
-          {title}
-        </div>
-        <Text className="my-4 text-pale-gray-500" content={text} />
-        <NextLink href={link}>
-          <button className="w-40 h-12 bg-trust-blue-500 rounded-3xl text-black font-semibold text-xl hover:bg-trust-blue-hover">
-            {button}
-          </button>
-        </NextLink>
-      </div>
-      <Image src={image} alt={title} className="h-36 w-auto mx-auto sm:hidden my-10" />
-    </div>
-  );
-};
 
 const Hero = () => {
   return (
@@ -64,7 +32,7 @@ const Landing = () => {
     <Layout>
       <div>
         <Hero />
-        <div className="flex flex-col justify-center items-center text-center bg-white w-screen overflow-x-auto">
+        <div className="flex flex-col justify-center items-center text-center bg-white mx-8">
           <Intro
             title="About Us"
             text="Computer Easy Lah! is an initiative in collaboration with Work Live Digital to provide essential computer literacy to senior adults. We offer a thoughtfully designed interactive platform known as The Playground, which is tailored exclusively to empower senior adults as they embark on a journey to acquire fundamental computer skills."
@@ -81,36 +49,45 @@ const Landing = () => {
             text="We have created a suite of resources to support the learning of senior adults, and to help them gain confidence in using a computer. These resources are available for free download and use. "
           />
 
-          <Image src={ResourceLogo} alt="" className="w-4/5 sm:w-1/2 mb-12" />
+          <Image src={ResourceLogo} alt="" className="w-full mt-8 sm:w-1/2 mb-12" />
+
+
+          <div className='flex flex-col space-y-16'>
 
           <Resource
-            image={ResourceIcon1}
-            title="The Playground"
-            text="An interactive platform filled with hands-on activities, quizzes and videos to enrich the learning of senior adults."
-            button="Go!"
-            link="/playground"
-          />
-          <Resource
-            image={ResourceIcon2}
-            title="Curriculum Guide"
-            text="A guide that outlines the curriculum of Work Live Digital’s foundation computer classes, and how to best incorporate The Playground with the lessons."
-            button="Download"
-            link="/"
-          />
-          <Resource
-            image={ResourceIcon3}
-            title="Playground Guide"
-            text="A guide that introduces the different features of The Playground, and how to use each of them for the best learning experience."
-            button="Download"
-            link="/"
-          />
-          <Resource
-            image={ResourceIcon4}
-            title="Video Playlist"
-            text="The educational videos in The Playground are publicly available on our YouTube channel. Feel free to browse through them!"
-            button="Watch"
-            link="/"
-          />
+              image={ResourceIcon1}
+              title="The Playground"
+              text="An interactive platform filled with hands-on activities, quizzes and videos to enrich the learning of senior adults."
+              button="Go!"
+              link="/playground"
+            />
+            <Resource
+              image={ResourceIcon2}
+              title="Curriculum Guide"
+              text="A guide that outlines the curriculum of Work Live Digital’s foundation computer classes, and how to best incorporate The Playground with the lessons."
+              button="Download"
+              link="/"
+            />
+            <Resource
+              image={ResourceIcon3}
+              title="Playground Guide"
+              text="A guide that introduces the different features of The Playground, and how to use each of them for the best learning experience."
+              button="Download"
+              link="/"
+            />
+            <Resource
+              image={ResourceIcon4}
+              title="Video Playlist"
+              text="The educational videos in The Playground are publicly available on our YouTube channel. Feel free to browse through them!"
+              button="Watch"
+              link="/"
+            />
+
+          </div>
+
+
+
+
           <Title text="We are supported by" className="mt-20"/>
           <Image src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />
         </div>

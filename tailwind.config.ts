@@ -11,6 +11,9 @@ const config: Config = {
   },
   theme: {
     extend: {
+      screens: {
+        'navbar-custom': '890px',    // Custom for navbar resizing
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

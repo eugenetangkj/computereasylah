@@ -4,13 +4,13 @@ interface TextProps {
   children?: React.ReactNode;
 }
 
-const Text: React.FC<TextProps> = ({ content, className, children }) => {
+const Text: React.FC<TextProps> = ({ content, className}) => {
   return (
     <div
-      className={`font-nunito text-base sm:text-md md:text-xl leading-loose sm:leading-normal ${className}`}
+      className={`font-nunito leading-normal md:text-xl md:leading-relaxed ${className}`}
     >
-      {content}
-      {children}
+    {content}
+      
     </div>
   );
 };

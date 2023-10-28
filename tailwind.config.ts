@@ -82,6 +82,7 @@ const config: Config = {
         "340p": "340px",
         "450p": "450px",
         "540p": "540px",
+        "1000p": "1000px"
       },
       height: {
         "80vh": "80vh",

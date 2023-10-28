@@ -13,18 +13,15 @@ import ResourceIcon4 from "public/assets/home/resource_icon_4.png";
 import VisionLogo from "public/assets/home/vision-logo.png";
 import { Resource } from "@/common/Resource";
 import { Intro } from "@/common/Intro";
-import Iframe from "react-iframe";
 
 
-
-
-
+//Landing page
 const Landing = () => {
   return (
     <Layout>
       <div>
         {/* Video */}
-        <div className="video-container">
+        <div className="video-container" id="landing-video">
           <video autoPlay loop muted playsInline className="h-80vh w-full object-cover">
             <source src="/assets/home/landing-video.mp4" type="video/mp4" />
           </video>

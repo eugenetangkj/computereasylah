@@ -78,7 +78,7 @@ export const philosophyInfo = [
   {
     title: "Guided",
     content:
-      "For each activity, we provide clear instructions and guidance on how to use it.",
+      "For each activity, we provide instructions and guidance so it is clear for the participants regarding how to use them.",
     imagesrc: "",
   },
 ];

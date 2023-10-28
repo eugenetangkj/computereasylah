@@ -35,7 +35,7 @@ export default function BackButton({
 
   return (
     <div
-      className={`fixed w-ful top-0 left-0 py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-8`}
+      className={`fixed w-full top-0 left-0 py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-8 bg-white`}
     >
       {/* Back button */}
       <NextLink href={pathToReturnTo} className="">

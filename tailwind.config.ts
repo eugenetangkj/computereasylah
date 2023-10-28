@@ -11,6 +11,9 @@ const config: Config = {
   },
   theme: {
     extend: {
+      screens: {
+        'navbar-custom': '890px',    // Custom for navbar resizing
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -54,15 +57,32 @@ const config: Config = {
           900: "#EB70BA",
           hover: "#D84FA1",
         },
+        question: {
+          correct: "#A2DA87",
+        },
 
+        "introduction-green": {
+          900: "#6DC280",
+        },
+        "using-computer-lime": {
+          900: "#B7C26D",
+        },
+        "file-management-blue": {
+          900: "#6DA9C2"
+        },
+        "internet-purple": {
+          900: "#E469F7"
+        },
         "pale-gray": {
           100: "#D4D4D4",
           500: "#595959",
         },
 
-        question: {
-          correct: "#A2DA87",
-        },
+
+
+
+
+
       },
       translate: {
         "1/8": "12.5%",
@@ -79,10 +99,12 @@ const config: Config = {
         "340p": "340px",
         "450p": "450px",
         "540p": "540px",
+        "1000p": "1000px"
       },
       height: {
         "80vh": "80vh",
         "100p": "100px",
+        "50vh": "50vh",
       },
       top: {
         "1/8": "12.5%",

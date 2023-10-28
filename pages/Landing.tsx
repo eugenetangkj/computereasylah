@@ -22,7 +22,7 @@ const Landing = () => {
       <div>
         {/* Video */}
         <div className="video-container" id="landing-video">
-          <video autoPlay loop muted playsInline className="h-80vh w-full object-cover">
+          <video autoPlay loop muted playsInline className="h-80vh w-full object-cover pointer-events-none">
             <source src="/assets/home/landing-video.mp4" type="video/mp4" />
           </video>
         </div>

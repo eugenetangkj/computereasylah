@@ -37,6 +37,12 @@ const Navbar = () => {
     };
   }, [prevScrollPos]);
 
+  useEffect(() => {
+    const bodyElement = document.getElementsByTagName("BODY")[0];
+    bodyElement.classList.remove('overflow-hidden');
+
+  }, [])
+
 
 
 

@@ -121,7 +121,7 @@ const Philosophy: NextPage = () => {
 
           {/* Strategy */}
           <div>
-            <Title text="Our Strategy" className="py-8 mt-32" />
+            <Title text="Our Strategy" className="py-8 mt-16" />
             <Text
               className="mb-12"
               content="The content and activities on The Playground revolve around 3 main aspects."

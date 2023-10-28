@@ -13,7 +13,7 @@ export const Resource = (props: any) => {
           </div>
           <Text className="my-4 text-pale-gray-500 text-lg" content={text} />
           <NextLink href={link}>
-            <button className="w-40 h-12 bg-trust-blue-500 rounded-3xl text-black font-semibold text-xl hover:bg-trust-blue-hover duration-300">
+            <button className="w-40 h-16 bg-trust-blue-500 rounded-3xl text-black font-semibold text-xl hover:bg-trust-blue-hover duration-300">
               {button}
             </button>
           </NextLink>

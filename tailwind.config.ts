@@ -57,15 +57,32 @@ const config: Config = {
           900: "#EB70BA",
           hover: "#D84FA1",
         },
+        question: {
+          correct: "#A2DA87",
+        },
 
+        "introduction-green": {
+          900: "#6DC280",
+        },
+        "using-computer-lime": {
+          900: "#B7C26D",
+        },
+        "file-management-blue": {
+          900: "#6DA9C2"
+        },
+        "internet-purple": {
+          900: "#E469F7"
+        },
         "pale-gray": {
           100: "#D4D4D4",
           500: "#595959",
         },
 
-        question: {
-          correct: "#A2DA87",
-        },
+
+
+
+
+
       },
       translate: {
         "1/8": "12.5%",
@@ -87,7 +104,7 @@ const config: Config = {
       height: {
         "80vh": "80vh",
         "100p": "100px",
-        "50vh": "50vh"
+        "50vh": "50vh",
       },
       top: {
         "1/8": "12.5%",

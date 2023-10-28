@@ -1,12 +1,10 @@
 import Text from "@/common/Text";
 import Title from "@/common/Title";
 import Layout from "@/components/layout";
-import { philosophyDetails, philosophyInfo } from "@/constants";
 import { NextPage } from "next";
 import React from "react";
 import { useEffect, useState } from "react";
-import { PhilosophyDetails } from "@/common/PhilosophyDetails";
-import { StrategyDetails } from "@/common/StrategyDetails";
+
 
 const Philosophy: NextPage = () => {
 
@@ -49,7 +47,7 @@ const Philosophy: NextPage = () => {
               />
               {/* Philosophy details */}
               <div className="flex flex-col justify-center mx-2 lg:items-start">
-                  <p className="font-gaegu font-bold text-3xl sm:text-4xl py-4">Relatability</p>
+                  <p className="font-gaegu font-bold text-3xl sm:text-4xl py-4">Bite-sized</p>
                   <p className="font-nunito text-lg md:text-xl self-center lg:self-start lg:text-left mb-8">
                   While the content is split into topics, we encourage recaps of previous topics&apos; content whenever possible.
                   </p>

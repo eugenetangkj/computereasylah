@@ -146,7 +146,7 @@ useEffect(() => {
 
 
       {/* Hamburger menu */}
-      <div id="hamburger-icon" className="mx-auto space-y-1 mr-5 md:mr-0 navbar-custom:hidden cursor-pointer z-30 text-[40px] dark:text-white">
+      <div id="hamburger-icon" className="mx-auto space-y-1 mr-5 navbar-custom:hidden cursor-pointer z-30 text-[40px] dark:text-white">
           <BiMenu onClick={ openMenu } name="menu"/>
       </div>
 

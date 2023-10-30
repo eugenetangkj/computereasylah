@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 const BorderedhintWithTooltip: React.FC<{
-  hint: string;
+  text: string;
   hintClassName: string;
   tooltipContent: Array<any>;
   handleRevealClicked: () => void;
-}> = ({ hint, hintClassName, tooltipContent, handleRevealClicked }) => {
+}> = ({ text, hintClassName, tooltipContent, handleRevealClicked }) => {
   const [isTooltipOpen, setTooltipOpen] = useState(false);
   const [hasClicked, setHasClicked] = useState(false);
 
@@ -18,9 +18,9 @@ const BorderedhintWithTooltip: React.FC<{
 
   return (
     <span className="relative inline">
-      <span className={`${hintClassName}`} onClick={toggleTooltip}>
-        {hint}
-      </span>
+      <button className={`${hintClassName}`} onClick={toggleTooltip}>
+        {text}
+      </button>
       {isTooltipOpen && (
         <div className="absolute z-10 left-0 mt-4 p-2 bg-blue-300 border-4 border-blue-500 rounded-lg text-xl">
           <div className="flex mr-4" dir="rtl">

@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import BackButton, { Topic } from "@/components/backButton";
+import IrasLogoWithWords from "@/public/assets/safety/practice/iras-logo-with-words.png";
+import IrasLogo from "@/public/assets/safety/practice/iras-logo.png";
+import Image from "next/image";
 import NextLink from "next/link";
+import React, { useEffect, useState } from "react";
 import BorderedWordWithTooltip from "./BorderedWordWithTooltip";
 import WordWithTooltip from "./WordWithTooltip";
-import { Topic } from "@/components/backButton";
-import BackButton from "@/components/backButton";
+
+import { CiMail } from "react-icons/ci";
 
 const SafetyPracticeTwo: React.FC = () => {
   const [isPhishy1Clicked, setIsPhishy1Clicked] = useState(false);
@@ -12,8 +16,7 @@ const SafetyPracticeTwo: React.FC = () => {
   const [isPhishy4Clicked, setIsPhishy4Clicked] = useState(false);
   const [isPhishy5Clicked, setIsPhishy5Clicked] = useState(false);
   const [phishyCount, setPhishyCount] = useState(0);
-  const [isCongratulationsModalOpen, setIsCongratulationsModalOpen] =
-    useState(false);
+  const [isCongratulationsModalOpen, setIsCongratulationsModalOpen] = useState(false);
   const [isContinueToRead, setIsContinueToRead] = useState(false);
   const [hints, setHints] = useState([
     { hint: "1. Fake sender email", count: 0, total: 1 },
@@ -108,68 +111,70 @@ const SafetyPracticeTwo: React.FC = () => {
   ]);
 
   return (
-    <div className="flex flex-col item-center justify-center min-h-screen p-10 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
+    <div className="flex flex-col item-center justify-center min-h-screen p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
       <BackButton
         pathToReturnTo="/playground/safety"
         displayText="Back"
         category={Topic.Safety}
       />
-
-      <div className="flex flex-col justify-center items-center text-3xl font-semibold mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
-        <h1>
+      <div className="flex flex-col justify-center items-center font-semibold lg:mx-12 space-y-8 py-4">
+        <div className="text-center text-3xl font-nunito font-semibold pt-4 mx-auto">
           Identify the texts in this email that are phishy, then click on them.
-        </h1>
-        <div className=" flex text-center items-center justify-between">
-          <div className="bg-blue-400 text-white rounded-full py-2 px-10">
+        </div>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-y-4 sm:w-full lg:w-2/3 font-nunito text-xl sm:text-2xl">
+          <div className="border-4 border-pale-gray-100 p-2 rounded-xl ">
             Phishing texts identified: {phishyCount} / 5
           </div>
-          <div className="ml-20 bg-red-700 text-white rounded-full py-2 px-10 cursor-pointer">
-            <WordWithTooltip
-              hint="Hint"
-              hintClassName="text-white"
-              tooltipContent={hints}
-              handleRevealClicked={handleRevealClicked}
+          <WordWithTooltip
+            text="Hint"
+            hintClassName="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32 cursor-pointer"
+            tooltipContent={hints}
+            handleRevealClicked={handleRevealClicked}
+          />
+        </div>
+      </div>
+      {/* Email content */}
+      <div className="border-y-2 sm:border-none sm:rounded-3xl sm:shadow-lg hover:shadow-xl sm:p-10 pb-8">
+        <div className="flex items-center w-full bg-gray-100 space-x-2 h-12">
+          <CiMail className="ml-2" />
+          <div>Inbox</div>
+        </div>
+        <div className="font-bold text-2xl">Tax Refund Confirmation Required</div>
+        <div className="flex items-center my-6">
+          <Image src={IrasLogo} alt="IRAS Logo" className="w-12 mr-2" />
+          {/* Sender details */}
+          <div className="flex flex-col">
+            <div>IRAS Refund Team</div>
+            <BorderedWordWithTooltip
+              word="&lt;iras.refundteam@officialiras.gov.sg&gt;"
+              wordClassName="text-gray-500"
+              tooltipContent="The sender email is not an official IRAS email address."
+              isWordClicked={isPhishy1Clicked}
+              handleWordClicked={handlePhishy1Click}
             />
           </div>
         </div>
-      </div>
-      <div className="text-left p-10 border-4 border-passion-red-900 ">
-        <div className="flex items-center space-x-2">
-          <div className="font-bold">From: IRAS Refund Team</div>
-          <BorderedWordWithTooltip
-            word="&lt;iras.refundteam@officialiras.gov.sg&gt;"
-            wordClassName="text-gray-500"
-            tooltipContent="The sender email is not an official IRAS email address."
-            isWordClicked={isPhishy1Clicked}
-            handleWordClicked={handlePhishy1Click}
-          />
-        </div>
-        <div className="font-bold text-left">Date: 2022-01-01</div>
-        <div className="font-bold text-left mb-16">
-          Subject: Tax Refund Confirmation Required
-        </div>
         <div>
-          <p>Dear [Your Name],</p>
+          <p>Dear Sir / Madam,</p>
           <br />
           <p>
-            We hope this email finds you in good health. We are writing to
-            inform you that you may be eligible for a tax refund from the Inland
-            Revenue Authority of Singapore (IRAS). The refund amount is
-            substantial, and we need to verify your identity before we can
-            process your refund.
+            We hope this email finds you in good health. We are writing to inform you
+            that you may be eligible for a tax refund from the Inland Revenue Authority
+            of Singapore (IRAS). The refund amount is substantial, and we need to verify
+            your identity before we can process your refund.
           </p>
           <br />
           <p>
             <BorderedWordWithTooltip
               word="Please note that this is a time-sensitive matter, and we urge you to
               take action immediately to claim your refund."
-              wordClassName="text-black"
+              wordClassName="text-black font-bold"
               tooltipContent="The email creates a sense of urgency, pressuring you to take immediate action. Phishing emails often use urgency to rush recipients into making mistakes."
               isWordClicked={isPhishy2Clicked}
               handleWordClicked={handlePhishy2Click}
             />
-            To proceed, click on the following link to access the secure IRAS
-            website and confirm your details:
+            To proceed, click on the following link to access the secure IRAS website
+            and confirm your details:
           </p>
           <p>
             <BorderedWordWithTooltip
@@ -182,19 +187,16 @@ const SafetyPracticeTwo: React.FC = () => {
             />
           </p>
           <br />
-          <p>
-            <BorderedWordWithTooltip
-              word="You will be asked to provide your personal
-              and financial information to confirm your identity. Please make sure
-              to have your Tax Reference Number, bank account details, and other
-              personal information"
-              wordClassName="text-black"
-              tooltipContent="The email asks for sensitive information like Tax Reference Number and bank account details. Legitimate organizations rarely request such information via email."
-              isWordClicked={isPhishy4Clicked}
-              handleWordClicked={handlePhishy4Click}
-            />
-            on hand to complete the verification process.
-          </p>
+          <BorderedWordWithTooltip
+            word="Once you click the link, you will be asked to provide your personal and
+            financial information to confirm your identity. Please make sure to have
+            your Tax Reference Number, bank account details, and other personal
+            information on hand to complete the verification process."
+            wordClassName="text-black"
+            tooltipContent="The email asks for sensitive information like Tax Reference Number and bank account details. Legitimate organizations rarely request such information via email."
+            isWordClicked={isPhishy4Clicked}
+            handleWordClicked={handlePhishy4Click}
+          />
           <br />
           <p>
             <BorderedWordWithTooltip
@@ -209,13 +211,13 @@ const SafetyPracticeTwo: React.FC = () => {
           </p>
           <br />
           <p>
-            We understand the importance of protecting your personal
-            information. Rest assured that this verification process is secure,
-            and your data will be handled with the utmost confidentiality.
+            We understand the importance of protecting your personal information. Rest
+            assured that this verification process is secure, and your data will be
+            handled with the utmost confidentiality.
           </p>
           <p>
-            If you have any questions or need assistance, please do not hesitate
-            to contact our IRAS support team at the following email address:
+            If you have any questions or need assistance, please do not hesitate to
+            contact our IRAS support team at the following email address:
             <a
               href="mailto:iras.support@phishingsite.com"
               className="text-blue-600 underline"
@@ -227,23 +229,25 @@ const SafetyPracticeTwo: React.FC = () => {
           </p>
           <br />
           <p>
-            Thank you for your prompt attention to this matter. We appreciate
-            your cooperation in helping us process your tax refund efficiently.
+            Thank you for your prompt attention to this matter. We appreciate your
+            cooperation in helping us process your tax refund efficiently.
           </p>
           <br />
           <br />
           <p>Sincerely,</p>
           <p>IRAS Refund Team Inland Revenue Authority of Singapore</p>
+          <Image
+            src={IrasLogoWithWords}
+            alt="IRAS Logo With words"
+            className="h-28 w-auto"
+          />
         </div>
       </div>
       {isCongratulationsModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="modal-content bg-green-300 p-4 rounded-lg shadow-lg">
             <h2 className="text-2xl mb-4">Congratulations!</h2>
-            <p>
-              You have successfully found all the phishing elements in the
-              email!
-            </p>
+            <p>You have successfully found all the phishing elements in the email!</p>
             <div className="justify-between mt-4">
               <button
                 className="bg-green-400 text-white rounded-full p-4 mx-10"

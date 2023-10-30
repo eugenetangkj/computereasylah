@@ -128,7 +128,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
         onClick={closeModal}
       />
 
-      <div className="text-center text-3xl font-nunito font-semibold py-4 mx-auto">
+      <div className="text-center text-3xl font-nunito font-semibold sm:py-2 xl:py-8 mx-auto">
         You have received the following email.
       </div>
       {/* Email content */}

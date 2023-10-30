@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import SafetyPracticOne from "@/components/safety/practice/safety-practice-one";
 import SafetyPracticeTwo from "@/components/safety/practice/safety-practice-two";
-import Head
- from "next/head";
+import Head from "next/head";
+import React, { useState } from "react";
 const SafetyPractice: React.FC = () => {
   interface ComponentsConfig {
     [key: number]: React.FC<any>;

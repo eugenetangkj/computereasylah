@@ -121,8 +121,8 @@ const SafetyPracticeTwo: React.FC = () => {
         <div className="text-center text-3xl font-nunito font-semibold pt-4 mx-auto">
           Identify the texts in this email that are phishy, then click on them.
         </div>
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-y-4 sm:w-full lg:w-2/3 font-nunito text-xl sm:text-2xl">
-          <div className="border-4 border-pale-gray-100 p-2 rounded-xl ">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-y-4  lg:w-2/3 font-nunito text-xl sm:text-2xl">
+          <div className="border-4 border-pale-gray-100 p-1.5 rounded-xl">
             Phishing texts identified: {phishyCount} / 5
           </div>
           <WordWithTooltip
@@ -187,10 +187,10 @@ const SafetyPracticeTwo: React.FC = () => {
             />
           </p>
           <br />
+          Once you click the link, you will be asked to provide your personal and
+          financial information to confirm your identity.
           <BorderedWordWithTooltip
-            word="Once you click the link, you will be asked to provide your personal and
-            financial information to confirm your identity. Please make sure to have
-            your Tax Reference Number, bank account details, and other personal
+            word="Please make sure to have your Tax Reference Number, bank account details, and other personal
             information on hand to complete the verification process."
             wordClassName="text-black"
             tooltipContent="The email asks for sensitive information like Tax Reference Number and bank account details. Legitimate organizations rarely request such information via email."

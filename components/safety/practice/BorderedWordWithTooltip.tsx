@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const BorderedWordWithTooltip: React.FC<{
   word: string;
@@ -6,13 +6,7 @@ const BorderedWordWithTooltip: React.FC<{
   tooltipContent: string;
   isWordClicked: boolean;
   handleWordClicked: () => void;
-}> = ({
-  word,
-  wordClassName,
-  tooltipContent,
-  isWordClicked,
-  handleWordClicked,
-}) => {
+}> = ({ word, wordClassName, tooltipContent, isWordClicked, handleWordClicked }) => {
   const [isTooltipOpen, setTooltipOpen] = useState(false);
 
   const toggleTooltip = () => {

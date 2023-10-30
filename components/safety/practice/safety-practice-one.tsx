@@ -25,7 +25,7 @@ const PhishyModal: React.FC<PhishyModalProps> = ({
   closeModal,
   nextPractice,
 }) => {
-  const ModalTitle = ({ isPhishy }) => {
+  const ModalTitle = ({ isPhishy }: { isPhishy: boolean }) => {
     return isPhishy ? (
       <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-center">
         Congratulations!
@@ -37,7 +37,7 @@ const PhishyModal: React.FC<PhishyModalProps> = ({
     );
   };
 
-  const ModalContent = ({ isPhishy }) => {
+  const ModalContent = ({ isPhishy }: { isPhishy: boolean }) => {
     return isPhishy ? (
       <p className="leading-normal md:text-xl md:leading-relaxed mb-8">
         You have identified a phishing attempt!

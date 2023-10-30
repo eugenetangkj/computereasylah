@@ -12,7 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        'navbar-custom': '890px',    // Custom for navbar resizing
+        "navbar-custom": "890px", // Custom for navbar resizing
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -59,6 +59,7 @@ const config: Config = {
         },
         question: {
           correct: "#A2DA87",
+          wrong: "#EF4444",
         },
 
         "introduction-green": {
@@ -68,21 +69,15 @@ const config: Config = {
           900: "#B7C26D",
         },
         "file-management-blue": {
-          900: "#6DA9C2"
+          900: "#6DA9C2",
         },
         "internet-purple": {
-          900: "#E469F7"
+          900: "#E469F7",
         },
         "pale-gray": {
           100: "#D4D4D4",
           500: "#595959",
         },
-
-
-
-
-
-
       },
       translate: {
         "1/8": "12.5%",
@@ -99,7 +94,7 @@ const config: Config = {
         "340p": "340px",
         "450p": "450px",
         "540p": "540px",
-        "1000p": "1000px"
+        "1000p": "1000px",
       },
       height: {
         "80vh": "80vh",

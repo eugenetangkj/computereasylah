@@ -7,10 +7,10 @@ export const navLinks = [
     id: "philosophy",
     title: "Philosophy",
   },
-  {
-    id: "impact",
-    title: "Impact",
-  },
+  // {
+  //   id: "impact",
+  //   title: "Impact",
+  // },
   {
     id: "curriculum",
     title: "Curriculum",
@@ -25,43 +25,42 @@ export const curriculumInfo = [
   {
     title: "Introduction",
     content: "What is a computer? What parts does it contain?",
-    color: "introduction-green-900"
-
+    color: "introduction-green-900",
   },
   {
     title: "Using a Computer",
     content: "How can I use the basic features of a computer?",
-    color: "using-computer-lime-900"
+    color: "using-computer-lime-900",
   },
   {
     title: "Typing",
     content: "How do I type into the computer using a keyboard?",
-    color: "energy-orange-900"
+    color: "energy-orange-900",
   },
   {
     title: "File Management",
     content: "How do I store and open files on a computer?",
-    color: "file-management-blue-900"
+    color: "file-management-blue-900",
   },
   {
     title: "Applications",
     content: "What are the main apps I can use on a computer?",
-    color: "creative-pink-900"
+    color: "creative-pink-900",
   },
   {
     title: "Internet",
     content: "How do I browse the Internet using a computer?",
-    color: "internet-purple-900"
+    color: "internet-purple-900",
   },
   {
     title: "Email",
     content: "How do I use the computer to send emails?",
-    color: "trust-blue-900"
+    color: "trust-blue-900",
   },
   {
     title: "Safety",
     content: "How can I safely use a computer and the Internet?",
-    color: "passion-red-900"
+    color: "passion-red-900",
   },
 ];
 

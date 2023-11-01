@@ -1,9 +1,9 @@
 import WLDLogo from "@/assets/WLDLogo.png";
-import Text from "@/common/Text";
+import { Intro } from "@/common/Intro";
+import { Resource } from "@/common/Resource";
 import Title from "@/common/Title";
 import Layout from "@/components/layout";
 import Image from "next/image";
-import NextLink from "next/link";
 import PartnerLogo from "public/assets/home/partner-logo.png";
 import ResourceLogo from "public/assets/home/resource-logo.png";
 import ResourceIcon1 from "public/assets/home/resource_icon_1.png";
@@ -11,23 +11,34 @@ import ResourceIcon2 from "public/assets/home/resource_icon_2.png";
 import ResourceIcon3 from "public/assets/home/resource_icon_3.png";
 import ResourceIcon4 from "public/assets/home/resource_icon_4.png";
 import VisionLogo from "public/assets/home/vision-logo.png";
-import { Resource } from "@/common/Resource";
-import { Intro } from "@/common/Intro";
-
+import { useEffect, useState } from "react";
 
 //Landing page
 const Landing = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <Layout>
       <div>
         {/* Video */}
-        <div className="video-container" id="landing-video">
-          <video autoPlay loop muted playsInline className="h-80vh w-full object-cover pointer-events-none">
-            <source src="/assets/home/landing-video.mp4" type="video/mp4" />
-          </video>
-        </div>
+        {isClient && (
+          <div className="video-container" id="landing-video">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-80vh w-full object-cover pointer-events-none"
+            >
+              <source src="/assets/home/landing-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+        )}
         <div className="flex flex-col justify-center items-center text-center mt-8 bg-white mx-8 lg:mx-16 xl:mx-48 2xl:mx-64">
-          
           {/* About Us */}
           <Intro
             title="About Us"
@@ -46,11 +57,14 @@ const Landing = () => {
           />
 
           {/* Resources */}
-          <Image src={ResourceLogo} alt="" className="w-full mt-8 sm:w-1/2 mb-12 lg:mb-8" />
+          <Image
+            src={ResourceLogo}
+            alt=""
+            className="w-full mt-8 sm:w-1/2 mb-12 lg:mb-8"
+          />
 
-          <div className='flex flex-col space-y-16 lg:justify-center lg:items-center mt-8'>
-
-          <Resource
+          <div className="flex flex-col space-y-16 lg:justify-center lg:items-center mt-8">
+            <Resource
               image={ResourceIcon1}
               title="The Playground"
               text="An interactive platform filled with hands-on activities, quizzes and videos to enrich the learning of senior adults."
@@ -60,7 +74,7 @@ const Landing = () => {
             <Resource
               image={ResourceIcon2}
               title="Curriculum Guide"
-              text="A guide that outlines the curriculum of Work Live Digital&apos;s foundation computer classes, and how to best incorporate The Playground with the lessons."
+              text="A guide that outlines the curriculum of Work Live Digital's foundation computer classes, and how to best incorporate The Playground with the lessons."
               button="Download"
               link="/"
             />
@@ -78,10 +92,9 @@ const Landing = () => {
               button="Watch"
               link="/"
             />
-
           </div>
 
-           {/* Video
+          {/* Video
            <div className="video-container mt-16 flex flex-col justify-center items-center">
           <Intro
             title="Promotional Video"
@@ -92,11 +105,7 @@ const Landing = () => {
             </video>
           </div> */}
 
-
-
-
-
-          <Title text="We are supported by" className="mt-20"/>
+          <Title text="We are supported by" className="mt-20" />
           <Image src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />
         </div>
       </div>

@@ -76,7 +76,7 @@ const Landing = () => {
               title="Curriculum Guide"
               text="A guide that outlines the curriculum of Work Live Digital's foundation computer classes, and how to best incorporate The Playground with the lessons."
               button="Download"
-              link="/"
+              link="/resources/curriculum-guide.pdf"
             />
             <Resource
               image={ResourceIcon3}

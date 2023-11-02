@@ -2,6 +2,7 @@ import Image from "next/image";
 import Text from "./Text";
 import NextLink from "next/link";
 
+
 export const Resource = (props: any) => {
     const { image, title, text, button, link } = props;
   
@@ -12,8 +13,8 @@ export const Resource = (props: any) => {
             {title}
           </div>
           <Text className="my-4 text-pale-gray-500 text-lg" content={text} />
-          <NextLink href={link}>
-            <button className="w-40 h-16 bg-trust-blue-500 rounded-3xl text-black font-semibold text-xl hover:bg-trust-blue-hover duration-300">
+          <NextLink href={ link } target="_blank">
+            <button className="w-36 sm:w-48 py-4 bg-trust-blue-500 rounded-3xl text-black font-semibold text-xl hover:bg-trust-blue-hover duration-300">
               {button}
             </button>
           </NextLink>

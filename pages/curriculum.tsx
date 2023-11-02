@@ -113,7 +113,7 @@ const Curriculum = () => {
             </div>
           </div>
        
-          <Slides />
+          {/* <Slides /> */}
         </div>
       </div>
     </Layout>

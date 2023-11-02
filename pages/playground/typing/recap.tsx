@@ -4,6 +4,7 @@ import BackButton from "@/components/backButton";
 import Image from 'next/image';
 import { Topic } from "@/components/backButton";
 import Head from "next/head";
+import Iframe from 'react-iframe'
 
 //Typing Recap page
 export default function TypingRecap() {
@@ -18,6 +19,10 @@ export default function TypingRecap() {
 
     return () => clearTimeout(timer); // Clean up the timer on unmount
   }, []);
+
+
+  //Video link to typing recap video
+  const videoLink = 'https://www.youtube.com/embed/01CVHD5pp80?si=87N_fwmcFoEUIaUa';
 
   return (
     <div>
@@ -34,8 +39,20 @@ export default function TypingRecap() {
         <BackButton pathToReturnTo='/playground/typing' displayText='Back' category={Topic.Typing} />
         
         {/* Title */}
-        <h1 className="text-4xl w-4/5 md:text-5xl lg:text-6xl 2xl:text-7xl font-bold font-gaegu text-center mt-16 z-10">Recap on Typing</h1>
-        <h3 className='text-3xl md:text-4xl text-gray-500 font-nunito text-center'>Coming soon...</h3>
+        <h1 className="text-4xl w-4/5 md:text-5xl lg:text-6xl 2xl:text-7xl font-bold font-gaegu text-center mt-16 z-30">Recap on Typing</h1>
+        <h3 className='text-3xl md:text-4xl text-gray-500 font-nunito text-center z-30'>Watch this 5-min recap video to recap what was taught for Typing.</h3>
+
+        {/* Video */}
+        <Iframe url={ videoLink }
+            height="320px"
+            id=""
+            className="z-30 w-340p lg:w-540p"
+        />
+
+
+
+
+
 
         {/* Background Images */}
         <img src='/assets/typing/tilted_keyboard.png' alt='Keyboard' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 right-0 translate-x-3/10 -translate-y-1/2 z-20' />

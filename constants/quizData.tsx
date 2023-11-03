@@ -127,23 +127,23 @@ export const ApplicationsQuizData: Quiz = {
       explanation:
         "The icon shown is used to minimise a window, such that the window no longer appears on the screen. To bring the window into view, you can visit the taskbar.",
     },
-    {
-      question:
-        "I have an existing file on the computer. I made some changes, and would like to save it without changing the file name. Which option should I press?",
-      choices: ["Save", "Save As", "Open", "Print"],
-      correctAnswer: "Save",
-      imageLink: "",
-      explanation:
-        "Save As allows you to save the file with a new file name, while Save saves the contents of the file without changing a new file name.",
-    },
-    {
-      question: "Which file extension do downloaded applications usually have?",
-      choices: [".docx", ".exe", ".mp3", ".pptx"],
-      correctAnswer: ".exe",
-      imageLink: "",
-      explanation:
-        "Downloaded apps are usually executable files, which contain instructions for your computer to download and run the apps. Executable files have a .exe file extension.",
-    },
+    // {
+    //   question:
+    //     "I have an existing file on the computer. I made some changes, and would like to save it without changing the file name. Which option should I press?",
+    //   choices: ["Save", "Save As", "Open", "Print"],
+    //   correctAnswer: "Save",
+    //   imageLink: "",
+    //   explanation:
+    //     "Save As allows you to save the file with a new file name, while Save saves the contents of the file without changing a new file name.",
+    // },
+    // {
+    //   question: "Which file extension do downloaded applications usually have?",
+    //   choices: [".docx", ".exe", ".mp3", ".pptx"],
+    //   correctAnswer: ".exe",
+    //   imageLink: "",
+    //   explanation:
+    //     "Downloaded apps are usually executable files, which contain instructions for your computer to download and run the apps. Executable files have a .exe file extension.",
+    // },
   ],
 };
 

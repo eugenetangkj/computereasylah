@@ -8,6 +8,8 @@ import React, { useState } from "react";
 import { CiMail } from "react-icons/ci";
 import { MdClose } from "react-icons/md";
 
+import { useEffect } from "react";
+
 interface SafetyPracticalProps {
   updateCurrentIndex: (index: number) => void;
 }
@@ -114,8 +116,22 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
     updateCurrentIndex(2);
   };
 
+  // Animation
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    // Set isActive to true after a short delay when the component is mounted
+    const timer = setTimeout(() => {
+      setIsActive(true);
+    }, 100); // Adjust the delay as needed
+
+    return () => clearTimeout(timer); // Clean up the timer on unmount
+  }, []);
+
   return (
-    <div className="flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
+    <div className={`flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
+      isActive ? "opacity-100" : ""
+  } duration-1000`}>
       <BackButton
         pathToReturnTo="/playground/safety"
         displayText="Back"
@@ -144,7 +160,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
           <div className="flex flex-col">
             <div>IRAS Refund Team</div>
             <div className="text-gray-500">
-              &lt;iras.refundteam@officialiras.gov.sg&gt;
+              &lt;iras.refundteam@officialiras.sg&gt;
             </div>
           </div>
         </div>
@@ -167,15 +183,12 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
             and confirm your details:
           </p>
           <p>
-            <a
-              href="http://phishingsite.com/verify"
-              target="_blank"
-              rel="noopener noreferrer"
+            <span
               className="text-blue-600 underline"
             >
               [IRAS Refund Team Inland Revenue Authority of Singapore:
-              http://phishingsite.com/verify-sg]
-            </a>
+              ]
+            </span>
           </p>
           <br />
           <p>
@@ -198,13 +211,12 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
           <p>
             If you have any questions or need assistance, please do not hesitate to
             contact our IRAS support team at the following email address:
-            <a
-              href="mailto:iras.support@phishingsite.com"
+            <span
               className="text-blue-600 underline"
             >
               {" "}
-              iras.support@officialiras.gov.sg
-            </a>
+              iras.support@officialiras.sg
+            </span>
             .
           </p>
           <br />

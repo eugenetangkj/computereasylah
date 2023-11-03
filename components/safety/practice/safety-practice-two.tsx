@@ -11,6 +11,7 @@ import Modal from "@/common/Modal";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 import { CiMail } from "react-icons/ci";
 
+
 interface HintModalProps {
   tooltipContent: Array<any>;
   handleRevealClicked: () => void;
@@ -211,8 +212,22 @@ const SafetyPracticeTwo: React.FC = () => {
     setIsHintModalOpen(false);
   };
 
+   // Animation
+   const [isActive, setIsActive] = useState(false);
+
+   useEffect(() => {
+     // Set isActive to true after a short delay when the component is mounted
+     const timer = setTimeout(() => {
+       setIsActive(true);
+     }, 100); // Adjust the delay as needed
+ 
+     return () => clearTimeout(timer); // Clean up the timer on unmount
+   }, []);
+
   return (
-    <div className="flex flex-col item-center justify-center min-h-screen p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0">
+    <div className={`flex flex-col item-center justify-center min-h-screen p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
+      isActive ? "opacity-100" : ""
+  } duration-1000`}>
       <BackButton
         pathToReturnTo="/playground/safety"
         displayText="Back"
@@ -255,7 +270,7 @@ const SafetyPracticeTwo: React.FC = () => {
           <div className="flex flex-col">
             <div>IRAS Refund Team</div>
             <BorderedWordWithModal
-              word="&lt;iras.refundteam@officialiras.gov.sg&gt;"
+              word="&lt;iras.refundteam@officialiras.sg&gt;"
               wordClassName="text-gray-500"
               tooltipContent="The sender email is not an official IRAS email address."
               isWordClicked={isPhishy1Clicked}
@@ -287,8 +302,7 @@ const SafetyPracticeTwo: React.FC = () => {
           </div>
           <div>
             <BorderedWordWithModal
-              word="[IRAS Refund Team Inland Revenue Authority of Singapore:
-                http://phishingsite.com/verify-sg]"
+              word="[IRAS Refund Team Inland Revenue Authority of Singapore]"
               wordClassName="text-blue-600 underline"
               tooltipContent="URL phishing attacks uses various means to trick a user into clicking on the malicious link."
               isWordClicked={isPhishy3Clicked}
@@ -327,13 +341,12 @@ const SafetyPracticeTwo: React.FC = () => {
           <div>
             If you have any questions or need assistance, please do not hesitate to
             contact our IRAS support team at the following email address:
-            <a
-              href="mailto:iras.support@phishingsite.com"
+            <span
               className="text-blue-600 underline"
             >
               {" "}
-              iras.support@officialiras.gov.sg
-            </a>
+              iras.support@officialiras.sg
+            </span>
             .
           </div>
           <br />

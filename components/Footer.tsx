@@ -13,14 +13,14 @@ const Footer = () => {
           </a>
 
           {/* YouTube logo */}
-          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@ComputerEasyLah" target="_blank" rel="noopener noreferrer">
             <BiLogoYoutube className='text-4xl lg:text-5xl hover:text-trust-blue-hover cursor-pointer duration-300' />
           </a>
 
           {/* Github logo */}
-          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
             <BiLogoGithub className='text-4xl lg:text-5xl hover:text-trust-blue-hover cursor-pointer duration-300' />
-          </a>
+          </a> */}
 
 
         </div>

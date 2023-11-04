@@ -94,6 +94,22 @@ const StoryPage = () => {
               <div className="flex flex-col justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
                 {/* Select Basic Levels */}
                 <div className="flex flex-row justify-center items-center space-x-10">
+                  {/* Words */}
+                  <button
+                      className="flex flex-col justify-center items-center space-y-4"
+                      onClick={() => router.push(`/playground/typing/game/words`)}
+                    >
+                      <div
+                        className="bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center rounded-3xl w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 duration-300"
+                        style={{ position: "relative" }}
+                      >
+                        <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
+                          Words
+                        </h3>
+                      </div>
+                  </button>
+
+                  {/* Symbols */}
                   <button
                     className="flex flex-col justify-center items-center space-y-4"
                     onClick={() =>
@@ -110,19 +126,7 @@ const StoryPage = () => {
                     </div>
                   </button>
 
-                  <button
-                    className="flex flex-col justify-center items-center space-y-4"
-                    onClick={() => router.push(`/playground/typing/game/words`)}
-                  >
-                    <div
-                      className="bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center rounded-3xl w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 duration-300"
-                      style={{ position: "relative" }}
-                    >
-                      <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
-                        Words
-                      </h3>
-                    </div>
-                  </button>
+                  
                 </div>
 
                 {/* Spacer */}

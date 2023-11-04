@@ -87,7 +87,7 @@ export default function CommonApps() {
               style={{ 'height': '225px' }}
               >
                   <div className='flex justify-between w-full'>
-                      <h2 className='font-gaegu font-bold text-3xl self-center xl:text-4xl'>Notes</h2>
+                      <h2 className='font-gaegu font-bold text-3xl self-center xl:text-4xl'>Notepad</h2>
                       <img src='/assets/applications/notepad-logo.png' alt='Notepad' className='' />
                   </div>
                   

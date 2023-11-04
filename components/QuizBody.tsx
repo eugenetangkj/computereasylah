@@ -258,7 +258,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           <img
             src={allQuestions.questions[currentQuestionIndex].imageLink}
             alt="Question Image"
-            className="mx-4 w-3/4"
+            className="mx-4 w-1/2"
           />
         ) : (
           <h2></h2>
@@ -335,23 +335,26 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           <span>Check</span>
         </button>
 
-        {/* View Explanation button */}
-        <button
-          id="view-explanation-button"
-          className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-4 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
-          onClick={() => toggleExplanation("open")}
-        >
-          <span>Explanation</span>
-        </button>
+        <div className='flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0'>
+          {/* View Explanation button */}
+          <button
+            id="view-explanation-button"
+            className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-4 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
+            onClick={() => toggleExplanation("open")}
+          >
+            <span>Explanation</span>
+          </button>
 
-        {/* Next button */}
-        <button
-          id="next-button"
-          className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-16 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
-          onClick={handleNextQuestion}
-        >
+          {/* Next button */}
+          <button
+            id="next-button"
+            className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-16 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
+            onClick={handleNextQuestion}
+          >
+     
           <span>Next</span>
-        </button>
+          </button>
+        </div>
       </div>
 
       <div

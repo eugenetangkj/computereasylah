@@ -54,7 +54,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
         setRandomInteger(randomInteger);
     }
 
-    , []);
+    , [randomInteger]);
 
 
 

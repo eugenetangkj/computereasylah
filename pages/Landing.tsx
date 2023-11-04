@@ -90,7 +90,7 @@ const Landing = () => {
               title="Video Playlist"
               text="The educational videos in The Playground are publicly available on our YouTube channel. Feel free to browse through them!"
               button="Watch"
-              link="/"
+              link="https://www.youtube.com/@ComputerEasyLah"
             />
           </div>
 

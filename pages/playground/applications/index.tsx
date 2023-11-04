@@ -1,6 +1,5 @@
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
-import { MdComputer } from "react-icons/md";
 import BackButton from "@/components/backButton";
 import Image from 'next/image';
 import { Topic } from "@/components/backButton";
@@ -59,25 +58,6 @@ export default function Applications() {
           >
             <div className="bg-white hover:bg-creative-pink-900 border-solid border-8 border-creative-pink-900 py-10 lg:px-8 xl:py-16 flex justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300">
               <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">Common Apps</h3>
-            </div>
-          </NextLink>
-
-          {/* Back up phone*/}
-          <NextLink
-            href="/playground/applications/backup-phone"
-            className="flex flex-col justify-center items-center space-y-4"
-          >
-            <div
-              className="bg-white hover:bg-creative-pink-900 border-solid border-8 border-creative-pink-900 py-10 lg:px-8 xl:py-16 flex flex-col justify-center items-center rounded-3xl w-64 h-28 lg:w-72 lg:h-36 xl:w-80 xl:h-16 duration-300"
-              style={{ position: "relative" }}
-            >
-              <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
-                How to Backup My Phone
-              </h3>
-              {/* <MdComputer
-                className="text-trust-blue-900 text-3xl lg:text-4xl"
-                style={{ position: "absolute", bottom: "20px", right: "20px" }}
-              /> */}
             </div>
           </NextLink>
 

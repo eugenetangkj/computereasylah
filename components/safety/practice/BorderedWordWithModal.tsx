@@ -32,29 +32,41 @@ const ExplanationModal: React.FC<ExplanationModalProps> = ({
     </>
   );
 };
+
 const BorderedWordWithModal: React.FC<{
   word: string;
   wordClassName: string;
-  tooltipContent: string;
+  modalContent: string;
   isWordClicked: boolean;
   handleWordClicked: () => void;
-}> = ({ word, wordClassName, tooltipContent, isWordClicked, handleWordClicked }) => {
-  const [isTooltipOpen, setTooltipOpen] = useState(false);
+  phishyCount: number;
+  isContinueToRead: boolean;
+  openCongratulationsModal: () => void;
+}> = ({ word, wordClassName, modalContent, isWordClicked, handleWordClicked, phishyCount, isContinueToRead, openCongratulationsModal }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
 
-  const toggleTooltip = () => {
+  const toggleModal = () => {
     if (!isWordClicked) {
       handleWordClicked();
     }
-    setTooltipOpen(!isTooltipOpen);
+    setModalOpen(!isModalOpen);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    // Only display congratulations modal when user has clicked on 5 phishy words and close the explanation modal
+    if (phishyCount === 5 && !isContinueToRead) {
+      openCongratulationsModal();
+    }
   };
 
   return (
     <span className="relative inline">
       <ExplanationModal
         word={word}
-        content={tooltipContent}
-        handleCloseModal={toggleTooltip}
-        isOpen={isTooltipOpen}
+        content={modalContent}
+        handleCloseModal={closeModal}
+        isOpen={isModalOpen}
       />
       <span
         className={`cursor-pointer ${wordClassName} ${
@@ -62,7 +74,7 @@ const BorderedWordWithModal: React.FC<{
             ? "border-b-4 border-question-wrong sm:border-4 sm:border-dashed sm:border-pale-gray-100 sm:rounded-lg sm:p-1 sm:leading-loose hover:border-solid hover:border-question-correct"
             : ""
         }`}
-        onClick={toggleTooltip}
+        onClick={toggleModal}
       >
         {word}
       </span>

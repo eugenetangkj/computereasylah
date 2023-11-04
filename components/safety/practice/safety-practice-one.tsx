@@ -89,25 +89,6 @@ const PhishyModal: React.FC<PhishyModalProps> = ({
           </div>
         </div>
       </Modal>
-      {/* {(isPhishy || isNotPhishy) && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 font-nunito">
-          <div className="p-4 rounded-lg shadow-md bg-white w-5/6">
-            <div dir="rtl">
-              <MdClose className="cursor-pointer" size={32} onClick={closeModal} />
-            </div>
-            <ModalTitle isPhishy={isPhishy} />
-            <ModalContent isPhishy={isPhishy} />
-            <div className="flex justify-center">
-              <button
-                className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full font-semibold text-lg sm:text-xl h-12 w-28 sm:h-14 sm:w-32"
-                onClick={nextPractice}
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      )} */}
     </>
   );
 };
@@ -169,23 +150,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
       <div className="text-center text-3xl font-nunito font-semibold sm:py-2 xl:py-8 mx-auto">
         You have received the following email.
       </div>
-      <div className="text-center text-2xl sm:text-3xl font-nunito font-semibold">
-        Is it a phishing attempt?
-      </div>
-      <div className="flex flex-row justify-center text-lg sm:text-xl font-semibold mt-4 space-x-8 font-nunito">
-        <button
-          className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32"
-          onClick={openisPhishyModal}
-        >
-          Phishy
-        </button>
-        <button
-          className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-32 sm:h-14 sm:w-36"
-          onClick={openisNotPhishyModal}
-        >
-          Not Phishy
-        </button>
-      </div>
+
       {/* Email content */}
       <div className="border-y-2 sm:border-none sm:rounded-3xl sm:shadow-lg hover:shadow-xl sm:p-10 pb-8">
         <div className="flex items-center w-full bg-gray-100 space-x-2 h-12">
@@ -268,6 +233,23 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
         </div>
       </div>
 
+      <div className="text-center text-2xl sm:text-3xl font-nunito font-semibold py-4">
+        Is it a phishing attempt?
+      </div>
+      <div className="flex flex-row justify-center text-lg sm:text-xl font-semibold mt-4 space-x-8 font-nunito">
+        <button
+          className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32"
+          onClick={openisPhishyModal}
+        >
+          Phishy
+        </button>
+        <button
+          className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-32 sm:h-14 sm:w-36"
+          onClick={openisNotPhishyModal}
+        >
+          Not Phishy
+        </button>
+      </div>
       <PhishyModal
         isPhishy={isPhishy}
         isNotPhishy={isNotPhishy}

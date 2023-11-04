@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { CiMail } from "react-icons/ci";
 import { MdClose } from "react-icons/md";
 
+import Modal from "@/common/Modal";
 import { useEffect } from "react";
 
 interface SafetyPracticalProps {
@@ -69,7 +70,26 @@ const PhishyModal: React.FC<PhishyModalProps> = ({
 
   return (
     <>
-      {(isPhishy || isNotPhishy) && (
+      <Modal isOpen={isPhishy || isNotPhishy} onClose={closeModal}>
+        <div className="fixed inset-0 flex items-center justify-center z-50 font-nunito">
+          <div className="p-4 rounded-lg shadow-md bg-white w-5/6 md:w-2/3 lg:w-1/3">
+            <div dir="rtl">
+              <MdClose className="cursor-pointer" size={32} onClick={closeModal} />
+            </div>
+            <ModalTitle isPhishy={isPhishy} />
+            <ModalContent isPhishy={isPhishy} />
+            <div className="flex justify-center">
+              <button
+                className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full font-semibold text-lg sm:text-xl h-12 w-28 sm:h-14 sm:w-32"
+                onClick={nextPractice}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </Modal>
+      {/* {(isPhishy || isNotPhishy) && (
         <div className="fixed inset-0 flex items-center justify-center z-50 font-nunito">
           <div className="p-4 rounded-lg shadow-md bg-white w-5/6">
             <div dir="rtl">
@@ -87,7 +107,7 @@ const PhishyModal: React.FC<PhishyModalProps> = ({
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
@@ -129,9 +149,11 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
   }, []);
 
   return (
-    <div className={`flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
-      isActive ? "opacity-100" : ""
-  } duration-1000`}>
+    <div
+      className={`flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
+        isActive ? "opacity-100" : ""
+      } duration-1000`}
+    >
       <BackButton
         pathToReturnTo="/playground/safety"
         displayText="Back"
@@ -147,6 +169,23 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
       <div className="text-center text-3xl font-nunito font-semibold sm:py-2 xl:py-8 mx-auto">
         You have received the following email.
       </div>
+      <div className="text-center text-2xl sm:text-3xl font-nunito font-semibold">
+        Is it a phishing attempt?
+      </div>
+      <div className="flex flex-row justify-center text-lg sm:text-xl font-semibold mt-4 space-x-8 font-nunito">
+        <button
+          className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32"
+          onClick={openisPhishyModal}
+        >
+          Phishy
+        </button>
+        <button
+          className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-32 sm:h-14 sm:w-36"
+          onClick={openisNotPhishyModal}
+        >
+          Not Phishy
+        </button>
+      </div>
       {/* Email content */}
       <div className="border-y-2 sm:border-none sm:rounded-3xl sm:shadow-lg hover:shadow-xl sm:p-10 pb-8">
         <div className="flex items-center w-full bg-gray-100 space-x-2 h-12">
@@ -159,9 +198,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
           {/* Sender details */}
           <div className="flex flex-col">
             <div>IRAS Refund Team</div>
-            <div className="text-gray-500">
-              &lt;iras.refundteam@officialiras.sg&gt;
-            </div>
+            <div className="text-gray-500">&lt;iras.refundteam@officialiras.sg&gt;</div>
           </div>
         </div>
         <div>
@@ -183,11 +220,8 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
             and confirm your details:
           </p>
           <p>
-            <span
-              className="text-blue-600 underline"
-            >
-              [IRAS Refund Team Inland Revenue Authority of Singapore:
-              ]
+            <span className="text-blue-600 underline">
+              [IRAS Refund Team Inland Revenue Authority of Singapore: ]
             </span>
           </p>
           <br />
@@ -211,9 +245,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
           <p>
             If you have any questions or need assistance, please do not hesitate to
             contact our IRAS support team at the following email address:
-            <span
-              className="text-blue-600 underline"
-            >
+            <span className="text-blue-600 underline">
               {" "}
               iras.support@officialiras.sg
             </span>
@@ -235,23 +267,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
           />
         </div>
       </div>
-      <div className="text-center text-2xl sm:text-3xl font-nunito font-semibold">
-        Is it a phishing attempt?
-      </div>
-      <div className="flex flex-row justify-center text-lg sm:text-xl font-semibold mt-4 space-x-8 font-nunito">
-        <button
-          className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32"
-          onClick={openisPhishyModal}
-        >
-          Phishy
-        </button>
-        <button
-          className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-32 sm:h-14 sm:w-36"
-          onClick={openisNotPhishyModal}
-        >
-          Not Phishy
-        </button>
-      </div>
+
       <PhishyModal
         isPhishy={isPhishy}
         isNotPhishy={isNotPhishy}

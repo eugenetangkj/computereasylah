@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { BiHome } from "react-icons/bi";
 
 //Back button
 export enum Topic {
@@ -37,15 +38,25 @@ export default function BackButton({
     <div
       className={`fixed w-full top-0 left-0 py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-8 bg-white`}
     >
-      {/* Back button */}
-      <NextLink href={pathToReturnTo} className="">
-        <h5
-          className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}
-          style={{ display: "inline-block", width: "5%", height: "100%" }}
-        >
-          {displayText}
-        </h5>
-      </NextLink>
+      <div className="flex flex-row items-center justify-between">
+        {/* Back button */}
+        <NextLink href={pathToReturnTo} className="">
+          <h5
+            className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}
+            style={{ display: "inline-block", width: "5%", height: "100%" }}
+          >
+            {displayText}
+          </h5>
+        </NextLink>
+        {/* Home button */}
+        <NextLink href="/playground" className="">
+          <BiHome
+            className={`${hoverColour} inline-block text-4xl lg:text-5xl duration-300 z-50`}
+          />
+        </NextLink>
+        {/* Empty div to fill up space so that home button is at center */}
+        <div></div>
+      </div>
     </div>
   );
 }

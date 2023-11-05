@@ -40,7 +40,7 @@ export default function TypingRecap() {
         
         {/* Title */}
         <h1 className="text-4xl w-4/5 md:text-5xl lg:text-6xl 2xl:text-7xl font-bold font-gaegu text-center mt-16 z-30">Recap on Typing</h1>
-        <h3 className='text-3xl md:text-4xl text-gray-500 font-nunito text-center z-30'>Watch this 5-min recap video to recap what was taught for Typing.</h3>
+        <h3 className='text-2xl md:text-4xl text-gray-500 font-nunito text-center z-30'>Watch this 5-min recap video to recap what was taught for Typing.</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }

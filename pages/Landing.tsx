@@ -83,7 +83,7 @@ const Landing = () => {
               title="Playground Guide"
               text="A guide that introduces the different features of The Playground, and how to use each of them for the best learning experience."
               button="Download"
-              link="/"
+              link="/resources/playground-guide.pdf"
             />
             <Resource
               image={ResourceIcon4}

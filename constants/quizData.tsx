@@ -85,7 +85,7 @@ export const TypingQuizData: Quiz = {
 
 //Applications Quiz Questions and Answers
 export const ApplicationsQuizData: Quiz = {
-  totalQuestions: 3,
+  totalQuestions: 5,
   questions: [
     {
       question: "What does a word processor do?",

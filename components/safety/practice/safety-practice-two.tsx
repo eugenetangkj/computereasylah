@@ -11,7 +11,6 @@ import Modal from "@/common/Modal";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 import { CiMail } from "react-icons/ci";
 
-
 interface HintModalProps {
   tooltipContent: Array<any>;
   handleRevealClicked: () => void;
@@ -79,39 +78,40 @@ const CongratulationsModal: React.FC<CongratulationsModalProps> = ({
   onClose,
 }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="font-nunito">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-center">
-          Congratulations!
-        </h2>
-        <div>You have successfully found all the phishing elements in the email!</div>
-        <div className="flex flex-row justify-between mt-4 font-semibold text-lg sm:text-xl">
-          <button
-            className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-36 sm:h-14 sm:w-40"
-            onClick={onClose}
-          >
-            Continue
-          </button>
-
-          <NextLink href="/playground/safety">
-            <button className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-36 sm:h-14 sm:w-40">
-              Back
+    <>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <div className="font-nunito mt-4 text-center">
+          <div className="text-xl sm:text-2xl font-semibold mb-4 text-center">
+            Congratulations!
+          </div>
+          <div className="text-lg sm:text-xl">
+            You have successfully found all the phishing elements in the email!
+          </div>
+          <div className="flex flex-row justify-center gap-x-4 mt-4 font-semibold text-lg sm:text-xl">
+            <button
+              className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-44 sm:h-14 sm:w-48"
+              onClick={onClose}
+            >
+              Continue to read
             </button>
-          </NextLink>
+
+            <NextLink href="/playground/safety">
+              <button className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-36 sm:h-14 sm:w-40">
+                Back
+              </button>
+            </NextLink>
+          </div>
         </div>
-      </div>
-    </Modal>
+      </Modal>
+    </>
   );
 };
 
 const SafetyPracticeTwo: React.FC = () => {
-  const [isPhishy1Clicked, setIsPhishy1Clicked] = useState(false);
-  const [isPhishy2Clicked, setIsPhishy2Clicked] = useState(false);
-  const [isPhishy3Clicked, setIsPhishy3Clicked] = useState(false);
-  const [isPhishy4Clicked, setIsPhishy4Clicked] = useState(false);
-  const [isPhishy5Clicked, setIsPhishy5Clicked] = useState(false);
   const [phishyCount, setPhishyCount] = useState(0);
+  const [isPhishyClicked, setIsPhishyClicked] = useState(Array(5).fill(false));
   const [isCongratulationsModalOpen, setIsCongratulationsModalOpen] = useState(false);
+  const [isHintModalOpen, setIsHintModalOpen] = useState(false);
   const [isContinueToRead, setIsContinueToRead] = useState(false);
   const [hints, setHints] = useState([
     { hint: "1. Fake sender email", count: 0, total: 1 },
@@ -121,29 +121,13 @@ const SafetyPracticeTwo: React.FC = () => {
   ]);
 
   // Function to handle email click
-  const handlePhishy1Click = () => {
-    setIsPhishy1Clicked(true);
-    setPhishyCount(phishyCount + 1);
-  };
-
-  const handlePhishy2Click = () => {
-    setIsPhishy2Clicked(true);
-    setPhishyCount(phishyCount + 1);
-  };
-
-  const handlePhishy3Click = () => {
-    setIsPhishy3Clicked(true);
-    setPhishyCount(phishyCount + 1);
-  };
-
-  const handlePhishy4Click = () => {
-    setIsPhishy4Clicked(true);
-    setPhishyCount(phishyCount + 1);
-  };
-
-  const handlePhishy5Click = () => {
-    setIsPhishy5Clicked(true);
-    setPhishyCount(phishyCount + 1);
+  const handlePhishyClick = (index: number) => {
+    setIsPhishyClicked((prev) => {
+      const updatedIsPhishyClicked = [...prev];
+      updatedIsPhishyClicked[index] = true;
+      return updatedIsPhishyClicked;
+    });
+    setPhishyCount((prevCount) => prevCount + 1);
   };
 
   // Function to open congratulations modal
@@ -159,21 +143,12 @@ const SafetyPracticeTwo: React.FC = () => {
 
   const handleRevealClicked = () => {
     setIsContinueToRead(true);
-    handlePhishy1Click();
-    handlePhishy2Click();
-    handlePhishy3Click();
-    handlePhishy4Click();
-    handlePhishy5Click();
+    for (let i = 0; i < 5; i++) {
+      handlePhishyClick(i);
+    }
     setPhishyCount(5);
     toast.success("Revealed Answers!");
   };
-
-  useEffect(() => {
-    // Check the phishyCount in useEffect
-    if (phishyCount === 5 && !isContinueToRead) {
-      openCongratulationsModal();
-    }
-  }, [phishyCount]);
 
   useEffect(() => {
     var hints = [
@@ -182,52 +157,39 @@ const SafetyPracticeTwo: React.FC = () => {
       { hint: "3. URL Phishing", count: 0, total: 1 },
       { hint: "4. Asking for sensitive information", count: 0, total: 1 },
     ];
-    if (isPhishy1Clicked) {
-      hints[0].count += 1;
-    }
-    if (isPhishy2Clicked) {
-      hints[1].count += 1;
-    }
-    if (isPhishy3Clicked) {
-      hints[2].count += 1;
-    }
-    if (isPhishy4Clicked) {
-      hints[3].count += 1;
-    }
-    if (isPhishy5Clicked) {
-      hints[1].count += 1;
-    }
-    setHints(hints);
-  }, [
-    isPhishy1Clicked,
-    isPhishy2Clicked,
-    isPhishy3Clicked,
-    isPhishy4Clicked,
-    isPhishy5Clicked,
-  ]);
-  const [isHintModalOpen, setIsHintModalOpen] = useState(false);
+    const indexMap = [0, 1, 2, 3, 1]; // Map isPhishyClicked index to hints index
 
+    isPhishyClicked.forEach((isClicked, index) => {
+      if (isClicked) {
+        const hintIndex = indexMap[index];
+        hints[hintIndex].count += 1;
+      }
+    });
+    setHints(hints);
+  }, [isPhishyClicked]);
 
   const handleCloseModal = () => {
     setIsHintModalOpen(false);
   };
 
-   // Animation
-   const [isActive, setIsActive] = useState(false);
+  // Animation
+  const [isActive, setIsActive] = useState(false);
 
-   useEffect(() => {
-     // Set isActive to true after a short delay when the component is mounted
-     const timer = setTimeout(() => {
-       setIsActive(true);
-     }, 100); // Adjust the delay as needed
- 
-     return () => clearTimeout(timer); // Clean up the timer on unmount
-   }, []);
+  useEffect(() => {
+    // Set isActive to true after a short delay when the component is mounted
+    const timer = setTimeout(() => {
+      setIsActive(true);
+    }, 100); // Adjust the delay as needed
+
+    return () => clearTimeout(timer); // Clean up the timer on unmount
+  }, []);
 
   return (
-    <div className={`flex flex-col item-center justify-center min-h-screen p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
-      isActive ? "opacity-100" : ""
-  } duration-1000`}>
+    <div
+      className={`flex flex-col item-center justify-center min-h-screen p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
+        isActive ? "opacity-100" : ""
+      } duration-1000`}
+    >
       <BackButton
         pathToReturnTo="/playground/safety"
         displayText="Back"
@@ -239,7 +201,10 @@ const SafetyPracticeTwo: React.FC = () => {
         handleCloseModal={handleCloseModal}
         isOpen={isHintModalOpen}
       />
-      <CongratulationsModal isOpen={isCongratulationsModalOpen} onClose={closeCongratulationsModal} />
+      <CongratulationsModal
+        isOpen={isCongratulationsModalOpen}
+        onClose={closeCongratulationsModal}
+      />
       <div className="flex flex-col justify-center items-center font-semibold lg:mx-12 space-y-8 py-4">
         <div className="text-center text-3xl font-nunito font-semibold pt-4 mx-auto">
           Identify the texts in this email that are phishy, then click on them.
@@ -272,9 +237,12 @@ const SafetyPracticeTwo: React.FC = () => {
             <BorderedWordWithModal
               word="&lt;iras.refundteam@officialiras.sg&gt;"
               wordClassName="text-gray-500"
-              tooltipContent="The sender email is not an official IRAS email address."
-              isWordClicked={isPhishy1Clicked}
-              handleWordClicked={handlePhishy1Click}
+              modalContent="The sender email is not an official IRAS email address."
+              isWordClicked={isPhishyClicked[0]}
+              handleWordClicked={() => handlePhishyClick(0)}
+              phishyCount={phishyCount}
+              isContinueToRead={isContinueToRead}
+              openCongratulationsModal={openCongratulationsModal}
             />
           </div>
         </div>
@@ -293,9 +261,12 @@ const SafetyPracticeTwo: React.FC = () => {
               word="Please note that this is a time-sensitive matter, and we urge you to
               take action immediately to claim your refund."
               wordClassName="text-black font-bold"
-              tooltipContent="The email creates a sense of urgency, pressuring you to take immediate action. Phishing emails often use urgency to rush recipients into making mistakes."
-              isWordClicked={isPhishy2Clicked}
-              handleWordClicked={handlePhishy2Click}
+              modalContent="The email creates a sense of urgency, pressuring you to take immediate action. Phishing emails often use urgency to rush recipients into making mistakes."
+              isWordClicked={isPhishyClicked[1]}
+              handleWordClicked={() => handlePhishyClick(1)}
+              phishyCount={phishyCount}
+              isContinueToRead={isContinueToRead}
+              openCongratulationsModal={openCongratulationsModal}
             />
             To proceed, click on the following link to access the secure IRAS website
             and confirm your details:
@@ -304,9 +275,12 @@ const SafetyPracticeTwo: React.FC = () => {
             <BorderedWordWithModal
               word="[IRAS Refund Team Inland Revenue Authority of Singapore]"
               wordClassName="text-blue-600 underline"
-              tooltipContent="URL phishing attacks uses various means to trick a user into clicking on the malicious link."
-              isWordClicked={isPhishy3Clicked}
-              handleWordClicked={handlePhishy3Click}
+              modalContent="URL phishing attacks uses various means to trick a user into clicking on the malicious link."
+              isWordClicked={isPhishyClicked[2]}
+              handleWordClicked={() => handlePhishyClick(2)}
+              phishyCount={phishyCount}
+              isContinueToRead={isContinueToRead}
+              openCongratulationsModal={openCongratulationsModal}
             />
           </div>
           <br />
@@ -316,19 +290,26 @@ const SafetyPracticeTwo: React.FC = () => {
             word="Please make sure to have your Tax Reference Number, bank account details, and other personal
             information on hand to complete the verification process."
             wordClassName="text-black"
-            tooltipContent="The email asks for sensitive information like Tax Reference Number and bank account details. Legitimate organizations rarely request such information via email."
-            isWordClicked={isPhishy4Clicked}
-            handleWordClicked={handlePhishy4Click}
+            modalContent="The email asks for sensitive information like Tax Reference Number and bank account details. Legitimate organizations rarely request such information via email."
+            isWordClicked={isPhishyClicked[3]}
+            handleWordClicked={() => handlePhishyClick(3)}
+            phishyCount={phishyCount}
+            isContinueToRead={isContinueToRead}
+            openCongratulationsModal={openCongratulationsModal}
           />
+          <br />
           <br />
           <div>
             <BorderedWordWithModal
               word="Failure to confirm your information within the next 48 hours will
               result in the cancellation of your refund request"
               wordClassName="text-black"
-              tooltipContent="Another attempt to create a sense of urgency to the victim."
-              isWordClicked={isPhishy5Clicked}
-              handleWordClicked={handlePhishy5Click}
+              modalContent="Another attempt to create a sense of urgency to the victim."
+              isWordClicked={isPhishyClicked[4]}
+              handleWordClicked={() => handlePhishyClick(4)}
+              phishyCount={phishyCount}
+              isContinueToRead={isContinueToRead}
+              openCongratulationsModal={openCongratulationsModal}
             />
             , and you will forfeit the refund.
           </div>
@@ -341,9 +322,7 @@ const SafetyPracticeTwo: React.FC = () => {
           <div>
             If you have any questions or need assistance, please do not hesitate to
             contact our IRAS support team at the following email address:
-            <span
-              className="text-blue-600 underline"
-            >
+            <span className="text-blue-600 underline">
               {" "}
               iras.support@officialiras.sg
             </span>
@@ -365,27 +344,6 @@ const SafetyPracticeTwo: React.FC = () => {
           />
         </div>
       </div>
-      {isCongratulationsModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="modal-content bg-green-300 p-4 rounded-lg shadow-lg">
-            <h2 className="text-2xl mb-4">Congratulations!</h2>
-            <div>You have successfully found all the phishing elements in the email!</div>
-            <div className="justify-between mt-4">
-              <button
-                className="bg-green-400 text-white rounded-full p-4 mx-10"
-                onClick={closeCongratulationsModal}
-              >
-                Continue to read
-              </button>
-              <NextLink href="/playground/safety">
-                <button className="bg-red-400 text-white rounded-full p-4 mx-10">
-                  Return to Safety Home Page
-                </button>
-              </NextLink>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

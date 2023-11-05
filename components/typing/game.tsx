@@ -304,7 +304,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
           <div
             className={`absolute ${
               showInstructions || showHint ? "bottom-56" : "bottom-36"
-            } bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`}
+            } bg-white bg-opacity-90 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`}
             hidden={gameEnded}
           >
             <div className="text-green-600"> Press any key to continue!</div>

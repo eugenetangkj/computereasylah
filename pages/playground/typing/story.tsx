@@ -1,15 +1,11 @@
-import LevelSelection from "@/components/typing/level-selection";
 import { LevelOption } from "@/components/typing/level-selection";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import TypingMainUI from "@/components/typing/typing-main-ui";
+import { useRouter } from "next/router";
 import React from "react";
 
-import { useEffect, useState } from "react";
 import BackButton, { Topic } from "@/components/backButton";
 import Head from "next/head";
-
-import NextLink from "next/link";
+import { useEffect, useState } from "react";
 
 const storyLevelOptions: LevelOption[] = [
   {
@@ -76,26 +72,24 @@ const StoryPage = () => {
                 isActive ? "opacity-100" : ""
               } duration-1000`}
             >
-              <div
-                className={`fixed top-0 left-0 w-full py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
-              >
-                {/* Back button */}
-                <NextLink href="/playground/typing" className="w-1/4">
-                  <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-energy-orange-hover duration-300">
-                    Back
-                  </h5>
-                </NextLink>
-              </div>
-              {/* Title */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-16">
-                Choose Practice
-              </h1>
-              {/* Levels */}
-              <div className="flex flex-col justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
-                {/* Select Basic Levels */}
-                <div className="flex flex-row justify-center items-center space-x-10">
-                  {/* Words */}
-                  <button
+              {/* Back button */}
+              <BackButton
+                pathToReturnTo="/playground/typing"
+                category={Topic.Typing}
+                displayText="Back"
+              />
+              <div>
+                {/* Title */}
+
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-16">
+                  Choose Practice
+                </h1>
+                {/* Levels */}
+                <div className="flex flex-col justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
+                  {/* Select Basic Levels */}
+                  <div className="flex flex-row justify-center items-center space-x-10">
+                    {/* Words */}
+                    <button
                       className="flex flex-col justify-center items-center space-y-4"
                       onClick={() => router.push(`/playground/typing/game/words`)}
                     >
@@ -107,60 +101,57 @@ const StoryPage = () => {
                           Words
                         </h3>
                       </div>
-                  </button>
-
-                  {/* Symbols */}
-                  <button
-                    className="flex flex-col justify-center items-center space-y-4"
-                    onClick={() =>
-                      router.push(`/playground/typing/symbols-game`)
-                    }
-                  >
-                    <div
-                      className="bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center rounded-3xl w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 duration-300"
-                      style={{ position: "relative" }}
-                    >
-                      <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
-                        Symbols
-                      </h3>
-                    </div>
-                  </button>
-
-                  
-                </div>
-
-                {/* Spacer */}
-
-                {/* <div className='h-1'></div> */}
-
-                <div>
-                  <span className="font-bold font-nunito text-2xl xl:text-3xl text-center">
-                    Sentences:
-                  </span>
-                </div>
-
-                {/* Select Story Levels */}
-
-                <div className="grid grid-cols-2 justify-center">
-                  {storyLevelOptions.map((option, index) => (
-                    <button
-                      key={index}
-                      className="flex flex-col items-center justify-center m-4 hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 rounded-t-3xl duration-300"
-                      style={{ position: "relative" }}
-                      onClick={() => selectOption(index)}
-                    >
-                      <div className="border-solid border-b-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 ">
-                        <span className="font-bold font-nunito text-2xl xl:text-3xl text-center">
-                          {option.label}
-                        </span>
-                      </div>
-                      <img
-                        alt={option.id}
-                        src={option.imageSrc}
-                        className="object-cover w-72 h-20 lg:w-80 lg:h-32 xl:w-96 xl:h-48"
-                      />
                     </button>
-                  ))}
+
+                    {/* Symbols */}
+                    <button
+                      className="flex flex-col justify-center items-center space-y-4"
+                      onClick={() => router.push(`/playground/typing/symbols-game`)}
+                    >
+                      <div
+                        className="bg-white hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center rounded-3xl w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 duration-300"
+                        style={{ position: "relative" }}
+                      >
+                        <h3 className="font-bold font-nunito text-2xl xl:text-3xl text-center">
+                          Symbols
+                        </h3>
+                      </div>
+                    </button>
+                  </div>
+
+                  {/* Spacer */}
+
+                  {/* <div className='h-1'></div> */}
+
+                  <div>
+                    <span className="font-bold font-nunito text-2xl xl:text-3xl text-center">
+                      Sentences:
+                    </span>
+                  </div>
+
+                  {/* Select Story Levels */}
+
+                  <div className="grid grid-cols-2 justify-center">
+                    {storyLevelOptions.map((option, index) => (
+                      <button
+                        key={index}
+                        className="flex flex-col items-center justify-center m-4 hover:bg-energy-orange-900 border-solid border-8 border-energy-orange-900 rounded-t-3xl duration-300"
+                        style={{ position: "relative" }}
+                        onClick={() => selectOption(index)}
+                      >
+                        <div className="border-solid border-b-8 border-energy-orange-900 py-8 lg:px-6 xl:py-10 flex flex-col justify-center items-center w-72 h-6 lg:w-80 lg:h-12 xl:w-96 xl:h-16 ">
+                          <span className="font-bold font-nunito text-2xl xl:text-3xl text-center">
+                            {option.label}
+                          </span>
+                        </div>
+                        <img
+                          alt={option.id}
+                          src={option.imageSrc}
+                          className="object-cover w-72 h-20 lg:w-80 lg:h-32 xl:w-96 xl:h-48"
+                        />
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

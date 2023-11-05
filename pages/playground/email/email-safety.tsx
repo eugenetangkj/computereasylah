@@ -1,8 +1,8 @@
+import BackButton, { Topic } from "@/components/backButton";
 import { EmailTipsData, Tips } from "@/constants/tipsData";
-import NextLink from "next/link";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import Head from "next/head";
 
 //Home page for email activities in the playground
 export default function EmailSafety() {
@@ -52,11 +52,11 @@ export default function EmailSafety() {
           className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
         >
           {/* Back button */}
-          <NextLink href="/playground/email" className="">
-            <h5 className="font-nunito text-2xl lg:text-4xl font-bold hover:text-trust-blue-hover duration-300">
-              Back
-            </h5>
-          </NextLink>
+          <BackButton
+            pathToReturnTo="/playground/email"
+            category={Topic.Email}
+            displayText="Back"
+          />
         </div>
         {/* Title */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">

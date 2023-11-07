@@ -371,13 +371,13 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           </button>
           <NextLink href= {
             (topic == Topic.Typing)
-            ? '/playground/typing'
+            ? '/typing'
             : (topic == Topic.Applications)
-            ? '/playground/applications'
+            ? '/apps'
             : (topic == Topic.Email)
-            ? '/playground/email'
+            ? '/email'
             : (topic == Topic.Safety)
-            ? '/playground/safety'
+            ? '/safety'
             : ''
 
           } className="my-4">

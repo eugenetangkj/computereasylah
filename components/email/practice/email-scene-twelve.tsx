@@ -30,7 +30,7 @@ export default function EmailSceneTwelve({ updateSceneIndex } : EmailSceneTwelve
 
     return (
         <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 md:pt-8 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            <BackButton pathToReturnTo='/playground/email' displayText='Exit'  category={ Topic.Email }  />
+            <BackButton pathToReturnTo='/email' displayText='Exit'  category={ Topic.Email }  />
 
             {/* Practice instructions, only available on desktop */}
             <div className='flex flex-col justify-center items-center space-y-16'>
@@ -43,7 +43,7 @@ export default function EmailSceneTwelve({ updateSceneIndex } : EmailSceneTwelve
                         onClick={handleNextButtonClick}>
                             <span>Take Again</span>
                         </button>
-                        <NextLink href='/playground/email' className='my-4'>
+                        <NextLink href='/email' className='my-4'>
                             <button className="text-3xl xl:text-4xl font-gaegu border-solid border-4 border-trust-blue-900 hover:border-trust-blue-hover hover:bg-trust-blue-hover font-bold px-8 py-4 rounded-2xl duration-300 w-64 xl:w-72">
                                 <span>Exit</span>
                             </button>

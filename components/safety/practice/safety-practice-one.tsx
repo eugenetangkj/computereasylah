@@ -131,12 +131,12 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
 
   return (
     <div
-      className={`flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-0 opacity-0 transition-opacity ${
+      className={`mt-8 lg:mt-16 flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 md:mt-20 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
       <BackButton
-        pathToReturnTo="/playground/safety"
+        pathToReturnTo="/safety"
         displayText="Back"
         category={Topic.Safety}
       />

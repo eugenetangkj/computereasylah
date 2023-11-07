@@ -7,7 +7,7 @@ function Menu() {
     const navButtonStyle = 'cursor-pointer mx-2 text-white';
 
     const handleExitGame = () => {
-        router.push('/playground');
+        router.push('');
     };
 
     const handleRetry = () => {

@@ -37,7 +37,7 @@ export default function DictionaryDefinition({ term, updateCurrentViewState, cur
             <div className='flex flex-col justify-start items-center space-y-16 xl:space-y-12 mx-8'>
 
             {/* Back button, show dictionary view */}
-            <div className={`flex justify-start items-center fixed w-full top-0 left-0 py-4 z-30 pt-8 bg-gray-100 text-center`}>
+            <div className={`flex justify-start items-center fixed w-full top-0 left-0 py-4 z-30 pt-8 bg-neutral-100 text-center`}>
               <div className="grid grid-cols-3 w-4/5">
                 {/* Back button */}
                 <button onClick={ () => updateCurrentViewState(true) } className="text-center">

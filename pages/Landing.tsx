@@ -69,7 +69,7 @@ const Landing = () => {
               title="The Playground"
               text="An interactive platform filled with hands-on activities, quizzes and videos to enrich the learning of senior adults."
               button="Go!"
-              link="/playground"
+              link="/"
             />
             <Resource
               image={ResourceIcon2}

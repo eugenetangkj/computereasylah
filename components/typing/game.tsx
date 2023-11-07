@@ -226,7 +226,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
         <div className="flex flex-col justify-center items-center w-screen h-screen">
           <div className="flex flex-col justify-center items-center space-y-16">
             <BackButton
-              pathToReturnTo="/playground/typing"
+              pathToReturnTo="/typing"
               displayText="Back"
               category={Topic.Typing}
             />

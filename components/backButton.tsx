@@ -35,7 +35,7 @@ export default function BackButton({
       : "hover:text-black";
 
   return (
-    <div className={`flex justify-center items-center fixed w-full top-0 left-0 py-4 z-30 md:pt-8 bg-gray-100 text-center`}>
+    <div className={`flex justify-center items-center fixed w-full top-0 left-0 py-4 z-30 md:pt-8 bg-neutral-100 text-center`}>
   <div className="grid grid-cols-3 w-4/5">
     {/* Back button */}
     <NextLink href={pathToReturnTo} className="text-center">
@@ -45,12 +45,12 @@ export default function BackButton({
     </NextLink>
 
     {/* Home button */}
-    <NextLink href="/playground" className="text-center">
+    <NextLink href="/" className="text-center">
       <h5 className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}>Home</h5>
     </NextLink>
 
     {/* Dictionary button */}
-    <NextLink href="/playground/dictionary" className="text-center">
+    <NextLink href="/dictionary" className="text-center">
       <h5 className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}>Dictionary</h5>
     </NextLink>
   </div>

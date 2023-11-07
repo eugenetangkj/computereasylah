@@ -31,20 +31,18 @@ export default function DictionaryDefinition({ term, updateCurrentViewState, cur
 
     
     return (
-        <div className={`flex flex-col justify-center items-center space-y-8 z-10 xl:space-y-12 mx-8 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`mt-8 lg:mt-16 flex flex-col justify-center items-center space-y-8 z-10 xl:space-y-12 mx-8 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             
             {/* Definition View */}
             <div className='flex flex-col justify-start items-center space-y-16 xl:space-y-12 mx-8'>
 
             {/* Back button, show dictionary view */}
-            <div className={`flex justify-center items-center fixed w-full top-0 left-0 py-2 z-30 pt-8 md:pt-8 bg-slate-100 text-center`}>
+            <div className={`flex justify-start items-center fixed w-full top-0 left-0 py-4 z-30 pt-8 bg-gray-100 text-center`}>
               <div className="grid grid-cols-3 w-4/5">
                 {/* Back button */}
                 <button onClick={ () => updateCurrentViewState(true) } className="text-center">
                     <h5 className={`font-nunito text-2xl lg:text-4xl font-bold hover:text-wisdom-purple-hover duration-300`}>Back</h5>
                   </button>
-
-            
               </div>
             </div>
 

@@ -35,7 +35,7 @@ export default function BackButton({
       : "hover:text-black";
 
   return (
-    <div className={`flex justify-center items-center fixed w-full top-0 left-0 py-2 z-30 pt-8 md:pt-8 bg-slate-100 text-center`}>
+    <div className={`flex justify-center items-center fixed w-full top-0 left-0 py-4 z-30 md:pt-8 bg-gray-100 text-center`}>
   <div className="grid grid-cols-3 w-4/5">
     {/* Back button */}
     <NextLink href={pathToReturnTo} className="text-center">

@@ -112,7 +112,7 @@ const KeyCheckGame: React.FC = () => {
 
             <div className="flex flex-row justify-center items-center content-start absolute top-1">
                 <button onClick={() => window.history.back()} className={`bg-slate-200 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-${fontSize}xl duration-300`}>
-                    Back
+                    Quit
                 </button>
 
                 {/* <button onClick={resetGame} className="bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-2xl">

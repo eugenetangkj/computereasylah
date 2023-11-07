@@ -96,7 +96,7 @@ export default function EmailSceneSix({ updateSceneIndex } : EmailSceneSixProps)
 
             <div className={`fixed top-0 right-0 z-20 bg-trust-blue-900 hover:bg-trust-blue-hover mr-16 px-8 py-4 rounded-3xl duration-300`}>
                 {/* Back button */}
-                <NextLink href='/playground/email' className=''>
+                <NextLink href='/email' className=''>
                 <h5 className="font-nunito text-2xl lg:text-4xl font-bold ">Quit</h5>
                 </NextLink>
             </div>

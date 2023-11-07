@@ -129,7 +129,7 @@ useEffect(() => {
           {navLinks.map((link) => (
             <li key={link.id}>
               {link.id === "playground" ? (
-                <a href={`/${link.id}`} target="_blank">
+                <a href={`/`} target="_blank">
                   <button className="bg-trust-blue-500 rounded-3xl sm:h-8 sm:w-32 md:h-12 md:w-36 text-black hover:bg-trust-blue-hover duration-300">
                     <span>{link.title}</span>
                   </button>

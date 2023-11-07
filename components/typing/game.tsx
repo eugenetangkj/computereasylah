@@ -226,7 +226,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
         <div className="flex flex-col justify-center items-center w-screen h-screen">
           <div className="flex flex-col justify-center items-center space-y-16">
             <BackButton
-              pathToReturnTo="/playground/typing"
+              pathToReturnTo="/typing"
               displayText="Back"
               category={Topic.Typing}
             />
@@ -253,7 +253,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
           onClick={() => window.history.back()}
           className={`bg-white bg-opacity-80 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-${fontSize}xl duration-300`}
         >
-          Back
+          Quit
         </button>
 
         {/* <button onClick={resetGame} className="bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-2xl">

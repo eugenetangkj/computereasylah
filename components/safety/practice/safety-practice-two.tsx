@@ -95,7 +95,7 @@ const CongratulationsModal: React.FC<CongratulationsModalProps> = ({
               Continue to read
             </button>
 
-            <NextLink href="/playground/safety">
+            <NextLink href="/safety">
               <button className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-36 sm:h-14 sm:w-40">
                 Back
               </button>
@@ -191,7 +191,7 @@ const SafetyPracticeTwo: React.FC = () => {
       } duration-1000`}
     >
       <BackButton
-        pathToReturnTo="/playground/safety"
+        pathToReturnTo="/safety"
         displayText="Back"
         category={Topic.Safety}
       />
@@ -206,7 +206,7 @@ const SafetyPracticeTwo: React.FC = () => {
         onClose={closeCongratulationsModal}
       />
       <div className="flex flex-col justify-center items-center font-semibold lg:mx-12 space-y-8 py-4">
-        <div className="text-center text-3xl font-nunito font-semibold pt-4 mx-auto">
+        <div className="mt-8 lg:mt-16 text-center text-3xl font-nunito font-semibold pt-4 mx-auto">
           Identify the texts in this email that are phishy, then click on them.
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-between w-full sm:w-5/6 lg:w-2/3 gap-y-4 font-nunito text-xl sm:text-2xl">

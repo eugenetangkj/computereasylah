@@ -83,7 +83,7 @@ export const TypingQuizData: Quiz = {
   ],
 };
 
-//Applications Quiz Questions and Answers
+//apps Quiz Questions and Answers
 export const ApplicationsQuizData: Quiz = {
   totalQuestions: 5,
   questions: [

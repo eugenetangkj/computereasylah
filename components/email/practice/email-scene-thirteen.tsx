@@ -52,7 +52,7 @@ export default function EmailSceneThirteen({ updateSceneIndex } : EmailSceneThir
 
 
                 {/* Home button */}
-                <NextLink href='/playground/email' className='my-4'>
+                <NextLink href='/email' className='my-4'>
                     <button className="bg-white hover:bg-trust-blue-500 text-trust-blue-900 hover:text-white font-itim py-4 px-16 rounded-full flex justify-center duration-300 text-5xl w-96">
                         <span>Home</span>
                     </button>

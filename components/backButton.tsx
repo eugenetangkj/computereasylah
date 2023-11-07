@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { BiHome } from "react-icons/bi";
+import { useRouter } from "next/router";
 
 //Back button
 export enum Topic {
@@ -34,29 +34,39 @@ export default function BackButton({
       ? "hover:text-wisdom-purple-hover"
       : "hover:text-black";
 
+      
+
   return (
-    <div
-      className={`fixed w-full top-0 left-0 py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-8 bg-white`}
+  <div className={`flex justify-center items-center fixed w-full top-0 left-0 py-4 z-30 md:pt-8 bg-neutral-100 text-center`}>
+    <div className="grid grid-cols-3 w-4/5">
+  {/* Back button */}
+  <NextLink href={pathToReturnTo} className="text-center w-fit mx-auto">
+    <h5
+      className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}
     >
-      <div className="flex flex-row items-center justify-between">
-        {/* Back button */}
-        <NextLink href={pathToReturnTo} className="">
-          <h5
-            className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}
-            style={{ display: "inline-block", width: "5%", height: "100%" }}
-          >
-            {displayText}
-          </h5>
-        </NextLink>
-        {/* Home button */}
-        <NextLink href="/playground" className="">
-          <BiHome
-            className={`${hoverColour} inline-block text-4xl lg:text-5xl duration-300 z-50`}
-          />
-        </NextLink>
-        {/* Empty div to fill up space so that home button is at center */}
-        <div></div>
-      </div>
-    </div>
+      {displayText}
+    </h5>
+  </NextLink>
+
+  {/* Home button */}
+  <NextLink href="/" className="text-center w-fit mx-auto">
+    <h5
+      className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}
+    >
+      Home
+    </h5>
+  </NextLink>
+
+  {/* Dictionary button */}
+  <NextLink href="/dictionary" className="text-center w-fit mx-auto">
+    <h5
+      className={`font-nunito text-2xl lg:text-4xl font-bold ${hoverColour} duration-300`}
+    >
+      Dictionary
+    </h5>
+  </NextLink>
+</div>
+  </div>
+    
   );
 }

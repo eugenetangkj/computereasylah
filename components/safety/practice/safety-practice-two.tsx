@@ -120,6 +120,24 @@ const SafetyPracticeTwo: React.FC = () => {
     { hint: "4. Asking for sensitive information", count: 0, total: 1 },
   ]);
 
+  const [fontSize, setFontSize] = useState(2);
+  const fontSizeClasses = ["text-base", "text-lg", "text-xl", "text-2xl", "text-3xl"];
+  const lineSpacingClasses = [
+    "leading-normal",
+    "leading-normal",
+    "leading-normal",
+    "leading-relaxed",
+    "leading-loose",
+  ];
+
+  const fontSizeClass = `${fontSizeClasses[fontSize - 2]} ${
+    lineSpacingClasses[fontSize - 2]
+  }`;
+
+  const handleFontSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFontSize(parseInt(event.target.value));
+  };
+
   // Function to handle email click
   const handlePhishyClick = (index: number) => {
     setIsPhishyClicked((prev) => {
@@ -209,6 +227,17 @@ const SafetyPracticeTwo: React.FC = () => {
         <div className="mt-8 lg:mt-16 text-center text-3xl font-nunito font-semibold pt-4 mx-auto">
           Identify the texts in this email that are phishy, then click on them.
         </div>
+        {/* Font size slider */}
+        <div className="flex flex-col bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold duration-300 w-full sm:w-1/2 md:w-1/4 mx-auto">
+          <span className={`${fontSizeClass} text-center`}>Font Size</span>
+          <input
+            type="range"
+            min="2"
+            max="6"
+            value={fontSize}
+            onChange={handleFontSizeChange}
+          />
+        </div>
         <div className="flex flex-col sm:flex-row items-center justify-between w-full sm:w-5/6 lg:w-2/3 gap-y-4 font-nunito text-xl sm:text-2xl">
           <div className="border- bg-pale-gray-100 p-2 rounded-lg">
             Phishing texts identified: {phishyCount} / 5
@@ -223,16 +252,21 @@ const SafetyPracticeTwo: React.FC = () => {
       </div>
 
       {/* Email content */}
-      <div className="border-y-2 sm:border-none sm:rounded-3xl sm:shadow-lg hover:shadow-xl sm:p-10 pb-8">
-        <div className="flex items-center w-full bg-gray-100 space-x-2 h-12">
+      <div
+        className={`border-y-2 sm:border-none sm:rounded-3xl sm:shadow-lg hover:shadow-xl sm:p-10 pb-8" ${fontSizeClass}`}
+      >
+        <div
+          className="flex items-center w-full bg-gray-100 space-x-2"
+          style={{ height: `${fontSize}rem` }}
+        >
           <CiMail className="ml-2" />
           <div>Inbox</div>
         </div>
-        <div className="font-bold text-2xl">Tax Refund Confirmation Required</div>
-        <div className="flex items-center my-6">
+        <div className="font-bold">Tax Refund Confirmation Required</div>
+        <div className="flex items-center my-6 ">
           <Image src={IrasLogo} alt="IRAS Logo" className="w-12 mr-2" />
           {/* Sender details */}
-          <div className="flex flex-col">
+          <div className="flex flex-col leading-snug text-base">
             <div>IRAS Refund Team</div>
             <BorderedWordWithModal
               word="&lt;iras.refundteam@officialiras.sg&gt;"

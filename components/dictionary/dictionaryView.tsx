@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { Term } from './dictionaryData';
 import { ListOfTerms, TermsData } from './dictionaryData';
-import BackButton from '../backButton';
+import BackButtonDictionary from '../backButtonDictionary';
 import { Topic } from '../backButton';
 
 
@@ -57,9 +57,9 @@ export default function DictionaryView( { updateCurrentViewState, updateCurrentT
 
 
     return (
-        <div className={`flex flex-col justify-center items-center space-y-8 z-10 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`mt-16 flex flex-col justify-center items-center space-y-8 z-10 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Back button */}
-            <BackButton pathToReturnTo='/playground' displayText='Back'  category={Topic.Dictionary} />
+            <BackButtonDictionary />
 
             {/* Title */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">Dictionary</h1>

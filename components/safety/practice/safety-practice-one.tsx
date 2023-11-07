@@ -96,6 +96,23 @@ const PhishyModal: React.FC<PhishyModalProps> = ({
 const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex }) => {
   const [isPhishy, setIsPhishy] = useState(false);
   const [isNotPhishy, setIsNotPhishy] = useState(false);
+  const [fontSize, setFontSize] = useState(2);
+  const fontSizeClasses = ["text-base", "text-lg", "text-xl", "text-2xl", "text-3xl"];
+  const lineSpacingClasses = [
+    "leading-normal",
+    "leading-normal",
+    "leading-normal",
+    "leading-relaxed",
+    "leading-loose",
+  ];
+
+  const fontSizeClass = `${fontSizeClasses[fontSize - 2]} ${
+    lineSpacingClasses[fontSize - 2]
+  }`;
+
+  const handleFontSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFontSize(parseInt(event.target.value));
+  };
 
   // Function to open the modal
   const openisPhishyModal = () => {
@@ -116,7 +133,12 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
   const nextPractice = () => {
     updateCurrentIndex(2);
   };
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Add smooth scrolling effect
+    });
+  };
   // Animation
   const [isActive, setIsActive] = useState(false);
 
@@ -140,28 +162,39 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
         displayText="Back"
         category={Topic.Safety}
       />
-      <div
-        className={`fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity ${
-          !isPhishy && !isNotPhishy && "hidden"
-        }`}
-        onClick={closeModal}
-      />
 
       <div className="text-center text-3xl font-nunito font-semibold sm:py-2 xl:py-8 mx-auto">
         You have received the following email.
       </div>
 
+      {/* Font size slider */}
+      <div className="flex flex-col bg-white bg-opacity-80 p-2 rounded-lg font-nunito font-bold duration-300 w-full sm:w-1/2 md:w-1/4 mx-auto">
+        <span className={`${fontSizeClass} text-center`}>Font Size</span>
+        <input
+          type="range"
+          min="2"
+          max="6"
+          value={fontSize}
+          onChange={handleFontSizeChange}
+        />
+      </div>
+
       {/* Email content */}
-      <div className="border-y-2 sm:border-none sm:rounded-3xl sm:shadow-lg hover:shadow-xl sm:p-10 pb-8">
-        <div className="flex items-center w-full bg-gray-100 space-x-2 h-12">
+      <div
+        className={`border-y-2 sm:border-none sm:rounded-3xl sm:shadow-lg hover:shadow-xl sm:p-10 pb-8 ${fontSizeClass}`}
+      >
+        <div
+          className="flex items-center w-full bg-gray-100 space-x-2 h-12"
+          style={{ height: `${fontSize}rem` }}
+        >
           <CiMail className="ml-2" />
           <div>Inbox</div>
         </div>
-        <div className="font-bold text-2xl">Tax Refund Confirmation Required</div>
+        <div className="font-bold">Tax Refund Confirmation Required</div>
         <div className="flex items-center my-6">
-          <Image src={IrasLogo} alt="IRAS Logo" className="w-12 mr-2" />
+          <Image src={IrasLogo} alt="IRAS Logo" className="mr-2 w-12" />
           {/* Sender details */}
-          <div className="flex flex-col">
+          <div className="flex flex-col leading-snug text-base">
             <div>IRAS Refund Team</div>
             <div className="text-gray-500">&lt;iras.refundteam@officialiras.sg&gt;</div>
           </div>
@@ -254,7 +287,10 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
         isPhishy={isPhishy}
         isNotPhishy={isNotPhishy}
         closeModal={closeModal}
-        nextPractice={nextPractice}
+        nextPractice={() => {
+          nextPractice();
+          scrollToTop();
+        }}
       />
     </div>
   );

@@ -14,34 +14,34 @@ const Navbar = () => {
 
 
   //Handle scroll effect for navbar, appearing when scroll upwards
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbarElement = document.getElementById("navbar");
-      const currentScrollPos = window.scrollY;
-      const isScrolledUp = prevScrollPos > currentScrollPos;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const navbarElement = document.getElementById("navbar");
+  //     const currentScrollPos = window.scrollY;
+  //     const isScrolledUp = prevScrollPos > currentScrollPos;
 
-      if (isScrolledUp && navbarElement != null) {
-        navbarElement.style.top = "0";
+  //     if (isScrolledUp && navbarElement != null) {
+  //       navbarElement.style.top = "0";
 
-      } else if (! isScrolledUp && navbarElement != null) {
-        navbarElement.style.top = "-200px";
-      }
+  //     } else if (! isScrolledUp && navbarElement != null) {
+  //       navbarElement.style.top = "-200px";
+  //     }
 
-      setPrevScrollPos(currentScrollPos);
-    };
+  //     setPrevScrollPos(currentScrollPos);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos]);
 
-  useEffect(() => {
-    const bodyElement = document.getElementsByTagName("BODY")[0];
-    bodyElement.classList.remove('overflow-hidden');
+  // useEffect(() => {
+  //   const bodyElement = document.getElementsByTagName("BODY")[0];
+  //   bodyElement.classList.remove('overflow-hidden');
 
-  }, [])
+  // }, [])
 
 
 
@@ -52,13 +52,15 @@ function openMenu() {
     const closeIcon = document.getElementById("close-icon");
     const hamburgerMenuItems = document.getElementById("hamburger-menu-items");
     const bodyElement = document.getElementsByTagName("BODY")[0];
+    const aboutUsElement = document.getElementById("about-us");
 
   
     hamburgerIcon?.classList.toggle("hidden");
     closeIcon?.classList.toggle("hidden");
     hamburgerMenuItems?.classList.add('w-[100%]');
+    aboutUsElement?.classList.remove('relative');
     
-    bodyElement.classList.add('overflow-hidden');
+    bodyElement?.classList.add('overflow-hidden');
     // introHeader?.classList.remove('z-10');
     // introSubHeader?.classList.remove('z-10');
 }
@@ -118,9 +120,9 @@ useEffect(() => {
 
 
   return (
-    <nav id="navbar" className="fixed top-0 flex justify-between items-center bg-white h-20 font-nunito w-full duration-300">
+    <nav id="navbar" className="fixed top-0 flex justify-between items-center bg-white h-20 font-nunito w-full duration-300 z-10">
       {/* Logo */}
-      <NextLink href="/">
+      <NextLink href="/home" className='w-fit'>
         <Image src={LogoIcon} alt="Logo" className="ml-10 w-28 sm:w-32" />
       </NextLink>
       {/* Desktop menu items */}
@@ -130,7 +132,7 @@ useEffect(() => {
             <li key={link.id}>
               {link.id === "playground" ? (
                 <a href={`/`} target="_blank">
-                  <button className="bg-trust-blue-500 rounded-3xl sm:h-8 sm:w-32 md:h-12 md:w-36 text-black hover:bg-trust-blue-hover duration-300">
+                  <button className="bg-trust-blue-500 rounded-full sm:h-8 sm:w-32 md:h-12 md:w-36 text-black hover:bg-trust-blue-hover duration-300">
                     <span>{link.title}</span>
                   </button>
                 </a>
@@ -138,7 +140,7 @@ useEffect(() => {
                 <NextLink
                   href={`/${link.id}`}
                   className={
-                    router.pathname == "/" + link.id ? "text-trust-blue-900" : ""
+                    router.pathname == "/" + link.id ? "text-trust-blue-900  hover:text-trust-blue-hover duration-300" : " hover:text-trust-blue-hover duration-300"
                   }
                 >
                   {link.title}
@@ -178,16 +180,6 @@ useEffect(() => {
 
               ))}
           </ul>
-
-         
-
-
-
-
-
-
-
-
       </div>
 
       {/* Close button  */}

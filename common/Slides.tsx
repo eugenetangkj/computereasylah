@@ -18,19 +18,7 @@ export const Slides = () => {
   
     return (
       <div className="flex flex-col justify-center items-center text-center overflow-y-hidden mt-12">
-        <div className="mx-auto w-11/12 md:w-5/6 lg:w-1/2 mb-8 md:mb-16">
-            <div className="mx-auto w-11/12 mb-8 md:mb-12">
-                <Title
-                className="p-4 md:p-12 items-center"
-                text="Curriculum Slides"
-                />
-                <Text
-                className=""
-                content="Interested in organising a lesson using the Foundation Class curriculum and The Playground?
-                Leave us your email and a message, and we will get in touch."
-                />
-            </div>
-
+        <div className="mx-auto w-11/12 md:w-5/6  mb-8 md:mb-16">
           <div className="w-full text-left flex flex-col gap-y-8">
             <div>
               <label htmlFor="email" className="font-nunito font-bold text-xl">

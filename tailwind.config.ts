@@ -77,6 +77,7 @@ const config: Config = {
         "pale-gray": {
           100: "#D4D4D4",
           500: "#595959",
+          bg: "#FAFAFA"
         },
       },
       translate: {
@@ -94,12 +95,15 @@ const config: Config = {
         "340p": "340px",
         "450p": "450px",
         "540p": "540px",
+        "740p": "740px",
         "1000p": "1000px",
       },
       height: {
         "80vh": "80vh",
         "100p": "100px",
         "50vh": "50vh",
+        "320p": "320px",
+        "420p": "520px"
       },
       top: {
         "1/8": "12.5%",

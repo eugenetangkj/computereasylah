@@ -170,7 +170,7 @@ const Landing = () => {
 
           {/* Get In Touch */}
           <div className='flex flex-col justify-center items-center space-y-4 w-screen py-8 px-8 lg:px-16 lg:py-16 xl:px-48 2xl:px-64 bg-pink-50'>
-            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Get In Touch</h2>
+            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Get in Touch</h2>
             <h3 className='font-nunito text-lg lg:text-xl text-pale-gray-500 leading-8 lg:leading-9'>Have any suggestions or questions for us? We are happy to get in touch.</h3>
             <button className="font-nunito bg-creative-pink-900 px-12 py-4 font-bold rounded-full text-lg text-white hover:bg-creative-pink-hover duration-300"
             onClick={() => window.location.href = '/contact'}

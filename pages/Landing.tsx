@@ -98,7 +98,7 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-1.png"
                   alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
+                  className="self-center w-auto sm:w-1/2 lg:w-2/3" />
                 </div>
 
                 {/* Integrate */}
@@ -112,7 +112,7 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-2.png"
                   alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
+                  className="self-center w-auto sm:w-1/2 lg:w-2/3" />
                 </div>
 
                 {/* Guide */}
@@ -126,7 +126,7 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-3.png"
                   alt="Guide"
-                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
+                  className="self-center w-auto sm:w-1/2 lg:w-2/3" />
                 </div>
 
                 {/* Takeaway */}
@@ -140,7 +140,7 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-4.png"
                   alt="Takeaway"
-                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
+                  className="self-center w-auto sm:w-1/2 lg:w-2/3" />
                 </div>
 
 
@@ -157,13 +157,13 @@ const Landing = () => {
           </div>
 
           {/* Project Study Partners */}
-          <div className='flex flex-col justify-center items-center space-y-4 py-2 px-8 mt-16 mb-16 lg:px-16 xl:px-48 2xl:px-64 '>
+          <div className='flex flex-col justify-center items-center space-y-4 py-2 px-8 mt-16 mb-16 lg:px-16 xl:px-24 2xl:px-64 '>
           <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Our Project Study Partners</h2>
             <div className='grid grid-cols-2 sm:grid-cols-4 place-items-center'>
-              <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2 xl:w-2/5" />
-              <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2 xl:w-2/5" />
-              <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2 xl:w-2/5" />
-              <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2 xl:w-2/5" />
+              <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2" />
+              <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2" />
+              <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2" />
+              <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2" />
 
             </div>
           </div>

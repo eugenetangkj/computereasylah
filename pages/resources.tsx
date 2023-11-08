@@ -28,7 +28,7 @@ const Resources = () => {
 
       <Layout>
         <div className="overflow-x-hidden mb-32">
-          <div className="flex flex-col items-center text-center bg-white lg:mx-16 xl:mx-48 2xl:mx-64">
+          <div className="flex flex-col items-center text-center bg-white lg:mx-16 xl:mx-16 2xl:mx-48">
             <div className="mx-auto w-11/12 mb-8 md:mb-12">
               <Title
                 className="p-4 md:p-12 items-center"

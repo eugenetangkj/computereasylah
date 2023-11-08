@@ -51,21 +51,21 @@ const Resources = () => {
             <Resource
               image={ResourceIcon1}
               title="The Playground"
-              text="An interactive platform filled with hands-on activities, quizzes and videos to enrich the learning of senior adults."
+              text="Check out our flagship interactive platform filled with hands-on activities, quizzes and videos to enrich the learning of senior adults."
               button="Go!"
               link="/"
             />
             <Resource
               image={ResourceIcon2}
               title="Curriculum Guide"
-              text="A guide that outlines the curriculum of Work Live Digital's foundation computer classes, and how to best incorporate The Playground with the lessons."
+              text="Want to start your own computer workshops for senior adults? Consider Work Live Digital’s Foundation Class curriculum and learn how to weave The Playground into it."
               button="Download"
               link="/resources/curriculum-guide.pdf"
             />
             <Resource
               image={ResourceIcon3}
               title="Playground Guide"
-              text="A guide that introduces the different features of The Playground, and how to use each of them for the best learning experience."
+              text="Interested in the details of The Playground? Check out this guide to understand what each activity is designed for."
               button="Download"
               link="/resources/playground-guide.pdf"
             />

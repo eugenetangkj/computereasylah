@@ -21,6 +21,12 @@ const Philosophy: NextPage = () => {
       return () => clearTimeout(timer); // Clean up the timer on unmount
   }, []);
 
+  useEffect(() => {
+    const bodyElement = document.getElementsByTagName("BODY")[0];
+    bodyElement.classList.remove('overflow-hidden');
+
+  }, []);
+
 
 
   return (

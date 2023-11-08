@@ -3,6 +3,7 @@ import Title from "@/common/Title";
 import Layout from "@/components/layout";
 import Head from "next/head";
 import { Resource } from "@/common/Resource";
+import { useEffect } from "react";
 import Image from "next/image";
 import ResourceLogo from "public/assets/home/resource-logo.png";
 import ResourceIcon1 from "public/assets/home/resource_icon_1.png";
@@ -13,6 +14,12 @@ import ResourceIcon5 from "public/assets/home/resource_icon_5.png";
 
 //Resources page
 const Resources = () => {
+  useEffect(() => {
+    const bodyElement = document.getElementsByTagName("BODY")[0];
+    bodyElement.classList.remove('overflow-hidden');
+
+  }, []);
+
   return (
     <div>
       <Head>

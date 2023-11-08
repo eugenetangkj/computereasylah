@@ -11,9 +11,10 @@ export default function Playground() {
     const timer = setTimeout(() => {
       setIsActive(true);
     }, 100); // Adjust the delay as needed
-
+   
     return () => clearTimeout(timer); // Clean up the timer on unmount
   }, []);
+
 
   return (
     <div>

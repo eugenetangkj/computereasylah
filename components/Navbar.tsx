@@ -120,9 +120,9 @@ useEffect(() => {
 
 
   return (
-    <nav id="navbar" className="fixed top-0 flex justify-between items-center bg-white h-20 font-nunito w-full duration-300">
+    <nav id="navbar" className="fixed top-0 flex justify-between items-center bg-white h-20 font-nunito w-full duration-300 z-10">
       {/* Logo */}
-      <NextLink href="/home">
+      <NextLink href="/home" className='w-fit'>
         <Image src={LogoIcon} alt="Logo" className="ml-10 w-28 sm:w-32" />
       </NextLink>
       {/* Desktop menu items */}

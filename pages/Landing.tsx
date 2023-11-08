@@ -1,114 +1,164 @@
 import WLDLogo from "@/assets/WLDLogo.png";
-import { Intro } from "@/common/Intro";
-import { Resource } from "@/common/Resource";
 import Title from "@/common/Title";
 import Layout from "@/components/layout";
-import Image from "next/image";
-import PartnerLogo from "public/assets/home/partner-logo.png";
-import ResourceLogo from "public/assets/home/resource-logo.png";
-import ResourceIcon1 from "public/assets/home/resource_icon_1.png";
-import ResourceIcon2 from "public/assets/home/resource_icon_2.png";
-import ResourceIcon3 from "public/assets/home/resource_icon_3.png";
-import ResourceIcon4 from "public/assets/home/resource_icon_4.png";
-import VisionLogo from "public/assets/home/vision-logo.png";
-import { useEffect, useState } from "react";
+import Text from "@/common/Text";
+import Iframe from "react-iframe";
+import { useState, useEffect } from "react";
+
 
 //Landing page
 const Landing = () => {
-  const [isClient, setIsClient] = useState(false);
+  //Video link to intro video
+  const videoLink = "https://www.youtube.com/embed/n3Vf4rSO1yM?si=72xUT-cXsts0Kk36";
+
+  const [showLineBreak, setShowLineBreak] = useState(false);
+
+  const lgBreakPoint = 1024;
 
   useEffect(() => {
-    setIsClient(true);
+    const handleResize = () => {
+      setShowLineBreak(window.innerWidth >= lgBreakPoint); //Lg breakpoint
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add a resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
+
+  
   return (
     <Layout>
-      <div>
-        {/* Video */}
-        {isClient && (
-          <div className="video-container" id="landing-video">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-80vh w-full object-cover pointer-events-none"
-            >
-              <source src="/assets/home/landing-video.mp4" type="video/mp4" />
-            </video>
+        <div className="flex flex-col justify-center items-center text-center mt-8 bg-white">
+          {/* Hero */}
+          <div className="flex flex-col justify-center items-center my-12 space-y-4 mx-8 md:grid md:grid-cols-5 md:text-left md:gap-x-8 md:place-items-center lg:mx-16 xl:mx-48 2xl:mx-64">
+            <div className='space-y-4 col-span-3'>
+            <h1 className='font-nunito text-4xl lg:text-5xl lg:leading-normal font-bold'>
+              Bring Learning Beyond {showLineBreak && <br />}Computer Classes
+            </h1>
+              <h3 className='font-nunito text-lg lg:text-xl text-pale-gray-500 leading-8 lg:leading-9'>We provide an interactive platform, The Playground, that allows senior adults to learn and practice basic computer skills outside of classes.</h3>
+            </div>
+              <img src='/assets/home/collage.png' alt='CEL Collage' className='col-span-2 w-3/4 sm:w-1/2 md:w-3/4' />
           </div>
-        )}
-        <div className="flex flex-col justify-center items-center text-center mt-8 bg-white mx-8 lg:mx-16 xl:mx-48 2xl:mx-64">
+
           {/* About Us */}
-          <Intro
-            title="About Us"
-            text="Computer Easy Lah! is an initiative in collaboration with Work Live Digital to provide essential computer literacy to senior adults. We offer a thoughtfully designed interactive platform known as The Playground, which is tailored exclusively to empower senior adults as they embark on a journey to acquire fundamental computer skills."
-          />
-          <Image src={PartnerLogo} alt="" className="w-1/2 md:w-1/5 lg:w-1/4 m-12" />
-          <Intro
-            title="Our Vision"
-            text="We envision to create a learning platform that would support participants in their learning during and after the curriculum of computer classes. It is a tool complementary to the computer classes, providing useful resources and hands-on activities that can complement and reinforce what was taught during the classes."
-          />
-          <Image src={VisionLogo} alt="" className="w-1/2 md:w-1/5 lg:w-1/4 m-12" />
+          <div id='about-us' className='flex flex-col justify-center items-center w-screen space-y-4 py-8 px-8 lg:px-16 lg:py-16 xl:px-48 2xl:px-64 bg-pale-gray-bg'>
+            {/* Absolute positioning for the images */}
+            <div className="hidden xl:block absolute left-0 top-1/2 transform -translate-y-3/4">
+              <img
+                src="/assets/playground/cursor.png"
+                alt="Cursor"
+                className="w-32 h-32"
+              />
+            </div>
+            <div className="hidden xl:block absolute right-0 top-1/2 transform -translate-x-3/10 -translate-y-1/2">
+              <img
+                src="/assets/playground/mouse.png"
+                alt="Cursor"
+                className="w-32 h-32"
+              />
+            </div>
 
-          <Intro
-            title="Our Resources"
-            text="We have created a suite of resources to support the learning of senior adults, and to help them gain confidence in using a computer. These resources are available for free download and use. "
-          />
-
-          {/* Resources */}
-          <Image
-            src={ResourceLogo}
-            alt=""
-            className="w-full mt-8 sm:w-1/2 mb-12 lg:mb-8"
-          />
-
-          <div className="flex flex-col space-y-16 lg:justify-center lg:items-center mt-8">
-            <Resource
-              image={ResourceIcon1}
-              title="The Playground"
-              text="An interactive platform filled with hands-on activities, quizzes and videos to enrich the learning of senior adults."
-              button="Go!"
-              link="/"
-            />
-            <Resource
-              image={ResourceIcon2}
-              title="Curriculum Guide"
-              text="A guide that outlines the curriculum of Work Live Digital's foundation computer classes, and how to best incorporate The Playground with the lessons."
-              button="Download"
-              link="/resources/curriculum-guide.pdf"
-            />
-            <Resource
-              image={ResourceIcon3}
-              title="Playground Guide"
-              text="A guide that introduces the different features of The Playground, and how to use each of them for the best learning experience."
-              button="Download"
-              link="/resources/playground-guide.pdf"
-            />
-            <Resource
-              image={ResourceIcon4}
-              title="Video Playlist"
-              text="The educational videos in The Playground are publicly available on our YouTube channel. Feel free to browse through them!"
-              button="Watch"
-              link="https://www.youtube.com/@ComputerEasyLah"
-            />
+            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>
+              It all began with our volunteer experience.
+            </h2>
+            <h3 className='font-nunito text-lg lg:text-xl text-pale-gray-500 leading-8 lg:leading-9'>
+              During our volunteer work at Work Live Digital, a ground-up movement offering free computer classes to senior adults, we recognized a gap - participants lacked a structured way to practice what they learned outside of class. So, we started Computer, Easy Lah!. Our mission: To build an interactive platform to better enable learning and practice.
+            </h3>
           </div>
 
-          {/* Video
-           <div className="video-container mt-16 flex flex-col justify-center items-center">
-          <Intro
-            title="Promotional Video"
-            text=""
-          />
-            <video controls className="xl:w-3/4">
-              <source src="/assets/home/landing-video.mp4" type="video/mp4" />
-            </video>
-          </div> */}
+          {/* Main Body */}
+          <div className='flex flex-col justify-center items-center space-y-4 lg:space-y-8 py-2 px-8 mt-8 lg:py-16 2xl:px-64 '>
+            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold px-8'>Organising computer workshops for senior adults?</h2>
+            <button className="font-nunito bg-trust-blue-900 px-6 py-4 font-bold rounded-full text-lg text-white hover:bg-trust-blue-hover duration-300"
+            onClick={() => window.location.href = '/resources'}
+            >View Resources</button>
+            <div className="flex flex-col items-center text-center bg-white w-screen xl:w-4/5">
+              <div className="w-5/6 mt-4">
+                {/* Plan */}
+                <div className=" flex flex-col mb-12 space-y-8">
+                  {/* Text content */}
+                  <div className="text-left space-y-4">
+                      <Title text="01 Plan" />
+                      <Text content="Develop your own lesson outline, or check out our curriculum guide which uses Work Live Digital&apos;s foundation class curriculum."/>
+                  </div>
+                  {/* Image content */}
+                  <img
+                  src="/assets/home/workshop-1.png"
+                  alt="Plan"
+                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-2/5" />
+                </div>
 
-          <Title text="We are supported by" className="mt-20" />
-          <Image src={WLDLogo} alt="Work Live Digital Logo" className="w-48" />
+                {/* Integrate */}
+                <div className=" flex flex-col mb-12 space-y-8">
+                  {/* Text content */}
+                  <div className="text-left space-y-4">
+                      <Title text="02 Integrate" />
+                      <Text content="Explore The Playground and take a look at our curriculum and playground guides to learn how to best integrate The Playground into your lessons."/>
+                  </div>
+                  {/* Image content */}
+                  <img
+                  src="/assets/home/workshop-2.png"
+                  alt="Plan"
+                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-2/5" />
+                </div>
+
+                {/* Guide */}
+                <div className=" flex flex-col mb-12 space-y-8">
+                  {/* Text content */}
+                  <div className="text-left space-y-4">
+                      <Title text="03 Guide" />
+                      <Text content="During lessons, demonstrate to participants how to use The Playground for their post-lesson practice. You can consider utilising The Playground Box which offers printable templates for participants."/>
+                  </div>
+                  {/* Image content */}
+                  <img
+                  src="/assets/home/workshop-3.png"
+                  alt="Plan"
+                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-2/5" />
+                </div>
+
+
+
+              </div>
+            </div>
+            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Watch us in action.</h2>
+            {/* Video */}
+              <Iframe
+                url={videoLink}
+                id=""
+                className="w-340p h-320p md:w-540p"
+              />
+          </div>
+
+          {/* Project Study Partners */}
+          <div className='flex flex-col justify-center items-center space-y-4 py-2 px-8 mt-16 mb-16 lg:px-16 xl:px-48 2xl:px-64 '>
+          <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Our Project Study Partners</h2>
+            <div className='grid grid-cols-2 sm:grid-cols-4 place-items-center'>
+              <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2 xl:w-2/5" />
+              <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2 xl:w-2/5" />
+              <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2 xl:w-2/5" />
+              <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2 xl:w-2/5" />
+
+            </div>
+          </div>
+
+          {/* Get In Touch */}
+          <div className='flex flex-col justify-center items-center space-y-4 w-screen py-8 px-8 lg:px-16 lg:py-16 xl:px-48 2xl:px-64 bg-pink-50'>
+            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Get In Touch</h2>
+            <h3 className='font-nunito text-lg lg:text-xl text-pale-gray-500 leading-8 lg:leading-9'>Have any suggestions or questions for us? We are happy to get in touch.</h3>
+            <button className="font-nunito bg-creative-pink-900 px-12 py-4 font-bold rounded-full text-lg text-white hover:bg-creative-pink-hover duration-300"
+            onClick={() => window.location.href = '/contact'}
+            >Contact</button>
+          </div>
+
         </div>
-      </div>
     </Layout>
   );
 };

@@ -80,7 +80,7 @@ const Landing = () => {
             <button className="font-nunito bg-trust-blue-900 px-6 py-4 font-bold rounded-full text-lg text-white hover:bg-trust-blue-hover duration-300"
             onClick={() => window.location.href = '/resources'}
             >View Resources</button>
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 place-items-center items-center text-center bg-white w-4/5" style={{ marginTop: '5%' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 place-items-center items-center text-center bg-white w-4/5" style={{ marginTop: '5%' }}>
                 {/* Plan */}
                 <div className=" flex flex-col mb-12 space-y-8 self-start">
                   {/* Text content */}
@@ -92,7 +92,7 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-1.png"
                   alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-1/2" />
+                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
                 </div>
 
                 {/* Integrate */}
@@ -106,7 +106,7 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-2.png"
                   alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-1/2" />
+                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
                 </div>
 
                 {/* Guide */}
@@ -114,14 +114,32 @@ const Landing = () => {
                   {/* Text content */}
                   <div className="text-left space-y-4">
                       <Title text="03 Guide" />
-                      <Text content="During lessons, demonstrate to participants how to use The Playground for their post-lesson practice. You can consider utilising The Playground Box which offers printable templates for participants."/>
+                      <Text content="During lessons, demonstrate to participants how to use The Playground for their post-lesson practice. Guide them how to access it."/>
                   </div>
                   {/* Image content */}
                   <img
                   src="/assets/home/workshop-3.png"
-                  alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-1/2" />
+                  alt="Guide"
+                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
                 </div>
+
+                {/* Takeaway */}
+                <div className=" flex flex-col mb-12 space-y-8 self-start">
+                  {/* Text content */}
+                  <div className="text-left space-y-4">
+                      <Title text="04 Takeaway" />
+                      <Text content="Explore The Playground Box which offers printable templates to help participants manage their computer journeys during and after classes."/>
+                  </div>
+                  {/* Image content */}
+                  <img
+                  src="/assets/home/workshop-4.png"
+                  alt="Takeaway"
+                  className="self-center w-auto sm:w-1/2 lg:w-3/5 xl:w-1/2" />
+                </div>
+
+
+
+
             </div>
             <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Watch us in action.</h2>
             {/* Video */}

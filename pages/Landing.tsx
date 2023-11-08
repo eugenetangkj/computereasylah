@@ -80,10 +80,9 @@ const Landing = () => {
             <button className="font-nunito bg-trust-blue-900 px-6 py-4 font-bold rounded-full text-lg text-white hover:bg-trust-blue-hover duration-300"
             onClick={() => window.location.href = '/resources'}
             >View Resources</button>
-            <div className="flex flex-col items-center text-center bg-white w-screen xl:w-4/5">
-              <div className="w-5/6 mt-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 place-items-center items-center text-center bg-white w-4/5" style={{ marginTop: '5%' }}>
                 {/* Plan */}
-                <div className=" flex flex-col mb-12 space-y-8">
+                <div className=" flex flex-col mb-12 space-y-8 self-start">
                   {/* Text content */}
                   <div className="text-left space-y-4">
                       <Title text="01 Plan" />
@@ -93,11 +92,11 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-1.png"
                   alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-2/5" />
+                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-1/2" />
                 </div>
 
                 {/* Integrate */}
-                <div className=" flex flex-col mb-12 space-y-8">
+                <div className=" flex flex-col mb-12 space-y-8 self-start">
                   {/* Text content */}
                   <div className="text-left space-y-4">
                       <Title text="02 Integrate" />
@@ -107,11 +106,11 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-2.png"
                   alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-2/5" />
+                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-1/2" />
                 </div>
 
                 {/* Guide */}
-                <div className=" flex flex-col mb-12 space-y-8">
+                <div className=" flex flex-col mb-12 space-y-8 self-start">
                   {/* Text content */}
                   <div className="text-left space-y-4">
                       <Title text="03 Guide" />
@@ -121,12 +120,8 @@ const Landing = () => {
                   <img
                   src="/assets/home/workshop-3.png"
                   alt="Plan"
-                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-2/5" />
+                  className="self-center w-auto sm:w-1/2 lg:w-2/5 xl:w-1/2" />
                 </div>
-
-
-
-              </div>
             </div>
             <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Watch us in action.</h2>
             {/* Video */}

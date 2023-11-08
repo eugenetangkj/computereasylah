@@ -12,8 +12,8 @@ export const navLinks = [
   //   title: "Impact",
   // },
   {
-    id: "curriculum",
-    title: "Curriculum",
+    id: "resources",
+    title: "Resources",
   },
   {
     id: "playground",

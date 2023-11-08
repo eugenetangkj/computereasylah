@@ -37,7 +37,7 @@ const Philosophy: NextPage = () => {
               <Title text="Our Philosophy" className="py-8" />
               <Text
                 className="mb-12"
-                content="Our team has designed our platform by considering the needs of senior adults in acquiring and practicing fundamental computer skills."
+                content="We have designed The Playground by considering the needs of senior adults in acquiring and practicing fundamental computer skills."
               />
             </div>
 
@@ -53,7 +53,7 @@ const Philosophy: NextPage = () => {
                 />
                 {/* Philosophy details */}
                 <div className="flex flex-col justify-center mx-2 lg:items-start">
-                    <p className="font-gaegu font-bold text-3xl sm:text-4xl py-4">Bite-sized</p>
+                    <p className="font-nunito font-bold text-3xl sm:text-4xl py-4">Bite-sized</p>
                     <p className="font-nunito text-lg md:text-xl self-center lg:self-start lg:text-left mb-8">
                     While the content is split into topics, we encourage recaps of previous topics&apos; content whenever possible.
                     </p>
@@ -71,7 +71,7 @@ const Philosophy: NextPage = () => {
                 />
                 {/* Philosophy details */}
                 <div className="flex flex-col justify-center mx-2 lg:items-start">
-                    <p className="font-gaegu font-bold text-3xl sm:text-4xl py-4">Relatability</p>
+                    <p className="font-nunito font-bold text-3xl sm:text-4xl py-4">Relatability</p>
                     <p className="font-nunito text-lg md:text-xl self-center lg:self-start lg:text-left mb-8">
                     We use concepts and images that senior adults are familiar with, instead of complex explanations.
                     </p>
@@ -89,7 +89,7 @@ const Philosophy: NextPage = () => {
                 />
                 {/* Philosophy details */}
                 <div className="flex flex-col justify-center mx-2 lg:items-start">
-                    <p className="font-gaegu font-bold text-3xl sm:text-4xl py-4">Recap</p>
+                    <p className="font-nunito font-bold text-3xl sm:text-4xl py-4">Recap</p>
                     <p className="font-nunito text-lg md:text-xl self-center lg:self-start lg:text-left mb-8">
                     While the content is split into topics, we encourage recaps of previous topics&apos; content whenever possible.
                     </p>
@@ -107,7 +107,7 @@ const Philosophy: NextPage = () => {
                 />
                 {/* Philosophy details */}
                 <div className="flex flex-col justify-center mx-2 lg:items-start">
-                    <p className="font-gaegu font-bold text-3xl sm:text-4xl py-4">Guided</p>
+                    <p className="font-nunito font-bold text-3xl sm:text-4xl py-4">Guided</p>
                     <p className="font-nunito text-lg md:text-xl self-center lg:self-start lg:text-left mb-8">
                     For each activity, we provide instructions and guidance so it is clear for the participants regarding how to use them.
                     </p>

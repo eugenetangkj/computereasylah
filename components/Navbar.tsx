@@ -140,7 +140,7 @@ useEffect(() => {
                 <NextLink
                   href={`/${link.id}`}
                   className={
-                    router.pathname == "/" + link.id ? "text-trust-blue-900" : ""
+                    router.pathname == "/" + link.id ? "text-trust-blue-900  hover:text-trust-blue-hover duration-300" : " hover:text-trust-blue-hover duration-300"
                   }
                 >
                   {link.title}

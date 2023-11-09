@@ -20,7 +20,7 @@ export const navLinks = [
     title: "Contact"
   },
   {
-    id: "playground",
+    id: "",
     title: "Playground",
   },
 ];

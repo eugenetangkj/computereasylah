@@ -130,7 +130,7 @@ useEffect(() => {
         <ul className="list-none hidden navbar-custom:flex flex-row gap-x-10 items-center font-semibold navbar-custom:text-lg lg:text-xl">
           {navLinks.map((link) => (
             <li key={link.id}>
-              {link.id === "playground" ? (
+              {link.id === "" ? (
                 <a href={`/`} target="_blank">
                   <button className="bg-trust-blue-500 rounded-full sm:h-8 sm:w-32 md:h-12 md:w-36 text-black hover:bg-trust-blue-hover duration-300">
                     <span>{link.title}</span>
@@ -162,7 +162,7 @@ useEffect(() => {
       <div id="hamburger-menu-items" className="flex flex-col justify-center items-center bg-trust-blue-500 dark:bg-black absolute left-0 top-0 w-0 h-[100vh] text-black dark:text-white font-semibold z-30 text-2xl duration-500 text-center overflow-hidden">
           <ul id="hamburger-menu-ul" className="space-y-10">
             {navLinks.map((link) => (
-                    (link.id != "playground")
+                    (link.id != "")
                     ?
                     <li key={link.id} className="p-1 hover:text-trust-blue-hover duration-300">
                       <NextLink href={`/${link.id}`}>{link.title}</NextLink>

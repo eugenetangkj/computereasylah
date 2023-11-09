@@ -8,7 +8,7 @@ export const Resource = (props: any) => {
   
     return (
       <div className="flex flex-col space-y-8 lg:flex-row justify-center items-center lg:space-x-16 w-full"> 
-        <div className="text-center lg:text-left w-full lg:ml-28 xl:ml-36">
+        <div className="text-center lg:text-left w-full mx-4 lg:ml-28 xl:ml-36">
           <div className="font-nunito font-bold text-3xl sm:text-4xl lg:text-4xl">
             {title}
           </div>

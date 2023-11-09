@@ -99,7 +99,7 @@ export default function EmailSafety() {
         <img
           src="/assets/email/tilted-mail.png"
           alt="Mail"
-          className="w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20"
+          className="w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-0"
         />
         <img
           src="/assets/email/tilted-email-symbol.png"

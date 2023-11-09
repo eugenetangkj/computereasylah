@@ -66,8 +66,8 @@ export default function SafetyQuiz() {
           className="w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 right-0 translate-x-3/10 z-20"
         />
         <img
-          src="/assets/cursor.png"
-          alt="Shield"
+          src="/assets/playground/cursor.png"
+          alt="Cursor"
           className="w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5"
         />
       </div>

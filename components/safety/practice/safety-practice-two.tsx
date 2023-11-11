@@ -236,6 +236,7 @@ const SafetyPracticeTwo: React.FC = () => {
             max="6"
             value={fontSize}
             onChange={handleFontSizeChange}
+            autoComplete="off"
           />
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-between w-full sm:w-5/6 lg:w-2/3 gap-y-4 font-nunito text-xl sm:text-2xl">

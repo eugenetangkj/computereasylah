@@ -29,9 +29,7 @@ export default function ApplicationsRecap() {
         <title>Playground - Applications Recap</title>
         </Head>
         <div
-        className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-16 mt-10 md:mt-20 lg:mt-0 2xl:mt-8 opacity-0 transition-opacity ${
-            isActive ? "opacity-100" : ""
-        } duration-1000`}
+        className={`flex flex-col items-center justify-start h-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-16 mt-20 lg:mt-24 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
         >
         
         {/* Back button */}

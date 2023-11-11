@@ -27,6 +27,7 @@ export default function DictionaryView( { updateCurrentViewState, updateCurrentT
       const timer = setTimeout(() => {
         setIsActive(true);
       }, 100); // Adjust the delay as needed
+      window.scrollTo(0, 0);
   
       return () => clearTimeout(timer); // Clean up the timer on unmount
     }, []);

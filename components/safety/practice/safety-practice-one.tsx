@@ -153,7 +153,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
 
   return (
     <div
-      className={`mt-8 lg:mt-16 flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 md:mt-20 opacity-0 transition-opacity ${
+      className={`mt-16 lg:mt-16 flex flex-col item-center justify-center min-h-screen p-2 sm:p-10 space-y-8 lg:space-y-4 md:mt-20 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
       } duration-1000`}
     >
@@ -163,7 +163,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
         category={Topic.Safety}
       />
 
-      <div className="text-center text-3xl font-nunito font-semibold sm:py-2 xl:py-8 mx-auto">
+      <div className="text-center text-3xl font-nunito font-semibold sm:py-2 xl:py-8 mx-auto mt-4">
         You have received the following email.
       </div>
 
@@ -176,6 +176,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
           max="6"
           value={fontSize}
           onChange={handleFontSizeChange}
+          autoComplete="off"
         />
       </div>
 

@@ -62,7 +62,7 @@ export default function DictionaryView( { updateCurrentViewState, updateCurrentT
             <BackButtonDictionary />
 
             {/* Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">Dictionary</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center mt-16">Dictionary</h1>
 
             {/* Search bar */}
             <input

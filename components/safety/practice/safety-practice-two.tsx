@@ -89,15 +89,15 @@ const CongratulationsModal: React.FC<CongratulationsModalProps> = ({
           </div>
           <div className="flex flex-row justify-center gap-x-4 mt-4 font-semibold text-lg sm:text-xl">
             <button
-              className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-44 sm:h-14 sm:w-48"
+              className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-44 sm:h-14 sm:w-48 duration-300"
               onClick={onClose}
             >
               Continue to read
             </button>
 
             <NextLink href="/safety">
-              <button className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-36 sm:h-14 sm:w-40">
-                Back
+              <button className="bg-passion-red-900 hover:bg-passion-red-hover rounded-full h-12 w-36 sm:h-14 sm:w-40 duration-300">
+                Quit
               </button>
             </NextLink>
           </div>
@@ -210,7 +210,7 @@ const SafetyPracticeTwo: React.FC = () => {
     >
       <BackButton
         pathToReturnTo="/safety"
-        displayText="Back"
+        displayText="Quit"
         category={Topic.Safety}
       />
       <HintModal

@@ -42,7 +42,7 @@ export default function TypingQuiz() {
           <BackButton
             pathToReturnTo="/typing"
             category={Topic.Typing}
-            displayText="Back"
+            displayText="Quit"
           />
         </div>
 

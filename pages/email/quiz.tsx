@@ -37,7 +37,7 @@ export default function EmailQuiz() {
           isActive ? "opacity-100" : ""
         } duration-1000`}
       >
-        <BackButton pathToReturnTo='/email' displayText='Back' category={ Topic.Email } />
+        <BackButton pathToReturnTo='/email' displayText='Quit' category={ Topic.Email } />
         
 
         {!hasStartedQuiz ? (

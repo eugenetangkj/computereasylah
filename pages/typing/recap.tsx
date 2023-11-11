@@ -52,7 +52,7 @@ export default function TypingRecap() {
         {/* Video */}
         <Iframe
           url={videoLink}
-          height="320px"
+          height="300px"
           id=""
           className="z-30 w-340p lg:w-540p"
         />

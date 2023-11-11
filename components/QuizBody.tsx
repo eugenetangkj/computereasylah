@@ -258,7 +258,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           <img
             src={allQuestions.questions[currentQuestionIndex].imageLink}
             alt="Question Image"
-            className="mx-4 w-1/2"
+            className="mx-4 w-1/4"
           />
         ) : (
           <h2></h2>

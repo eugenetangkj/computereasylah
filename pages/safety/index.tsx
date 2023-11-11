@@ -39,9 +39,7 @@ const SafetyPage = () => {
         <title>Playground - Safety</title>
       </Head>
       <div
-        className={`flex flex-col items-center justify-center min-h-screen py-2 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-10 opacity-0 transition-opacity ${
-          isActive ? "opacity-100" : ""
-        } duration-1000`}
+        className={`flex flex-col items-center justify-start h-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-4 mt-20 lg:mt-20 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
       >
         <BackButton pathToReturnTo='/' displayText='Back' category={Topic.Safety} />
         

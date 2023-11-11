@@ -25,7 +25,7 @@ export default function CommonApps() {
         <title>Playground - Common Apps</title>
       </Head>
       <div
-        className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-16 2xl:mt-16 opacity-0 transition-opacity ${
+        className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-28 opacity-0 transition-opacity ${
           isActive ? "opacity-100" : ""
         } duration-1000`}
       >

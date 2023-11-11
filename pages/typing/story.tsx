@@ -81,11 +81,11 @@ const StoryPage = () => {
               <div>
                 {/* Title */}
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-16">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-24">
                   Choose Practice
                 </h1>
                 {/* Levels */}
-                <div className="flex flex-col justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
+                <div className="flex flex-col justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-y-12 lg:gap-x-32 py-4">
                   {/* Select Basic Levels */}
                   <div className="flex flex-row justify-center items-center space-x-10">
                     {/* Words */}

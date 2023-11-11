@@ -67,13 +67,13 @@ export default function NotepadPractical({ updateCurrentElementIndex } : Notepad
     const [shouldShowErrorPrompt, setShowShouldErrorPrompt] = useState(false);
 
     //Help prompt handling
-    const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
+    const videoLink = 'https://www.youtube.com/embed/avdjQ1SAx34';
     const [shouldShowHelpPrompt, setShowShouldHelpPrompt] = useState(false);
     const handleGetHelpButtonClick = () => {
         setShowShouldHelpPrompt(true);
     }
 
-
+    
 
     //Check answer
     const handleCheckButtonClick = () => {

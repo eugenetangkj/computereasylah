@@ -35,13 +35,13 @@ export default function CalculatorPractical({ updateCurrentElementIndex } : Calc
     const [shouldShowErrorPrompt, setShowShouldErrorPrompt] = useState(false);
 
     //Help prompt handling
-    const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
+    const videoLink = 'https://www.youtube.com/embed/mU7HbGv0s-M';
     const [shouldShowHelpPrompt, setShowShouldHelpPrompt] = useState(false);
     const handleGetHelpButtonClick = () => {
         setShowShouldHelpPrompt(true);
     }
 
-
+    
     //Calculator variables
     const [randomIntegerOne, setRandomIntegerOne] = useState<number>();
     const [randomIntegerTwo, setRandomIntegerTwo] = useState<number>();

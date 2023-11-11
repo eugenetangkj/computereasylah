@@ -36,7 +36,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
     const [shouldShowErrorPrompt, setShowShouldErrorPrompt] = useState(false);
 
     //Help prompt handling
-    const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
+    const videoLink = 'https://www.youtube.com/embed/LpOUk6fvfHo';
     const [shouldShowHelpPrompt, setShowShouldHelpPrompt] = useState(false);
     const handleGetHelpButtonClick = () => {
         setShowShouldHelpPrompt(true);

@@ -78,7 +78,7 @@ export default function SnippingToolPractical({ updateCurrentElementIndex }: Sni
     const [shouldShowErrorPrompt, setShowShouldErrorPrompt] = useState(false);
 
     //Help prompt handling
-    const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
+    const videoLink = 'https://www.youtube.com/embed/meKdIRzylA8';
     const [shouldShowHelpPrompt, setShowShouldHelpPrompt] = useState(false);
     const handleGetHelpButtonClick = () => {
         setShowShouldHelpPrompt(true);

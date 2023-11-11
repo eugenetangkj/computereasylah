@@ -38,7 +38,7 @@ export default function PaintTheory({ updateCurrentElementIndex } : PaintTheoryP
             <img src='/assets/apps/paint-logo.png' alt='Paint' className='' />
         </div>
 
-        <h3 className='text-2xl text-gray-500 font-nunito text-center'>Draw on your computer!</h3>
+        <h3 className='text-2xl text-gray-500 font-nunito text-center px-4'>Draw on your computer!</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }

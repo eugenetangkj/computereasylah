@@ -30,7 +30,7 @@ export default function TypingRecap() {
         <title>Playground - Typing Recap</title>
       </Head>
       <div
-        className={`flex flex-col items-center justify-start h-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-16 mt-20 lg:mt-24 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
+        className={`flex flex-col items-center justify-start w-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-16 mt-16 lg:mt-16 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
       >
         {/* Back button */}
         <BackButton

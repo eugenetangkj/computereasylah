@@ -80,7 +80,7 @@ const PhishyModal: React.FC<PhishyModalProps> = ({
             <ModalContent isPhishy={isPhishy} />
             <div className="flex justify-center">
               <button
-                className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full font-semibold text-lg sm:text-xl h-12 w-28 sm:h-14 sm:w-32"
+                className="bg-trust-blue-900 hover:bg-trust-blue-hover hover:text-white rounded-full font-semibold text-lg sm:text-xl h-12 w-28 sm:h-14 sm:w-32 duration-300"
                 onClick={nextPractice}
               >
                 Next
@@ -272,13 +272,13 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
       </div>
       <div className="flex flex-row justify-center text-lg sm:text-xl font-semibold mt-4 space-x-8 font-nunito">
         <button
-          className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32"
+          className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32 duration-300"
           onClick={openisPhishyModal}
         >
           Phishy
         </button>
         <button
-          className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-32 sm:h-14 sm:w-36"
+          className="bg-trust-blue-900 hover:bg-trust-blue-hover hover:text-white  rounded-full h-12 w-32 sm:h-14 sm:w-36 duration-300"
           onClick={openisNotPhishyModal}
         >
           Not Phishy

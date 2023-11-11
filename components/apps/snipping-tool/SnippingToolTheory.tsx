@@ -38,7 +38,7 @@ export default function SnippingToolTheory({ updateCurrentElementIndex } : Snipp
             <img src='/assets/apps/snipping-tool-logo.png' alt='Snipping Tool' className='' />
         </div>
 
-        <h3 className='text-2xl text-gray-500 font-nunito text-center'>Want to take a picture of your computer screen?</h3>
+        <h3 className='text-2xl text-gray-500 font-nunito text-center px-4'>Want to take a picture of your computer screen?</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }

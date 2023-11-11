@@ -20,8 +20,12 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
         setIsActive(true);
         }, 100); // Adjust the delay as needed
         window.scrollTo(0, 0);
+        const randomInteger = Math.floor(Math.random() * numberOfQuestions);
+        setRandomInteger(randomInteger);
+        console.log(randomInteger);
 
         return () => clearTimeout(timer); // Clean up the timer on unmount
+
     }, []);
 
 
@@ -45,17 +49,9 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
 
 
     //Question variables
-    const [randomInteger, setRandomInteger] = useState<number>(-1);
+    const [randomInteger, setRandomInteger] = useState<number>(0);
     const numberOfQuestions = 3;
 
-
-
-    useEffect(() => {
-        const randomInteger = Math.floor(Math.random() * numberOfQuestions) + 1;
-        setRandomInteger(randomInteger);
-    }
-
-    , [randomInteger]);
 
 
 
@@ -83,7 +79,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
         {/* Question  */}
         { (randomInteger != -1)
             ? <h2 className="text-4xl md:text-5xl lg:text-6xl lg:leading-relaxed 2xl:text-8xl 2xl:leading-relaxed font-bold font-gaegu text-center w-3/4">{ browserQuestions[randomInteger] }</h2>
-            : <h2 className="text-4xl md:text-5xl lg:text-6xl lg:leading-relaxed 2xl:text-8xl 2xl:leading-relaxed font-bold font-gaegu text-center w-3/4">{ browserQuestions[Math.floor(Math.random() * numberOfQuestions) + 1] }</h2>
+            : <h2 className="text-4xl md:text-5xl lg:text-6xl lg:leading-relaxed 2xl:text-8xl 2xl:leading-relaxed font-bold font-gaegu text-center w-3/4">{ browserQuestions[Math.floor(Math.random() * numberOfQuestions)] }</h2>
         }
 
 
@@ -97,6 +93,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
             onChange={(e: any) => {
                 setInputFieldData(e.target.value);
             }}
+            autoCorrect="off"
         />
 
 

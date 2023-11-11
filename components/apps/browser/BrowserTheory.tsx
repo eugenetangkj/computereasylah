@@ -37,7 +37,7 @@ export default function BrowserTheory({ updateCurrentElementIndex } : BrowserThe
             <img src='/assets/apps/edge-logo.png' alt='Microsoft Edge' className='' />
         </div>
 
-        <h3 className='text-2xl text-gray-500 font-nunito text-center'>Access the Internet with browsers!</h3>
+        <h3 className='text-2xl text-gray-500 font-nunito text-center px-4'>Access the Internet with browsers!</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }

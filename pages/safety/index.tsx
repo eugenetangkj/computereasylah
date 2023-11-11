@@ -39,20 +39,18 @@ const SafetyPage = () => {
         <title>Playground - Safety</title>
       </Head>
       <div
-        className={`flex flex-col items-center justify-center min-h-screen py-2 bg- space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-10 opacity-0 transition-opacity ${
-          isActive ? "opacity-100" : ""
-        } duration-1000`}
+        className={`flex flex-col items-center justify-start h-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-4 mt-20 lg:mt-24 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
       >
         <BackButton pathToReturnTo='/' displayText='Back' category={Topic.Safety} />
         
 
         {/* Title */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-gaegu text-center mt-16">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center mt-16">
           Safety
         </h1>
 
         {/* Options */}
-        <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-16 lg:gap-x-32 py-4">
+        <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 justify-center items-center mx-24 lg:mx-12 space-y-8 lg:space-y-0 lg:gap-y-8 lg:gap-x-32 2xl:gap-y-16 py-4">
           <SafetyOption href="/safety/recap" title="Recap" />
           <SafetyOption href="/safety/tips" title="Safety Tips" />
           <SafetyOption href="/safety/practice" title="Practice" />

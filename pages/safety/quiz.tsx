@@ -36,7 +36,7 @@ export default function SafetyQuiz() {
           isActive ? "opacity-100" : ""
         } duration-1000`}
       >
-        <BackButton pathToReturnTo='/safety' displayText='Back' category={ Topic.Safety } />
+        <BackButton pathToReturnTo='/safety' displayText='Quit' category={ Topic.Safety } />
 
         {!hasStartedQuiz ? (
           <div className="flex flex-col justify-center items-center space-y-24 2xl:space-y-36">

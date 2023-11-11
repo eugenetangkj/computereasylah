@@ -27,9 +27,7 @@ export default function Email() {
       </Head>
 
       <div
-        className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-8 lg:space-y-4 mt-10 md:mt-20 lg:mt-8 2xl:mt-0 opacity-0 transition-opacity ${
-          isActive ? "opacity-100" : ""
-        } duration-1000`}
+        className={`flex flex-col items-center justify-start h-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-4 mt-20 lg:mt-24 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
       >
         
         {/* Back button */}

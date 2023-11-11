@@ -79,7 +79,7 @@ const Resources = () => {
             <Resource
               image={ResourceIcon5}
               title="The Playground Box"
-              text="Printable templates for participants to manage their computer journeys during and after classes."
+              text="Printable cards for participants to manage their computer journeys during and after classes."
               button="Download"
               link="/resources/playground-box-guide.pdf"
             />

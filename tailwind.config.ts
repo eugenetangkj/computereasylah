@@ -103,7 +103,7 @@ const config: Config = {
         "80vh": "80vh",
         "100p": "100px",
         "50vh": "50vh",
-        "320p": "320px",
+        "320p": "300px",
         "420p": "520px"
       },
       top: {

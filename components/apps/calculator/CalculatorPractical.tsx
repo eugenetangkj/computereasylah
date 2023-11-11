@@ -35,13 +35,13 @@ export default function CalculatorPractical({ updateCurrentElementIndex } : Calc
     const [shouldShowErrorPrompt, setShowShouldErrorPrompt] = useState(false);
 
     //Help prompt handling
-    const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
+    const videoLink = 'https://www.youtube.com/embed/mU7HbGv0s-M';
     const [shouldShowHelpPrompt, setShowShouldHelpPrompt] = useState(false);
     const handleGetHelpButtonClick = () => {
         setShowShouldHelpPrompt(true);
     }
 
-
+    
     //Calculator variables
     const [randomIntegerOne, setRandomIntegerOne] = useState<number>();
     const [randomIntegerTwo, setRandomIntegerTwo] = useState<number>();
@@ -138,7 +138,7 @@ export default function CalculatorPractical({ updateCurrentElementIndex } : Calc
             ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 rounded-xl p-16 flex flex-col justify-center items-center space-y-8 2xl:space-y-16 bg-gray-100' style={{ marginTop: 0 }}>
                 <h4 className='text-3xl xl:text-4xl 2xl:text-5xl font-nunito text-center'>Watch this video to get help!</h4>
                 <Iframe url={ videoLink }
-                    height="320px"
+                    height="300px"
                     id=""
                     className="z-20 w-540p"
                 />

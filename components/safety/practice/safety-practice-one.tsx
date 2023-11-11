@@ -159,7 +159,7 @@ const SafetyPracticeOne: React.FC<SafetyPracticalProps> = ({ updateCurrentIndex 
     >
       <BackButton
         pathToReturnTo="/safety"
-        displayText="Back"
+        displayText="Quit"
         category={Topic.Safety}
       />
 

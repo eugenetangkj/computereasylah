@@ -41,7 +41,7 @@ export default function ApplicationQuiz() {
             className={`fixed top-0 left-0 w-full bg-white py-2 z-20 pl-8 pt-8 md:pl-16 md:pt-16`}
         >
             {/* Back button */}
-            <BackButton pathToReturnTo='/apps' displayText='Back' category={Topic.Applications} />
+            <BackButton pathToReturnTo='/apps' displayText='Quiz' category={Topic.Applications} />
         </div>
 
         {!hasStartedQuiz ? (

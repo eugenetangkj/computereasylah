@@ -36,6 +36,34 @@ export default function BackButton({
       ? "hover:text-wisdom-purple-hover"
       : "hover:text-black";
 
+    let ringHoverColour =
+    category == Topic.Typing
+      ? "focus:ring-energy-orange-hover"
+      : category == Topic.Applications
+      ? "focus:ring-creative-pink-hover"
+      : category == Topic.Email
+      ? "focus:ring-trust-blue-hover"
+      : category == Topic.Safety
+      ? "focus:ring-passion-red-hover"
+      : category == Topic.Dictionary
+      ? "focus:ring-wisdom-purple-hover"
+      : "focus:ring-text-black";
+    
+    let borderHoverColour =
+    category == Topic.Typing
+      ? "focus:border-energy-orange-hover"
+      : category == Topic.Applications
+      ? "focus:border-creative-pink-hover"
+      : category == Topic.Email
+      ? "focus:border-trust-blue-hover"
+      : category == Topic.Safety
+      ? "focus:border-passion-red-hover"
+      : category == Topic.Dictionary
+      ? "focus:border-wisdom-purple-hover"
+      : "focus:border-text-black";
+      
+  
+
   
   //Constants for search bar
   const [searchTerm, setSearchTerm] = useState('');
@@ -95,7 +123,7 @@ export default function BackButton({
       <input
         type="search"
         id='search-bar'
-        className="font-nunito p-2 text-lg sm:text-xl md:text-2xl text-gray-900 border border-gray-300 rounded-2xl bg-gray-50 focus:ring-2 focus:ring-wisdom-purple-hover focus:border-wisdom-purple-hover outline-none"
+        className={`font-nunito p-2 text-lg sm:text-xl md:text-2xl text-gray-900 border border-gray-300 rounded-2xl bg-gray-50 focus:ring-2 ${ ringHoverColour } ${ borderHoverColour } focus:border-wisdom-purple-hover outline-none`}
         placeholder="Search Computer Term"
         onChange={handleSearch}
         value={searchTerm}
@@ -103,21 +131,21 @@ export default function BackButton({
       />
 
       {showDropdown && searchTerm && (
-        <div className="absolute top-full left-0 w-full max-h-[400px] overflow-y-auto border bg-white p-4">
+        <div className="absolute top-full left-0 w-full max-h-[400px] overflow-y-auto border bg-white py-4 px-8">
           {
           (filteredTerms.length == 1)
           ? (
             filteredTerms.map((term) => (
-              <div key={term.term} className='flex flex-col justify-center items-center space-y-4'>
+              <div key={term.term} className='flex flex-col justify-center items-center space-y-8'>
                 <h3 className='font-gaegu text-5xl font-bold '>{term.term}</h3>
                 <h5 className='font-gaegu text-3xl font-bold'>{term.leadingText}</h5>
-                <img src={term.imageUrl} alt={term.term} className='w-2/5' />
-                <p className='font-nunito text-2xl xl:text-3xl leading-snug'>{term.explanation}</p>
+                <img src={term.imageUrl} alt={term.term} className='w-1/2 xl:w-2/5' />
+                <p className='font-nunito text-2xl xl:text-3xl' style={{ lineHeight: "3rem" }}>{term.explanation}</p>
               </div>
             )))
           : (filteredTerms.length > 1)
-          ? (<p>Be more specific!</p>)
-          : (<p>No results found.</p>)}
+          ? (<p className='font-nunito text-2xl'>Be more specific!</p>)
+          : (<p className='font-nunito text-2xl'>No results found.</p>)}
         </div>
       )}
     </div>

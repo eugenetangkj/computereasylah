@@ -139,6 +139,7 @@ const KeyCheckGame: React.FC = () => {
                     value={fontSize}
                     onChange={handleFontSizeChange}
                     className="w-full"
+                    autoComplete="off"
                 />
             </div>
 

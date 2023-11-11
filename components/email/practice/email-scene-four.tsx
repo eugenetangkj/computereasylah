@@ -128,6 +128,7 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
                                 onChange={(e: any) => {
                                     setToFieldData(e.target.value);
                                 }}
+                                autoComplete="off"
                     />
                 </div>
 
@@ -143,6 +144,7 @@ export default function EmailSceneFour({ updateSceneIndex } : EmailSceneFourProp
                                 onChange={(e: any) => {
                                     setSubjectFieldData(e.target.value);
                                 }}
+                                autoComplete="off"
                     />
                 </div>
 

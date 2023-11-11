@@ -293,6 +293,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
           value={fontSize}
           onChange={handleFontSizeChange}
           className="w-full"
+          autoComplete="off"
         />
       </div>
 

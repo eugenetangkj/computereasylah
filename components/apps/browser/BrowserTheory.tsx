@@ -27,7 +27,7 @@ export default function BrowserTheory({ updateCurrentElementIndex } : BrowserThe
 
 
 
-  return ( <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-12 lg:space-y-8 mt-10 md:mt-20 lg:mt-8 2xl:mt-0 opacity-0 transition-opacity ${
+  return ( <div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-12 lg:space-y-8 mt-10 md:mt-20 lg:mt-16 2xl:mt-0 opacity-0 transition-opacity ${
         isActive ? "opacity-100" : ""
     } duration-1000`}>
 

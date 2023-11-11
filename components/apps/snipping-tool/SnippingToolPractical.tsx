@@ -19,6 +19,8 @@ export default function SnippingToolPractical({ updateCurrentElementIndex }: Sni
         const timer = setTimeout(() => {
             setIsActive(true);
         }, 100); // Adjust the delay as needed
+        window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
         return () => clearTimeout(timer); // Clean up the timer on unmount
     }, []);
@@ -103,7 +105,7 @@ export default function SnippingToolPractical({ updateCurrentElementIndex }: Sni
 
 
 
-    return (<div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-12 lg:space-y-12 mt-10 md:mt-20 lg:mt-8 2xl:mt-0 opacity-0 transition-opacity ${isActive ? "opacity-100" : ""
+    return (<div className={`flex flex-col items-center justify-center min-h-screen py-2 bg-white space-y-12 lg:space-y-12 mt-10 md:mt-20 lg:mt-28 2xl:mt-0 opacity-0 transition-opacity ${isActive ? "opacity-100" : ""
         } duration-1000`}>
 
         {/* Title */}
@@ -126,10 +128,10 @@ export default function SnippingToolPractical({ updateCurrentElementIndex }: Sni
         {/* Help Message */}
         {
             (shouldShowHelpPrompt)
-                ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 rounded-xl p-16 flex flex-col justify-center items-center space-y-8 2xl:space-y-16 bg-gray-100' style={{ marginTop: 0 }}>
+                ? <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-trust-blue-100 rounded-xl p-16 flex flex-col justify-center items-center space-y-8 2xl:space-y-16 bg-gray-300 z-40' style={{ marginTop: 0 }}>
                     <h4 className='text-3xl xl:text-4xl 2xl:text-5xl font-nunito text-center'>Watch this video to get help!</h4>
                     <Iframe url={videoLink}
-                        height="300px"
+                        height="250px"
                         id=""
                         className="z-20 w-540p"
                     />

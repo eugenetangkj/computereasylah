@@ -9,8 +9,7 @@ import { useState, useEffect } from "react";
 //Landing page
 const Landing = () => {
   //Video link to intro video
-  const videoLink = "https://www.youtube.com/embed/n3Vf4rSO1yM?si=72xUT-cXsts0Kk36";
-
+  const videoLink = "https://www.youtube.com/embed/njLdIZNpsEY";
   const [showLineBreak, setShowLineBreak] = useState(false);
 
   const lgBreakPoint = 1024;
@@ -147,7 +146,7 @@ const Landing = () => {
 
 
             </div>
-            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Watch us in action.</h2>
+            <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Watch our project trailer</h2>
             {/* Video */}
               <Iframe
                 url={videoLink}

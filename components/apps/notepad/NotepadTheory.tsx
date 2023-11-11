@@ -38,7 +38,7 @@ export default function NotepadTheory({ updateCurrentElementIndex } : NotepadThe
             <img src='/assets/apps/notepad-logo.png' alt='Notepad' className='' />
         </div>
 
-        <h3 className='text-2xl text-gray-500 font-nunito text-center'>Write and save your notes!</h3>
+        <h3 className='text-2xl text-gray-500 font-nunito text-center px-4'>Write and save your notes!</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }

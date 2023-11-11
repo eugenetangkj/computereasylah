@@ -21,7 +21,7 @@ export default function ApplicationsRecap() {
   }, []);
 
   //Video link to applications recap video
-  const videoLink = 'https://www.youtube.com/embed/Z7oq7xNAe80';
+  const videoLink = 'https://www.youtube.com/embed/cyFndPqNDu8';
 
   return (
     <div>
@@ -29,21 +29,21 @@ export default function ApplicationsRecap() {
         <title>Playground - Applications Recap</title>
         </Head>
         <div
-        className={`flex flex-col items-center justify-start h-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-16 mt-20 lg:mt-24 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
+        className={`flex flex-col items-center justify-start w-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-16 mt-16 lg:mt-16 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
         >
         
         {/* Back button */}
         <BackButton pathToReturnTo='/apps' displayText='Back' category={Topic.Applications} />
         
         {/* Title */}
-        <h1 className="text-4xl w-4/5 md:text-5xl lg:text-6xl 2xl:text-7xl font-bold font-gaegu text-center mt-16 z-30">Recap on Applications</h1>
-        <h3 className='text-2xl md:text-4xl text-gray-500 font-nunito text-center z-30'>Watch this 6-min recap video to recap what was taught for Applications.</h3>
+        <h1 className="text-4xl w-4/5 md:text-5xl lg:text-6xl 2xl:text-7xl font-bold font-gaegu text-center mt-16">Recap on Applications</h1>
+        <h3 className='text-2xl md:text-4xl text-gray-500 font-nunito text-center z-10'>Watch this 6-min recap video to recap what was taught for Applications.</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }
             height="300px"
             id=""
-            className="z-30 w-340p lg:w-540p"
+            className="w-340p lg:w-540p"
         />
 
         

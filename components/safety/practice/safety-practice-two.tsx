@@ -89,14 +89,14 @@ const CongratulationsModal: React.FC<CongratulationsModalProps> = ({
           </div>
           <div className="flex flex-row justify-center gap-x-4 mt-4 font-semibold text-lg sm:text-xl">
             <button
-              className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full h-12 w-44 sm:h-14 sm:w-48 duration-300"
+              className="bg-trust-blue-900 hover:bg-trust-blue-hover hover:text-white rounded-full h-12 w-44 sm:h-14 sm:w-48 duration-300"
               onClick={onClose}
             >
               Continue to read
             </button>
 
             <NextLink href="/safety">
-              <button className="bg-passion-red-900 hover:bg-passion-red-hover rounded-full h-12 w-36 sm:h-14 sm:w-40 duration-300">
+              <button className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-36 sm:h-14 sm:w-40 duration-300">
                 Quit
               </button>
             </NextLink>
@@ -244,7 +244,7 @@ const SafetyPracticeTwo: React.FC = () => {
             Phishing texts identified: {phishyCount} / 5
           </div>
           <button
-            className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32 cursor-pointer"
+            className="bg-passion-red-900 hover:bg-passion-red-hover hover:text-white rounded-full h-12 w-28 sm:h-14 sm:w-32 cursor-pointer duration-300"
             onClick={() => setIsHintModalOpen(true)}
           >
             Hint

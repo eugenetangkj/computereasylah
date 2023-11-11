@@ -171,7 +171,7 @@ const StoryPage = () => {
 
         <div className="md:hidden w-screen h-screen">
           {/* Only available on desktop message, only shown on mobile */}
-          <div className="flex md:hidden flex-col justify-center items-center space-y-16">
+          <div className="flex md:hidden h-screen flex-col justify-center items-center space-y-16">
             <BackButton
               pathToReturnTo="/typing"
               displayText="Back"

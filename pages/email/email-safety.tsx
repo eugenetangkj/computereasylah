@@ -59,7 +59,7 @@ export default function EmailSafety() {
           />
         </div>
         {/* Title */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center mt-16">
           Email Safety
         </h1>
         {/* Tips */}
@@ -91,7 +91,7 @@ export default function EmailSafety() {
           <img
             src={allTips.tips[currentTipIndex].tipImage}
             alt="Email Safety Tip Image"
-            className="w-3/4 md:w-1/2"
+            className="w-3/4 md:w-1/3 2xl:w-1/2"
           />
         </div>
 

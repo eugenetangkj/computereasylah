@@ -38,7 +38,7 @@ export default function CalculatorTheory({ updateCurrentElementIndex } : Calcula
             <img src='/assets/apps/calculator-logo.png' alt='Calculator' className='' />
         </div>
 
-        <h3 className='text-2xl text-gray-500 font-nunito text-center'>Need to calculate something? Use the calculator!</h3>
+        <h3 className='text-2xl text-gray-500 font-nunito text-center px-4'>Need to calculate something? Use the calculator!</h3>
 
         {/* Video */}
         <Iframe url={ videoLink }

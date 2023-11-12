@@ -1,9 +1,7 @@
 import React from 'react';
-import Menu from './menu';
-import Statistics from './statistics';
 import Game from './game';
-// import Image from 'next/image';
-// import pic from '@/assets/chickenricestall.png';
+
+
 import { getStoryScenesFromString } from './story-data';
 
 

@@ -9,6 +9,27 @@ interface TypingChallengeGameProps {
 }
 
 const TypingChallengeGame: React.FC<TypingChallengeGameProps> = ({ storyData }) => {
+    //Timer
+    const [seconds, setSeconds] = useState(0);
+
+    const [isTimerActive, setIsTimerActive] = useState(true);
+
+    useEffect(() => {
+    if (isTimerActive) {
+        const interval = setInterval(() => {
+        setSeconds((prevSeconds) => prevSeconds + 1);
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }
+    }, [isTimerActive]);
+
+    // Function to stop the timer
+    const stopTimer = () => {
+    setIsTimerActive(false);
+    };
+    const timeLimit = 60;
+    const textColor = seconds > timeLimit ? 'text-red-600' : 'text-green-600';
 
 
   const [currentSentence, setCurrentSentence] = useState(
@@ -217,31 +238,6 @@ const TypingChallengeGame: React.FC<TypingChallengeGameProps> = ({ storyData }) 
       </div>
     );
   }
-
-
-//Timer
-    const [seconds, setSeconds] = useState(0);
-
-    const [isTimerActive, setIsTimerActive] = useState(true);
-
-    useEffect(() => {
-    if (isTimerActive) {
-        const interval = setInterval(() => {
-        setSeconds((prevSeconds) => prevSeconds + 1);
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }
-    }, [isTimerActive]);
-
-    // Function to stop the timer
-    const stopTimer = () => {
-    setIsTimerActive(false);
-    };
-    const timeLimit = 60;
-    const textColor = seconds > timeLimit ? 'text-red-600' : 'text-green-600';
-  
-
 
   return (
     <div id="typing-game-container" className="relative">

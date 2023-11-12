@@ -24,8 +24,7 @@ const LearnPage = () => {
     const [chosenStory, setChosenStory] = React.useState<string | null>(null);
 
     const selectOption = (index: number) => {
-        console.log("Chose " + index + " with id " + learnLevelOptions[index].id);
-
+   
         const chosenStory = learnLevelOptions[index].id;
         setChosenStory(chosenStory);
     }

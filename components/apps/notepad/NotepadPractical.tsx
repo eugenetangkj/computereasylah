@@ -80,7 +80,7 @@ export default function NotepadPractical({ updateCurrentElementIndex } : Notepad
     //Check answer
     const handleCheckButtonClick = () => {
         const modelAnswer = 'i love notepad!';
-        console.log(fileData);
+        
         if (fileData === modelAnswer) {
             //Proceed to success page
             updateCurrentElementIndex(2);

@@ -22,7 +22,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
         window.scrollTo(0, 0);
         const randomInteger = Math.floor(Math.random() * numberOfQuestions);
         setRandomInteger(randomInteger);
-        console.log(randomInteger);
+        
 
         return () => clearTimeout(timer); // Clean up the timer on unmount
 

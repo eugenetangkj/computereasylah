@@ -394,7 +394,7 @@ export const getStoryScenesFromString = (storyName: string): StoryScenes => {
         }
     }
 
-    console.log("Getting story scenes for " + storyName);
+
     return storyMapping[storyName];
 };
 

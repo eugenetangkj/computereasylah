@@ -97,9 +97,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
   };
 
   const handleQuestionEnded = () => {
-    console.log("Question ended");
-    console.log("Current question index: " + currentQuestionIndex);
-    console.log("Upc: " + storyData);
+    
 
     setShowHint(false);
     setShowInstructions(false);
@@ -162,10 +160,10 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
 
       const { key } = event;
 
-      console.log("Key pressed: " + key);
+ 
       if (typedSentence.length == currentSentence.length - 1 && key.length === 1) {
         setShowContinueInstructions(true);
-        console.log("press enter button to continue!!!!!!!!!!!!");
+    
       }
       if (key === "Backspace") {
         if (currentCharIndex == 0) return;
@@ -198,7 +196,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
         setCurrentCharIndex((prevIndex) => prevIndex + 1);
       }
 
-      console.log("Previous typed sentence: " + typedSentence);
+  
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -209,7 +207,7 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
   });
 
   const handleFontSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("Font size changed to: " + event.target.value);
+   
     setFontSize(parseInt(event.target.value));
   };
 
@@ -305,14 +303,14 @@ const TypingGame: React.FC<TypingGameProps> = ({ storyData }) => {
           <div
             className={`absolute ${
               showInstructions || showHint ? "bottom-56" : "bottom-36"
-            } bg-white bg-opacity-90 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`}
+            } bg-white bg-opacity-90 p-5 rounded-lg font-nunito font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`}
             hidden={gameEnded}
           >
             <div className="text-green-600"> Press any key to continue!</div>
           </div>
         ) : null}
         <div
-          className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-consolas font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`}
+          className={`absolute bottom-8 bg-white bg-opacity-80 p-5 rounded-lg font-nunito font-bold text-${fontSize}xl max-w-fit inline-block mx-8 duration-300`}
           hidden={gameEnded}
         >
           {/* {{ Hint shown when user types to the end of the sentence but it is not correct yet}} */}

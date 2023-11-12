@@ -21,8 +21,7 @@ export default function SafetyRecap() {
   }, []);
 
   //Video link to email recap video
-  const videoLink =
-    "https://www.youtube.com/embed/xHevanGQuj0?si=tNboLQn01CTeuqqf";
+  const videoLink = "https://youtu.be/X7FLDcAjgA4";
 
   return (
     <div>
@@ -30,7 +29,9 @@ export default function SafetyRecap() {
         <title>Playground - Safety Recap</title>
       </Head>
       <div
-        className={`flex flex-col items-center justify-start w-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-16 mt-16 lg:mt-16 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}
+        className={`flex flex-col items-center justify-start w-80vh lg:justify-center py-2 bg-white space-y-8 lg:space-y-16 mt-16 lg:mt-16 opacity-0 transition-opacity ${
+          isActive ? "opacity-100" : ""
+        } duration-1000`}
       >
         {/* Back button */}
         <BackButton

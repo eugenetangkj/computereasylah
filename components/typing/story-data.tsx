@@ -90,8 +90,6 @@ export const chickenRiceStory: StoryScenes = {
     ]
 };
 
-
-
 export const mrtStory: StoryScenes = {
     scenes: [
         {
@@ -247,6 +245,24 @@ export const supermarketStory: StoryScenes = {
     ]
 };
 
+export const challengeStory: StoryScenes = {
+    scenes: [
+        {
+            typingSentence: "I find typing to be easy.",
+            bkgImg: "/assets/typing/challenge/keyboard.png"
+        },
+        // {
+        //     typingSentence: "Let us bridge the digital divide together!",
+        //     bkgImg: "/assets/typing/challenge/keyboard.png"
+        // },
+    ]
+};
+
+
+
+
+
+
 export const words: StoryScenes = {
     scenes: [
         {
@@ -378,6 +394,7 @@ const storyMapping: { [key: string]: StoryScenes } = {
     "chickenrice": chickenRiceStory,
     "mrt": mrtStory,
     "supermarket": supermarketStory,
+    "challenge": challengeStory,
 
     // Not in use
     "computerparts": computerParts,

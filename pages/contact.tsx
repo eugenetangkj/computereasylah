@@ -33,13 +33,19 @@ const Contact = () => {
   }, []);
 
   const [subject, setSubject] = useState<string>(""); // Initialize the subject state with an empty string
+  const [emailaddress, setEmailAddress] = useState<string>(""); // Initialize the email address state with an empty string
   const [message, setMessage] = useState<string>(""); // Initialize the message state with an empty string
+  
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
 
   const handleSubjectChange = (event: React.ChangeEvent<any>) => {
     setSubject(event.target.value);
+  };
+
+  const handleEmailAddressChange = (event: React.ChangeEvent<any>) => {
+    setEmailAddress(event.target.value);
   };
 
   const handleMessageChange = (event: React.ChangeEvent<any>) => {
@@ -50,11 +56,11 @@ const Contact = () => {
     setModalContent(content);
     setIsModalOpen(true);
 
-    // Automatically close the modal after 1 second
+    // Automatically close the modal after 2.5 seconds
     setTimeout(() => {
       setIsModalOpen(false);
       setModalContent("");
-    }, 1000);
+    }, 2500);
   };
 
   const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = async (
@@ -62,13 +68,15 @@ const Contact = () => {
   ) => {
     event.preventDefault();
     try {
-      await sendEmail(subject, message);
-      openModal("Email sent successfully!");
+      let newMessage = "From: " + emailaddress + "\n" + message;
+      await sendEmail(subject, newMessage);
+      openModal("Message successfully sent! We will get in touch soon.");
       setSubject("");
+      setEmailAddress("");
       setMessage("");
     } catch (error) {
       console.error("Error sending email:", error);
-      openModal("Email sending failed. Please try again.");
+      openModal("We could not receive your message. Please try again.");
     }
   };
 
@@ -105,8 +113,25 @@ const Contact = () => {
                   onChange={handleSubjectChange}
                 />
               </div>
+              <div className="flex flex-col space-y-4">
+                <label
+                  htmlFor="emailaddress"
+                  className="font-nunito font-bold text-xl"
+                >
+                  Your Email Address:
+                </label>
+                <input
+                  type="text"
+                  name="emailaddress"
+                  id="emailaddress"
+                  className="border-2 border-gray-300 text-gray-900 rounded-lg text-xl  focus:outline-blue-500 p-2.5  placeholder-gray-300"
+                  value={emailaddress}
+                  onChange={handleEmailAddressChange}
+                />
+              </div>
 
-              <div className="w-full text-left flex flex-col gap-y-8">
+
+              <div className="w-full text-left flex flex-col gap-y-4">
                 <label
                   htmlFor="message"
                   className="block mb-2 md:mb-1 font-nunito font-bold text-xl"
@@ -134,7 +159,7 @@ const Contact = () => {
       </Layout>
       {isModalOpen && (
         <div className="fixed z-10 inset-0 overflow-y-auto">
-          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items-start justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div
               className="fixed inset-0 transition-opacity"
               aria-hidden="true"

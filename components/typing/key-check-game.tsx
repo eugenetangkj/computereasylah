@@ -39,9 +39,7 @@ const KeyCheckGame: React.FC = () => {
     }
 
     const handleQuestionEnded = () => {
-        console.log("Question ended");
-        console.log("Current question index: " + currentQuestionIndex);
-
+    
         // setShowHint(false);
 
         // Use the next element in upcomingSentencesAndBackgroundImages in another instance of TypingGame
@@ -81,9 +79,7 @@ const KeyCheckGame: React.FC = () => {
 
             const { key } = event;
 
-            console.log("Key pressed: " + key);
-            console.log("Correct key: " + questionData[currentQuestionIndex].checkKey);
-
+    
             if (key == checkKey) {
                 handleQuestionEnded();
             } else {
@@ -101,7 +97,7 @@ const KeyCheckGame: React.FC = () => {
 
 
     const handleFontSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log("Font size changed to: " + event.target.value);
+     
         setFontSize(parseInt(event.target.value));
     };
 

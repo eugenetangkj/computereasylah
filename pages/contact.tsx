@@ -14,14 +14,16 @@ const sendEmail = async (subject: string, message: string) => {
       body: JSON.stringify({ subject, message }),
     });
 
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-    } else {
-      console.error("Error sending email:", response.statusText);
+    if (!response.ok) {
+      throw new Error(
+        `Email API request failed with status: ${response.status}`
+      );
     }
+
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
-    console.error("Error sending email:", error);
+    throw new Error(`Error sending email: ${(error as Error).message}`);
   }
 };
 
@@ -35,7 +37,6 @@ const Contact = () => {
   const [subject, setSubject] = useState<string>(""); // Initialize the subject state with an empty string
   const [emailaddress, setEmailAddress] = useState<string>(""); // Initialize the email address state with an empty string
   const [message, setMessage] = useState<string>(""); // Initialize the message state with an empty string
-  
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
@@ -129,7 +130,6 @@ const Contact = () => {
                   onChange={handleEmailAddressChange}
                 />
               </div>
-
 
               <div className="w-full text-left flex flex-col gap-y-4">
                 <label

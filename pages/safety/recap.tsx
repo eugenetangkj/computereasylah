@@ -21,7 +21,8 @@ export default function SafetyRecap() {
   }, []);
 
   //Video link to email recap video
-  const videoLink = "https://youtu.be/X7FLDcAjgA4";
+  const videoLink =
+    "https://www.youtube.com/embed/X7FLDcAjgA4?si=MMA14N_mdmCPI8z3";
 
   return (
     <div>

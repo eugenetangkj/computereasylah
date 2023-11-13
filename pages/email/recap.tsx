@@ -21,7 +21,8 @@ export default function EmailRecap() {
   }, []);
 
   //Video link to email recap video
-  const videoLink = "https://youtu.be/bA9kBqHlVoE";
+  const videoLink =
+    "https://www.youtube.com/embed/bA9kBqHlVoE?si=TxGpGH8qKRPwAAdk";
 
   return (
     <div>

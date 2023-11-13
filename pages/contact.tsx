@@ -68,7 +68,7 @@ const Contact = () => {
   ) => {
     event.preventDefault();
     try {
-      let newMessage = "From: " + emailaddress + "\n" + message;
+      let newMessage = "From: " + emailaddress + "\n\n" + message;
       await sendEmail(subject, newMessage);
       openModal("Message successfully sent! We will get in touch soon.");
       setSubject("");

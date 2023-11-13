@@ -330,7 +330,7 @@ export const words: StoryScenes = {
             bkgImg: "/assets/typing/computerparts/calculator.png"
         },
         {
-            typingSentence: "Notes",
+            typingSentence: "Notepad",
             bkgImg: "/assets/typing/computerparts/notes.png"
         },
         {

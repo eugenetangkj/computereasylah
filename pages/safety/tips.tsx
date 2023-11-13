@@ -64,7 +64,7 @@ export default function SafetyTips() {
           className="flex flex-col justify-center items-center mx-8 space-y-12"
         >
           <h2 className="text-3xl font-bold font-gaegu text-center bg-passion-red-500 rounded-full p-4">
-            {`Tip ${currentTipIndex + 1}: ${
+            {`Sign of Phishing ${currentTipIndex + 1}: ${
               allTips.tips[currentTipIndex].tipHeader
             }`}
           </h2>
@@ -90,7 +90,7 @@ export default function SafetyTips() {
             <img
               src={allTips.tips[currentTipIndex].tipImage}
               alt="Safety Tips Image"
-              className="w-3/4 md:w-1/2"
+              className="w-3/4 md:w-1/3 2xl:w-1/2"
             />
           )}
         </div>

@@ -68,7 +68,9 @@ export default function EmailSafety() {
           className="flex flex-col justify-center items-center mx-8 space-y-12"
         >
           <h2 className="text-3xl font-bold font-gaegu text-center bg-trust-blue-500 rounded-full p-4">
-            {`Tip ${currentTipIndex + 1}: ${allTips.tips[currentTipIndex].tipHeader}`}
+            {`Tip ${currentTipIndex + 1}: ${
+              allTips.tips[currentTipIndex].tipHeader
+            }`}
           </h2>
           <div className="flex justify-between items-center space-x-4">
             <button

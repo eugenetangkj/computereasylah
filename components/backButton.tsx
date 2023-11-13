@@ -71,21 +71,30 @@ export default function BackButton({
   const [showDropdown, setShowDropdown] = useState(false);
 
 
-  const handleSearch = (e : any) => {
+  const handleSearch = (e: any) => {
     const term = e.target.value;
     setSearchTerm(term);
     setShowDropdown(true);
-    const filtered = TermsData.terms.filter((item) =>
-      item.term.toLowerCase().includes(term.toLowerCase())
+  
+    // Check for an exact match
+    const exactMatch = TermsData.terms.find(
+      (item) => item.term.toLowerCase() === term.toLowerCase()
     );
-    setFilteredTerms(filtered);
+  
+    if (exactMatch) {
+      // If an exact match is found, use it directly
+      setFilteredTerms([exactMatch]);
+    } else {
+      // If no exact match, perform filtering
+      const filtered = TermsData.terms.filter((item) =>
+        item.term.toLowerCase().includes(term.toLowerCase())
+      );
+      setFilteredTerms(filtered);
+    }
   };
 
 
   
-  
-      
-
   return (
   <div className={`flex justify-center items-center fixed w-full top-0 left-0 py-4 z-30 md:pt-8 bg-neutral-100 text-center`}>
     <div className="grid grid-cols-3 w-4/5 ">

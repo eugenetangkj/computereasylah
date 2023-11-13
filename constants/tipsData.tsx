@@ -36,31 +36,43 @@ export const EmailTipsData: Tips = {
 };
 
 export const SafetyTipsData: Tips = {
-  totalTips: 4,
+  totalTips: 6,
   tips: [
     {
-      tipHeader: "Keep Your Computer Safe",
+      tipHeader: "Using vague and incorrect language and information",
       tipBody:
-        "Make sure your computer is always up to date with the latest fixes.",
-      tipImage: "/assets/safety/safety-tips/update-software.png",
+        "Phishing messages might make grammar or spelling mistakes and use a generic greeting instead of your name, so watch out for those signs!",
+      tipImage: "/assets/safety/safety-tips/tip-1.png",
     },
     {
-      tipHeader: "Lock the Door with a Strong Key",
+      tipHeader: "Using urgent or threatening language",
       tipBody:
-        "Think of a strong, secret password like a key that locks your computer. Make it hard for others to guess.",
-      tipImage: "/assets/safety/safety-tips/strong-password.png",
+        "Phishing messages may try to scare you into doing something quickly by saying things like 'Your account will be locked' or 'Immediate action required'.",
+      tipImage: "/assets/safety/safety-tips/tip-2.png",
     },
     {
-      tipHeader: "Don't Believe Scary Warnings",
+      tipHeader: "Promising attractive prizes",
       tipBody:
-        "Some pop-up warnings aren't true. Don't download things because a scary message tells you to.",
-      tipImage: "/assets/safety/safety-tips/scary-warning.png",
+        "Phishing messages might say you've won a big prize to get your attention, but it's usually a trick to make you do something bad.",
+      tipImage: "/assets/safety/safety-tips/tip-3.png",
     },
     {
-      tipHeader: "Beware of Tech Support Scams",
+      tipHeader: "Requesting for confidential information",
       tipBody:
-        "Be careful if someone you don't know contacts you about computer problems; real tech support won't do that. If you're unsure, ask someone you trust for help to avoid scams.",
-      tipImage: "/assets/safety/safety-tips/tech-support-scam.png",
+        "Phishing messages might ask for private information, like your password or personal details, trying to trick you into giving it to them.",
+      tipImage: "/assets/safety/safety-tips/tip-4.png",
+    },
+    {
+      tipHeader: "Receiving unexpected emails",
+      tipBody:
+        "If you get emails from people you don't know or weren't expecting, they might be phishing emails with bad stuff inside.",
+      tipImage: "/assets/safety/safety-tips/tip-5.png",
+    },
+    {
+      tipHeader: "Message containing suspicious attachments",
+      tipBody:
+        "If you get messages with weird attachments, they could be bad, like viruses, so be careful.",
+      tipImage: "/assets/safety/safety-tips/tip-6.png",
     },
   ],
 };

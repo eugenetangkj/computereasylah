@@ -81,7 +81,7 @@ const Resources = () => {
               title="The Printables"
               text="Printable cards for participants to manage their computer journeys during and after classes."
               button="Download"
-              link="/resources/playground-box-guide.pdf"
+              link="/resources/printables.pdf"
             />
 
 

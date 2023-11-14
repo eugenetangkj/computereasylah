@@ -90,7 +90,7 @@ export default function SafetyTips() {
             <img
               src={allTips.tips[currentTipIndex].tipImage}
               alt="Safety Tips Image"
-              className="w-3/4 md:w-1/3 2xl:w-1/2"
+              className="md:w-1/2 2xl:w-1/2"
             />
           )}
         </div>
@@ -104,7 +104,7 @@ export default function SafetyTips() {
         <img
           src="/assets/playground/cursor.png"
           alt="Shield"
-          className="w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5"
+          className="w-1/6 md:w-1/6 lg:w-1/8 fixed bottom-0 -translate-y-1/2 lg:top-1/8 left-0 -translate-x-2/5"
         />
       </div>
     </div>

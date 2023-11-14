@@ -93,7 +93,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
             onChange={(e: any) => {
                 setInputFieldData(e.target.value);
             }}
-            autoCorrect="off"
+            autoComplete="off"
         />
 
 

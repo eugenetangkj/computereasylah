@@ -22,7 +22,7 @@ const ExplanationModal: React.FC<ExplanationModalProps> = ({
           <div className="text-lg sm:text-xl">{content}</div>
           <br />
           <button
-            className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full font-semibold text-lg sm:text-xl h-12 w-28 sm:h-14 sm:w-32 cursor-pointer"
+            className="bg-trust-blue-900 hover:bg-trust-blue-hover rounded-full font-semibold text-lg sm:text-xl h-12 w-28 sm:h-14 sm:w-32 cursor-pointer duration-300"
             onClick={handleCloseModal}
           >
             I see!

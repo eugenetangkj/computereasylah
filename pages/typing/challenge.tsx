@@ -30,7 +30,7 @@ export default function TypingChallenge() {
       <Head>
         <title>Playground - Typing Challenge</title>
       </Head>
-      <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 ${hasStartedChallenge ? 'pt-0 mt-0 py-0' : 'pt-28 md:pt-8 md:mt-20 lg:mt-20'}`}>
+      <div className={`flex flex-col items-center justify-start py-2 bg-white space-y-8 lg:space-y-4 ${hasStartedChallenge ? 'pt-0 mt-0 py-0 h-screen' : 'pt-28 md:pt-8 md:mt-20 lg:mt-20'}`}>
 
         {!hasStartedChallenge ? (
            <BackButton

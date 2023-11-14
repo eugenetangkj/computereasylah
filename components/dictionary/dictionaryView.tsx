@@ -83,7 +83,7 @@ export default function DictionaryView( { updateCurrentViewState, updateCurrentT
                         ? <div key={index} className='border-4 border-wisdom-purple-500 bg-white rounded-xl p-4 flex flex-col justify-start items-start space-y-4 mx-4 h-40 hover:bg-wisdom-purple-hover hover:text-white duration-300 hover:border-wisdom-purple-hover cursor-pointer'
                         onClick= { () => handleOpenDefinition(term.term, term.shortDescription, term.leadingText, term.imageUrl, term.explanation) }>
                             <h2 className='font-gaegu font-bold text-3xl xl:text-4xl'>{ term.term }</h2>
-                            <h4 className='font-nunito text-xl xl:text-2xl'>{ term.shortDescription }</h4>
+                            <h4 className='font-nunito text-xl xl:text-xl'>{ term.shortDescription }</h4>
                         </div>
                         : ''
                     )

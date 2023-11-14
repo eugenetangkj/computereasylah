@@ -332,7 +332,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           onClick={handleCheckAnswer}
           disabled={selectedAnswer == ""}
         >
-          <span>Check</span>
+          <span>Submit</span>
         </button>
 
         <div className='flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0'>

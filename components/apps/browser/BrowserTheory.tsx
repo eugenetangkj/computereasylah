@@ -23,7 +23,7 @@ export default function BrowserTheory({ updateCurrentElementIndex } : BrowserThe
   }, []);
 
   
-  const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
+  const videoLink = 'https://www.youtube.com/embed/SeZoYVcrSRc';
 
 
 

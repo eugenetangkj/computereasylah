@@ -24,7 +24,7 @@ export default function NotepadTheory({ updateCurrentElementIndex } : NotepadThe
   }, []);
 
 
-  const videoLink = 'https://www.youtube.com/embed/tgbNymZ7vqY';
+  const videoLink = 'https://www.youtube.com/embed/dQTdy2cNflo';
 
 
 

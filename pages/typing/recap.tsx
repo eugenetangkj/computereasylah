@@ -22,7 +22,7 @@ export default function TypingRecap() {
 
   //Video link to typing recap video
   const videoLink =
-    "https://www.youtube.com/embed/01CVHD5pp80?si=87N_fwmcFoEUIaUa";
+    "https://www.youtube.com/embed/MtzMfjUHU_Y";
 
   return (
     <div>

@@ -1,40 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bring Learning Beyond Computer Classes
+<p align="center">
+    <img src="public/assets/home/cel.gif"/>
+</p>
 
-## Getting Started
+## About the Initiative
+[Computer, Easy Lah!](https://www.cel.land/home/) is an initiative in collaboration with Work Live Digital, a ground up movement that provides free computer classes to senior adults aged 50 and above. 💻🧓
 
-First, run the development server:
+From our personal experience volunteering with Work Live Digital, we identified a gap - after class, there is a lack of a guided and safe environment for the participants to recap and practice what they have learnt.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Thus, we have built [_The Playground_](https://www.cel.land/), a companion for senior adults participating in foundation computer classes. It provides resources and interactive hands-on activities that complement what was taught in class, providing opportunities for learning beyond the classroom context. 🛝
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## About The Playground
+Our design of _The Playground_ is guided by a simple three-step strategy: **Recap, Practice** and **Test**. This simple strategy allows senior adults to consolidate their learning for both theoretical and practical aspects.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Currently, The Playground offers 4 different topics: Typing, Applications, Email and Safety. The content revolves closely around Work Live Digital's curriculum as our platform is designed to support their classes.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Recap
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+We filmed our own videos that recap the main points taught in each topic.
 
-## Learn More
+2. Practice
 
-To learn more about Next.js, take a look at the following resources:
+We created bite-sized interactive activities for hands-on practice, such as typing practices and a guided email walkthrough.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Test
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We curated simple quizzes for participants to test their knowledge after class.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To learn more about how to use _The Playground_ in computer classes for senior adults, do check out our [curriculum](https://www.cel.land/resources/curriculum-guide.pdf) and [playground](https://www.cel.land/resources/playground-guide.pdf) guides. 📖
+
+
+<p align="center">
+    <img src="public/assets/home/homepage.png"/>
+</p>
+
+## Interested to Contribute?
+_The Playground_ is currently available for free usage in computer classes. That being said, we are constantly refining the content and adding new material that the participants would enjoy.
+
+If you are interested in contributing to our initiative, whether as a developer or as a volunteer for computer classes, feel free to [send us a message](https://www.cel.land/contact), and we will get in touch with you. 😄
+
+## Project Study Partners
+We would like to extend our appreciation to the following project study partners supporting our initiative.
+
+<p align="center">
+    <img src="public/assets/home/partners/combined-partners.png" />
+</p>

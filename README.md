@@ -4,7 +4,7 @@
 </p>
 
 ## About the Initiative
-[Computer, Easy Lah!](https://www.cel.land/home/) is an initiative in collaboration with Work Live Digital, a ground up movement that provides free computer classes to senior adults aged 50 and above. 💻🧓
+[Computer, Easy Lah!](https://www.cel.land/home/) is an initiative in collaboration with [Work Live Digital](https://www.linkedin.com/company/worklivedigital?originalSubdomain=sg), a ground up movement that provides free computer classes to senior adults aged 50 and above. 💻🧓
 
 From our personal experience volunteering with Work Live Digital, we identified a gap - after class, there is a lack of a guided and safe environment for the participants to recap and practice what they have learnt.
 

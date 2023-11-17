@@ -158,14 +158,10 @@ const Landing = () => {
           {/* Project Study Partners */}
           <div className='flex flex-col justify-center items-center space-y-4 py-2 px-8 mt-16 mb-16 lg:px-16 xl:px-24 2xl:px-64 '>
           <h2 className='font-nunito text-2xl lg:text-3xl 2xl:text-4xl font-bold'>Our Project Study Partners</h2>
-            <div className='grid grid-cols-2 sm:grid-cols-4 place-items-center'>
-              <div className='hidden sm:block'></div>
+            <div className='grid grid-cols-2 sm:grid-cols-3 place-items-center'>
               <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2" />
               <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2" />
-              <div className='hidden sm:block'></div>
-              {/* <img src="/assets/home/partners/wld-logo.png" alt="Work Live Digital" className="w-4/5 sm:w-1/2" />
-              <img src="/assets/home/partners/family-central-logo.webp" alt="Family Central" className="w-4/5 sm:w-1/2" /> */}
-
+              <img src="/assets/home/partners/cckit-logo.jpg" alt="Choa Chu Kang IT Centre" className="w-4/5 sm:w-1/2" />
             </div>
           </div>
 

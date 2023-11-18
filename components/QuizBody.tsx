@@ -36,8 +36,8 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
   //CSS styling variables
   let unselectedOptionStylingBorder = "border-pale-gray";
   let unselectedOptionStylingBackground = "bg-white";
-  let selectedOptionStylingBackground = `bg-${themeColor}-900`;
-  let selectedOptionStylingBorder = `border-${themeColor}-900`;
+  let selectedOptionStylingBackground = `bg-pale-gray-100`;
+  let selectedOptionStylingBorder = `border-pale-gray-100`;
   let correctOptionStylingBorder = "border-question-correct";
   let correctOptionStylingBackground = "bg-question-correct";
 
@@ -280,7 +280,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
               <div
                 key={index}
                 id={choice}
-                className={`bg-${themeColor}-900 border-solid border-4 border-${themeColor}-900 rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 md:w-500p lg:w-600p xl:w-800p font-nunito duration-300 text-xl`}
+                className={`bg-pale-gray-100 border-solid border-4 border-pale-gray-100 rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 md:w-500p lg:w-600p xl:w-800p font-nunito duration-300 text-xl`}
                 onClick={() => handleAnswerSelection(choice)}
               >
                 <h3>{choice}</h3>

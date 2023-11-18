@@ -74,7 +74,7 @@ export default function BrowserPractical({ updateCurrentElementIndex } : Browser
     } duration-1000`}>
 
         {/* Title */}
-        <h3 className="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed 2xl:text-4xl 2xl:leading-relaxed font-bold font-nunito text-center w-3/4">Head to www.google.com and search</h3>
+        <h3 className="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed 2xl:text-4xl 2xl:leading-relaxed font-bold font-nunito text-center w-3/4">Open a new tab, head to www.google.com, and search</h3>
 
         {/* Question  */}
         { (randomInteger != -1)

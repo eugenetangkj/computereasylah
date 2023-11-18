@@ -400,7 +400,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://www.cloudns.net/blog/wp-content/uploads/2018/03/86306918_m.jpg",
       explanation:
-        "Forwarding involves sending information, messages, or emails to a subsequent destination or recipient. It allows you to share content with others.",
+        "When someone sends you a message or email, and you want to send it to another person, you can perform an action called forwarding. It allows you to send what you have received to another person.",
     },
     {
       term: "Graphical User Interface",
@@ -410,7 +410,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://img.freepik.com/premium-vector/web-page-user-interface-template-social-network-website-browser-window-ui-design-flat-style_266660-829.jpg",
       explanation:
-        "A Graphical User Interface (GUI) is an interface that uses graphical elements, such as icons and windows, for user interaction. It provides a visual way to interact with computer systems.",
+        "On your computer and mobile screens, you see a screen with images, text and colours. This screen is known as a Graphical User Interface (GUI), which you can use to interact with the computer or phone.",
     },
     {
       term: "Hyperlink",
@@ -418,7 +418,7 @@ export const TermsData: ListOfTerms = {
         "A clickable link that navigates to another location or resource",
       leadingText: "Ever clicked on a highlighted link on a webpage?",
       imageUrl:
-        "https://www.volusion.com/blog/content/images/2018/11/What-is-a-Hyperlink.png",
+        "https://doctor-seo.net/wp-content/uploads/2022/02/Image-Internal-HyperLink-example.jpg",
       explanation:
         "A hyperlink is a clickable link that, when activated, navigates to another location or resource. It is commonly used in documents and on the web for easy navigation.",
     },
@@ -427,7 +427,7 @@ export const TermsData: ListOfTerms = {
       shortDescription: "A visual symbol representing a file, folder, or application",
       leadingText: "Recognize those small images on your screen?",
       imageUrl:
-        "hhttps://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi0wMy5qcGc.jpg",
+        "https://www.tenforums.com/attachments/general-support/260898d1577472006t-some-my-desktop-icons-not-displaying-full-size-capture1.png",
       explanation:
         "An icon is a visual symbol that represents a file, folder, or application on your computer. Icons make it easier to identify and interact with different elements on your screen.",
     },
@@ -578,12 +578,12 @@ export const TermsData: ListOfTerms = {
     {
       term: "Ransomware",
       shortDescription:
-        "Malicious software that encrypts files and demands payment for their release",
+        "Harmful software that locks your files and demands payment for their release",
       leadingText: "How do you protect your files from malicious attacks?",
       imageUrl:
         "https://www.globalsign.com/application/files/3416/1644/1850/iStock-1022030450.jpg",
       explanation:
-        "Ransomware is malicious software that encrypts files on a computer and demands payment for their release. It poses a threat to the security of digital data.",
+        "Ransomware is harmful software that locks your files on a computer. You will not be able to access your files and the culprit will ask you to pay money in order to unlock the files.",
     },
     {
       term: "Recycling Bin",
@@ -593,7 +593,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://www.intowindows.com/wp-content/uploads/2015/11/Add-Recycle-Bin-icon-to-Windows-10-Desktop.jpg",
       explanation:
-        "The Recycling Bin is a temporary storage location for deleted files before they are permanently removed from the computer. It provides a chance to recover deleted items.",
+        "When you delete a file on the computer, the file enters the Recycling Bin. You can go to the Recycling Bin to recover your files if needed. If you are sure you do not need the file anymore, you can also delete it from the Recycling Bin.",
     },
     {
       term: "Router",
@@ -603,7 +603,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://www.lifewire.com/thmb/J-RKLI26Tx6wSs_Hkp13kkIUJ3o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tp-link-router-5b2c1608a474be003670ae0f.jpg",
       explanation:
-        "A Router is a networking device that forwards data between computer networks. It connects multiple devices to the internet and directs data traffic efficiently.",
+        "A router is a hardware device that connects several devices to a single Internet connection. For example, at home, if you have different devices, you can use a router to connect all of them to a single Internet connection.",
     },
     {
       term: "Search Box",
@@ -633,17 +633,17 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://i.pcmag.com/imagery/articles/04UeCgzKVJ5x3Y3kij4jSoP-21.fit_lim.size_1050x.png",
       explanation:
-        "The Start Menu is a menu on the Windows operating system that provides access to programs, settings, and features. It serves as a central hub for navigation.",
+        "The Start Menu is a menu on the Windows operating system that provides access to programs, settings, and features. If you want to find a particular app on your computer, you can head to the Start Menu. It is also where you can access the options to shut down or restart your computer.",
     },
     {
       term: "Subfolder",
       shortDescription:
-        "A folder located within another folder, creating a hierarchical structure",
+        "A folder located within another folder",
       leadingText: "How do you organize your digital files into categories?",
       imageUrl:
         "https://desk.zoho.in/DocsDisplay?zgId=60001911841&mode=inline&blockId=zuzwjf77c895cf6e5452c98eb25bd620e7a24",
       explanation:
-        "A Subfolder is a folder located within another folder, creating a hierarchical structure for organizing digital files. It helps maintain a systematic arrangement.",
+        "A subfolder is a folder located within another folder. It helps keep your files neat and tidy.",
     },
     {
       term: "System Unit",
@@ -663,7 +663,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://i0.wp.com/www.alphr.com/wp-content/uploads/2022/10/Chrome-Change-Tab-Color-Based-on-URL-4.png?resize=666%2C463&ssl=1",
       explanation:
-        "Tabs are separate sections in a web browser that allow users to view multiple webpages simultaneously within a single window. It enhances browsing efficiency.",
+        "Tabs are separate sections in a web browser that allow you to view multiple webpages at the same time within a single window.",
     },
     {
       term: "Taskbar",
@@ -690,7 +690,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://www.tutorialspoint.com/computer_concepts/images/word_processing.jpg",
       explanation:
-        "A Word Processor is software designed for creating, editing, and formatting text documents. It provides tools for efficient document composition.",
+        "A word processor is software designed for creating, editing, and formatting text documents. You can use a word processor to create a report. Examples of word processors include Microsoft Word and Notepad.",
     },
     {
       term: "Wikipedia",

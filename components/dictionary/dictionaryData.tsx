@@ -410,7 +410,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://img.freepik.com/premium-vector/web-page-user-interface-template-social-network-website-browser-window-ui-design-flat-style_266660-829.jpg",
       explanation:
-        "A Graphical User Interface (GUI) is an interface that uses graphical elements, such as icons and windows, for user interaction. It provides a visual way to interact with computer systems.",
+        "On your computer and mobile screens, you see a screen with images, text and colours. This screen is known as a Graphical User Interface (GUI), which you can use to interact with the computer or phone.",
     },
     {
       term: "Hyperlink",
@@ -593,7 +593,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://www.intowindows.com/wp-content/uploads/2015/11/Add-Recycle-Bin-icon-to-Windows-10-Desktop.jpg",
       explanation:
-        "The Recycling Bin is a temporary storage location for deleted files before they are permanently removed from the computer. It provides a chance to recover deleted items.",
+        "When you delete a file on the computer, the file enters the Recycling Bin. You can go to the Recycling Bin to recover your files if needed. If you are sure you do not need the file anymore, you can also delete it from the Recycling Bin.",
     },
     {
       term: "Router",
@@ -603,7 +603,7 @@ export const TermsData: ListOfTerms = {
       imageUrl:
         "https://www.lifewire.com/thmb/J-RKLI26Tx6wSs_Hkp13kkIUJ3o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tp-link-router-5b2c1608a474be003670ae0f.jpg",
       explanation:
-        "A Router is a networking device that forwards data between computer networks. It connects multiple devices to the internet and directs data traffic efficiently.",
+        "A router is a hardware device that connects several devices to a single Internet connection. For example, at home, if you have different devices, you can use a router to connect all of them to a single Internet connection.",
     },
     {
       term: "Search Box",
@@ -638,12 +638,12 @@ export const TermsData: ListOfTerms = {
     {
       term: "Subfolder",
       shortDescription:
-        "A folder located within another folder, creating a hierarchical structure",
+        "A folder located within another folder",
       leadingText: "How do you organize your digital files into categories?",
       imageUrl:
         "https://desk.zoho.in/DocsDisplay?zgId=60001911841&mode=inline&blockId=zuzwjf77c895cf6e5452c98eb25bd620e7a24",
       explanation:
-        "A Subfolder is a folder located within another folder, creating a hierarchical structure for organizing digital files. It helps maintain a systematic arrangement.",
+        "A subfolder is a folder located within another folder. It helps keep your files neat and tidy.",
     },
     {
       term: "System Unit",

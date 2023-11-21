@@ -95,13 +95,13 @@ export const symbolsQuestions: KeyCheckQuestion[] = [
         key: "|",
         checkKey: "|",
         displayQuestion: "Pipe",
-        hint: "Press Shift together with the \\ located above the keyboard letters at the same time.",
+        hint: "Press Shift together with the \\ located beside the keyboard letters at the same time.",
     },
     {
         key: ":",
         checkKey: ":",
         displayQuestion: "Colon",
-        hint: "Press Shift together with the ; located above the keyboard letters at the same time.",
+        hint: "Press Shift together with the ; located beside the keyboard letters at the same time.",
     },
     {
         key: '"',

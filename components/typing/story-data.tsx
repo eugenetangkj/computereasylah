@@ -84,7 +84,7 @@ export const chickenRiceStory: StoryScenes = {
             bkgImg: "/assets/typing/chickenrice/stall_2.png"
         },
         {
-            typingSentence: "The address is: Block 4A Eunos Crescent, #01-34 Eng Kee Haianese Chicken Rice and Porridge",
+            typingSentence: "The address is: Block 4A Eunos Crescent, #01-34 Eng Kee Hainanese Chicken Rice and Porridge",
             bkgImg: "/assets/typing/chickenrice/map.png"
         },
     ]
@@ -101,7 +101,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/mrtmap1.png"
         },
         {
-            typingSentence: "Along the way, I would need to change trains at Macpherson station from the Downtown Line to the Circle Line.",
+            typingSentence: "Along the way, I would need to change trains at MacPherson station from the Downtown Line to the Circle Line.",
             bkgImg: "/assets/typing/mrt/macphersonmap.png"
         },
         {
@@ -113,7 +113,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/dtlgantryin.png"
         },
         {
-            typingSentence: "At the MRT platform now, waiting for the train towards Macpherson station.",
+            typingSentence: "At the MRT platform now, waiting for the train towards MacPherson station.",
             bkgImg: "/assets/typing/mrt/tampinesdtlwaittrain.png"
         },
         {
@@ -133,7 +133,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/gaveupreservedseat.png"
         },
         {
-            typingSentence: "Looks like I reached Macpherson station, need to alight and transfer here.",
+            typingSentence: "Looks like I reached MacPherson station, need to alight and transfer here.",
             bkgImg: "/assets/typing/mrt/reachmacpherson.png"
         },
         {

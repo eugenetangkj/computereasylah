@@ -84,7 +84,7 @@ export const chickenRiceStory: StoryScenes = {
             bkgImg: "/assets/typing/chickenrice/stall_2.png"
         },
         {
-            typingSentence: "The address is: Block 4A Eunos Crescent, #01-34 Eng Kee Haianese Chicken Rice and Porridge",
+            typingSentence: "The address is: Block 4A Eunos Crescent, #01-34 Eng Kee Hainanese Chicken Rice and Porridge",
             bkgImg: "/assets/typing/chickenrice/map.png"
         },
     ]

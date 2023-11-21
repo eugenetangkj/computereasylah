@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { Term } from './dictionaryData';
 import { ListOfTerms, TermsData } from './dictionaryData';
-import BackButton from '../backButton';
+import BackButtonDictionary from '../backButtonDictionary';
 import { Topic } from '../backButton';
 
 
@@ -27,6 +27,7 @@ export default function DictionaryView( { updateCurrentViewState, updateCurrentT
       const timer = setTimeout(() => {
         setIsActive(true);
       }, 100); // Adjust the delay as needed
+      window.scrollTo(0, 0);
   
       return () => clearTimeout(timer); // Clean up the timer on unmount
     }, []);
@@ -57,12 +58,12 @@ export default function DictionaryView( { updateCurrentViewState, updateCurrentT
 
 
     return (
-        <div className={`flex flex-col justify-center items-center space-y-8 z-10 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
+        <div className={`mt-16 flex flex-col justify-center items-center space-y-8 z-10 opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
             {/* Back button */}
-            <BackButton pathToReturnTo='/playground' displayText='Back'  category={Topic.Dictionary} />
+            <BackButtonDictionary />
 
             {/* Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center">Dictionary</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-gaegu text-center mt-16">Dictionary</h1>
 
             {/* Search bar */}
             <input
@@ -82,7 +83,7 @@ export default function DictionaryView( { updateCurrentViewState, updateCurrentT
                         ? <div key={index} className='border-4 border-wisdom-purple-500 bg-white rounded-xl p-4 flex flex-col justify-start items-start space-y-4 mx-4 h-40 hover:bg-wisdom-purple-hover hover:text-white duration-300 hover:border-wisdom-purple-hover cursor-pointer'
                         onClick= { () => handleOpenDefinition(term.term, term.shortDescription, term.leadingText, term.imageUrl, term.explanation) }>
                             <h2 className='font-gaegu font-bold text-3xl xl:text-4xl'>{ term.term }</h2>
-                            <h4 className='font-nunito text-xl xl:text-2xl'>{ term.shortDescription }</h4>
+                            <h4 className='font-nunito text-xl xl:text-xl'>{ term.shortDescription }</h4>
                         </div>
                         : ''
                     )

@@ -32,7 +32,7 @@ export default function EmailSceneTwo({ updateSceneIndex } : EmailSceneTwoProps)
     
     return (
         <div className={`flex flex-col justify-center items-center space-y-6 2xl:space-y-12 mt-16  opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            <BackButton pathToReturnTo='/playground/email' displayText='Quit' category={ Topic.Email } />
+            <BackButton pathToReturnTo='/email' displayText='Quit' category={ Topic.Email } />
 
             {/* Picture image */}
             <img src='/assets/email/catch-up.png' alt='Catch up via email' className='w-36' />

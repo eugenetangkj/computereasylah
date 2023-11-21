@@ -1,30 +1,28 @@
-import Image from "next/image";
-import Logo from "@/assets/logo_white_font.png";
-import IconButton from "@/common/IconButton";
-
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaTwitter,
-  FaTelegramPlane,
-  FaYoutube,
-} from "react-icons/fa";
+import { BiLogoGithub, BiLogoYoutube} from "react-icons/bi";
+import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 w-full overflow-x-auto">
-      <div className="flex flex-col items-left bg-trust-blue-900 px-4 py-8">
-        <div className="flex flex-col gap-y-2">
-          <div className="flex flex-row items-center select-none">
-            <Image src={Logo} alt="SilverBytes Logo" className="w-48" />
-          </div>
-        </div>
-        <div className="flex gap-x-4 m-4">
-          <IconButton icon={<FaInstagram />} />
-          <IconButton icon={<FaFacebookF />} />
-          <IconButton icon={<FaTwitter />} />
-          <IconButton icon={<FaTelegramPlane />} />
-          <IconButton icon={<FaYoutube />} />
+    <footer className="z-10 w-full overflow-x-auto">
+      <div className="flex justify-between items-center bg-white px-4 sm:px-8 py-8">
+        <h2 className='font-gaegu text-xl sm:text-2xl md:text-3xl font-bold'>Computer, Easy Lah!</h2>
+        <div className="flex items-center space-x-4 sm:space-x-8">
+          {/* Email logo */}
+          <a href="mailto:computereasylah@gmail.com">
+            <MdEmail className='text-4xl lg:text-5xl hover:text-trust-blue-hover cursor-pointer duration-300' />
+          </a>
+
+          {/* YouTube logo */}
+          <a href="https://www.youtube.com/@ComputerEasyLah" target="_blank" rel="noopener noreferrer">
+            <BiLogoYoutube className='text-4xl lg:text-5xl hover:text-trust-blue-hover cursor-pointer duration-300' />
+          </a>
+
+          {/* Github logo */}
+          {/* <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            <BiLogoGithub className='text-4xl lg:text-5xl hover:text-trust-blue-hover cursor-pointer duration-300' />
+          </a> */}
+
+
         </div>
       </div>
     </footer>

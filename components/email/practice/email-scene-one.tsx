@@ -30,7 +30,7 @@ export default function EmailSceneOne({ updateSceneIndex } : EmailSceneOneProps)
 
     return (
         <div className={`flex justify-center items-center mx-16 mt-28 overflow-hidden opacity-0 transition-opacity ${isActive ? 'opacity-100' : ''} duration-1000`}>
-            <BackButton pathToReturnTo='/playground/email' displayText='Quit' category={ Topic.Email } />
+            <BackButton pathToReturnTo='/email' displayText='Quit' category={ Topic.Email } />
 
             {/* Picture image */}
             <img src='/assets/email/fan.png' alt='Fan' className='w-1/6' />

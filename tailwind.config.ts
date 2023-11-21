@@ -6,8 +6,14 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
+      screens: {
+        "navbar-custom": "890px", // Custom for navbar resizing
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -51,13 +57,27 @@ const config: Config = {
           900: "#EB70BA",
           hover: "#D84FA1",
         },
-
-        "pale-gray": {
-          100: "#D4D4D4",
-        },
-
         question: {
           correct: "#A2DA87",
+          wrong: "#EF4444",
+        },
+
+        "introduction-green": {
+          900: "#6DC280",
+        },
+        "using-computer-lime": {
+          900: "#B7C26D",
+        },
+        "file-management-blue": {
+          900: "#6DA9C2",
+        },
+        "internet-purple": {
+          900: "#E469F7",
+        },
+        "pale-gray": {
+          100: "#D4D4D4",
+          500: "#595959",
+          bg: "#FAFAFA"
         },
       },
       translate: {
@@ -66,20 +86,26 @@ const config: Config = {
         "2/5": "40%",
       },
       width: {
+        "1/3": "35%",
         "1/8": "12.5%",
         "1/16": "6.25%",
+        "200p": "200px",
         "500p": "500px",
         "600p": "600px",
         "800p": "800px",
         "80vw": "80vw",
-        '340p': "340px",
-        '450p': "450px",
-        '540p': "540px"
-
+        "340p": "340px",
+        "450p": "450px",
+        "540p": "540px",
+        "740p": "740px",
+        "1000p": "1000px",
       },
       height: {
         "80vh": "80vh",
-        '100p': "100px"
+        "100p": "100px",
+        "50vh": "50vh",
+        "320p": "300px",
+        "420p": "520px"
       },
       top: {
         "1/8": "12.5%",

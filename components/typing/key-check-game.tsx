@@ -39,8 +39,6 @@ const KeyCheckGame: React.FC = () => {
     }
 
     const handleQuestionEnded = () => {
-        console.log("Question ended");
-        console.log("Current question index: " + currentQuestionIndex);
 
         // setShowHint(false);
 
@@ -81,8 +79,6 @@ const KeyCheckGame: React.FC = () => {
 
             const { key } = event;
 
-            console.log("Key pressed: " + key);
-            console.log("Correct key: " + questionData[currentQuestionIndex].checkKey);
 
             if (key == checkKey) {
                 handleQuestionEnded();
@@ -101,7 +97,7 @@ const KeyCheckGame: React.FC = () => {
 
 
     const handleFontSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log("Font size changed to: " + event.target.value);
+
         setFontSize(parseInt(event.target.value));
     };
 
@@ -112,7 +108,7 @@ const KeyCheckGame: React.FC = () => {
 
             <div className="flex flex-row justify-center items-center content-start absolute top-1">
                 <button onClick={() => window.history.back()} className={`bg-slate-200 hover:bg-energy-orange-900 p-2 m-2 ml-4 rounded-lg font-nunito font-bold text-${fontSize}xl duration-300`}>
-                    Back
+                    Quit
                 </button>
 
                 {/* <button onClick={resetGame} className="bg-white bg-opacity-80 p-2 m-2 rounded-lg font-gaegu font-bold text-2xl">
@@ -139,6 +135,7 @@ const KeyCheckGame: React.FC = () => {
                     value={fontSize}
                     onChange={handleFontSizeChange}
                     className="w-full"
+                    autoComplete="off"
                 />
             </div>
 
@@ -162,19 +159,17 @@ const KeyCheckGame: React.FC = () => {
                     <span className={`font-bold font-nunito text-${fontSize}xl text-center`}>{questionTitle}</span>
                 </div>
 
-                <div className={`p-5 rounded-lg font-nunito font-bold text-${fontSize}xl max-w-fit inline-block mx-8 mt-10 duration-300`} hidden={gameEnded}>
+                <div className={`p-5 rounded-lg font-nunito font-bold text-${fontSize}xl max-w-fit inline-block mx-8 mt-10 duration-300 z-10`} hidden={gameEnded}>
 
                     {showHint ? <div className={hintClassName}>Hint: {hint}</div> : null}
                 </div>
 
-                <img src='/assets/typing/tilted_keyboard.png' alt='Keyboard' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 right-0 translate-x-3/10 -translate-y-1/2 z-20' />
+                <img src='/assets/typing/tilted_keyboard.png' alt='Keyboard' className='w-1/4 md:w-1/6 lg:w-1/8 fixed bottom-0 right-0 translate-x-3/10 -translate-y-1/2' />
                 <img src='/assets/typing/tilted_i_cursor_icon.png' alt='I Cursor' className='w-1/4 md:w-1/6 lg:w-1/8 fixed top-0 translate-y-3/4 lg:top-1/8 left-4 -translate-x-2/5' />
 
 
                 {gameEnded ? <GameEndOverlayDiv /> : null}
             </div>
-
-
         </div>
     );
 };

@@ -36,8 +36,8 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
   //CSS styling variables
   let unselectedOptionStylingBorder = "border-pale-gray";
   let unselectedOptionStylingBackground = "bg-white";
-  let selectedOptionStylingBackground = `bg-${themeColor}-900`;
-  let selectedOptionStylingBorder = `border-${themeColor}-900`;
+  let selectedOptionStylingBackground = `bg-pale-gray-100`;
+  let selectedOptionStylingBorder = `border-pale-gray-100`;
   let correctOptionStylingBorder = "border-question-correct";
   let correctOptionStylingBackground = "bg-question-correct";
 
@@ -258,7 +258,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           <img
             src={allQuestions.questions[currentQuestionIndex].imageLink}
             alt="Question Image"
-            className="mx-4 w-3/4"
+            className="mx-4 w-1/4"
           />
         ) : (
           <h2></h2>
@@ -280,7 +280,7 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
               <div
                 key={index}
                 id={choice}
-                className={`bg-${themeColor}-900 border-solid border-4 border-${themeColor}-900 rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 md:w-500p lg:w-600p xl:w-800p font-nunito duration-300 text-xl`}
+                className={`bg-pale-gray-100 border-solid border-4 border-pale-gray-100 rounded-full py-4 px-8 mb-5 cursor-pointer options w-72 md:w-500p lg:w-600p xl:w-800p font-nunito duration-300 text-xl`}
                 onClick={() => handleAnswerSelection(choice)}
               >
                 <h3>{choice}</h3>
@@ -332,26 +332,29 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           onClick={handleCheckAnswer}
           disabled={selectedAnswer == ""}
         >
-          <span>Check</span>
+          <span>Submit</span>
         </button>
 
-        {/* View Explanation button */}
-        <button
-          id="view-explanation-button"
-          className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-4 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
-          onClick={() => toggleExplanation("open")}
-        >
-          <span>Explanation</span>
-        </button>
+        <div className='flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0'>
+          {/* View Explanation button */}
+          <button
+            id="view-explanation-button"
+            className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-4 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
+            onClick={() => toggleExplanation("open")}
+          >
+            <span>Explanation</span>
+          </button>
 
-        {/* Next button */}
-        <button
-          id="next-button"
-          className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-16 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
-          onClick={handleNextQuestion}
-        >
+          {/* Next button */}
+          <button
+            id="next-button"
+            className={`hidden w-48 text-3xl font-gaegu bg-${themeColor}-500 font-bold px-16 py-4 rounded-2xl duration-300 disabled:bg-gray-200`}
+            onClick={handleNextQuestion}
+          >
+     
           <span>Next</span>
-        </button>
+          </button>
+        </div>
       </div>
 
       <div
@@ -368,13 +371,13 @@ export const QuizBody = ({ quizData, themeColor, topic }: Props) => {
           </button>
           <NextLink href= {
             (topic == Topic.Typing)
-            ? '/playground/typing'
+            ? '/typing'
             : (topic == Topic.Applications)
-            ? '/playground/applications'
+            ? '/apps'
             : (topic == Topic.Email)
-            ? '/playground/email'
+            ? '/email'
             : (topic == Topic.Safety)
-            ? '/playground/safety'
+            ? '/safety'
             : ''
 
           } className="my-4">

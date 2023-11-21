@@ -90,8 +90,6 @@ export const chickenRiceStory: StoryScenes = {
     ]
 };
 
-
-
 export const mrtStory: StoryScenes = {
     scenes: [
         {
@@ -103,7 +101,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/mrtmap1.png"
         },
         {
-            typingSentence: "Along the way, I would need to change trains at Macpherson station from the Downtown Line to the Circle Line.",
+            typingSentence: "Along the way, I would need to change trains at MacPherson station from the Downtown Line to the Circle Line.",
             bkgImg: "/assets/typing/mrt/macphersonmap.png"
         },
         {
@@ -115,7 +113,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/dtlgantryin.png"
         },
         {
-            typingSentence: "At the MRT platform now, waiting for the train towards Macpherson station.",
+            typingSentence: "At the MRT platform now, waiting for the train towards MacPherson station.",
             bkgImg: "/assets/typing/mrt/tampinesdtlwaittrain.png"
         },
         {
@@ -135,7 +133,7 @@ export const mrtStory: StoryScenes = {
             bkgImg: "/assets/typing/mrt/gaveupreservedseat.png"
         },
         {
-            typingSentence: "Looks like I reached Macpherson station, need to alight and transfer here.",
+            typingSentence: "Looks like I reached MacPherson station, need to alight and transfer here.",
             bkgImg: "/assets/typing/mrt/reachmacpherson.png"
         },
         {
@@ -247,6 +245,24 @@ export const supermarketStory: StoryScenes = {
     ]
 };
 
+export const challengeStory: StoryScenes = {
+    scenes: [
+        {
+            typingSentence: "I find typing to be easy.",
+            bkgImg: "/assets/typing/challenge/keyboard.png"
+        },
+        // {
+        //     typingSentence: "Let us bridge the digital divide together!",
+        //     bkgImg: "/assets/typing/challenge/keyboard.png"
+        // },
+    ]
+};
+
+
+
+
+
+
 export const words: StoryScenes = {
     scenes: [
         {
@@ -314,7 +330,7 @@ export const words: StoryScenes = {
             bkgImg: "/assets/typing/computerparts/calculator.png"
         },
         {
-            typingSentence: "Notes",
+            typingSentence: "Notepad",
             bkgImg: "/assets/typing/computerparts/notes.png"
         },
         {
@@ -378,6 +394,7 @@ const storyMapping: { [key: string]: StoryScenes } = {
     "chickenrice": chickenRiceStory,
     "mrt": mrtStory,
     "supermarket": supermarketStory,
+    "challenge": challengeStory,
 
     // Not in use
     "computerparts": computerParts,
@@ -394,7 +411,7 @@ export const getStoryScenesFromString = (storyName: string): StoryScenes => {
         }
     }
 
-    console.log("Getting story scenes for " + storyName);
+
     return storyMapping[storyName];
 };
 

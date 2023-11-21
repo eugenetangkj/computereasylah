@@ -1,22 +1,26 @@
 export const navLinks = [
   {
-    id: "",
+    id: "home",
     title: "Home",
   },
   {
-    id: "impact",
-    title: "Impact",
+    id: "philosophy",
+    title: "Philosophy",
+  },
+  // {
+  //   id: "impact",
+  //   title: "Impact",
+  // },
+  {
+    id: "resources",
+    title: "Resources",
   },
   {
-    id: "curriculum",
-    title: "Curriculum",
+    id: "contact",
+    title: "Contact"
   },
   {
-    id: "slides",
-    title: "Slides",
-  },
-  {
-    id: "playground",
+    id: "",
     title: "Playground",
   },
 ];
@@ -24,50 +28,89 @@ export const navLinks = [
 export const curriculumInfo = [
   {
     title: "Introduction",
-    subtitle: "What is a computer? What parts does it contain?",
-    text: "In this introductory chapter, we provide a warm welcome to the world of technology by demystifying the various parts of a computer. We'll explore the essential tools, such as the mouse and keyboard, guiding senior adults through their functions and practical use.",
-    imagesrc: "",
+    content: "What is a computer? What parts does it contain?",
+    color: "introduction-green-900",
   },
   {
     title: "Using a Computer",
-    subtitle: "How can I use the basic features of a computer?",
-    text: "In this chapter, we take a hands-on approach to empower seniors with the practical skills needed to use the computer components introduced in the previous chapter. We'll guide them on how to confidently switch on and off the computer, navigate using the mouse, and perform other essential tasks.",
-    imagesrc: "",
+    content: "How can I use the basic features of a computer?",
+    color: "using-computer-lime-900",
   },
   {
     title: "Typing",
-    subtitle: "How do I type into the computer using a keyboard?",
-    text: "In this chapter, we'll dive into the art of keyboard typing, recognizing that for senior adults learning computer skills, this is a valuable technical skill that may feel unfamiliar at first. We understand that mastering typing takes time and patience, and our approach is designed to make the journey enjoyable and effective.",
-    imagesrc: "",
+    content: "How do I type into the computer using a keyboard?",
+    color: "energy-orange-900",
   },
   {
     title: "File Management",
-    subtitle: "How do I store and open files on a computer?",
-    text: "In this chapter, we delve into the essential skill of file management, where we empower senior adults to create, save, organize, and manage their digital documents on the local computer.",
-    imagesrc: "",
+    content: "How do I store and open files on a computer?",
+    color: "file-management-blue-900",
   },
   {
     title: "Applications",
-    subtitle: "What are the main apps I can use on a computer?",
-    text: "In this chapter, we introduce senior adults to the fascinating world of computer applications. We'll showcase a variety of basic applications that are designed to enhance their digital experience. We also introduce the concept of windows, the digital spaces where applications appear and where one will perform various tasks.",
-    imagesrc: "",
+    content: "What are the main apps I can use on a computer?",
+    color: "creative-pink-900",
   },
   {
     title: "Internet",
-    subtitle: "How do I browse the Internet using a computer?",
-    text: "In this chapter, we embark on a journey to introduce senior adults to the vast and fascinating realm of the Internet. We explore the fundamental concepts of URLs and websites, demystifying the digital landscape for them. We'll also showcase a selection of common websites that can be immensely useful and enriching.",
-    imagesrc: "",
+    content: "How do I browse the Internet using a computer?",
+    color: "internet-purple-900",
   },
   {
     title: "Email",
-    subtitle: "How do I use the computer to send emails?",
-    text: "In this chapter, we aim to inculcate senior adults with the essential skills of email communication. We begin by introducing the world of emails, explaining their purpose and the significance of learning this valuable tool in today's digital age. We will then guide them through the process of composing and sending emails.",
-    imagesrc: "",
+    content: "How do I use the computer to send emails?",
+    color: "trust-blue-900",
   },
   {
     title: "Safety",
-    subtitle: "How can I safely use a computer and the Internet?",
-    text: "In this chapter, we address the vital aspect of staying safe while using the computer and the Internet, recognizing the ever-evolving digital landscape and the presence of potential threats and scams. We introduce techniques and best practices to ensure the senior adults’ online safety in today's digital world.",
+    content: "How can I safely use a computer and the Internet?",
+    color: "passion-red-900",
+  },
+];
+
+export const philosophyInfo = [
+  {
+    title: "Bite-sized",
+    content:
+      "We designed our content and activities to be short and sweet chunks, allowing for easy absorption.",
     imagesrc: "",
+  },
+  {
+    title: "Relatability",
+    content:
+      "We use concepts and images that senior adults are familiar with, instead of complex explanations.",
+    imagesrc: "",
+  },
+  {
+    title: "Recap",
+    content:
+      "While the content is split into topics, we encourage recaps of previous topics’ content whenever possible.",
+    imagesrc: "",
+  },
+  {
+    title: "Guided",
+    content:
+      "For each activity, we provide instructions and guidance so it is clear for the participants regarding how to use them.",
+    imagesrc: "",
+  },
+];
+
+export const philosophyDetails = [
+  {
+    title: "Recap",
+    subtitle: "We highlight and recap the key points that were taught in each topic.",
+    text: "It could be overwhelming for the participants of computer classes to remember all the content. Thus, we have summary videos that help the participants distill the key points to takeaway. This better helps them to remember important information amidst the wide-ranging content taught in each lesson.",
+  },
+  {
+    title: "Practice",
+    subtitle:
+      "We provide hands-on interactive activities that build on the content taught in the computer classes.",
+    text: "Participants value hands-on, and we hear them. We designed hands-on practices that are intended to build confidence amongst the learners with regards to grasping the concepts taught in the classes, providing them an opportunity to apply what they have learned.",
+  },
+  {
+    title: "Test",
+    subtitle:
+      "We curate simple assessments that allow the participants to test their knowledge.",
+    text: "Simple assessments help participants identify areas that they are still unfamiliar with, helping them to check if they have a good understanding of the key concepts taught in the classes.",
   },
 ];
